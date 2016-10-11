@@ -24,10 +24,16 @@ class RootViewController: UIViewController {
     }
     
     func prepareViewController() {
-        let registKeyViewController = RegistKeyViewController()
-        addChildContainerViewController(registKeyViewController)
         
-        activeViewController = registKeyViewController
+        if AppStatus.sharedInstance.hasApiInformation() {
+            let tabBarController = BitTraderTabViewController()
+            addChildContainerViewController(tabBarController)
+            activeViewController = tabBarController
+        } else {
+            let registKeyViewController = RegistKeyViewController()
+            addChildContainerViewController(registKeyViewController)
+            activeViewController = registKeyViewController
+        }
     }
 }
 
@@ -37,6 +43,7 @@ extension RootViewController {
     func addChildContainerViewController(_ addChildContainerViewController: UIViewController) {
         addChildViewController(addChildContainerViewController)
         view.addSubview(addChildContainerViewController.view)
+        view.addFittingConstraintsFor(childView: addChildContainerViewController.view)
         addChildContainerViewController.didMove(toParentViewController: self)
     }
 }

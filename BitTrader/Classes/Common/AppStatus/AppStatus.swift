@@ -35,4 +35,13 @@ class AppStatus {
         keychain[KeyChainDataType.ApiKey.rawValue] = apiKey
         keychain[KeyChainDataType.ApiSecretKey.rawValue] = apiSecretKey
     }
+    
+    func hasApiInformation() -> Bool {
+        
+        if let apiKey = self.apiKey, let apiSecretKey = self.apiSecretKey {
+            return !apiKey.isEmpty && !apiSecretKey.isEmpty
+        } else {
+            return false
+        }
+    }
 }

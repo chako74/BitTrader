@@ -15,6 +15,15 @@
 		072441861DACBEB40059E872 /* RegistKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072441831DACBEB40059E872 /* RegistKeyViewController.swift */; };
 		072441871DACBEB40059E872 /* RegistKeyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072441841DACBEB40059E872 /* RegistKeyViewController.xib */; };
 		072441881DACBEB40059E872 /* RegistKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072441851DACBEB40059E872 /* RegistKeyViewModel.swift */; };
+		0724418F1DACC1D40059E872 /* MarketRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724418D1DACC1D40059E872 /* MarketRootViewController.swift */; };
+		072441901DACC1D40059E872 /* MarketRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0724418E1DACC1D40059E872 /* MarketRootViewController.xib */; };
+		072441931DACC1E70059E872 /* MenuRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072441911DACC1E70059E872 /* MenuRootViewController.swift */; };
+		072441941DACC1E70059E872 /* MenuRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072441921DACC1E70059E872 /* MenuRootViewController.xib */; };
+		072441971DACC1FB0059E872 /* ReferenceRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072441951DACC1FB0059E872 /* ReferenceRootViewController.swift */; };
+		072441981DACC1FB0059E872 /* ReferenceRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072441961DACC1FB0059E872 /* ReferenceRootViewController.xib */; };
+		0724419B1DACC20A0059E872 /* TradeRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072441991DACC20A0059E872 /* TradeRootViewController.swift */; };
+		0724419C1DACC20A0059E872 /* TradeRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0724419A1DACC20A0059E872 /* TradeRootViewController.xib */; };
+		0724419E1DACCA230059E872 /* BitTraderTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724419D1DACCA230059E872 /* BitTraderTabViewController.swift */; };
 		072B67351DA87E6600F276AF /* GetBalanceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B67341DA87E6600F276AF /* GetBalanceRequest.swift */; };
 		072B67371DA87EA000F276AF /* GetBalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B67361DA87EA000F276AF /* GetBalanceResponse.swift */; };
 		072B67391DA87EF200F276AF /* BalanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B67381DA87EF200F276AF /* BalanceModel.swift */; };
@@ -63,6 +72,15 @@
 		072441831DACBEB40059E872 /* RegistKeyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistKeyViewController.swift; sourceTree = "<group>"; };
 		072441841DACBEB40059E872 /* RegistKeyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistKeyViewController.xib; sourceTree = "<group>"; };
 		072441851DACBEB40059E872 /* RegistKeyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistKeyViewModel.swift; sourceTree = "<group>"; };
+		0724418D1DACC1D40059E872 /* MarketRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketRootViewController.swift; sourceTree = "<group>"; };
+		0724418E1DACC1D40059E872 /* MarketRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarketRootViewController.xib; sourceTree = "<group>"; };
+		072441911DACC1E70059E872 /* MenuRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuRootViewController.swift; sourceTree = "<group>"; };
+		072441921DACC1E70059E872 /* MenuRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuRootViewController.xib; sourceTree = "<group>"; };
+		072441951DACC1FB0059E872 /* ReferenceRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferenceRootViewController.swift; sourceTree = "<group>"; };
+		072441961DACC1FB0059E872 /* ReferenceRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReferenceRootViewController.xib; sourceTree = "<group>"; };
+		072441991DACC20A0059E872 /* TradeRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradeRootViewController.swift; sourceTree = "<group>"; };
+		0724419A1DACC20A0059E872 /* TradeRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TradeRootViewController.xib; sourceTree = "<group>"; };
+		0724419D1DACCA230059E872 /* BitTraderTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitTraderTabViewController.swift; sourceTree = "<group>"; };
 		072B67341DA87E6600F276AF /* GetBalanceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBalanceRequest.swift; sourceTree = "<group>"; };
 		072B67361DA87EA000F276AF /* GetBalanceResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBalanceResponse.swift; sourceTree = "<group>"; };
 		072B67381DA87EF200F276AF /* BalanceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceModel.swift; sourceTree = "<group>"; };
@@ -149,6 +167,42 @@
 				072441851DACBEB40059E872 /* RegistKeyViewModel.swift */,
 			);
 			path = RegistKey;
+			sourceTree = "<group>";
+		};
+		072441891DACC08D0059E872 /* Trade */ = {
+			isa = PBXGroup;
+			children = (
+				072441991DACC20A0059E872 /* TradeRootViewController.swift */,
+				0724419A1DACC20A0059E872 /* TradeRootViewController.xib */,
+			);
+			path = Trade;
+			sourceTree = "<group>";
+		};
+		0724418A1DACC1740059E872 /* Reference */ = {
+			isa = PBXGroup;
+			children = (
+				072441951DACC1FB0059E872 /* ReferenceRootViewController.swift */,
+				072441961DACC1FB0059E872 /* ReferenceRootViewController.xib */,
+			);
+			path = Reference;
+			sourceTree = "<group>";
+		};
+		0724418B1DACC1890059E872 /* Market */ = {
+			isa = PBXGroup;
+			children = (
+				0724418D1DACC1D40059E872 /* MarketRootViewController.swift */,
+				0724418E1DACC1D40059E872 /* MarketRootViewController.xib */,
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
+		0724418C1DACC19B0059E872 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				072441911DACC1E70059E872 /* MenuRootViewController.swift */,
+				072441921DACC1E70059E872 /* MenuRootViewController.xib */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		072B67331DA87E4800F276AF /* GetBalance */ = {
@@ -253,8 +307,12 @@
 		07FAE3261DA7787000089136 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				0724418B1DACC1890059E872 /* Market */,
+				0724418C1DACC19B0059E872 /* Menu */,
+				0724418A1DACC1740059E872 /* Reference */,
 				072441821DACBEB40059E872 /* RegistKey */,
 				07FAE3271DA778A700089136 /* Root */,
+				072441891DACC08D0059E872 /* Trade */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -264,6 +322,7 @@
 			children = (
 				07FAE3281DA778E500089136 /* RootViewController.swift */,
 				07FAE32F1DA77CE600089136 /* RootViewController.xib */,
+				0724419D1DACCA230059E872 /* BitTraderTabViewController.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -467,9 +526,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				07BD52011DA3DECD00DA54B8 /* LaunchScreen.storyboard in Resources */,
+				072441941DACC1E70059E872 /* MenuRootViewController.xib in Resources */,
+				072441901DACC1D40059E872 /* MarketRootViewController.xib in Resources */,
 				07FAE3301DA77CE600089136 /* RootViewController.xib in Resources */,
 				072441871DACBEB40059E872 /* RegistKeyViewController.xib in Resources */,
+				072441981DACC1FB0059E872 /* ReferenceRootViewController.xib in Resources */,
 				07BD522E1DA3E67A00DA54B8 /* Assets.xcassets in Resources */,
+				0724419C1DACC20A0059E872 /* TradeRootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +668,7 @@
 				072441731DABD51C0059E872 /* GetChildOrdersParameter.swift in Sources */,
 				072441881DACBEB40059E872 /* RegistKeyViewModel.swift in Sources */,
 				07FAE33F1DA7C44500089136 /* GetHealthRequest.swift in Sources */,
+				0724419E1DACCA230059E872 /* BitTraderTabViewController.swift in Sources */,
 				0724416D1DABCEFB0059E872 /* GetChildOrdersRequest.swift in Sources */,
 				072441861DACBEB40059E872 /* RegistKeyViewController.swift in Sources */,
 				07BD522A1DA3E4AE00DA54B8 /* AppDelegate.swift in Sources */,
@@ -613,13 +677,17 @@
 				072B67371DA87EA000F276AF /* GetBalanceResponse.swift in Sources */,
 				072B673B1DA8809C00F276AF /* BitTraderPrivateRequest.swift in Sources */,
 				07FAE3291DA778E500089136 /* RootViewController.swift in Sources */,
+				072441971DACC1FB0059E872 /* ReferenceRootViewController.swift in Sources */,
 				0724416F1DABCF060059E872 /* GetChildOrdersResponse.swift in Sources */,
 				07FAE3341DA7BA2500089136 /* AppStatus.swift in Sources */,
 				072B67411DAA7A0900F276AF /* Extension.swift in Sources */,
 				072B67391DA87EF200F276AF /* BalanceModel.swift in Sources */,
+				072441931DACC1E70059E872 /* MenuRootViewController.swift in Sources */,
+				0724418F1DACC1D40059E872 /* MarketRootViewController.swift in Sources */,
 				07FAE33D1DA7C31C00089136 /* BitTraderPublicAPI.swift in Sources */,
 				072B67351DA87E6600F276AF /* GetBalanceRequest.swift in Sources */,
 				07FAE3411DA7C49300089136 /* GetHealthResponse.swift in Sources */,
+				0724419B1DACC20A0059E872 /* TradeRootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

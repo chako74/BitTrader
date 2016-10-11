@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: String Extension
 enum CryptoAlgorithm {
@@ -65,5 +66,22 @@ extension String {
         }
         return String(hash)
     }
-    
+}
+
+// MARK: UIView
+extension UIView {
+    func addFittingConstraintsFor(childView: UIView) {
+        let constraints = [.top, .leading, .bottom, .trailing].map {
+            NSLayoutConstraint(
+                item: childView,
+                attribute: $0,
+                relatedBy: .equal,
+                toItem: self,
+                attribute: $0,
+                multiplier: 1.0,
+                constant: 0.0)
+        }
+        childView.translatesAutoresizingMaskIntoConstraints = false
+        addConstraints(constraints)
+    }
 }
