@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  RegistKeyViewController.swift
 //  BitTrader
 //
 //  Created by chako on 2016/10/07.
@@ -12,10 +12,10 @@ import APIKit
 import RxCocoa
 import RxSwift
 
-class LoginViewController: UIViewController {
+class RegistKeyViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
-    private let loginViewModel = LoginViewModel()
+    private let registKeyViewModel = RegistKeyViewModel()
     
     // MARK: IBOutlet
     @IBOutlet weak private var apiKeyTextField: UITextField!
@@ -29,22 +29,22 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        apiKeyTextField.text = loginViewModel.apiKey.value
+        apiKeyTextField.text = registKeyViewModel.apiKey.value
         apiKeyTextField.rx.text
-            .bindTo(loginViewModel.apiKey)
+            .bindTo(registKeyViewModel.apiKey)
             .addDisposableTo(disposeBag)
         
-        loginViewModel.apiKey.asObservable()
+        registKeyViewModel.apiKey.asObservable()
             .observeOn(MainScheduler.instance)
             .bindTo(apiKeyTextField.rx.text)
             .addDisposableTo(disposeBag)
         
-        apiSecretKeyTextField.text = loginViewModel.apiSecretKey.value
+        apiSecretKeyTextField.text = registKeyViewModel.apiSecretKey.value
         apiSecretKeyTextField.rx.text
-            .bindTo(loginViewModel.apiSecretKey)
+            .bindTo(registKeyViewModel.apiSecretKey)
             .addDisposableTo(disposeBag)
         
-        loginViewModel.apiSecretKey.asObservable()
+        registKeyViewModel.apiSecretKey.asObservable()
             .observeOn(MainScheduler.instance)
             .bindTo(apiSecretKeyTextField.rx.text)
             .addDisposableTo(disposeBag)
@@ -52,12 +52,12 @@ class LoginViewController: UIViewController {
         
         settingButton.rx.tap
             .subscribe(onNext: { [weak self] in
-                self?.loginViewModel.registApiKeyInformation()
+                self?.registKeyViewModel.registApiKeyInformation()
                 self?.sendRequest()
             })
         .addDisposableTo(disposeBag)
         
-        loginViewModel.enableSettingButton
+        registKeyViewModel.enableSettingButton
             .bindTo(settingButton.rx.enabled)
             .addDisposableTo(disposeBag)
     }

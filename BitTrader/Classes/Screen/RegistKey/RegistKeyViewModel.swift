@@ -1,5 +1,5 @@
 //
-//  LoginViewModel.swift
+//  RegistKeyViewModel.swift
 //  BitTrader
 //
 //  Created by chako on 2016/10/11.
@@ -11,7 +11,7 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-struct LoginViewModel {
+struct RegistKeyViewModel {
     
     let apiKey = Variable("")
     let apiSecretKey = Variable("")

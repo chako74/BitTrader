@@ -24,10 +24,10 @@ class RootViewController: UIViewController {
     }
     
     func prepareViewController() {
-        let loginViewController = LoginViewController()
-        addChildContainerViewController(loginViewController)
+        let registKeyViewController = RegistKeyViewController()
+        addChildContainerViewController(registKeyViewController)
         
-        activeViewController = loginViewController
+        activeViewController = registKeyViewController
     }
 }
 

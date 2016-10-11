@@ -12,7 +12,9 @@
 		0724416F1DABCF060059E872 /* GetChildOrdersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724416E1DABCF060059E872 /* GetChildOrdersResponse.swift */; };
 		072441711DABCF2A0059E872 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072441701DABCF2A0059E872 /* OrderModel.swift */; };
 		072441731DABD51C0059E872 /* GetChildOrdersParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072441721DABD51C0059E872 /* GetChildOrdersParameter.swift */; };
-		072441751DAC7EF90059E872 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072441741DAC7EF90059E872 /* LoginViewModel.swift */; };
+		072441861DACBEB40059E872 /* RegistKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072441831DACBEB40059E872 /* RegistKeyViewController.swift */; };
+		072441871DACBEB40059E872 /* RegistKeyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072441841DACBEB40059E872 /* RegistKeyViewController.xib */; };
+		072441881DACBEB40059E872 /* RegistKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072441851DACBEB40059E872 /* RegistKeyViewModel.swift */; };
 		072B67351DA87E6600F276AF /* GetBalanceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B67341DA87E6600F276AF /* GetBalanceRequest.swift */; };
 		072B67371DA87EA000F276AF /* GetBalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B67361DA87EA000F276AF /* GetBalanceResponse.swift */; };
 		072B67391DA87EF200F276AF /* BalanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B67381DA87EF200F276AF /* BalanceModel.swift */; };
@@ -25,8 +27,6 @@
 		07BD522A1DA3E4AE00DA54B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD52281DA3E4AE00DA54B8 /* AppDelegate.swift */; };
 		07BD522E1DA3E67A00DA54B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07BD522D1DA3E67A00DA54B8 /* Assets.xcassets */; };
 		07FAE3291DA778E500089136 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE3281DA778E500089136 /* RootViewController.swift */; };
-		07FAE32D1DA77CD700089136 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE32B1DA77CD700089136 /* LoginViewController.swift */; };
-		07FAE32E1DA77CD700089136 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FAE32C1DA77CD700089136 /* LoginViewController.xib */; };
 		07FAE3301DA77CE600089136 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FAE32F1DA77CE600089136 /* RootViewController.xib */; };
 		07FAE3341DA7BA2500089136 /* AppStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE3331DA7BA2500089136 /* AppStatus.swift */; };
 		07FAE33B1DA7C03900089136 /* BitTraderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE33A1DA7C03900089136 /* BitTraderRequest.swift */; };
@@ -59,8 +59,10 @@
 		0724416E1DABCF060059E872 /* GetChildOrdersResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetChildOrdersResponse.swift; sourceTree = "<group>"; };
 		072441701DABCF2A0059E872 /* OrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		072441721DABD51C0059E872 /* GetChildOrdersParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetChildOrdersParameter.swift; sourceTree = "<group>"; };
-		072441741DAC7EF90059E872 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		072441791DAC8C760059E872 /* BitTrader.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BitTrader.entitlements; sourceTree = "<group>"; };
+		072441831DACBEB40059E872 /* RegistKeyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistKeyViewController.swift; sourceTree = "<group>"; };
+		072441841DACBEB40059E872 /* RegistKeyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistKeyViewController.xib; sourceTree = "<group>"; };
+		072441851DACBEB40059E872 /* RegistKeyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistKeyViewModel.swift; sourceTree = "<group>"; };
 		072B67341DA87E6600F276AF /* GetBalanceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBalanceRequest.swift; sourceTree = "<group>"; };
 		072B67361DA87EA000F276AF /* GetBalanceResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBalanceResponse.swift; sourceTree = "<group>"; };
 		072B67381DA87EF200F276AF /* BalanceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceModel.swift; sourceTree = "<group>"; };
@@ -79,8 +81,6 @@
 		07BD52281DA3E4AE00DA54B8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07BD522D1DA3E67A00DA54B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07FAE3281DA778E500089136 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		07FAE32B1DA77CD700089136 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		07FAE32C1DA77CD700089136 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		07FAE32F1DA77CE600089136 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		07FAE3331DA7BA2500089136 /* AppStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStatus.swift; sourceTree = "<group>"; };
 		07FAE33A1DA7C03900089136 /* BitTraderRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitTraderRequest.swift; sourceTree = "<group>"; };
@@ -139,6 +139,16 @@
 				072441721DABD51C0059E872 /* GetChildOrdersParameter.swift */,
 			);
 			path = GetChildOrders;
+			sourceTree = "<group>";
+		};
+		072441821DACBEB40059E872 /* RegistKey */ = {
+			isa = PBXGroup;
+			children = (
+				072441831DACBEB40059E872 /* RegistKeyViewController.swift */,
+				072441841DACBEB40059E872 /* RegistKeyViewController.xib */,
+				072441851DACBEB40059E872 /* RegistKeyViewModel.swift */,
+			);
+			path = RegistKey;
 			sourceTree = "<group>";
 		};
 		072B67331DA87E4800F276AF /* GetBalance */ = {
@@ -243,7 +253,7 @@
 		07FAE3261DA7787000089136 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				07FAE32A1DA77CBB00089136 /* Login */,
+				072441821DACBEB40059E872 /* RegistKey */,
 				07FAE3271DA778A700089136 /* Root */,
 			);
 			path = Screen;
@@ -256,16 +266,6 @@
 				07FAE32F1DA77CE600089136 /* RootViewController.xib */,
 			);
 			path = Root;
-			sourceTree = "<group>";
-		};
-		07FAE32A1DA77CBB00089136 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				07FAE32B1DA77CD700089136 /* LoginViewController.swift */,
-				07FAE32C1DA77CD700089136 /* LoginViewController.xib */,
-				072441741DAC7EF90059E872 /* LoginViewModel.swift */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		07FAE3311DA7898100089136 /* API */ = {
@@ -466,9 +466,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07FAE32E1DA77CD700089136 /* LoginViewController.xib in Resources */,
 				07BD52011DA3DECD00DA54B8 /* LaunchScreen.storyboard in Resources */,
 				07FAE3301DA77CE600089136 /* RootViewController.xib in Resources */,
+				072441871DACBEB40059E872 /* RegistKeyViewController.xib in Resources */,
 				07BD522E1DA3E67A00DA54B8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,10 +602,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				072441711DABCF2A0059E872 /* OrderModel.swift in Sources */,
-				07FAE32D1DA77CD700089136 /* LoginViewController.swift in Sources */,
 				072441731DABD51C0059E872 /* GetChildOrdersParameter.swift in Sources */,
+				072441881DACBEB40059E872 /* RegistKeyViewModel.swift in Sources */,
 				07FAE33F1DA7C44500089136 /* GetHealthRequest.swift in Sources */,
 				0724416D1DABCEFB0059E872 /* GetChildOrdersRequest.swift in Sources */,
+				072441861DACBEB40059E872 /* RegistKeyViewController.swift in Sources */,
 				07BD522A1DA3E4AE00DA54B8 /* AppDelegate.swift in Sources */,
 				072B673E1DA9E6F900F276AF /* BitTraderPrivateAPI.swift in Sources */,
 				07FAE33B1DA7C03900089136 /* BitTraderRequest.swift in Sources */,
@@ -618,7 +619,6 @@
 				072B67391DA87EF200F276AF /* BalanceModel.swift in Sources */,
 				07FAE33D1DA7C31C00089136 /* BitTraderPublicAPI.swift in Sources */,
 				072B67351DA87E6600F276AF /* GetBalanceRequest.swift in Sources */,
-				072441751DAC7EF90059E872 /* LoginViewModel.swift in Sources */,
 				07FAE3411DA7C49300089136 /* GetHealthResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
