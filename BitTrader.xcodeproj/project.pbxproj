@@ -1,0 +1,901 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		026314F1AFFCE13E8D9DBFEE /* Pods_BitTraderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71653296D47E56926068FCF7 /* Pods_BitTraderTests.framework */; };
+		0724416D1DABCEFB0059E872 /* GetChildOrdersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724416C1DABCEFB0059E872 /* GetChildOrdersRequest.swift */; };
+		0724416F1DABCF060059E872 /* GetChildOrdersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724416E1DABCF060059E872 /* GetChildOrdersResponse.swift */; };
+		072441711DABCF2A0059E872 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072441701DABCF2A0059E872 /* OrderModel.swift */; };
+		072441731DABD51C0059E872 /* GetChildOrdersParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072441721DABD51C0059E872 /* GetChildOrdersParameter.swift */; };
+		072441751DAC7EF90059E872 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072441741DAC7EF90059E872 /* LoginViewModel.swift */; };
+		072B67351DA87E6600F276AF /* GetBalanceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B67341DA87E6600F276AF /* GetBalanceRequest.swift */; };
+		072B67371DA87EA000F276AF /* GetBalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B67361DA87EA000F276AF /* GetBalanceResponse.swift */; };
+		072B67391DA87EF200F276AF /* BalanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B67381DA87EF200F276AF /* BalanceModel.swift */; };
+		072B673B1DA8809C00F276AF /* BitTraderPrivateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B673A1DA8809C00F276AF /* BitTraderPrivateRequest.swift */; };
+		072B673E1DA9E6F900F276AF /* BitTraderPrivateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B673D1DA9E6F900F276AF /* BitTraderPrivateAPI.swift */; };
+		072B67411DAA7A0900F276AF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B67401DAA7A0900F276AF /* Extension.swift */; };
+		07BD52011DA3DECD00DA54B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07BD51FF1DA3DECD00DA54B8 /* LaunchScreen.storyboard */; };
+		07BD520C1DA3DECD00DA54B8 /* RequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD520B1DA3DECD00DA54B8 /* RequestTest.swift */; };
+		07BD52171DA3DECD00DA54B8 /* BitTraderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD52161DA3DECD00DA54B8 /* BitTraderUITests.swift */; };
+		07BD522A1DA3E4AE00DA54B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD52281DA3E4AE00DA54B8 /* AppDelegate.swift */; };
+		07BD522E1DA3E67A00DA54B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07BD522D1DA3E67A00DA54B8 /* Assets.xcassets */; };
+		07FAE3291DA778E500089136 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE3281DA778E500089136 /* RootViewController.swift */; };
+		07FAE32D1DA77CD700089136 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE32B1DA77CD700089136 /* LoginViewController.swift */; };
+		07FAE32E1DA77CD700089136 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FAE32C1DA77CD700089136 /* LoginViewController.xib */; };
+		07FAE3301DA77CE600089136 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FAE32F1DA77CE600089136 /* RootViewController.xib */; };
+		07FAE3341DA7BA2500089136 /* AppStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE3331DA7BA2500089136 /* AppStatus.swift */; };
+		07FAE33B1DA7C03900089136 /* BitTraderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE33A1DA7C03900089136 /* BitTraderRequest.swift */; };
+		07FAE33D1DA7C31C00089136 /* BitTraderPublicAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE33C1DA7C31C00089136 /* BitTraderPublicAPI.swift */; };
+		07FAE33F1DA7C44500089136 /* GetHealthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE33E1DA7C44500089136 /* GetHealthRequest.swift */; };
+		07FAE3411DA7C49300089136 /* GetHealthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE3401DA7C49300089136 /* GetHealthResponse.swift */; };
+		82857357A68650A1A1556799 /* Pods_BitTrader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E525F9CF272892EAA3DF1AA6 /* Pods_BitTrader.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07BD52081DA3DECD00DA54B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07BD51EB1DA3DECD00DA54B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07BD51F21DA3DECD00DA54B8;
+			remoteInfo = BitTrader;
+		};
+		07BD52131DA3DECD00DA54B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07BD51EB1DA3DECD00DA54B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07BD51F21DA3DECD00DA54B8;
+			remoteInfo = BitTrader;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		070E9E291DA66F1B0095A671 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0724416C1DABCEFB0059E872 /* GetChildOrdersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetChildOrdersRequest.swift; sourceTree = "<group>"; };
+		0724416E1DABCF060059E872 /* GetChildOrdersResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetChildOrdersResponse.swift; sourceTree = "<group>"; };
+		072441701DABCF2A0059E872 /* OrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		072441721DABD51C0059E872 /* GetChildOrdersParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetChildOrdersParameter.swift; sourceTree = "<group>"; };
+		072441741DAC7EF90059E872 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		072441791DAC8C760059E872 /* BitTrader.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BitTrader.entitlements; sourceTree = "<group>"; };
+		072B67341DA87E6600F276AF /* GetBalanceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBalanceRequest.swift; sourceTree = "<group>"; };
+		072B67361DA87EA000F276AF /* GetBalanceResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBalanceResponse.swift; sourceTree = "<group>"; };
+		072B67381DA87EF200F276AF /* BalanceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceModel.swift; sourceTree = "<group>"; };
+		072B673A1DA8809C00F276AF /* BitTraderPrivateRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitTraderPrivateRequest.swift; sourceTree = "<group>"; };
+		072B673C1DA9D33800F276AF /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		072B673D1DA9E6F900F276AF /* BitTraderPrivateAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitTraderPrivateAPI.swift; sourceTree = "<group>"; };
+		072B67401DAA7A0900F276AF /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		07BD51F31DA3DECD00DA54B8 /* BitTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		07BD52001DA3DECD00DA54B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		07BD52071DA3DECD00DA54B8 /* BitTraderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitTraderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07BD520B1DA3DECD00DA54B8 /* RequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTest.swift; sourceTree = "<group>"; };
+		07BD520D1DA3DECD00DA54B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07BD52121DA3DECD00DA54B8 /* BitTraderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitTraderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07BD52161DA3DECD00DA54B8 /* BitTraderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitTraderUITests.swift; sourceTree = "<group>"; };
+		07BD52181DA3DECD00DA54B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07BD52281DA3E4AE00DA54B8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		07BD522D1DA3E67A00DA54B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		07FAE3281DA778E500089136 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		07FAE32B1DA77CD700089136 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		07FAE32C1DA77CD700089136 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		07FAE32F1DA77CE600089136 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		07FAE3331DA7BA2500089136 /* AppStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStatus.swift; sourceTree = "<group>"; };
+		07FAE33A1DA7C03900089136 /* BitTraderRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitTraderRequest.swift; sourceTree = "<group>"; };
+		07FAE33C1DA7C31C00089136 /* BitTraderPublicAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitTraderPublicAPI.swift; sourceTree = "<group>"; };
+		07FAE33E1DA7C44500089136 /* GetHealthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHealthRequest.swift; sourceTree = "<group>"; };
+		07FAE3401DA7C49300089136 /* GetHealthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHealthResponse.swift; sourceTree = "<group>"; };
+		71653296D47E56926068FCF7 /* Pods_BitTraderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitTraderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4915E65A73E188106ABD949 /* Pods-BitTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTrader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitTrader/Pods-BitTrader.debug.xcconfig"; sourceTree = "<group>"; };
+		C724E1701441F1D7C5862AD3 /* Pods-BitTraderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTraderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitTraderTests/Pods-BitTraderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CC4B7FDBD26058AF1B3EC060 /* Pods-BitTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTrader.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitTrader/Pods-BitTrader.release.xcconfig"; sourceTree = "<group>"; };
+		CEFF4274892F4ACA1287631A /* Pods-BitTraderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTraderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitTraderTests/Pods-BitTraderTests.release.xcconfig"; sourceTree = "<group>"; };
+		E525F9CF272892EAA3DF1AA6 /* Pods_BitTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07BD51F01DA3DECD00DA54B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82857357A68650A1A1556799 /* Pods_BitTrader.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07BD52041DA3DECD00DA54B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				026314F1AFFCE13E8D9DBFEE /* Pods_BitTraderTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07BD520F1DA3DECD00DA54B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		070E9E281DA66EDF0095A671 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				070E9E291DA66F1B0095A671 /* Info.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		0724416B1DABCED40059E872 /* GetChildOrders */ = {
+			isa = PBXGroup;
+			children = (
+				0724416C1DABCEFB0059E872 /* GetChildOrdersRequest.swift */,
+				0724416E1DABCF060059E872 /* GetChildOrdersResponse.swift */,
+				072441701DABCF2A0059E872 /* OrderModel.swift */,
+				072441721DABD51C0059E872 /* GetChildOrdersParameter.swift */,
+			);
+			path = GetChildOrders;
+			sourceTree = "<group>";
+		};
+		072B67331DA87E4800F276AF /* GetBalance */ = {
+			isa = PBXGroup;
+			children = (
+				072B67341DA87E6600F276AF /* GetBalanceRequest.swift */,
+				072B67361DA87EA000F276AF /* GetBalanceResponse.swift */,
+				072B67381DA87EF200F276AF /* BalanceModel.swift */,
+			);
+			path = GetBalance;
+			sourceTree = "<group>";
+		};
+		072B673F1DAA79E900F276AF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				072B67401DAA7A0900F276AF /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		07BD51EA1DA3DECD00DA54B8 = {
+			isa = PBXGroup;
+			children = (
+				07BD51F51DA3DECD00DA54B8 /* BitTrader */,
+				07BD520A1DA3DECD00DA54B8 /* BitTraderTests */,
+				07BD52151DA3DECD00DA54B8 /* BitTraderUITests */,
+				07BD51F41DA3DECD00DA54B8 /* Products */,
+				DC686BCE6AAAC37F9CCAD49A /* Pods */,
+				B3CF5883109D2DCCCAA69426 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		07BD51F41DA3DECD00DA54B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07BD51F31DA3DECD00DA54B8 /* BitTrader.app */,
+				07BD52071DA3DECD00DA54B8 /* BitTraderTests.xctest */,
+				07BD52121DA3DECD00DA54B8 /* BitTraderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07BD51F51DA3DECD00DA54B8 /* BitTrader */ = {
+			isa = PBXGroup;
+			children = (
+				07BD522C1DA3E4CC00DA54B8 /* Resources */,
+				07BD52271DA3E33500DA54B8 /* Classes */,
+				07BD51FF1DA3DECD00DA54B8 /* LaunchScreen.storyboard */,
+			);
+			path = BitTrader;
+			sourceTree = "<group>";
+		};
+		07BD520A1DA3DECD00DA54B8 /* BitTraderTests */ = {
+			isa = PBXGroup;
+			children = (
+				07BD520B1DA3DECD00DA54B8 /* RequestTest.swift */,
+				07BD520D1DA3DECD00DA54B8 /* Info.plist */,
+			);
+			path = BitTraderTests;
+			sourceTree = "<group>";
+		};
+		07BD52151DA3DECD00DA54B8 /* BitTraderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				07BD52161DA3DECD00DA54B8 /* BitTraderUITests.swift */,
+				07BD52181DA3DECD00DA54B8 /* Info.plist */,
+			);
+			path = BitTraderUITests;
+			sourceTree = "<group>";
+		};
+		07BD52271DA3E33500DA54B8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				072B673F1DAA79E900F276AF /* Extension */,
+				07FAE3311DA7898100089136 /* API */,
+				07FAE3251DA7785D00089136 /* Common */,
+				07FAE3261DA7787000089136 /* Screen */,
+				07BD52281DA3E4AE00DA54B8 /* AppDelegate.swift */,
+				072B673C1DA9D33800F276AF /* Bridging-Header.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		07BD522C1DA3E4CC00DA54B8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				070E9E281DA66EDF0095A671 /* Plist */,
+				07BD522D1DA3E67A00DA54B8 /* Assets.xcassets */,
+				072441791DAC8C760059E872 /* BitTrader.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		07FAE3251DA7785D00089136 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				07FAE3321DA7B9F500089136 /* AppStatus */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		07FAE3261DA7787000089136 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				07FAE32A1DA77CBB00089136 /* Login */,
+				07FAE3271DA778A700089136 /* Root */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		07FAE3271DA778A700089136 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				07FAE3281DA778E500089136 /* RootViewController.swift */,
+				07FAE32F1DA77CE600089136 /* RootViewController.xib */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		07FAE32A1DA77CBB00089136 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				07FAE32B1DA77CD700089136 /* LoginViewController.swift */,
+				07FAE32C1DA77CD700089136 /* LoginViewController.xib */,
+				072441741DAC7EF90059E872 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		07FAE3311DA7898100089136 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				07FAE3361DA7BFC700089136 /* Base */,
+				07FAE3371DA7BFDA00089136 /* Public */,
+				07FAE3381DA7BFEB00089136 /* Private */,
+				07FAE33C1DA7C31C00089136 /* BitTraderPublicAPI.swift */,
+				072B673D1DA9E6F900F276AF /* BitTraderPrivateAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		07FAE3321DA7B9F500089136 /* AppStatus */ = {
+			isa = PBXGroup;
+			children = (
+				07FAE3331DA7BA2500089136 /* AppStatus.swift */,
+			);
+			path = AppStatus;
+			sourceTree = "<group>";
+		};
+		07FAE3361DA7BFC700089136 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				07FAE33A1DA7C03900089136 /* BitTraderRequest.swift */,
+				072B673A1DA8809C00F276AF /* BitTraderPrivateRequest.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		07FAE3371DA7BFDA00089136 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				07FAE3391DA7C01900089136 /* GetHealth */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		07FAE3381DA7BFEB00089136 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				0724416B1DABCED40059E872 /* GetChildOrders */,
+				072B67331DA87E4800F276AF /* GetBalance */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		07FAE3391DA7C01900089136 /* GetHealth */ = {
+			isa = PBXGroup;
+			children = (
+				07FAE33E1DA7C44500089136 /* GetHealthRequest.swift */,
+				07FAE3401DA7C49300089136 /* GetHealthResponse.swift */,
+			);
+			path = GetHealth;
+			sourceTree = "<group>";
+		};
+		B3CF5883109D2DCCCAA69426 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E525F9CF272892EAA3DF1AA6 /* Pods_BitTrader.framework */,
+				71653296D47E56926068FCF7 /* Pods_BitTraderTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC686BCE6AAAC37F9CCAD49A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4915E65A73E188106ABD949 /* Pods-BitTrader.debug.xcconfig */,
+				CC4B7FDBD26058AF1B3EC060 /* Pods-BitTrader.release.xcconfig */,
+				C724E1701441F1D7C5862AD3 /* Pods-BitTraderTests.debug.xcconfig */,
+				CEFF4274892F4ACA1287631A /* Pods-BitTraderTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		07BD51F21DA3DECD00DA54B8 /* BitTrader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07BD521B1DA3DECD00DA54B8 /* Build configuration list for PBXNativeTarget "BitTrader" */;
+			buildPhases = (
+				EEAFFAC415AFBA7C04948340 /* [CP] Check Pods Manifest.lock */,
+				07BD51EF1DA3DECD00DA54B8 /* Sources */,
+				07BD51F01DA3DECD00DA54B8 /* Frameworks */,
+				07BD51F11DA3DECD00DA54B8 /* Resources */,
+				07BD52241DA3E0EE00DA54B8 /* Swift Lint */,
+				4433E22F2D591B4CB6517463 /* [CP] Embed Pods Frameworks */,
+				E921243AA0F99BE2038E4FE9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BitTrader;
+			productName = BitTrader;
+			productReference = 07BD51F31DA3DECD00DA54B8 /* BitTrader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		07BD52061DA3DECD00DA54B8 /* BitTraderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07BD521E1DA3DECD00DA54B8 /* Build configuration list for PBXNativeTarget "BitTraderTests" */;
+			buildPhases = (
+				195AF677750647836AB832B8 /* [CP] Check Pods Manifest.lock */,
+				07BD52031DA3DECD00DA54B8 /* Sources */,
+				07BD52041DA3DECD00DA54B8 /* Frameworks */,
+				07BD52051DA3DECD00DA54B8 /* Resources */,
+				76FE9DDBE5EFEDBEFEE13A93 /* [CP] Embed Pods Frameworks */,
+				9E83DDB7EFC09D7DF7F4E049 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07BD52091DA3DECD00DA54B8 /* PBXTargetDependency */,
+			);
+			name = BitTraderTests;
+			productName = BitTraderTests;
+			productReference = 07BD52071DA3DECD00DA54B8 /* BitTraderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		07BD52111DA3DECD00DA54B8 /* BitTraderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07BD52211DA3DECD00DA54B8 /* Build configuration list for PBXNativeTarget "BitTraderUITests" */;
+			buildPhases = (
+				07BD520E1DA3DECD00DA54B8 /* Sources */,
+				07BD520F1DA3DECD00DA54B8 /* Frameworks */,
+				07BD52101DA3DECD00DA54B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07BD52141DA3DECD00DA54B8 /* PBXTargetDependency */,
+			);
+			name = BitTraderUITests;
+			productName = BitTraderUITests;
+			productReference = 07BD52121DA3DECD00DA54B8 /* BitTraderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07BD51EB1DA3DECD00DA54B8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Bit Trader";
+				TargetAttributes = {
+					07BD51F21DA3DECD00DA54B8 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = ZYH5V292WC;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
+					};
+					07BD52061DA3DECD00DA54B8 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = ZYH5V292WC;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 07BD51F21DA3DECD00DA54B8;
+					};
+					07BD52111DA3DECD00DA54B8 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = ZYH5V292WC;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 07BD51F21DA3DECD00DA54B8;
+					};
+				};
+			};
+			buildConfigurationList = 07BD51EE1DA3DECD00DA54B8 /* Build configuration list for PBXProject "BitTrader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 07BD51EA1DA3DECD00DA54B8;
+			productRefGroup = 07BD51F41DA3DECD00DA54B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				07BD51F21DA3DECD00DA54B8 /* BitTrader */,
+				07BD52061DA3DECD00DA54B8 /* BitTraderTests */,
+				07BD52111DA3DECD00DA54B8 /* BitTraderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		07BD51F11DA3DECD00DA54B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07FAE32E1DA77CD700089136 /* LoginViewController.xib in Resources */,
+				07BD52011DA3DECD00DA54B8 /* LaunchScreen.storyboard in Resources */,
+				07FAE3301DA77CE600089136 /* RootViewController.xib in Resources */,
+				07BD522E1DA3E67A00DA54B8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07BD52051DA3DECD00DA54B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07BD52101DA3DECD00DA54B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07BD52241DA3E0EE00DA54B8 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		195AF677750647836AB832B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4433E22F2D591B4CB6517463 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BitTrader/Pods-BitTrader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76FE9DDBE5EFEDBEFEE13A93 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BitTraderTests/Pods-BitTraderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E83DDB7EFC09D7DF7F4E049 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BitTraderTests/Pods-BitTraderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E921243AA0F99BE2038E4FE9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BitTrader/Pods-BitTrader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEAFFAC415AFBA7C04948340 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07BD51EF1DA3DECD00DA54B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				072441711DABCF2A0059E872 /* OrderModel.swift in Sources */,
+				07FAE32D1DA77CD700089136 /* LoginViewController.swift in Sources */,
+				072441731DABD51C0059E872 /* GetChildOrdersParameter.swift in Sources */,
+				07FAE33F1DA7C44500089136 /* GetHealthRequest.swift in Sources */,
+				0724416D1DABCEFB0059E872 /* GetChildOrdersRequest.swift in Sources */,
+				07BD522A1DA3E4AE00DA54B8 /* AppDelegate.swift in Sources */,
+				072B673E1DA9E6F900F276AF /* BitTraderPrivateAPI.swift in Sources */,
+				07FAE33B1DA7C03900089136 /* BitTraderRequest.swift in Sources */,
+				072B67371DA87EA000F276AF /* GetBalanceResponse.swift in Sources */,
+				072B673B1DA8809C00F276AF /* BitTraderPrivateRequest.swift in Sources */,
+				07FAE3291DA778E500089136 /* RootViewController.swift in Sources */,
+				0724416F1DABCF060059E872 /* GetChildOrdersResponse.swift in Sources */,
+				07FAE3341DA7BA2500089136 /* AppStatus.swift in Sources */,
+				072B67411DAA7A0900F276AF /* Extension.swift in Sources */,
+				072B67391DA87EF200F276AF /* BalanceModel.swift in Sources */,
+				07FAE33D1DA7C31C00089136 /* BitTraderPublicAPI.swift in Sources */,
+				072B67351DA87E6600F276AF /* GetBalanceRequest.swift in Sources */,
+				072441751DAC7EF90059E872 /* LoginViewModel.swift in Sources */,
+				07FAE3411DA7C49300089136 /* GetHealthResponse.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07BD52031DA3DECD00DA54B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07BD520C1DA3DECD00DA54B8 /* RequestTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07BD520E1DA3DECD00DA54B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07BD52171DA3DECD00DA54B8 /* BitTraderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		07BD52091DA3DECD00DA54B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07BD51F21DA3DECD00DA54B8 /* BitTrader */;
+			targetProxy = 07BD52081DA3DECD00DA54B8 /* PBXContainerItemProxy */;
+		};
+		07BD52141DA3DECD00DA54B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07BD51F21DA3DECD00DA54B8 /* BitTrader */;
+			targetProxy = 07BD52131DA3DECD00DA54B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		07BD51FF1DA3DECD00DA54B8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07BD52001DA3DECD00DA54B8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		07BD52191DA3DECD00DA54B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = BitTrader/Resources/BitTrader.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PRODUCT)BitTrader/Classes/Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		07BD521A1DA3DECD00DA54B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = BitTrader/Resources/BitTrader.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PRODUCT)BitTrader/Classes/Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		07BD521C1DA3DECD00DA54B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4915E65A73E188106ABD949 /* Pods-BitTrader.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = ZYH5V292WC;
+				INFOPLIST_FILE = BitTrader/Resources/Plist/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mt.ak.bittrader.BitTrader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		07BD521D1DA3DECD00DA54B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC4B7FDBD26058AF1B3EC060 /* Pods-BitTrader.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = ZYH5V292WC;
+				INFOPLIST_FILE = BitTrader/Resources/Plist/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mt.ak.bittrader.BitTrader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		07BD521F1DA3DECD00DA54B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C724E1701441F1D7C5862AD3 /* Pods-BitTraderTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ZYH5V292WC;
+				INFOPLIST_FILE = BitTraderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mt.ak.bittrader.BitTraderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BitTrader.app/BitTrader";
+			};
+			name = Debug;
+		};
+		07BD52201DA3DECD00DA54B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEFF4274892F4ACA1287631A /* Pods-BitTraderTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ZYH5V292WC;
+				INFOPLIST_FILE = BitTraderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mt.ak.bittrader.BitTraderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BitTrader.app/BitTrader";
+			};
+			name = Release;
+		};
+		07BD52221DA3DECD00DA54B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = ZYH5V292WC;
+				INFOPLIST_FILE = BitTraderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mt.ak.bittrader.BitTraderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = BitTrader;
+			};
+			name = Debug;
+		};
+		07BD52231DA3DECD00DA54B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = ZYH5V292WC;
+				INFOPLIST_FILE = BitTraderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mt.ak.bittrader.BitTraderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = BitTrader;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07BD51EE1DA3DECD00DA54B8 /* Build configuration list for PBXProject "BitTrader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07BD52191DA3DECD00DA54B8 /* Debug */,
+				07BD521A1DA3DECD00DA54B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07BD521B1DA3DECD00DA54B8 /* Build configuration list for PBXNativeTarget "BitTrader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07BD521C1DA3DECD00DA54B8 /* Debug */,
+				07BD521D1DA3DECD00DA54B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07BD521E1DA3DECD00DA54B8 /* Build configuration list for PBXNativeTarget "BitTraderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07BD521F1DA3DECD00DA54B8 /* Debug */,
+				07BD52201DA3DECD00DA54B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07BD52211DA3DECD00DA54B8 /* Build configuration list for PBXNativeTarget "BitTraderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07BD52221DA3DECD00DA54B8 /* Debug */,
+				07BD52231DA3DECD00DA54B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07BD51EB1DA3DECD00DA54B8 /* Project object */;
+}

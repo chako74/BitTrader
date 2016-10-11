@@ -1,0 +1,6 @@
+framework module Pods_BitTraderTests {
+  umbrella header "Pods-BitTraderTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
