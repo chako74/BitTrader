@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
-class MenuRootViewController: UIViewController {
-
+class MenuRootViewController: UIViewController, ViewContainer {
+    
+    private var activeViewController: UIViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let navi = UINavigationController(rootViewController: MenuListViewController())
+        addChildContainerViewController(navi)
+        activeViewController = navi
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

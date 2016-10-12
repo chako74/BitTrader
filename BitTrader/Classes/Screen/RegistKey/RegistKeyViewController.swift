@@ -24,10 +24,6 @@ class RegistKeyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
         apiKeyTextField.text = registKeyViewModel.apiKey.value
         apiKeyTextField.rx.text
@@ -54,8 +50,8 @@ class RegistKeyViewController: UIViewController {
             .subscribe(onNext: { [weak self] in
                 self?.registKeyViewModel.registApiKeyInformation()
                 self?.sendRequest()
-            })
-        .addDisposableTo(disposeBag)
+                })
+            .addDisposableTo(disposeBag)
         
         registKeyViewModel.enableSettingButton
             .bindTo(settingButton.rx.enabled)

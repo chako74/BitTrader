@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+class RootViewController: UIViewController, ViewContainer {
 
     // MARK: member
     var activeViewController: UIViewController?
@@ -34,16 +34,5 @@ class RootViewController: UIViewController {
             addChildContainerViewController(registKeyViewController)
             activeViewController = registKeyViewController
         }
-    }
-}
-
-// MARK: Container Method
-extension RootViewController {
-    
-    func addChildContainerViewController(_ addChildContainerViewController: UIViewController) {
-        addChildViewController(addChildContainerViewController)
-        view.addSubview(addChildContainerViewController.view)
-        view.addFittingConstraintsFor(childView: addChildContainerViewController.view)
-        addChildContainerViewController.didMove(toParentViewController: self)
     }
 }
