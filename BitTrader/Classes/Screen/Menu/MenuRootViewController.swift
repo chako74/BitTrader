@@ -18,6 +18,7 @@ class MenuRootViewController: UIViewController, ViewContainer {
         super.viewDidLoad()
         
         let navi = UINavigationController(rootViewController: MenuListViewController())
+        navi.navigationBar.isTranslucent = false
         addChildContainerViewController(navi)
         activeViewController = navi
     }

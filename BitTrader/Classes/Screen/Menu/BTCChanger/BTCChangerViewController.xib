@@ -1,20 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BTCChangerViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BTCChangerViewController" customModule="BitTrader" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="64" width="375" height="603"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4kS-mK-79L">
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dla-dd-IOp">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="cZ5-9S-aQO"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6e-BG-Sfj" customClass="PlusMinusInputField" customModule="BitTrader" customModuleProvider="target">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="P6e-BG-Sfj" firstAttribute="top" secondItem="4kS-mK-79L" secondAttribute="top" id="B5b-As-KPx"/>
+                        <constraint firstItem="dla-dd-IOp" firstAttribute="centerY" secondItem="4kS-mK-79L" secondAttribute="centerY" id="ExF-J1-QfD"/>
+                        <constraint firstAttribute="trailing" secondItem="P6e-BG-Sfj" secondAttribute="trailing" id="JN2-ER-Up9"/>
+                        <constraint firstItem="dla-dd-IOp" firstAttribute="leading" secondItem="4kS-mK-79L" secondAttribute="leading" id="Jwj-uW-Ms7"/>
+                        <constraint firstAttribute="bottom" secondItem="P6e-BG-Sfj" secondAttribute="bottom" id="PfD-nE-UQV"/>
+                        <constraint firstItem="P6e-BG-Sfj" firstAttribute="leading" secondItem="dla-dd-IOp" secondAttribute="trailing" constant="20" id="bVg-qk-tIH"/>
+                        <constraint firstAttribute="height" constant="60" id="stb-js-xiS"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="4kS-mK-79L" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="BQ0-NI-FYa"/>
+                <constraint firstAttribute="trailing" secondItem="4kS-mK-79L" secondAttribute="trailing" constant="16" id="TW5-aM-dXm"/>
+                <constraint firstItem="4kS-mK-79L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="wdm-Bp-TH6"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <point key="canvasLocation" x="33.5" y="95.5"/>
         </view>
     </objects>
 </document>
