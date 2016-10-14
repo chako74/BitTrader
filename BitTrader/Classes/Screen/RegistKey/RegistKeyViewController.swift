@@ -31,7 +31,6 @@ class RegistKeyViewController: UIViewController {
             .addDisposableTo(disposeBag)
         
         registKeyViewModel.apiKey.asObservable()
-            .observeOn(MainScheduler.instance)
             .bindTo(apiKeyTextField.rx.text)
             .addDisposableTo(disposeBag)
         
@@ -41,7 +40,6 @@ class RegistKeyViewController: UIViewController {
             .addDisposableTo(disposeBag)
         
         registKeyViewModel.apiSecretKey.asObservable()
-            .observeOn(MainScheduler.instance)
             .bindTo(apiSecretKeyTextField.rx.text)
             .addDisposableTo(disposeBag)
         

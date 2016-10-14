@@ -14,19 +14,30 @@ import RxSwift
 
 class PlusMinusInputField: UIView {
     
+    private(set) var input = Variable(Double(0))
     var upDownUnit = Double(1)
     var min = Double(0)
-    var max = Double(99999999)
+    var max = DBL_MAX
+    var format: String = "%f" {
+        didSet {
+            if let field = inputFieldLabel {
+                field.text = String(format: format, input.value)
+            }
+        }
+    }
     
     private let disposeBag = DisposeBag()
-    private var input = Variable(Double(0))
     
     @IBOutlet private var contentView: UIView!
     @IBOutlet private weak var plusButton: UIButton!
     @IBOutlet private weak var minusButton: UIButton!
-    @IBOutlet private weak var inputFieldLabel: UILabel!
+    @IBOutlet weak var inputFieldLabel: UILabel! {
+        didSet {
+            inputFieldLabel.font = inputFieldLabel.font.monospacedDigitFont
+        }
+    }
     
-    var inputFieldFontSize: CGFloat = 35.0 {
+    var inputFieldFontSize: CGFloat = 30.0 {
         didSet {
             inputFieldLabel?.font = inputFieldLabel.font.withSize(inputFieldFontSize)
         }
@@ -36,6 +47,15 @@ class PlusMinusInputField: UIView {
         super.init(coder: aDecoder)!
         loadXib()
         bind()
+    }
+    
+    func update(input: Double) {
+        
+        if min <= input && input <= max {
+            if self.input.value != input {
+                self.input.value = input
+            }
+        }
     }
     
     private func loadXib() {
@@ -63,15 +83,10 @@ class PlusMinusInputField: UIView {
         
         input
             .asObservable()
-            .map { String(describing: $0) }
+            .map { [unowned self] in
+                String(format: self.format, $0)
+            }
             .bindTo(inputFieldLabel.rx.text)
             .addDisposableTo(disposeBag)
-    }
-    
-    private func update(input: Double) {
-        
-        if min <= input && input <= max {
-            self.input.value = input
-        }
     }
 }
