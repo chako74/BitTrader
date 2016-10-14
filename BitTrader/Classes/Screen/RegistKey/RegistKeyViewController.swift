@@ -62,6 +62,7 @@ class RegistKeyViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    // TODO: 通信動作確認用
     func sendRequest() {
         let publicAPI = BitTraderPublicAPI()
         publicAPI.sendGetHealthRequest()

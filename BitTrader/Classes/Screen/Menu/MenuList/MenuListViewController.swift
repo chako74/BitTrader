@@ -21,6 +21,8 @@ class MenuListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabBarController?.tabBar.isTranslucent = false
+        
         tableView!.register(UITableViewCell.self, forCellReuseIdentifier: "MenuCell")
         
         menuListViewModel.menus
@@ -55,6 +57,8 @@ class MenuListViewController: UIViewController {
     private func move(to indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
+            navigationController?.pushViewController(RegistKeyViewController(), animated: true)
+        case 1:
             navigationController?.pushViewController(BTCChangerViewController(), animated: true)
         default:
             break

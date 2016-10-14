@@ -12,6 +12,7 @@ import UIKit
 protocol ViewContainer {
     
     func addChildContainerViewController(_ addChildContainerViewController: UIViewController)
+    func removeChildContainerViewController(_ removeChildContainerViewController: UIViewController)
 }
 
 extension ViewContainer where Self: UIViewController {
@@ -21,5 +22,11 @@ extension ViewContainer where Self: UIViewController {
         view.addSubview(addChildContainerViewController.view)
         view.addFittingConstraintsFor(childView: addChildContainerViewController.view)
         addChildContainerViewController.didMove(toParentViewController: self)
+    }
+    
+    func removeChildContainerViewController(_ removeChildContainerViewController: UIViewController) {
+        removeChildContainerViewController.willMove(toParentViewController: nil)
+        removeChildContainerViewController.view.removeFromSuperview()
+        removeChildContainerViewController.removeFromParentViewController()
     }
 }

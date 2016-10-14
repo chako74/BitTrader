@@ -8,6 +8,9 @@
 
 import KeychainAccess
 
+import RxCocoa
+import RxSwift
+
 class AppStatus {
     
     enum KeyChainDataType: String {
@@ -15,8 +18,15 @@ class AppStatus {
         case ApiSecretKey = "Bitflyer.API.Secret.Key"
     }
     
+    enum ViewType: Int {
+        case RegistKey
+        case TabMenu
+    }
+    
     private(set) var apiKey: String?
     private(set) var apiSecretKey: String?
+    
+    private(set) var viewType = Variable(ViewType.RegistKey)
 
     private let keychain = Keychain()
     
@@ -25,6 +35,10 @@ class AppStatus {
     private init() {
         apiKey = keychain[KeyChainDataType.ApiKey.rawValue]
         apiSecretKey = keychain[KeyChainDataType.ApiSecretKey.rawValue]
+        
+        if hasApiInformation() {
+            viewType.value = ViewType.TabMenu
+        }
     }
     
     func updateApiInformation(apiKey: String, apiSecretKey: String) {
@@ -34,9 +48,15 @@ class AppStatus {
         
         keychain[KeyChainDataType.ApiKey.rawValue] = apiKey
         keychain[KeyChainDataType.ApiSecretKey.rawValue] = apiSecretKey
+        
+        if hasApiInformation() {
+            viewType.value = ViewType.TabMenu
+        } else {
+            viewType.value = ViewType.RegistKey
+        }
     }
     
-    func hasApiInformation() -> Bool {
+    private func hasApiInformation() -> Bool {
         
         if let apiKey = self.apiKey, let apiSecretKey = self.apiSecretKey {
             return !apiKey.isEmpty && !apiSecretKey.isEmpty

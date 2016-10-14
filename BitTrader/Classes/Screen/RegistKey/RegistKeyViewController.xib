@@ -55,11 +55,10 @@
                 <constraint firstItem="cJF-AX-mTA" firstAttribute="top" secondItem="vkg-n7-ebJ" secondAttribute="bottom" constant="10" id="249-pe-mtS"/>
                 <constraint firstAttribute="trailing" secondItem="cJF-AX-mTA" secondAttribute="trailing" constant="16" id="AqF-EZ-hA3"/>
                 <constraint firstItem="vkg-n7-ebJ" firstAttribute="top" secondItem="tpJ-np-SVV" secondAttribute="bottom" constant="20" id="Bw8-P8-Zgq"/>
-                <constraint firstItem="IXs-u9-OS1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="45" id="MUA-cM-Yeo"/>
+                <constraint firstItem="IXs-u9-OS1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="MUA-cM-Yeo"/>
                 <constraint firstAttribute="trailing" secondItem="vkg-n7-ebJ" secondAttribute="trailing" constant="16" id="R3z-Sp-eEu"/>
                 <constraint firstAttribute="trailing" secondItem="tpJ-np-SVV" secondAttribute="trailing" constant="16" id="SAw-yf-ZBx"/>
                 <constraint firstItem="cJF-AX-mTA" firstAttribute="top" secondItem="vkg-n7-ebJ" secondAttribute="bottom" constant="10" id="XI8-6H-Pbr"/>
-                <constraint firstAttribute="bottom" secondItem="dYB-Gj-UU2" secondAttribute="bottom" constant="20" id="XMm-5Q-bjB"/>
                 <constraint firstItem="cJF-AX-mTA" firstAttribute="top" secondItem="vkg-n7-ebJ" secondAttribute="bottom" constant="10" id="YvW-cp-jUZ"/>
                 <constraint firstItem="tpJ-np-SVV" firstAttribute="top" secondItem="IXs-u9-OS1" secondAttribute="bottom" constant="10" id="Yxl-dV-czx"/>
                 <constraint firstItem="tpJ-np-SVV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="bIU-wz-U7S"/>
@@ -68,6 +67,7 @@
                 <constraint firstItem="IXs-u9-OS1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="ghc-BZ-cem"/>
                 <constraint firstItem="dYB-Gj-UU2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="164" id="jJO-wU-BIW"/>
                 <constraint firstAttribute="trailing" secondItem="IXs-u9-OS1" secondAttribute="trailing" constant="16" id="mKB-1c-Q2c"/>
+                <constraint firstAttribute="bottom" secondItem="dYB-Gj-UU2" secondAttribute="bottom" constant="20" id="mfZ-X5-gwA"/>
                 <constraint firstAttribute="trailing" secondItem="dYB-Gj-UU2" secondAttribute="trailing" constant="164" id="mrl-R2-1AG"/>
             </constraints>
             <point key="canvasLocation" x="34.5" y="54.5"/>

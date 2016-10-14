@@ -14,6 +14,7 @@ struct MenuListViewModel {
     let menus = Variable<[String]>([])
     
     init() {
+        menus.value.append("APIキー登録")
         menus.value.append("BTC-Satoshi計算")
     }
 }

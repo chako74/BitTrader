@@ -25,6 +25,7 @@ class BitTraderTabViewController: UITabBarController {
     }
     
     func prepareViewController() {
+
         let viewControllers: [UIViewController] = [
             MarketRootViewController(),
             TradeRootViewController(),
