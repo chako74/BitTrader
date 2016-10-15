@@ -9,7 +9,7 @@
 import APIKit
 
 struct GetHealthRequest: BitTraderRequest {
-    
+
     typealias Response = GetHealthResponse
     
     var method: HTTPMethod {

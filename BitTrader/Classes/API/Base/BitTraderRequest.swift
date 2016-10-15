@@ -9,12 +9,17 @@
 import APIKit
 import Himotoki
 
+public protocol BitTraderRequestParameter {
+    func createParameters() -> [String: String]?
+}
+
 protocol BitTraderRequest: Request {
 }
 
 extension BitTraderRequest {
+
     var baseURL: URL {
-        return URL(string: "https://api.bitflyer.jp")!        
+        return URL(string: "https://api.bitflyer.jp")!
     }
 }
 

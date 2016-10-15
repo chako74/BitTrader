@@ -47,7 +47,6 @@ class RegistKeyViewController: UIViewController {
         settingButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 self?.registKeyViewModel.registApiKeyInformation()
-                self?.sendRequest()
                 })
             .addDisposableTo(disposeBag)
         
@@ -58,15 +57,5 @@ class RegistKeyViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    // TODO: 通信動作確認用
-    func sendRequest() {
-        let publicAPI = BitTraderPublicAPI()
-        publicAPI.sendGetHealthRequest()
-        
-        let privateAPI = BitTraderPrivateAPI()
-        privateAPI.sendGetBalanceRequest()
-        privateAPI.sendGetChildOrdersRequest()
     }
 }

@@ -22,6 +22,9 @@ struct GetChildOrdersParameter {
     let after: Int?
     let childOrderState: ChildOrderState?
     let parentOrderId: String?
+}
+
+extension GetChildOrdersParameter: BitTraderRequestParameter {
     
     func createParameters() -> [String: String]? {
         
