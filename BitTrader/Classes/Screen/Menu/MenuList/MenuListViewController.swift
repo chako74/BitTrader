@@ -29,7 +29,7 @@ class MenuListViewController: UIViewController {
             .asObservable()
             .bindTo(tableView!.rx.items) { tableView, _, element in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell")!
-                cell.textLabel?.text = element
+                cell.textLabel?.text = element.displayText()
                 return cell
             }
             .addDisposableTo(disposeBag)
@@ -41,13 +41,6 @@ class MenuListViewController: UIViewController {
                 self?.tableView!.cellForRow(at: indexPath)?.isSelected = false
                 })
             .addDisposableTo(disposeBag)
-        
-        //        tableView!
-        //            .rx.itemDeselected
-        //            .subscribe(onNext: { [weak self] indexPath in
-        //                self?.tableView!.cellForRow(at: indexPath)?.isSelected = false
-        //                })
-        //            .addDisposableTo(disposeBag)
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,13 +48,15 @@ class MenuListViewController: UIViewController {
     }
     
     private func move(to indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
+        
+        let menuType = self.menuListViewModel.menus.value[indexPath.row]
+        switch menuType {
+        case .apiKey:
             navigationController?.pushViewController(RegistKeyViewController(), animated: true)
-        case 1:
+        case .btcChanger:
             navigationController?.pushViewController(BTCChangerViewController(), animated: true)
-        default:
-            break
+        case .numberPad:
+            navigationController?.pushViewController(NumberPadViewController(), animated: true)
         }
     }
 }

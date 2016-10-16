@@ -9,12 +9,32 @@
 import RxCocoa
 import RxSwift
 
+enum MenuType: Int {
+    case apiKey
+    case btcChanger
+    case numberPad
+    
+    func displayText() -> String {
+        
+        switch self {
+        case .apiKey:
+            return "APIキー登録"
+        case .btcChanger:
+            return "BTC-Satoshi計算"
+        case .numberPad:
+            return "数値入力"
+        }
+    }
+}
+
 struct MenuListViewModel {
     
-    let menus = Variable<[String]>([])
+    let menus = Variable<[MenuType]>([])
     
     init() {
-        menus.value.append("APIキー登録")
-        menus.value.append("BTC-Satoshi計算")
+        menus.value.append(.apiKey)
+        menus.value.append(.btcChanger)
+        // TODO: 動作確認用
+        menus.value.append(.numberPad)
     }
 }
