@@ -9,11 +9,11 @@
 struct GetChildOrdersParameter {
     
     enum ChildOrderState: String {
-        case Active = "ACTIVE"
-        case Completed = "COMPLETED"
-        case Canceled = "CANCELED"
-        case Expired = "EXPIRED"
-        case Rejected = "REJECTED"
+        case active = "ACTIVE"
+        case completed = "COMPLETED"
+        case canceled = "CANCELED"
+        case expired = "EXPIRED"
+        case rejected = "REJECTED"
     }
     
     let productCode: String?
@@ -28,6 +28,7 @@ extension GetChildOrdersParameter: BitTraderRequestParameter {
     
     func createParameters() -> [String: String]? {
         
+        // TODO: パラメータ作成
         var dic = [String: String]()
         if let productCode = self.productCode {
             dic["product_code"] = productCode

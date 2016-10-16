@@ -33,7 +33,6 @@ class BitTraderTabViewController: UITabBarController {
             MenuRootViewController()
         ]
         
-        // TODO: ここでCastをするのは微妙か？
         viewControllers.forEach {
             if let controller = $0 as? BitTraderTabRootable {
                 controller.setupTab()

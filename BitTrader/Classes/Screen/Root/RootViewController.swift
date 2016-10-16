@@ -13,7 +13,6 @@ import RxSwift
 
 class RootViewController: UIViewController, ViewContainer {
 
-    // MARK: member
     private let disposeBag = DisposeBag()
     
     var activeViewController: UIViewController?
@@ -27,14 +26,14 @@ class RootViewController: UIViewController, ViewContainer {
             
             if let active = self?.activeViewController {
                 switch viewType {
-                case .RegistKey:
+                case .registKey:
                     if type(of: active) != RegistKeyViewController.self {
                         self?.removeChildContainerViewController(active)
                         let registKeyViewController = RegistKeyViewController()
                         self?.addChildContainerViewController(registKeyViewController)
                         self?.activeViewController = registKeyViewController
                     }
-                case .TabMenu:
+                case .tabMenu:
                     if type(of: active) != BitTraderTabViewController.self {
                         self?.removeChildContainerViewController(active)
                         let bitTraderTabViewController = BitTraderTabViewController()
@@ -54,12 +53,12 @@ class RootViewController: UIViewController, ViewContainer {
     func prepareViewController() {
         
         switch AppStatus.sharedInstance.viewType.value {
-        case .RegistKey:
+        case .registKey:
             let registKeyViewController = RegistKeyViewController()
             addChildContainerViewController(registKeyViewController)
             activeViewController = registKeyViewController
 
-        case .TabMenu:
+        case .tabMenu:
             let tabBarController = BitTraderTabViewController()
             addChildContainerViewController(tabBarController)
             activeViewController = tabBarController

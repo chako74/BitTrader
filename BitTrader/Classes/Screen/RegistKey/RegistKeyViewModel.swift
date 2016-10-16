@@ -25,15 +25,15 @@ struct RegistKeyViewModel {
             self.apiSecretKey.value = apiSecretKey
         }
         
-        self.enableSettingButton =
-            Observable.combineLatest(self.apiKey.asObservable(),
-                                     self.apiSecretKey.asObservable()) {
+        enableSettingButton =
+            Observable.combineLatest(apiKey.asObservable(),
+                                     apiSecretKey.asObservable()) {
                                         !$0.0.isEmpty && !$0.1.isEmpty
         }
     }
     
     func registApiKeyInformation() {
-        AppStatus.sharedInstance.updateApiInformation(apiKey: self.apiKey.value,
-                                                      apiSecretKey: self.apiSecretKey.value)
+        AppStatus.sharedInstance.updateApiInformation(apiKey: apiKey.value,
+                                                      apiSecretKey: apiSecretKey.value)
     }
 }

@@ -8,15 +8,15 @@
 
 import Himotoki
 
+enum HealthStatus: String {
+    case normal = "NORMAL"
+    case busy = "BUSY"
+    case veryBusy = "VERY BUSY"
+    case stop = "STOP"
+}
+
 struct GetHealthResponse {
     
-    enum HealthStatus: String {
-        case Normal = "NORMAL"
-        case Busy = "BUSY"
-        case VeryBusy = "VERY BUSY"
-        case Stop = "STOP"
-    }
-
     let status: HealthStatus?
 }
 

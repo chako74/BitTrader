@@ -14,30 +14,30 @@ import RxSwift
 class AppStatus {
     
     enum KeyChainDataType: String {
-        case ApiKey = "Bitflyer.API.Key"
-        case ApiSecretKey = "Bitflyer.API.Secret.Key"
+        case apiKey = "Bitflyer.API.Key"
+        case apiSecretKey = "Bitflyer.API.Secret.Key"
     }
     
     enum ViewType: Int {
-        case RegistKey
-        case TabMenu
+        case registKey
+        case tabMenu
     }
     
     private(set) var apiKey: String?
     private(set) var apiSecretKey: String?
     
-    private(set) var viewType = Variable(ViewType.RegistKey)
+    private(set) var viewType = Variable(ViewType.registKey)
 
     private let keychain = Keychain()
     
     static let sharedInstance: AppStatus = AppStatus()
     
     private init() {
-        apiKey = keychain[KeyChainDataType.ApiKey.rawValue]
-        apiSecretKey = keychain[KeyChainDataType.ApiSecretKey.rawValue]
+        apiKey = keychain[KeyChainDataType.apiKey.rawValue]
+        apiSecretKey = keychain[KeyChainDataType.apiSecretKey.rawValue]
         
         if hasApiInformation() {
-            viewType.value = ViewType.TabMenu
+            viewType.value = ViewType.tabMenu
         }
     }
     
@@ -46,13 +46,13 @@ class AppStatus {
         self.apiKey = apiKey
         self.apiSecretKey = apiSecretKey
         
-        keychain[KeyChainDataType.ApiKey.rawValue] = apiKey
-        keychain[KeyChainDataType.ApiSecretKey.rawValue] = apiSecretKey
+        keychain[KeyChainDataType.apiKey.rawValue] = apiKey
+        keychain[KeyChainDataType.apiSecretKey.rawValue] = apiSecretKey
         
         if hasApiInformation() {
-            viewType.value = ViewType.TabMenu
+            viewType.value = ViewType.tabMenu
         } else {
-            viewType.value = ViewType.RegistKey
+            viewType.value = ViewType.registKey
         }
     }
     

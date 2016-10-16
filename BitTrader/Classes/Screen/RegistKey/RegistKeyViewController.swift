@@ -17,7 +17,6 @@ class RegistKeyViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private let registKeyViewModel = RegistKeyViewModel()
     
-    // MARK: IBOutlet
     @IBOutlet weak private var apiKeyTextField: UITextField!
     @IBOutlet weak private var apiSecretKeyTextField: UITextField!
     @IBOutlet weak private var settingButton: UIButton!
