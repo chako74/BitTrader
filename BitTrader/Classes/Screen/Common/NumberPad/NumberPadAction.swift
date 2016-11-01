@@ -13,4 +13,5 @@ enum NumberPadAction {
     case backspace
     case addNumber(String)
     case addDot
+    case done
 }
