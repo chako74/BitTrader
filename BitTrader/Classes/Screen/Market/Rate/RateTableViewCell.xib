@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="RateTableViewCell" customModule="BitTrader" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="es7-Pv-AXr">
+                        <rect key="frame" x="8" y="8" width="60" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="LDI-sl-O7F"/>
+                            <constraint firstAttribute="height" constant="28" id="mod-ka-L9n"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ol2-cU-nir" userLabel="MidPrice Label">
+                        <rect key="frame" x="76" y="8" width="118" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="4zK-KM-CVs"/>
+                            <constraint firstAttribute="height" constant="28" id="idl-nz-KMF"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lMv-HK-ea1">
+                        <rect key="frame" x="202" y="8" width="28" height="28"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ask" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zr-SH-cwe">
+                                <rect key="frame" x="0.0" y="0.0" width="28" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7S6-OG-eLT">
+                                <rect key="frame" x="0.0" y="14" width="28" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="28" id="5fU-JV-w2f"/>
+                        </constraints>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qYc-j4-Qko">
+                        <rect key="frame" x="232" y="8" width="80" height="28"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2t-fN-Bl2" userLabel="Ask Price Label">
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wip-wa-MvQ" userLabel="Bid Price Label">
+                                <rect key="frame" x="0.0" y="14" width="80" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="EBP-16-E3h"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="qYc-j4-Qko" firstAttribute="leading" secondItem="lMv-HK-ea1" secondAttribute="trailing" constant="2" id="48C-b9-HZn"/>
+                    <constraint firstAttribute="trailing" secondItem="qYc-j4-Qko" secondAttribute="trailing" constant="8" id="GOr-9c-zXB"/>
+                    <constraint firstItem="lMv-HK-ea1" firstAttribute="height" secondItem="ol2-cU-nir" secondAttribute="height" id="HNq-KK-a86"/>
+                    <constraint firstItem="lMv-HK-ea1" firstAttribute="leading" secondItem="ol2-cU-nir" secondAttribute="trailing" constant="8" id="IOd-U3-9f2"/>
+                    <constraint firstItem="ol2-cU-nir" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PZv-Aa-425"/>
+                    <constraint firstItem="es7-Pv-AXr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UCD-6T-JJ4"/>
+                    <constraint firstItem="lMv-HK-ea1" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Xky-gN-bwX"/>
+                    <constraint firstItem="qYc-j4-Qko" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fIm-gI-F8m"/>
+                    <constraint firstItem="es7-Pv-AXr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="mKm-Bg-dYg"/>
+                    <constraint firstItem="qYc-j4-Qko" firstAttribute="height" secondItem="ol2-cU-nir" secondAttribute="height" id="pO9-zm-aLd"/>
+                    <constraint firstItem="ol2-cU-nir" firstAttribute="leading" secondItem="es7-Pv-AXr" secondAttribute="trailing" constant="8" id="szc-B5-iDc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="askPriceLabel" destination="W2t-fN-Bl2" id="PT0-Op-XNT"/>
+                <outlet property="bidPriceLabel" destination="wip-wa-MvQ" id="7eW-ix-NpW"/>
+                <outlet property="midPriceLabel" destination="ol2-cU-nir" id="Z8f-oV-nZ3"/>
+                <outlet property="rateTypeLabel" destination="es7-Pv-AXr" id="wio-3l-bWQ"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

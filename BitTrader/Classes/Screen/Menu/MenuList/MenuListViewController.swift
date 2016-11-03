@@ -21,7 +21,7 @@ class MenuListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabBarController?.tabBar.isTranslucent = false
+        edgesForExtendedLayout = []
         
         tableView!.register(UITableViewCell.self, forCellReuseIdentifier: "MenuCell")
         

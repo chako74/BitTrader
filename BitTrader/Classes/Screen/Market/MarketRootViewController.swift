@@ -8,10 +8,22 @@
 
 import UIKit
 
-class MarketRootViewController: UIViewController {
+class MarketRootViewController: UIViewController, ViewContainer {
 
+    private var activeViewController: UIViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        //let rateViewController = RateListViewController()
+        let sb = UIStoryboard.init(name: "RateList", bundle: nil)
+        if let rateViewController = sb.instantiateInitialViewController() {
+            //let navi = UINavigationController(rootViewController:rateViewController)
+            //navi.navigationBar.isTranslucent = false
+            //navi.view.backgroundColor = UIColor.red
+            addChildContainerViewController(rateViewController)
+            activeViewController = rateViewController
+        }
     }
 
     override func didReceiveMemoryWarning() {

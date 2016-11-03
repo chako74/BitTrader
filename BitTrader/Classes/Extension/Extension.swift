@@ -72,6 +72,19 @@ extension String {
     }
 }
 
+extension NSNumber {
+    
+    func formatComma() -> String {
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.decimal
+        formatter.groupingSeparator = ","
+        formatter.groupingSize = 3
+        
+        return formatter.string(from: self) ?? self.stringValue
+    }
+}
+
 // MARK: UIView
 extension UIView {
     func addFittingConstraintsFor(childView: UIView) {
