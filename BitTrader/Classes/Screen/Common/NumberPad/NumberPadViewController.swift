@@ -13,6 +13,8 @@ import RxSwift
 
 class NumberPadViewController: UIViewController {
 
+    let rx_tap_done = PublishSubject<String>()
+
     private let disposeBag = DisposeBag()
     
     @IBOutlet private weak var resultLabel: UILabel!
@@ -67,16 +69,30 @@ class NumberPadViewController: UIViewController {
             eightButton.rx.tap.map { _ in .addNumber("8") },
             nineButton.rx.tap.map { _ in .addNumber("9") },
             
-            thousandButton.rx.tap.map { _ in .addNumber("000") }
+            thousandButton.rx.tap.map { _ in .addNumber("000") },
+
+            doneButton.rx.tap.map { _ in .done },
+
         ]
         
         Observable.from(commands)
-        .merge()
-        .scan(NumberPadState.CLEAR_STATE) { action, state in
-            return action.tranformState(state)
-        }
-        .subscribe(onNext: { [weak self] state in
-            self?.resultLabel.text = state.inScreen
+            .merge()
+            .scan(NumberPadState.CLEAR_STATE) { state, action in
+                switch state.action {
+                case NumberPadAction.done:
+                    return NumberPadState.CLEAR_STATE.tranformState(action)
+                default:
+                    return state.tranformState(action)
+                }
+            }
+            .subscribe(onNext: { [weak self] state in
+                switch state.action {
+                case NumberPadAction.done:
+                    self?.rx_tap_done.on(.next(state.inScreen))
+                    self?.resultLabel.text = ""
+                default:
+                    self?.resultLabel.text = state.inScreen
+                }
             })
         .addDisposableTo(disposeBag)
     }

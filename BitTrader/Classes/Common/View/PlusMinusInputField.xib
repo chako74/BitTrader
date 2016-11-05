@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlusMinusInputField" customModule="BitTrader" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="6CH-2m-tux"/>
+                <outlet property="inputFieldButton" destination="hc2-cx-EOo" id="jvw-XM-QB3"/>
                 <outlet property="inputFieldLabel" destination="Bnp-MC-3H2" id="vmv-vh-Sh6"/>
                 <outlet property="minusButton" destination="yYu-Zt-ard" id="kZT-Oa-zib"/>
                 <outlet property="plusButton" destination="ZPU-N4-yMJ" id="BwK-5q-Nan"/>
@@ -33,16 +34,22 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hc2-cx-EOo">
+                </button>
             </subviews>
             <constraints>
+                <constraint firstItem="hc2-cx-EOo" firstAttribute="top" secondItem="Bnp-MC-3H2" secondAttribute="top" id="2kg-YC-fFw"/>
                 <constraint firstItem="ZPU-N4-yMJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2my-UN-XDj"/>
                 <constraint firstItem="yYu-Zt-ard" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4U6-PX-4pq"/>
                 <constraint firstItem="yYu-Zt-ard" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.2" id="D1Y-8d-Eat"/>
                 <constraint firstAttribute="bottom" secondItem="ZPU-N4-yMJ" secondAttribute="bottom" id="EaC-I2-Zzt"/>
+                <constraint firstItem="hc2-cx-EOo" firstAttribute="leading" secondItem="Bnp-MC-3H2" secondAttribute="leading" id="Ekm-ia-XyS"/>
                 <constraint firstAttribute="bottom" secondItem="Bnp-MC-3H2" secondAttribute="bottom" id="QG5-A0-sQO"/>
+                <constraint firstItem="hc2-cx-EOo" firstAttribute="height" secondItem="Bnp-MC-3H2" secondAttribute="height" id="Sbq-Pz-MDK"/>
                 <constraint firstAttribute="bottom" secondItem="yYu-Zt-ard" secondAttribute="bottom" id="VgI-od-e2f"/>
                 <constraint firstItem="ZPU-N4-yMJ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.2" id="d2g-QS-SEQ"/>
                 <constraint firstItem="Bnp-MC-3H2" firstAttribute="leading" secondItem="yYu-Zt-ard" secondAttribute="trailing" id="gp1-QO-Rhq"/>
+                <constraint firstItem="hc2-cx-EOo" firstAttribute="width" secondItem="Bnp-MC-3H2" secondAttribute="width" id="k7c-C0-VJv"/>
                 <constraint firstItem="ZPU-N4-yMJ" firstAttribute="leading" secondItem="Bnp-MC-3H2" secondAttribute="trailing" id="mUz-q9-5jz"/>
                 <constraint firstAttribute="trailing" secondItem="ZPU-N4-yMJ" secondAttribute="trailing" id="qCf-tG-IuZ"/>
                 <constraint firstItem="yYu-Zt-ard" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tEs-tE-IAM"/>

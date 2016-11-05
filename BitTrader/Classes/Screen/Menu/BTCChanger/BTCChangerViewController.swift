@@ -16,6 +16,8 @@ class BTCChangerViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
     private let btcChangerViewModel = BTCChangerViewModel()
+    private let numberPadViewController = NumberPadViewController()
+    private var button: PlusMinusInputField?
     
     @IBOutlet private weak var btcPlusMinusInput: PlusMinusInputField?
     @IBOutlet private weak var satoshiPlusMinusInput: PlusMinusInputField?
@@ -25,6 +27,9 @@ class BTCChangerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        numberPadViewController.modalPresentationStyle = .overCurrentContext
+        numberPadViewController.view.backgroundColor = UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.6)
+
         btcPlusMinusInput!.format = "%.8f"
         satoshiPlusMinusInput!.format = "%.0f"
         
@@ -64,6 +69,29 @@ class BTCChangerViewController: UIViewController {
                 self?.btcPlusMinusInput!.update(input: 0)
                 self?.satoshiPlusMinusInput!.update(input: 0)
                 })
+            .addDisposableTo(disposeBag)
+
+        btcPlusMinusInput?.rx_tap_input
+            .subscribe(onNext: { [weak self] button in
+                self?.button = button
+                self?.present((self?.numberPadViewController)!, animated: false, completion: nil)
+            })
+            .addDisposableTo(disposeBag)
+
+        satoshiPlusMinusInput?.rx_tap_input
+            .subscribe(onNext: { [weak self] button in
+                self?.button = button
+                self?.present((self?.numberPadViewController)!, animated: false, completion: nil)
+            })
+            .addDisposableTo(disposeBag)
+
+        numberPadViewController.rx_tap_done
+            .subscribe(onNext: { [weak self] input in
+                if (input != "") {
+                    self?.button?.update(input: Double(input)!)
+                }
+                self?.dismiss(animated: false, completion: nil)
+            })
             .addDisposableTo(disposeBag)
         
         Observable

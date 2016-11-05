@@ -14,6 +14,8 @@ import RxSwift
 
 class PlusMinusInputField: UIView {
     
+    let rx_tap_input = PublishSubject<PlusMinusInputField>()
+
     private(set) var input = Variable(Double(0))
     var upDownUnit = Double(1)
     var min = Double(0)
@@ -31,6 +33,7 @@ class PlusMinusInputField: UIView {
     @IBOutlet private var contentView: UIView!
     @IBOutlet private weak var plusButton: UIButton!
     @IBOutlet private weak var minusButton: UIButton!
+    @IBOutlet private weak var inputFieldButton: UIButton!
     @IBOutlet weak var inputFieldLabel: UILabel! {
         didSet {
             inputFieldLabel.font = inputFieldLabel.font.monospacedDigitFont
@@ -78,6 +81,12 @@ class PlusMinusInputField: UIView {
                 if let input = self?.input.value, let unit = self?.upDownUnit {
                     self?.update(input: input - unit)
                 }
+                })
+            .addDisposableTo(disposeBag)
+
+        inputFieldButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.rx_tap_input.on(.next(self!))
                 })
             .addDisposableTo(disposeBag)
         

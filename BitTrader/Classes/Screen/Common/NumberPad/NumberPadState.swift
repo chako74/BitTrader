@@ -12,7 +12,7 @@ struct NumberPadState {
     
     static let CLEAR_STATE = NumberPadState(action: .clear, inScreen: "")
     
-    let action: NumberPadAction!
+    let action: NumberPadAction
     let inScreen: String
 }
 
@@ -27,13 +27,15 @@ extension NumberPadState {
             return addDot()
         case .addNumber(let numberStr):
             return addNumber(numberStr)
+        case .done:
+            return done()
         }
     }
     
     private func backspace() -> NumberPadState {
         let value = inScreen.isEmpty ?
             inScreen : inScreen.substring(to: inScreen.index(inScreen.endIndex, offsetBy: -1))
-        return NumberPadState(action: action, inScreen: value)
+        return NumberPadState(action: .backspace, inScreen: value)
     }
     
     private func addNumber(_ number: String) -> NumberPadState {
@@ -50,7 +52,7 @@ extension NumberPadState {
                 spilit[0] = intPart
             }
         }
-        return NumberPadState(action: action, inScreen: spilit.joined(separator: "."))
+        return NumberPadState(action: .addNumber(number), inScreen: spilit.joined(separator: "."))
     }
     
     private func addDot() -> NumberPadState {
@@ -58,7 +60,11 @@ extension NumberPadState {
         if value == "." {
             value = "0."
         }
-        return NumberPadState(action: action, inScreen: value)
+        return NumberPadState(action: .addDot, inScreen: value)
+    }
+
+    private func done() -> NumberPadState {
+        return NumberPadState(action: .done, inScreen: inScreen)
     }
     
     private func containsDot(_ value: String) -> Bool {
