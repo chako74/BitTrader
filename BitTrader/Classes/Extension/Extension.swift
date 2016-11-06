@@ -70,6 +70,35 @@ extension String {
         }
         return String(hash)
     }
+    
+    func formatDate(fromFormat: DateFormat, toFormat: DateFormat) -> String {
+        
+        let fromDateFormatter = DateFormatter()
+        fromDateFormatter.timeZone = NSTimeZone.local
+        fromDateFormatter.dateFormat = fromFormat.rawValue
+        
+        if let date = fromDateFormatter.date(from: self) {
+            let toDateFormatter = DateFormatter()
+            toDateFormatter.timeZone = NSTimeZone.local
+            toDateFormatter.dateFormat = toFormat.rawValue
+            
+            return toDateFormatter.string(from: date)
+        } else {
+            return self
+        }
+    }
+}
+
+extension Date {
+    
+    public static func iso8601Date(from string: String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = NSTimeZone.local
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        
+        return dateFormatter.date(from: string)
+    }
+
 }
 
 extension NSNumber {

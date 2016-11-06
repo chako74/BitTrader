@@ -50,9 +50,6 @@ extension BitTraderPrivateRequest {
         let text = timestamp + method + path + body
         let sign = text.hmac(algorithm: .SHA256, key: secretKey)
         
-        print("text = \(text)")
-        print("sign = \(sign)")
-        
         return ["ACCESS-KEY": AppStatus.sharedInstance.apiKey ?? "",
                 "ACCESS-TIMESTAMP": timestamp,
                 "ACCESS-SIGN": sign]

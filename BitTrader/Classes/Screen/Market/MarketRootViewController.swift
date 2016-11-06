@@ -15,12 +15,8 @@ class MarketRootViewController: UIViewController, ViewContainer {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //let rateViewController = RateListViewController()
         let sb = UIStoryboard.init(name: "RateList", bundle: nil)
         if let rateViewController = sb.instantiateInitialViewController() {
-            //let navi = UINavigationController(rootViewController:rateViewController)
-            //navi.navigationBar.isTranslucent = false
-            //navi.view.backgroundColor = UIColor.red
             addChildContainerViewController(rateViewController)
             activeViewController = rateViewController
         }

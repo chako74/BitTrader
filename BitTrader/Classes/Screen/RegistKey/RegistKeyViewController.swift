@@ -24,6 +24,8 @@ class RegistKeyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        edgesForExtendedLayout = []
+        
         apiKeyTextField.text = registKeyViewModel.apiKey.value
         apiKeyTextField.rx.text
             .bindTo(registKeyViewModel.apiKey)
