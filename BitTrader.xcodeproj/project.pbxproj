@@ -76,6 +76,7 @@
 		07FAE33F1DA7C44500089136 /* GetHealthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE33E1DA7C44500089136 /* GetHealthRequest.swift */; };
 		07FAE3411DA7C49300089136 /* GetHealthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE3401DA7C49300089136 /* GetHealthResponse.swift */; };
 		82857357A68650A1A1556799 /* Pods_BitTrader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E525F9CF272892EAA3DF1AA6 /* Pods_BitTrader.framework */; };
+		BA51DEC31DCEE59800D5029B /* NumberPadViewController+RxCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51DEC21DCEE59800D5029B /* NumberPadViewController+RxCreate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +174,7 @@
 		07FAE3401DA7C49300089136 /* GetHealthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHealthResponse.swift; sourceTree = "<group>"; };
 		71653296D47E56926068FCF7 /* Pods_BitTraderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitTraderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4915E65A73E188106ABD949 /* Pods-BitTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTrader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitTrader/Pods-BitTrader.debug.xcconfig"; sourceTree = "<group>"; };
+		BA51DEC21DCEE59800D5029B /* NumberPadViewController+RxCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NumberPadViewController+RxCreate.swift"; sourceTree = "<group>"; };
 		C724E1701441F1D7C5862AD3 /* Pods-BitTraderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTraderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitTraderTests/Pods-BitTraderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC4B7FDBD26058AF1B3EC060 /* Pods-BitTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTrader.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitTrader/Pods-BitTrader.release.xcconfig"; sourceTree = "<group>"; };
 		CEFF4274892F4ACA1287631A /* Pods-BitTraderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTraderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitTraderTests/Pods-BitTraderTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				07B854581DB1DCE8009E3181 /* NumberPadViewController.swift */,
+				BA51DEC21DCEE59800D5029B /* NumberPadViewController+RxCreate.swift */,
 				07B854591DB1DCE8009E3181 /* NumberPadViewController.xib */,
 				07B8545C1DB1ECEF009E3181 /* NumberPadAction.swift */,
 				07B8545E1DB205DB009E3181 /* NumberPadState.swift */,
@@ -913,6 +916,7 @@
 				072441AD1DADD7080059E872 /* MenuListViewModel.swift in Sources */,
 				072441B31DAE03120059E872 /* PlusMinusInputField.swift in Sources */,
 				072B67351DA87E6600F276AF /* GetBalanceRequest.swift in Sources */,
+				BA51DEC31DCEE59800D5029B /* NumberPadViewController+RxCreate.swift in Sources */,
 				07FAE3411DA7C49300089136 /* GetHealthResponse.swift in Sources */,
 				0724419B1DACC20A0059E872 /* TradeRootViewController.swift in Sources */,
 				07B854511DB0A2B6009E3181 /* GetBoardRequestParameter.swift in Sources */,

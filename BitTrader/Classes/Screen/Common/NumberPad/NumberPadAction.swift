@@ -14,4 +14,5 @@ enum NumberPadAction {
     case addNumber(String)
     case addDot
     case done
+    case cancel
 }

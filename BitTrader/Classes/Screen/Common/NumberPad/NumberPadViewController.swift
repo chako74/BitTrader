@@ -13,7 +13,8 @@ import RxSwift
 
 class NumberPadViewController: UIViewController {
 
-    let rx_tap_done = PublishSubject<String>()
+    let didDone = PublishSubject<String>()
+    let didCancel = PublishSubject<NumberPadViewController>()
 
     private let disposeBag = DisposeBag()
     
@@ -38,8 +39,8 @@ class NumberPadViewController: UIViewController {
     @IBOutlet private weak var thousandButton: UIButton!
     
     @IBOutlet private weak var doneButton: UIButton!
-    
-    
+    @IBOutlet private weak var cancelButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,51 +50,48 @@ class NumberPadViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     private func bind() {
         let commands: [Observable<NumberPadAction>] =
-        [
-            clearButton.rx.tap.map { _ in .clear },
-            backspaceButton.rx.tap.map { _ in .backspace },
-            
-            dotButton.rx.tap.map { _ in .addDot },
-            
-            zeroButton.rx.tap.map { _ in .addNumber("0") },
-            oneButton.rx.tap.map { _ in .addNumber("1") },
-            twoButton.rx.tap.map { _ in .addNumber("2") },
-            threeButton.rx.tap.map { _ in .addNumber("3") },
-            fourButton.rx.tap.map { _ in .addNumber("4") },
-            fiveButton.rx.tap.map { _ in .addNumber("5") },
-            sixButton.rx.tap.map { _ in .addNumber("6") },
-            sevenButton.rx.tap.map { _ in .addNumber("7") },
-            eightButton.rx.tap.map { _ in .addNumber("8") },
-            nineButton.rx.tap.map { _ in .addNumber("9") },
-            
-            thousandButton.rx.tap.map { _ in .addNumber("000") },
+            [
+                clearButton.rx.tap.map { _ in .clear },
+                backspaceButton.rx.tap.map { _ in .backspace },
 
-            doneButton.rx.tap.map { _ in .done },
+                dotButton.rx.tap.map { _ in .addDot },
 
-        ]
-        
+                zeroButton.rx.tap.map { _ in .addNumber("0") },
+                oneButton.rx.tap.map { _ in .addNumber("1") },
+                twoButton.rx.tap.map { _ in .addNumber("2") },
+                threeButton.rx.tap.map { _ in .addNumber("3") },
+                fourButton.rx.tap.map { _ in .addNumber("4") },
+                fiveButton.rx.tap.map { _ in .addNumber("5") },
+                sixButton.rx.tap.map { _ in .addNumber("6") },
+                sevenButton.rx.tap.map { _ in .addNumber("7") },
+                eightButton.rx.tap.map { _ in .addNumber("8") },
+                nineButton.rx.tap.map { _ in .addNumber("9") },
+
+                thousandButton.rx.tap.map { _ in .addNumber("000") },
+
+                doneButton.rx.tap.map { _ in .done },
+                cancelButton.rx.tap.map { _ in .cancel },
+
+                ]
+
         Observable.from(commands)
             .merge()
             .scan(NumberPadState.CLEAR_STATE) { state, action in
-                switch state.action {
-                case NumberPadAction.done:
-                    return NumberPadState.CLEAR_STATE.tranformState(action)
-                default:
-                    return state.tranformState(action)
-                }
+                return state.tranformState(action)
             }
             .subscribe(onNext: { [weak self] state in
                 switch state.action {
                 case NumberPadAction.done:
-                    self?.rx_tap_done.on(.next(state.inScreen))
-                    self?.resultLabel.text = ""
+                    self?.didDone.on(.next(state.inScreen))
+                case NumberPadAction.cancel:
+                    self?.didCancel.on(.next(self!))
                 default:
                     self?.resultLabel.text = state.inScreen
                 }
             })
-        .addDisposableTo(disposeBag)
+            .addDisposableTo(disposeBag)
     }
 }
