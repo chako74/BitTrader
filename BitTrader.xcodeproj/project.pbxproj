@@ -60,6 +60,15 @@
 		07BD52171DA3DECD00DA54B8 /* BitTraderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD52161DA3DECD00DA54B8 /* BitTraderUITests.swift */; };
 		07BD522A1DA3E4AE00DA54B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD52281DA3E4AE00DA54B8 /* AppDelegate.swift */; };
 		07BD522E1DA3E67A00DA54B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07BD522D1DA3E67A00DA54B8 /* Assets.xcassets */; };
+		07DCBF201DCB482C00B60008 /* GetPositionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DCBF1F1DCB482C00B60008 /* GetPositionsRequest.swift */; };
+		07DCBF221DCB483A00B60008 /* GetPositionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DCBF211DCB483A00B60008 /* GetPositionsResponse.swift */; };
+		07DCBF241DCB484700B60008 /* PositionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DCBF231DCB484700B60008 /* PositionModel.swift */; };
+		07DCBF261DCB488A00B60008 /* GetPositionsParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DCBF251DCB488A00B60008 /* GetPositionsParameter.swift */; };
+		07DCBF291DCB718E00B60008 /* PositionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DCBF271DCB718E00B60008 /* PositionListViewController.swift */; };
+		07DCBF2A1DCB718E00B60008 /* PositionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07DCBF281DCB718E00B60008 /* PositionListViewController.xib */; };
+		07DCBF2C1DCB734800B60008 /* PositionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DCBF2B1DCB734800B60008 /* PositionListViewModel.swift */; };
+		07DCBF2F1DCB737600B60008 /* PositionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DCBF2D1DCB737600B60008 /* PositionTableViewCell.swift */; };
+		07DCBF301DCB737600B60008 /* PositionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07DCBF2E1DCB737600B60008 /* PositionTableViewCell.xib */; };
 		07FAE3291DA778E500089136 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE3281DA778E500089136 /* RootViewController.swift */; };
 		07FAE3301DA77CE600089136 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FAE32F1DA77CE600089136 /* RootViewController.xib */; };
 		07FAE3341DA7BA2500089136 /* AppStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE3331DA7BA2500089136 /* AppStatus.swift */; };
@@ -147,6 +156,15 @@
 		07BD52181DA3DECD00DA54B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07BD52281DA3E4AE00DA54B8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07BD522D1DA3E67A00DA54B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		07DCBF1F1DCB482C00B60008 /* GetPositionsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPositionsRequest.swift; sourceTree = "<group>"; };
+		07DCBF211DCB483A00B60008 /* GetPositionsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPositionsResponse.swift; sourceTree = "<group>"; };
+		07DCBF231DCB484700B60008 /* PositionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionModel.swift; sourceTree = "<group>"; };
+		07DCBF251DCB488A00B60008 /* GetPositionsParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPositionsParameter.swift; sourceTree = "<group>"; };
+		07DCBF271DCB718E00B60008 /* PositionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionListViewController.swift; sourceTree = "<group>"; };
+		07DCBF281DCB718E00B60008 /* PositionListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PositionListViewController.xib; sourceTree = "<group>"; };
+		07DCBF2B1DCB734800B60008 /* PositionListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionListViewModel.swift; sourceTree = "<group>"; };
+		07DCBF2D1DCB737600B60008 /* PositionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionTableViewCell.swift; sourceTree = "<group>"; };
+		07DCBF2E1DCB737600B60008 /* PositionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PositionTableViewCell.xib; sourceTree = "<group>"; };
 		07FAE3281DA778E500089136 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		07FAE32F1DA77CE600089136 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		07FAE3331DA7BA2500089136 /* AppStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStatus.swift; sourceTree = "<group>"; };
@@ -237,6 +255,7 @@
 		0724418A1DACC1740059E872 /* Reference */ = {
 			isa = PBXGroup;
 			children = (
+				07DCBF1D1DCB0A9C00B60008 /* Position */,
 				072441951DACC1FB0059E872 /* ReferenceRootViewController.swift */,
 				072441961DACC1FB0059E872 /* ReferenceRootViewController.xib */,
 			);
@@ -443,6 +462,29 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		07DCBF1D1DCB0A9C00B60008 /* Position */ = {
+			isa = PBXGroup;
+			children = (
+				07DCBF271DCB718E00B60008 /* PositionListViewController.swift */,
+				07DCBF281DCB718E00B60008 /* PositionListViewController.xib */,
+				07DCBF2B1DCB734800B60008 /* PositionListViewModel.swift */,
+				07DCBF2D1DCB737600B60008 /* PositionTableViewCell.swift */,
+				07DCBF2E1DCB737600B60008 /* PositionTableViewCell.xib */,
+			);
+			path = Position;
+			sourceTree = "<group>";
+		};
+		07DCBF1E1DCB47CA00B60008 /* GetPositions */ = {
+			isa = PBXGroup;
+			children = (
+				07DCBF1F1DCB482C00B60008 /* GetPositionsRequest.swift */,
+				07DCBF211DCB483A00B60008 /* GetPositionsResponse.swift */,
+				07DCBF231DCB484700B60008 /* PositionModel.swift */,
+				07DCBF251DCB488A00B60008 /* GetPositionsParameter.swift */,
+			);
+			path = GetPositions;
+			sourceTree = "<group>";
+		};
 		07FAE3251DA7785D00089136 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,6 +561,7 @@
 		07FAE3381DA7BFEB00089136 /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				07DCBF1E1DCB47CA00B60008 /* GetPositions */,
 				0724416B1DABCED40059E872 /* GetChildOrders */,
 				072B67331DA87E4800F276AF /* GetBalance */,
 			);
@@ -679,8 +722,10 @@
 			files = (
 				07BD52011DA3DECD00DA54B8 /* LaunchScreen.storyboard in Resources */,
 				07932C751DBD035F00E38530 /* RateTableViewCell.xib in Resources */,
+				07DCBF301DCB737600B60008 /* PositionTableViewCell.xib in Resources */,
 				07B8545B1DB1DCE8009E3181 /* NumberPadViewController.xib in Resources */,
 				072441941DACC1E70059E872 /* MenuRootViewController.xib in Resources */,
+				07DCBF2A1DCB718E00B60008 /* PositionListViewController.xib in Resources */,
 				072441901DACC1D40059E872 /* MarketRootViewController.xib in Resources */,
 				072441B51DAE03980059E872 /* PlusMinusInputField.xib in Resources */,
 				07B854471DAF2D84009E3181 /* BTCChangerViewController.xib in Resources */,
@@ -822,6 +867,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07DCBF221DCB483A00B60008 /* GetPositionsResponse.swift in Sources */,
 				072441711DABCF2A0059E872 /* OrderModel.swift in Sources */,
 				07B854531DB0AA7A009E3181 /* APIEnum.swift in Sources */,
 				07B8544F1DB0A209009E3181 /* GetBoardRequest.swift in Sources */,
@@ -833,11 +879,16 @@
 				07FAE33F1DA7C44500089136 /* GetHealthRequest.swift in Sources */,
 				0724419E1DACCA230059E872 /* BitTraderTabViewController.swift in Sources */,
 				0724416D1DABCEFB0059E872 /* GetChildOrdersRequest.swift in Sources */,
+				07DCBF241DCB484700B60008 /* PositionModel.swift in Sources */,
 				072441861DACBEB40059E872 /* RegistKeyViewController.swift in Sources */,
 				07B854551DB1C11F009E3181 /* BTCChangerViewModel.swift in Sources */,
+				07DCBF261DCB488A00B60008 /* GetPositionsParameter.swift in Sources */,
 				07BD522A1DA3E4AE00DA54B8 /* AppDelegate.swift in Sources */,
+				07DCBF201DCB482C00B60008 /* GetPositionsRequest.swift in Sources */,
 				07FAE33B1DA7C03900089136 /* BitTraderRequest.swift in Sources */,
+				07DCBF2C1DCB734800B60008 /* PositionListViewModel.swift in Sources */,
 				072B67371DA87EA000F276AF /* GetBalanceResponse.swift in Sources */,
+				07DCBF2F1DCB737600B60008 /* PositionTableViewCell.swift in Sources */,
 				07932C681DBCDD6600E38530 /* RateListViewController.swift in Sources */,
 				072B673B1DA8809C00F276AF /* BitTraderPrivateRequest.swift in Sources */,
 				07B8545A1DB1DCE8009E3181 /* NumberPadViewController.swift in Sources */,
@@ -857,6 +908,7 @@
 				07B8545F1DB205DB009E3181 /* NumberPadState.swift in Sources */,
 				072441931DACC1E70059E872 /* MenuRootViewController.swift in Sources */,
 				072441AA1DADD6F30059E872 /* MenuListViewController.swift in Sources */,
+				07DCBF291DCB718E00B60008 /* PositionListViewController.swift in Sources */,
 				0724418F1DACC1D40059E872 /* MarketRootViewController.swift in Sources */,
 				072441AD1DADD7080059E872 /* MenuListViewModel.swift in Sources */,
 				072441B31DAE03120059E872 /* PlusMinusInputField.swift in Sources */,

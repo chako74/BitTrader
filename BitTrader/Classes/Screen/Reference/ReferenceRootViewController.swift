@@ -8,10 +8,16 @@
 
 import UIKit
 
-class ReferenceRootViewController: UIViewController {
+class ReferenceRootViewController: UIViewController, ViewContainer {
 
+    private var activeViewController: UIViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let navi = UINavigationController(rootViewController: PositionListViewController())
+        addChildContainerViewController(navi)
+        activeViewController = navi
     }
 
     override func didReceiveMemoryWarning() {
