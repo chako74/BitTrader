@@ -43,7 +43,7 @@ class PositionListViewController: UIViewController {
             .startWith(0)
             .shareReplay(1)
         
-        let backgroundScheduler = SerialDispatchQueueScheduler(globalConcurrentQueueQOS: .default)
+        let backgroundScheduler = SerialDispatchQueueScheduler(qos: .default)
         rxTimer
             .subscribeOn(backgroundScheduler)
             .flatMap {_ -> Observable<GetPositionsRequest.Response> in
