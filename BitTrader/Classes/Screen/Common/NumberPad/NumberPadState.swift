@@ -29,6 +29,8 @@ extension NumberPadState {
             return addNumber(numberStr)
         case .done:
             return done()
+        case .cancel:
+            return cancel()
         }
     }
     
@@ -64,9 +66,16 @@ extension NumberPadState {
     }
 
     private func done() -> NumberPadState {
+        if inScreen.isEmpty {
+            return cancel()
+        }
         return NumberPadState(action: .done, inScreen: inScreen)
     }
     
+    private func cancel() -> NumberPadState {
+        return NumberPadState(action: .cancel, inScreen: "")
+    }
+
     private func containsDot(_ value: String) -> Bool {
         return value.range(of: ".") != nil
     }
