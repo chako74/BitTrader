@@ -67,9 +67,9 @@ class BTCChangerViewController: UIViewController {
             .addDisposableTo(disposeBag)
 
         btcPlusMinusInput?.didTap
-            .flatMapLatest { [weak self] _ in
-                return NumberPadViewController.rx.createWithParent(self)
-                    .flatMap { $0.didDone }
+            .flatMapLatest { _ in
+                return NumberPadViewController.rx.createWithParent()
+                    .flatMap { $0.rx.didDone }
                     .take(1)
             }
             .map { Double($0)! }
@@ -77,9 +77,9 @@ class BTCChangerViewController: UIViewController {
             .addDisposableTo(disposeBag)
 
         satoshiPlusMinusInput?.didTap
-            .flatMapLatest { [weak self] _ in
-                return NumberPadViewController.rx.createWithParent(self)
-                    .flatMap { $0.didDone }
+            .flatMapLatest { _ in
+                return NumberPadViewController.rx.createWithParent()
+                    .flatMap { $0.rx.didDone }
                     .take(1)
             }
             .map { Double($0)! }
