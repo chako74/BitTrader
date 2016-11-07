@@ -27,7 +27,7 @@ class RegistKeyViewController: UIViewController {
         edgesForExtendedLayout = []
         
         apiKeyTextField.text = registKeyViewModel.apiKey.value
-        apiKeyTextField.rx.text
+        apiKeyTextField.rx.text.orEmpty
             .bindTo(registKeyViewModel.apiKey)
             .addDisposableTo(disposeBag)
         
@@ -36,7 +36,7 @@ class RegistKeyViewController: UIViewController {
             .addDisposableTo(disposeBag)
         
         apiSecretKeyTextField.text = registKeyViewModel.apiSecretKey.value
-        apiSecretKeyTextField.rx.text
+        apiSecretKeyTextField.rx.text.orEmpty
             .bindTo(registKeyViewModel.apiSecretKey)
             .addDisposableTo(disposeBag)
         
@@ -52,7 +52,7 @@ class RegistKeyViewController: UIViewController {
             .addDisposableTo(disposeBag)
         
         registKeyViewModel.enableSettingButton
-            .bindTo(settingButton.rx.enabled)
+            .bindTo(settingButton.rx.isEnabled)
             .addDisposableTo(disposeBag)
     }
     

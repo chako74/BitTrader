@@ -4,9 +4,9 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'BitTrader' do
-  pod 'RxSwift', '3.0.0-beta.2'
-  pod 'RxCocoa', '3.0.0-beta.2'
-  pod 'APIKit', '3.0.0-beta.2'
+  pod 'RxSwift', '3.0.1'
+  pod 'RxCocoa', '3.0.1'
+  pod 'APIKit', '3.0.0'
   pod 'Himotoki', '3.0.0'
   pod 'KeychainAccess', '3.0.0'
   pod 'ReSwift', '2.1.0'
