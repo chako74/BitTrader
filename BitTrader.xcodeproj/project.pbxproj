@@ -77,6 +77,8 @@
 		07FAE3411DA7C49300089136 /* GetHealthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE3401DA7C49300089136 /* GetHealthResponse.swift */; };
 		82857357A68650A1A1556799 /* Pods_BitTrader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E525F9CF272892EAA3DF1AA6 /* Pods_BitTrader.framework */; };
 		BA51DEC31DCEE59800D5029B /* NumberPadViewController+RxCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51DEC21DCEE59800D5029B /* NumberPadViewController+RxCreate.swift */; };
+		BA699AE61DD0D369007B650F /* RxNumberPadViewDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA699AE51DD0D369007B650F /* RxNumberPadViewDelegateProxy.swift */; };
+		BA699AE81DD0D5F6007B650F /* NumberPadViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA699AE71DD0D5F6007B650F /* NumberPadViewController+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +177,8 @@
 		71653296D47E56926068FCF7 /* Pods_BitTraderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitTraderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4915E65A73E188106ABD949 /* Pods-BitTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTrader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitTrader/Pods-BitTrader.debug.xcconfig"; sourceTree = "<group>"; };
 		BA51DEC21DCEE59800D5029B /* NumberPadViewController+RxCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NumberPadViewController+RxCreate.swift"; sourceTree = "<group>"; };
+		BA699AE51DD0D369007B650F /* RxNumberPadViewDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxNumberPadViewDelegateProxy.swift; sourceTree = "<group>"; };
+		BA699AE71DD0D5F6007B650F /* NumberPadViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NumberPadViewController+Rx.swift"; sourceTree = "<group>"; };
 		C724E1701441F1D7C5862AD3 /* Pods-BitTraderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTraderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitTraderTests/Pods-BitTraderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC4B7FDBD26058AF1B3EC060 /* Pods-BitTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTrader.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitTrader/Pods-BitTrader.release.xcconfig"; sourceTree = "<group>"; };
 		CEFF4274892F4ACA1287631A /* Pods-BitTraderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTraderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitTraderTests/Pods-BitTraderTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -380,6 +384,8 @@
 				07B854591DB1DCE8009E3181 /* NumberPadViewController.xib */,
 				07B8545C1DB1ECEF009E3181 /* NumberPadAction.swift */,
 				07B8545E1DB205DB009E3181 /* NumberPadState.swift */,
+				BA699AE51DD0D369007B650F /* RxNumberPadViewDelegateProxy.swift */,
+				BA699AE71DD0D5F6007B650F /* NumberPadViewController+Rx.swift */,
 			);
 			path = NumberPad;
 			sourceTree = "<group>";
@@ -896,6 +902,8 @@
 				072B673B1DA8809C00F276AF /* BitTraderPrivateRequest.swift in Sources */,
 				07B8545A1DB1DCE8009E3181 /* NumberPadViewController.swift in Sources */,
 				07B8545D1DB1ECEF009E3181 /* NumberPadAction.swift in Sources */,
+				BA699AE81DD0D5F6007B650F /* NumberPadViewController+Rx.swift in Sources */,
+				BA699AE61DD0D369007B650F /* RxNumberPadViewDelegateProxy.swift in Sources */,
 				07FAE3291DA778E500089136 /* RootViewController.swift in Sources */,
 				072441971DACC1FB0059E872 /* ReferenceRootViewController.swift in Sources */,
 				07932C6B1DBCEEB300E38530 /* RateListViewModel.swift in Sources */,
