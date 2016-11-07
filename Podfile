@@ -9,6 +9,7 @@ target 'BitTrader' do
   pod 'APIKit', '3.0.0-beta.2'
   pod 'Himotoki', '3.0.0'
   pod 'KeychainAccess', '3.0.0'
+  pod 'ReSwift', '2.1.0'
 
   target 'BitTraderTests' do
     inherit! :search_paths
