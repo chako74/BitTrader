@@ -27,14 +27,14 @@ func dismissViewController(_ viewController: UIViewController, animated: Bool) {
 
 extension Reactive where Base: NumberPadViewController {
 
-    static func createWithParent(_ parent: UIViewController?,
+    static func createWithParent(_ parent: UIViewController = rootViewController,
                                  animated: Bool = true,
                                  configureNumberPad: @escaping (NumberPadViewController) throws -> () = { x in }) -> Observable<NumberPadViewController> {
 
         return Observable.create { [weak parent] observer in
 
             let numberPad = NumberPadViewController()
-            let dismissDisposable = numberPad
+            let dismissDisposable = numberPad.rx
                 .didCancel
                 .subscribe(onNext: { numberPad in
                     dismissViewController(numberPad, animated: animated)
@@ -61,5 +61,9 @@ extension Reactive where Base: NumberPadViewController {
                 dismissViewController(numberPad, animated: animated)
             })
         }
+    }
+
+    private static var rootViewController: UIViewController {
+        return UIApplication.shared.keyWindow!.rootViewController!
     }
 }

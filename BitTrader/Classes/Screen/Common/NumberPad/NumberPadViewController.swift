@@ -11,10 +11,15 @@ import UIKit
 import RxCocoa
 import RxSwift
 
+@objc public protocol NumberPadViewDelegate: NSObjectProtocol {
+
+    @objc optional func didDone(_ value: String)
+    @objc optional func didCancel(_ numberPadViewController: UIViewController)
+}
+
 class NumberPadViewController: UIViewController {
 
-    let didDone = PublishSubject<String>()
-    let didCancel = PublishSubject<NumberPadViewController>()
+    weak var delegate: NumberPadViewDelegate?
 
     private let disposeBag = DisposeBag()
     
@@ -85,9 +90,9 @@ class NumberPadViewController: UIViewController {
             .subscribe(onNext: { [weak self] state in
                 switch state.action {
                 case NumberPadAction.done:
-                    self?.didDone.on(.next(state.inScreen))
+                    self?.delegate?.didDone!(state.inScreen)
                 case NumberPadAction.cancel:
-                    self?.didCancel.on(.next(self!))
+                    self?.delegate?.didCancel!(self!)
                 default:
                     self?.resultLabel.text = state.inScreen
                 }
