@@ -16,14 +16,18 @@ class PlusMinusInputField: UIView {
     
     let didTap = PublishSubject<PlusMinusInputField>()
 
-    private(set) var input = Variable(Double(0))
+    var input = Variable<Double?>(0)
     var upDownUnit = Double(1)
     var min = Double(0)
     var max = DBL_MAX
     var format: String = "%f" {
         didSet {
             if let field = inputFieldLabel {
-                field.text = String(format: format, input.value)
+                guard input.value != nil else {
+                    field.text = ""
+                    return
+                }
+                field.text = String(format: format, input.value!)
             }
         }
     }
@@ -52,15 +56,6 @@ class PlusMinusInputField: UIView {
         bind()
     }
     
-    func update(input: Double) {
-        
-        if min <= input && input <= max {
-            if self.input.value != input {
-                self.input.value = input
-            }
-        }
-    }
-    
     private func loadXib() {
         Bundle.main.loadNibNamed("PlusMinusInputField", owner: self, options: nil)
         contentView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
@@ -70,17 +65,21 @@ class PlusMinusInputField: UIView {
     private func bind() {
         plusButton.rx.tap
             .subscribe(onNext: { [weak self] in
-                if let input = self?.input.value, let unit = self?.upDownUnit {
-                    self?.update(input: input + unit)
-                    }
-                })
+                guard let input = self?.input.value else {
+                    self?.input.value = Double(0)
+                    return
+                }
+                self?.input.value = input + (self?.upDownUnit)!
+            })
             .addDisposableTo(disposeBag)
         
         minusButton.rx.tap
             .subscribe(onNext: { [weak self] in
-                if let input = self?.input.value, let unit = self?.upDownUnit {
-                    self?.update(input: input - unit)
+                guard let input = self?.input.value else {
+                    self?.input.value = Double(0)
+                    return
                 }
+                self?.input.value = input - (self?.upDownUnit)!
                 })
             .addDisposableTo(disposeBag)
 
@@ -93,7 +92,10 @@ class PlusMinusInputField: UIView {
         input
             .asObservable()
             .map { [unowned self] in
-                String(format: self.format, $0)
+                guard $0 != nil else {
+                    return ""
+                }
+                return String(format: self.format, $0!)
             }
             .bindTo(inputFieldLabel.rx.text)
             .addDisposableTo(disposeBag)

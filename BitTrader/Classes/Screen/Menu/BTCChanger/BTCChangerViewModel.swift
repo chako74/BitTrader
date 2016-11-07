@@ -10,6 +10,6 @@ import RxCocoa
 import RxSwift
 
 struct BTCChangerViewModel {
-    let btcAmount = Variable(Double(0))
+    let btcAmount = Variable<Double?>(0)
     let midPrice = Variable(Int(0))
 }

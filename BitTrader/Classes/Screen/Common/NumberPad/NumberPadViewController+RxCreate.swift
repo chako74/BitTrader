@@ -34,7 +34,7 @@ extension Reactive where Base: NumberPadViewController {
         return Observable.create { [weak parent] observer in
 
             let numberPad = NumberPadViewController()
-            let dismissDisposable = numberPad
+            let dismissDisposable = numberPad.rx
                 .didCancel
                 .subscribe(onNext: { numberPad in
                     dismissViewController(numberPad, animated: animated)
