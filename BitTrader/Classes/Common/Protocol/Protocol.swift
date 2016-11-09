@@ -12,15 +12,20 @@ import UIKit
 protocol ViewContainer {
     
     func addChildContainerViewController(_ addChildContainerViewController: UIViewController)
+    func addChildContainerViewController(_ addChildContainerViewController: UIViewController, atContainerView: UIView)
     func removeChildContainerViewController(_ removeChildContainerViewController: UIViewController)
 }
 
 extension ViewContainer where Self: UIViewController {
     
     func addChildContainerViewController(_ addChildContainerViewController: UIViewController) {
+        self.addChildContainerViewController(addChildContainerViewController, atContainerView: self.view!)
+    }
+    
+    func addChildContainerViewController(_ addChildContainerViewController: UIViewController, atContainerView: UIView) {
         addChildViewController(addChildContainerViewController)
-        view.addSubview(addChildContainerViewController.view)
-        view.addFittingConstraintsFor(childView: addChildContainerViewController.view)
+        atContainerView.addSubview(addChildContainerViewController.view)
+        atContainerView.addFittingConstraintsFor(childView: addChildContainerViewController.view)
         addChildContainerViewController.didMove(toParentViewController: self)
     }
     

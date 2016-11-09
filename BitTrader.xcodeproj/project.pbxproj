@@ -60,6 +60,10 @@
 		07BD52171DA3DECD00DA54B8 /* BitTraderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD52161DA3DECD00DA54B8 /* BitTraderUITests.swift */; };
 		07BD522A1DA3E4AE00DA54B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD52281DA3E4AE00DA54B8 /* AppDelegate.swift */; };
 		07BD522E1DA3E67A00DA54B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07BD522D1DA3E67A00DA54B8 /* Assets.xcassets */; };
+		07BDF9B81DD1F55E006C99CA /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BDF9B61DD1F55E006C99CA /* PagerViewController.swift */; };
+		07BDF9B91DD1F55E006C99CA /* PagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07BDF9B71DD1F55E006C99CA /* PagerViewController.xib */; };
+		07BDF9BD1DD370A5006C99CA /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BDF9BB1DD370A5006C99CA /* OrderListViewController.swift */; };
+		07BDF9BE1DD370A5006C99CA /* OrderListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07BDF9BC1DD370A5006C99CA /* OrderListViewController.xib */; };
 		07DCBF201DCB482C00B60008 /* GetPositionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DCBF1F1DCB482C00B60008 /* GetPositionsRequest.swift */; };
 		07DCBF221DCB483A00B60008 /* GetPositionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DCBF211DCB483A00B60008 /* GetPositionsResponse.swift */; };
 		07DCBF241DCB484700B60008 /* PositionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DCBF231DCB484700B60008 /* PositionModel.swift */; };
@@ -159,6 +163,10 @@
 		07BD52181DA3DECD00DA54B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07BD52281DA3E4AE00DA54B8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07BD522D1DA3E67A00DA54B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		07BDF9B61DD1F55E006C99CA /* PagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
+		07BDF9B71DD1F55E006C99CA /* PagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PagerViewController.xib; sourceTree = "<group>"; };
+		07BDF9BB1DD370A5006C99CA /* OrderListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
+		07BDF9BC1DD370A5006C99CA /* OrderListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderListViewController.xib; sourceTree = "<group>"; };
 		07DCBF1F1DCB482C00B60008 /* GetPositionsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPositionsRequest.swift; sourceTree = "<group>"; };
 		07DCBF211DCB483A00B60008 /* GetPositionsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPositionsResponse.swift; sourceTree = "<group>"; };
 		07DCBF231DCB484700B60008 /* PositionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionModel.swift; sourceTree = "<group>"; };
@@ -261,6 +269,7 @@
 		0724418A1DACC1740059E872 /* Reference */ = {
 			isa = PBXGroup;
 			children = (
+				07BDF9BA1DD3708A006C99CA /* Order */,
 				07DCBF1D1DCB0A9C00B60008 /* Position */,
 				072441951DACC1FB0059E872 /* ReferenceRootViewController.swift */,
 				072441961DACC1FB0059E872 /* ReferenceRootViewController.xib */,
@@ -371,6 +380,7 @@
 		07B854561DB1DC60009E3181 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				07BDF9B51DD1F2FF006C99CA /* Pager */,
 				07B854571DB1DCA1009E3181 /* NumberPad */,
 			);
 			path = Common;
@@ -469,6 +479,24 @@
 				072441791DAC8C760059E872 /* BitTrader.entitlements */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		07BDF9B51DD1F2FF006C99CA /* Pager */ = {
+			isa = PBXGroup;
+			children = (
+				07BDF9B61DD1F55E006C99CA /* PagerViewController.swift */,
+				07BDF9B71DD1F55E006C99CA /* PagerViewController.xib */,
+			);
+			path = Pager;
+			sourceTree = "<group>";
+		};
+		07BDF9BA1DD3708A006C99CA /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				07BDF9BB1DD370A5006C99CA /* OrderListViewController.swift */,
+				07BDF9BC1DD370A5006C99CA /* OrderListViewController.xib */,
+			);
+			path = Order;
 			sourceTree = "<group>";
 		};
 		07DCBF1D1DCB0A9C00B60008 /* Position */ = {
@@ -734,6 +762,7 @@
 				07DCBF301DCB737600B60008 /* PositionTableViewCell.xib in Resources */,
 				07B8545B1DB1DCE8009E3181 /* NumberPadViewController.xib in Resources */,
 				072441941DACC1E70059E872 /* MenuRootViewController.xib in Resources */,
+				07BDF9B91DD1F55E006C99CA /* PagerViewController.xib in Resources */,
 				07DCBF2A1DCB718E00B60008 /* PositionListViewController.xib in Resources */,
 				072441901DACC1D40059E872 /* MarketRootViewController.xib in Resources */,
 				072441B51DAE03980059E872 /* PlusMinusInputField.xib in Resources */,
@@ -743,6 +772,7 @@
 				072441871DACBEB40059E872 /* RegistKeyViewController.xib in Resources */,
 				072441981DACC1FB0059E872 /* ReferenceRootViewController.xib in Resources */,
 				07BD522E1DA3E67A00DA54B8 /* Assets.xcassets in Resources */,
+				07BDF9BE1DD370A5006C99CA /* OrderListViewController.xib in Resources */,
 				0724419C1DACC20A0059E872 /* TradeRootViewController.xib in Resources */,
 				079E4A7A1DC630770004EB78 /* RateList.storyboard in Resources */,
 			);
@@ -876,6 +906,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07BDF9B81DD1F55E006C99CA /* PagerViewController.swift in Sources */,
 				07DCBF221DCB483A00B60008 /* GetPositionsResponse.swift in Sources */,
 				072441711DABCF2A0059E872 /* OrderModel.swift in Sources */,
 				07B854531DB0AA7A009E3181 /* APIEnum.swift in Sources */,
@@ -890,6 +921,7 @@
 				0724416D1DABCEFB0059E872 /* GetChildOrdersRequest.swift in Sources */,
 				07DCBF241DCB484700B60008 /* PositionModel.swift in Sources */,
 				072441861DACBEB40059E872 /* RegistKeyViewController.swift in Sources */,
+				07BDF9BD1DD370A5006C99CA /* OrderListViewController.swift in Sources */,
 				07B854551DB1C11F009E3181 /* BTCChangerViewModel.swift in Sources */,
 				07DCBF261DCB488A00B60008 /* GetPositionsParameter.swift in Sources */,
 				07BD522A1DA3E4AE00DA54B8 /* AppDelegate.swift in Sources */,
