@@ -12,7 +12,7 @@ import APIKit
 import RxCocoa
 import RxSwift
 
-class BTCChangerViewController: UIViewController {
+class BTCChangerViewController: UIViewController, NumberPadViewDelegate {
 
     private let disposeBag = DisposeBag()
     private let btcChangerViewModel = BTCChangerViewModel()
@@ -36,60 +36,82 @@ class BTCChangerViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    func didDone(_ numberPadViewController: NumberPadViewController, value: String) {
+        // 通常のdelegate呼び出し
+        print("didDone:" + value)
+    }
+
+    func didCancel(_ numberPadViewController: NumberPadViewController) {
+        // 通常のdelegate呼び出し
+        print("didCancel")
+    }
+
     private func bind() {
         
         btcPlusMinusInput!.input
             .asObservable()
-            .map() { input -> Double in
-                return input / 0.00000001
+            .map() { input -> Double? in
+                guard input != nil else {
+                    return nil
+                }
+                return input! / 0.00000001
             }
+            .filter { $0 != self.satoshiPlusMinusInput?.input.value }
             .subscribe(onNext: { [weak self] input in
-                self?.satoshiPlusMinusInput?.update(input: input)
+                self?.satoshiPlusMinusInput?.input.value = input
             })
             .addDisposableTo(disposeBag)
         
         satoshiPlusMinusInput!.input
             .asObservable()
-            .map() { input -> Double in
-                return input * 0.00000001
+            .map { input -> Double? in
+                guard input != nil else {
+                    return nil
+                }
+                return input! * 0.00000001
             }
             .subscribe(onNext: { [weak self] input in
-                self?.btcPlusMinusInput?.update(input: input)
+                self?.btcPlusMinusInput?.input.value = input
                 self?.btcChangerViewModel.btcAmount.value = input
             })
             .addDisposableTo(disposeBag)
         
         clearButton!.rx.tap
             .subscribe(onNext: { [weak self] in
-                self?.btcPlusMinusInput!.update(input: 0)
-                self?.satoshiPlusMinusInput!.update(input: 0)
+                self?.btcPlusMinusInput?.input.value = Double(0)
+                self?.satoshiPlusMinusInput?.input.value = Double(0)
             })
             .addDisposableTo(disposeBag)
 
         btcPlusMinusInput?.didTap
-            .flatMapLatest { [weak self] _ in
-                return NumberPadViewController.rx.createWithParent(self)
-                    .flatMap { $0.didDone }
+            .flatMapLatest { _ in
+                return NumberPadViewController.rx.createWithParent(self.rootViewController()) { $0.delegate = self }
+                    .flatMap { $0.rx.didDone }
+                    .skipWhile { !self.isValid( $0, value: $1) }
                     .take(1)
             }
-            .map { Double($0)! }
+            .map { $1 != "" ? Double($1)! : nil }
             .bindTo((btcPlusMinusInput?.input)!)
             .addDisposableTo(disposeBag)
 
         satoshiPlusMinusInput?.didTap
-            .flatMapLatest { [weak self] _ in
-                return NumberPadViewController.rx.createWithParent(self)
-                    .flatMap { $0.didDone }
+            .flatMapLatest { _ in
+                return NumberPadViewController.rx.createWithParent(self.rootViewController()) { $0.delegate = self }
+                    .flatMap { $0.rx.didDone }
+                    .skipWhile { !self.isValid( $0, value: $1) }
                     .take(1)
             }
-            .map { Double($0)! }
+            .map { $1 != "" ? Double($1)! : nil }
             .bindTo((satoshiPlusMinusInput?.input)!)
             .addDisposableTo(disposeBag)
         
         Observable
             .combineLatest(self.btcChangerViewModel.btcAmount.asObservable(),
                            self.btcChangerViewModel.midPrice.asObservable()) { (amount, midPrice) -> String in
-                            return String(amount * Double(midPrice))
+                            guard amount != nil else {
+                                return ""
+                            }
+                            return String(amount! * Double(midPrice))
             }
             .bindTo(yenLabel!.rx.text)
             .addDisposableTo(disposeBag)
@@ -114,5 +136,23 @@ class BTCChangerViewController: UIViewController {
                 self?.btcChangerViewModel.midPrice.value = Int(response.midPrice)
             })
             .addDisposableTo(disposeBag)
+    }
+
+    private func isValid(_ numberPadViewController: NumberPadViewController, value: String) -> Bool {
+        if value == "0" {
+            self.presentAlert(numberPadViewController, message: "0はダメです。")
+            return false
+        }
+        return true
+    }
+
+    private func presentAlert(_ parent: UIViewController?, message: String, title: String? = "") {
+        let alertView = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertView.addAction(UIAlertAction(title: "OK", style: .cancel))
+        parent?.present(alertView, animated: true, completion: nil)
+    }
+
+    private func rootViewController() -> UIViewController? {
+        return UIApplication.shared.keyWindow!.rootViewController
     }
 }
