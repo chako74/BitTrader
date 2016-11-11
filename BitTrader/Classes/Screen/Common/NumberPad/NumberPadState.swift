@@ -66,9 +66,6 @@ extension NumberPadState {
     }
 
     private func done() -> NumberPadState {
-        if inScreen.isEmpty {
-            return cancel()
-        }
         return NumberPadState(action: .done, inScreen: inScreen)
     }
     
