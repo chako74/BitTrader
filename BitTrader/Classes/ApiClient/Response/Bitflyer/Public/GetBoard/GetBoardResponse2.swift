@@ -1,22 +1,21 @@
 //
-//  GetBoardResponse.swift
+//  GetBoardResponse2.swift
 //  BitTrader
 //
-//  Created by chako on 2016/10/14.
+//  Created by coaractos on 2016/11/15.
 //  Copyright © 2016年 Bit Trader. All rights reserved.
 //
 
-import APIKit
+import Foundation
 import Himotoki
 
-struct GetBoardResponse {
+struct GetBoardResponse2: BitflyerResponseProtocol {
+
     let midPrice: Int
     let bids: [BoardModel]
     let asks: [BoardModel]
-}
 
-extension GetBoardResponse: ResponseProtocol {
-    static func decode(_ e: Extractor) throws -> GetBoardResponse {
+    static func decode(_ e: Extractor) throws -> GetBoardResponse2 {
         return try self.init(
             midPrice: e <| APIKey.midPrice.keyPath(),
             bids: e <|| APIKey.bids.keyPath(),

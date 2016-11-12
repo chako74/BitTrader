@@ -156,7 +156,8 @@ private extension UIFontDescriptor {
 // MARK: Session
 extension Session {
     func rx_sendRequest<T: Request>(request: T) -> Observable<T.Response> {
-        return Observable.create { observer in
+        
+         let o = Observable<T.Response>.create { observer in
             let task = self.send(request) { result in
                 switch result {
                 case .success(let res):
@@ -170,6 +171,8 @@ extension Session {
                 task?.cancel()
             }
         }
+
+        return o
     }
     
     class func rx_sendRequest<T: Request>(request: T) -> Observable<T.Response> {

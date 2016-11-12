@@ -42,27 +42,26 @@ class RateListViewController: UIViewController {
         }
         .addDisposableTo(disposeBag)
         
-        let rxTimer = Observable<Int>
-            .interval(3.0, scheduler: MainScheduler.instance)
-            .startWith(0)
-            .shareReplay(1)
-        
-        let backgroundScheduler = SerialDispatchQueueScheduler(qos: .default)
-        rxTimer
-            .subscribeOn(backgroundScheduler)
-            .flatMap {_ -> Observable<GetBoardRequest.Response> in
-                let request = GetBoardRequest(requestParameter: GetBoardRequestParameter(productCode: .fxBtcJpy))
-                return Session.rx_sendRequest(request: request)
+        let bitflyer = BaseApi().execute(GetBoardRequest2())
+        let coincheck = BaseApi().execute(TickerRequest())
+
+        Observable.combineLatest(bitflyer, coincheck) { ($0, $1) }
+            .flatMapLatest { (bitflyer, coincheck) -> Observable<[RateViewModel]> in
+                return .just([RateViewModel(rateType:.bitflyer,
+                                            midPrice: Variable(bitflyer.midPrice),
+                                            askPrice: Variable(bitflyer.asks[0].price),
+                                            bidPrice: Variable(bitflyer.bids[0].price)),
+                              RateViewModel(rateType:.coincheck,
+                                            midPrice: Variable(coincheck.last),
+                                            askPrice: Variable(coincheck.ask),
+                                            bidPrice: Variable(coincheck.bid))
+                    ])
             }
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] response in
-                let model = RateViewModel(rateType:.bitflyer,
-                                          midPrice: Variable(response.midPrice),
-                                          askPrice: Variable(response.asks[0].price),
-                                          bidPrice: Variable(response.bids[0].price))
-                                          
-                self?.rateListViewModel.rateList.value = [model]
-                })
+            .subscribe(onNext: { [weak self] models in
+                self?.rateListViewModel.rateList.value = models
+            })
             .addDisposableTo(disposeBag)
+
+
     }
 }
