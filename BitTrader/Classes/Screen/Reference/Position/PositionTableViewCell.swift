@@ -31,7 +31,7 @@ class PositionTableViewCell: UITableViewCell {
         
         productLabel!.text = positionModel.productCode
         sideLabel!.text = positionModel.side.rawValue
-        dateLabel!.text = positionModel.openDate.formatDate(fromFormat: DateFormat.iso8601, toFormat: DateFormat.openPosition)
+        dateLabel!.text = positionModel.openDate.formatDate(fromFormat: .iso8601, toFormat: .cell)
         executionPriceLabel!.text = NSNumber(integerLiteral: positionModel.price).formatComma()
         sizeLabel!.text = NSNumber(floatLiteral: positionModel.size).formatComma()
         commissionLabel!.text = NSNumber(integerLiteral: positionModel.commission).formatComma()
