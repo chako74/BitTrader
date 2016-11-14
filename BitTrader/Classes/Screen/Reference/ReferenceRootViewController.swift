@@ -15,8 +15,13 @@ class ReferenceRootViewController: UIViewController, ViewContainer {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let navi = UINavigationController(rootViewController: PositionListViewController())
+        let pager = PagerViewController()
+        let navi = UINavigationController(rootViewController: pager)
         addChildContainerViewController(navi)
+        
+        pager.pageViewControllers = [PositionListViewController(), OrderListViewController()]
+        pager.currentPage = 0
+
         activeViewController = navi
     }
 

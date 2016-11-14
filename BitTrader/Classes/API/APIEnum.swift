@@ -19,6 +19,19 @@ enum SideType: String {
     case sell = "SELL"
 }
 
+enum ChildOrderState: String {
+    case active = "ACTIVE"
+    case completed = "COMPLETED"
+    case canceled = "CANCELED"
+    case expired = "EXPIRED"
+    case rejected = "REJECTED"
+}
+
+enum ChildOrderType: String {
+    case market = "MARKET"
+    case limit = "LIMIT"
+}
+
 enum APIKey: String {
     case productCode = "product_code"
     case side = "side"
@@ -30,6 +43,22 @@ enum APIKey: String {
     case openDate = "open_date"
     case leverage = "leverage"
     case pnl = "pnl"
+    case count = "count"
+    case before = "before"
+    case after = "after"
+    case childOrderState = "child_order_state"
+    case parentOrderId = "parent_order_id"
+    case id = "id"
+    case childOrderId = "child_order_id"
+    case childOrderType = "child_order_type"
+    case averagePrice = "average_price"
+    case expireDate = "expire_date"
+    case childOrderDate = "child_order_date"
+    case childOrderAcceptanceId = "child_order_acceptance_id"
+    case outstandingSize = "outstanding_size"
+    case cancelSize = "cancel_size"
+    case executedSize = "executed_size"
+    case totalCommission = "total_commission"
     
     func keyPath() -> KeyPath {
         return KeyPath.init(rawValue)
@@ -38,5 +67,5 @@ enum APIKey: String {
 
 enum DateFormat: String {
     case iso8601 = "yyyy-MM-dd'T'HH:mm:ss.SSS"
-    case openPosition = "MM/dd HH:mm:ss"
+    case cell = "MM/dd HH:mm:ss"
 }
