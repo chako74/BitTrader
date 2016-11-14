@@ -22,5 +22,12 @@ post_install do |installer|
       config.build_settings['SWIFT_VERSION'] = '3.0'
       config.build_settings['MACOSX_DEPLOYMENT_TARGET'] = '10.10'
     end
+    if target.name == 'RxSwift'
+        target.build_configurations.each do |config|
+            if config.name == 'Debug'
+                config.build_settings['OTHER_SWIFT_FLAGS'] ||= ['-D', 'TRACE_RESOURCES']
+            end
+        end
+    end
   end
 end
