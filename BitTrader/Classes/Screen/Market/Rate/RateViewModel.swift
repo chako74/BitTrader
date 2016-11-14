@@ -13,11 +13,14 @@ import RxSwift
 
 enum RateType: Int {
     case bitflyer
+    case coincheck
     
     func text() -> String {
         switch self {
         case .bitflyer:
             return "Bitflyer"
+        case .coincheck:
+            return "coincheck"
         }
     }
 }

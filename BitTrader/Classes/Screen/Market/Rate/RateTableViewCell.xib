@@ -16,13 +16,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="es7-Pv-AXr">
-                        <rect key="frame" x="8" y="8" width="60" height="28"/>
+                        <rect key="frame" x="8" y="8" width="100" height="28"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="LDI-sl-O7F"/>
+                            <constraint firstAttribute="width" constant="100" id="LDI-sl-O7F"/>
                             <constraint firstAttribute="height" constant="28" id="mod-ka-L9n"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -30,9 +30,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ol2-cU-nir" userLabel="MidPrice Label">
-                        <rect key="frame" x="76" y="8" width="118" height="28"/>
+                        <rect key="frame" x="116" y="8" width="78" height="28"/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="4zK-KM-CVs"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="4zK-KM-CVs"/>
                             <constraint firstAttribute="height" constant="28" id="idl-nz-KMF"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>

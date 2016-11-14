@@ -85,6 +85,18 @@
 		07FAE33F1DA7C44500089136 /* GetHealthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE33E1DA7C44500089136 /* GetHealthRequest.swift */; };
 		07FAE3411DA7C49300089136 /* GetHealthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE3401DA7C49300089136 /* GetHealthResponse.swift */; };
 		82857357A68650A1A1556799 /* Pods_BitTrader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E525F9CF272892EAA3DF1AA6 /* Pods_BitTrader.framework */; };
+		BA3F0C611DDA0792002FAF07 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F0C601DDA0792002FAF07 /* RequestProtocol.swift */; };
+		BA3F0C631DDA07B6002FAF07 /* ResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F0C621DDA07B6002FAF07 /* ResponseProtocol.swift */; };
+		BA3F0C661DDA07F3002FAF07 /* CoinchekRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F0C651DDA07F3002FAF07 /* CoinchekRequestProtocol.swift */; };
+		BA3F0C6A1DDA0885002FAF07 /* TickerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F0C691DDA0885002FAF07 /* TickerRequest.swift */; };
+		BA3F0C711DDA091C002FAF07 /* TickerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F0C701DDA091C002FAF07 /* TickerResponse.swift */; };
+		BA3F0C731DDA09A8002FAF07 /* CoinchekResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F0C721DDA09A8002FAF07 /* CoinchekResponseProtocol.swift */; };
+		BA3F0C791DDA0CB0002FAF07 /* ApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F0C781DDA0CB0002FAF07 /* ApiProtocol.swift */; };
+		BA3F0C7B1DDA0CDC002FAF07 /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F0C7A1DDA0CDC002FAF07 /* BaseApi.swift */; };
+		BA3F0C871DDA13FA002FAF07 /* BitflyerResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F0C861DDA13FA002FAF07 /* BitflyerResponseProtocol.swift */; };
+		BA3F0C8B1DDA14E5002FAF07 /* GetBoardRequest2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F0C8A1DDA14E5002FAF07 /* GetBoardRequest2.swift */; };
+		BA3F0C8D1DDA14F9002FAF07 /* GetBoardResponse2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F0C8C1DDA14F9002FAF07 /* GetBoardResponse2.swift */; };
+		BA3F0C8F1DDA1EEC002FAF07 /* BitflyerRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F0C8E1DDA1EEC002FAF07 /* BitflyerRequestProtocol.swift */; };
 		BA51DEC31DCEE59800D5029B /* NumberPadViewController+RxCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51DEC21DCEE59800D5029B /* NumberPadViewController+RxCreate.swift */; };
 		BA699AE61DD0D369007B650F /* RxNumberPadViewDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA699AE51DD0D369007B650F /* RxNumberPadViewDelegateProxy.swift */; };
 		BA699AE81DD0D5F6007B650F /* NumberPadViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA699AE71DD0D5F6007B650F /* NumberPadViewController+Rx.swift */; };
@@ -194,6 +206,18 @@
 		07FAE3401DA7C49300089136 /* GetHealthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHealthResponse.swift; sourceTree = "<group>"; };
 		71653296D47E56926068FCF7 /* Pods_BitTraderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitTraderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4915E65A73E188106ABD949 /* Pods-BitTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTrader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitTrader/Pods-BitTrader.debug.xcconfig"; sourceTree = "<group>"; };
+		BA3F0C601DDA0792002FAF07 /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		BA3F0C621DDA07B6002FAF07 /* ResponseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseProtocol.swift; sourceTree = "<group>"; };
+		BA3F0C651DDA07F3002FAF07 /* CoinchekRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoinchekRequestProtocol.swift; path = ../CoinchekRequestProtocol.swift; sourceTree = "<group>"; };
+		BA3F0C691DDA0885002FAF07 /* TickerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerRequest.swift; sourceTree = "<group>"; };
+		BA3F0C701DDA091C002FAF07 /* TickerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerResponse.swift; sourceTree = "<group>"; };
+		BA3F0C721DDA09A8002FAF07 /* CoinchekResponseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinchekResponseProtocol.swift; sourceTree = "<group>"; };
+		BA3F0C781DDA0CB0002FAF07 /* ApiProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiProtocol.swift; sourceTree = "<group>"; };
+		BA3F0C7A1DDA0CDC002FAF07 /* BaseApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
+		BA3F0C861DDA13FA002FAF07 /* BitflyerResponseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerResponseProtocol.swift; sourceTree = "<group>"; };
+		BA3F0C8A1DDA14E5002FAF07 /* GetBoardRequest2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBoardRequest2.swift; sourceTree = "<group>"; };
+		BA3F0C8C1DDA14F9002FAF07 /* GetBoardResponse2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBoardResponse2.swift; sourceTree = "<group>"; };
+		BA3F0C8E1DDA1EEC002FAF07 /* BitflyerRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerRequestProtocol.swift; sourceTree = "<group>"; };
 		BA51DEC21DCEE59800D5029B /* NumberPadViewController+RxCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NumberPadViewController+RxCreate.swift"; sourceTree = "<group>"; };
 		BA699AE51DD0D369007B650F /* RxNumberPadViewDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxNumberPadViewDelegateProxy.swift; sourceTree = "<group>"; };
 		BA699AE71DD0D5F6007B650F /* NumberPadViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NumberPadViewController+Rx.swift"; sourceTree = "<group>"; };
@@ -379,9 +403,9 @@
 		07B854481DB09FF7009E3181 /* GetBoard */ = {
 			isa = PBXGroup;
 			children = (
+				07B8544E1DB0A209009E3181 /* GetBoardRequest.swift */,
 				07B8544C1DB0A128009E3181 /* GetBoardResponse.swift */,
 				07B8544A1DB0A072009E3181 /* BoardModel.swift */,
-				07B8544E1DB0A209009E3181 /* GetBoardRequest.swift */,
 				07B854501DB0A2B6009E3181 /* GetBoardRequestParameter.swift */,
 			);
 			path = GetBoard;
@@ -471,6 +495,7 @@
 		07BD52271DA3E33500DA54B8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BA2C10231DD6EFC7004F1974 /* ApiClient */,
 				072B673F1DAA79E900F276AF /* Extension */,
 				07FAE3311DA7898100089136 /* API */,
 				07FAE3251DA7785D00089136 /* Common */,
@@ -636,6 +661,145 @@
 				71653296D47E56926068FCF7 /* Pods_BitTraderTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA2C10231DD6EFC7004F1974 /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F0C5D1DDA073A002FAF07 /* Request */,
+				BA3F0C5C1DDA0724002FAF07 /* Response */,
+				BA2C10261DD6EFF1004F1974 /* Client */,
+			);
+			path = ApiClient;
+			sourceTree = "<group>";
+		};
+		BA2C10261DD6EFF1004F1974 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F0C781DDA0CB0002FAF07 /* ApiProtocol.swift */,
+				BA3F0C7A1DDA0CDC002FAF07 /* BaseApi.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		BA3F0C5C1DDA0724002FAF07 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F0C621DDA07B6002FAF07 /* ResponseProtocol.swift */,
+				BA3F0C7D1DDA131B002FAF07 /* Bitflyer */,
+				BA3F0C6D1DDA08D7002FAF07 /* Coinchek */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		BA3F0C5D1DDA073A002FAF07 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F0C601DDA0792002FAF07 /* RequestProtocol.swift */,
+				BA3F0C7C1DDA1305002FAF07 /* Bitflyer */,
+				BA3F0C641DDA07E1002FAF07 /* Coinchek */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		BA3F0C641DDA07E1002FAF07 /* Coinchek */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F0C671DDA0846002FAF07 /* Public */,
+			);
+			path = Coinchek;
+			sourceTree = "<group>";
+		};
+		BA3F0C671DDA0846002FAF07 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F0C651DDA07F3002FAF07 /* CoinchekRequestProtocol.swift */,
+				BA3F0C681DDA0859002FAF07 /* Ticker */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		BA3F0C681DDA0859002FAF07 /* Ticker */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F0C691DDA0885002FAF07 /* TickerRequest.swift */,
+			);
+			path = Ticker;
+			sourceTree = "<group>";
+		};
+		BA3F0C6D1DDA08D7002FAF07 /* Coinchek */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F0C721DDA09A8002FAF07 /* CoinchekResponseProtocol.swift */,
+				BA3F0C6E1DDA08FA002FAF07 /* Public */,
+			);
+			path = Coinchek;
+			sourceTree = "<group>";
+		};
+		BA3F0C6E1DDA08FA002FAF07 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F0C6F1DDA0907002FAF07 /* Ticker */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		BA3F0C6F1DDA0907002FAF07 /* Ticker */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F0C701DDA091C002FAF07 /* TickerResponse.swift */,
+			);
+			path = Ticker;
+			sourceTree = "<group>";
+		};
+		BA3F0C7C1DDA1305002FAF07 /* Bitflyer */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F0C7E1DDA132A002FAF07 /* Public */,
+			);
+			path = Bitflyer;
+			sourceTree = "<group>";
+		};
+		BA3F0C7D1DDA131B002FAF07 /* Bitflyer */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F0C861DDA13FA002FAF07 /* BitflyerResponseProtocol.swift */,
+				BA3F0C7F1DDA1336002FAF07 /* Public */,
+			);
+			path = Bitflyer;
+			sourceTree = "<group>";
+		};
+		BA3F0C7E1DDA132A002FAF07 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F0C8E1DDA1EEC002FAF07 /* BitflyerRequestProtocol.swift */,
+				BA3F0C801DDA1354002FAF07 /* GetBoard */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		BA3F0C7F1DDA1336002FAF07 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F0C811DDA1361002FAF07 /* GetBoard */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		BA3F0C801DDA1354002FAF07 /* GetBoard */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F0C8A1DDA14E5002FAF07 /* GetBoardRequest2.swift */,
+			);
+			path = GetBoard;
+			sourceTree = "<group>";
+		};
+		BA3F0C811DDA1361002FAF07 /* GetBoard */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F0C8C1DDA14F9002FAF07 /* GetBoardResponse2.swift */,
+			);
+			path = GetBoard;
 			sourceTree = "<group>";
 		};
 		DC686BCE6AAAC37F9CCAD49A /* Pods */ = {
@@ -925,6 +1089,7 @@
 				07BDF9B81DD1F55E006C99CA /* PagerViewController.swift in Sources */,
 				07DCBF221DCB483A00B60008 /* GetPositionsResponse.swift in Sources */,
 				072441711DABCF2A0059E872 /* OrderModel.swift in Sources */,
+				BA3F0C6A1DDA0885002FAF07 /* TickerRequest.swift in Sources */,
 				07B854531DB0AA7A009E3181 /* APIEnum.swift in Sources */,
 				07B8544F1DB0A209009E3181 /* GetBoardRequest.swift in Sources */,
 				072441731DABD51C0059E872 /* GetChildOrdersParameter.swift in Sources */,
@@ -934,6 +1099,8 @@
 				07097DD51DC8C8CF00A08EEA /* StringUtils.swift in Sources */,
 				072441B01DADFA570059E872 /* Protocol.swift in Sources */,
 				07FAE33F1DA7C44500089136 /* GetHealthRequest.swift in Sources */,
+				BA3F0C661DDA07F3002FAF07 /* CoinchekRequestProtocol.swift in Sources */,
+				BA3F0C731DDA09A8002FAF07 /* CoinchekResponseProtocol.swift in Sources */,
 				0724419E1DACCA230059E872 /* BitTraderTabViewController.swift in Sources */,
 				0724416D1DABCEFB0059E872 /* GetChildOrdersRequest.swift in Sources */,
 				07AFA1791DD8571400A8B981 /* OrderListTableViewCell.swift in Sources */,
@@ -943,14 +1110,17 @@
 				07BDF9BD1DD370A5006C99CA /* OrderListViewController.swift in Sources */,
 				07B854551DB1C11F009E3181 /* BTCChangerViewModel.swift in Sources */,
 				07C7CC591DD4B50E00F7A398 /* OrderListState.swift in Sources */,
+				BA3F0C871DDA13FA002FAF07 /* BitflyerResponseProtocol.swift in Sources */,
 				07DCBF261DCB488A00B60008 /* GetPositionsParameter.swift in Sources */,
 				07BD522A1DA3E4AE00DA54B8 /* AppDelegate.swift in Sources */,
 				07DCBF201DCB482C00B60008 /* GetPositionsRequest.swift in Sources */,
 				07FAE33B1DA7C03900089136 /* BitTraderRequest.swift in Sources */,
 				07DCBF2C1DCB734800B60008 /* PositionListViewModel.swift in Sources */,
+				BA3F0C8D1DDA14F9002FAF07 /* GetBoardResponse2.swift in Sources */,
 				072B67371DA87EA000F276AF /* GetBalanceResponse.swift in Sources */,
 				07DCBF2F1DCB737600B60008 /* PositionTableViewCell.swift in Sources */,
 				07932C681DBCDD6600E38530 /* RateListViewController.swift in Sources */,
+				BA3F0C711DDA091C002FAF07 /* TickerResponse.swift in Sources */,
 				072B673B1DA8809C00F276AF /* BitTraderPrivateRequest.swift in Sources */,
 				07B8545A1DB1DCE8009E3181 /* NumberPadViewController.swift in Sources */,
 				07B8545D1DB1ECEF009E3181 /* NumberPadAction.swift in Sources */,
@@ -960,9 +1130,11 @@
 				072441971DACC1FB0059E872 /* ReferenceRootViewController.swift in Sources */,
 				07932C6B1DBCEEB300E38530 /* RateListViewModel.swift in Sources */,
 				0724416F1DABCF060059E872 /* GetChildOrdersResponse.swift in Sources */,
+				BA3F0C611DDA0792002FAF07 /* RequestProtocol.swift in Sources */,
 				07932C741DBD035F00E38530 /* RateTableViewCell.swift in Sources */,
 				07FAE3341DA7BA2500089136 /* AppStatus.swift in Sources */,
 				07B8544D1DB0A128009E3181 /* GetBoardResponse.swift in Sources */,
+				BA3F0C8B1DDA14E5002FAF07 /* GetBoardRequest2.swift in Sources */,
 				072B67411DAA7A0900F276AF /* Extension.swift in Sources */,
 				07B8544B1DB0A072009E3181 /* BoardModel.swift in Sources */,
 				072B67391DA87EF200F276AF /* BalanceModel.swift in Sources */,
@@ -975,9 +1147,13 @@
 				0724418F1DACC1D40059E872 /* MarketRootViewController.swift in Sources */,
 				072441AD1DADD7080059E872 /* MenuListViewModel.swift in Sources */,
 				072441B31DAE03120059E872 /* PlusMinusInputField.swift in Sources */,
+				BA3F0C791DDA0CB0002FAF07 /* ApiProtocol.swift in Sources */,
 				072B67351DA87E6600F276AF /* GetBalanceRequest.swift in Sources */,
 				BA51DEC31DCEE59800D5029B /* NumberPadViewController+RxCreate.swift in Sources */,
+				BA3F0C8F1DDA1EEC002FAF07 /* BitflyerRequestProtocol.swift in Sources */,
 				07FAE3411DA7C49300089136 /* GetHealthResponse.swift in Sources */,
+				BA3F0C7B1DDA0CDC002FAF07 /* BaseApi.swift in Sources */,
+				BA3F0C631DDA07B6002FAF07 /* ResponseProtocol.swift in Sources */,
 				0724419B1DACC20A0059E872 /* TradeRootViewController.swift in Sources */,
 				07B854511DB0A2B6009E3181 /* GetBoardRequestParameter.swift in Sources */,
 			);
