@@ -43,10 +43,6 @@ class MenuListViewController: UIViewController {
             .addDisposableTo(disposeBag)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     private func move(to indexPath: IndexPath) {
         
         let menuType = self.menuListViewModel.menus.value[indexPath.row]

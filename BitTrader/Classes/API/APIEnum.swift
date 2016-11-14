@@ -32,6 +32,19 @@ enum ChildOrderType: String {
     case limit = "LIMIT"
 }
 
+enum CurrencyCode: String {
+    case jpy = "JPY"
+    case btc = "BTC"
+    case eth = "ETH"
+}
+
+enum HealthStatus: String {
+    case normal = "NORMAL"
+    case busy = "BUSY"
+    case veryBusy = "VERY BUSY"
+    case stop = "STOP"
+}
+
 enum APIKey: String {
     case productCode = "product_code"
     case side = "side"
@@ -59,6 +72,13 @@ enum APIKey: String {
     case cancelSize = "cancel_size"
     case executedSize = "executed_size"
     case totalCommission = "total_commission"
+    case midPrice = "mid_price"
+    case bids = "bids"
+    case asks = "asks"
+    case status = "status"
+    case currencyCode = "currency_code"
+    case amount = "amount"
+    case available = "available"
     
     func keyPath() -> KeyPath {
         return KeyPath.init(rawValue)

@@ -26,10 +26,6 @@ class OrderListViewController: UIViewController, StoreSubscriber {
         
         tableView!.register(UINib(nibName: String(describing: OrderListTableViewCell.self), bundle:nil), forCellReuseIdentifier: String(describing: OrderListTableViewCell.self))
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

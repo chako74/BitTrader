@@ -52,10 +52,6 @@ class NumberPadViewController: UIViewController {
         bind()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
     private func bind() {
         let commands: [Observable<NumberPadAction>] =
             [

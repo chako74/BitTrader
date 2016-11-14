@@ -9,17 +9,17 @@
 import Himotoki
 
 struct BalanceModel {
-    let currencyCode: String
-    let amount: NSNumber
-    let available: NSNumber
+    let currencyCode: CurrencyCode
+    let amount: Double
+    let available: Double
 }
 
 extension BalanceModel: Decodable {
     
     static func decode(_ e: Extractor) throws -> BalanceModel {
         return try self.init(
-            currencyCode: e <| "currency_code",
-            amount: e <| "amount",
-            available: e <| "available")
+            currencyCode: CurrencyCode(rawValue: e <| APIKey.currencyCode.keyPath())!,
+            amount: e <| APIKey.amount.keyPath(),
+            available: e <| APIKey.available.keyPath())
     }
 }

@@ -8,13 +8,6 @@
 
 import Himotoki
 
-enum HealthStatus: String {
-    case normal = "NORMAL"
-    case busy = "BUSY"
-    case veryBusy = "VERY BUSY"
-    case stop = "STOP"
-}
-
 struct GetHealthResponse {
     
     let status: HealthStatus?
@@ -23,6 +16,6 @@ struct GetHealthResponse {
 extension GetHealthResponse: Decodable {
     
     static func decode(_ e: Extractor) throws -> GetHealthResponse {
-        return try self.init(status: HealthStatus(rawValue:e <| "status"))
+        return try self.init(status: HealthStatus(rawValue:e <| APIKey.status.keyPath()))
     }
 }

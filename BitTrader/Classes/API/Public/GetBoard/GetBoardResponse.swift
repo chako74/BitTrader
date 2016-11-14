@@ -19,8 +19,8 @@ extension GetBoardResponse: Decodable {
     
     static func decode(_ e: Extractor) throws -> GetBoardResponse {
         return try self.init(
-            midPrice: e <| "mid_price",
-            bids: e <|| "bids",
-            asks: e <|| "asks")
+            midPrice: e <| APIKey.midPrice.keyPath(),
+            bids: e <|| APIKey.bids.keyPath(),
+            asks: e <|| APIKey.asks.keyPath())
     }
 }
