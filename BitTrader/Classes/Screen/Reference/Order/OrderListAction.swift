@@ -24,15 +24,25 @@ struct OrderListAction {
 
     static func requestOrderListAsyncAction(requestParameter: GetChildOrdersParameter?) -> Store<OrderListState>.AsyncActionCreator {
         
-        return { (state, store, callback) in callback { _, _ in OrderListAction.RequestStartAction() }
+        return { (state, store, callback) in
+            
+            callback { _, _ in
+                OrderListAction.RequestStartAction()
+            }
+            
             let request = GetChildOrdersRequest(requestParameter: requestParameter)
             Session.send(request) { result in
                 
                 switch result {
                 case .success(let response):
-                    callback { _, _ in OrderListAction.RequestFinishedAction(items: response.orderModels) }
+                    callback { _, _ in
+                        OrderListAction.RequestFinishedAction(items: response.orderModels)
+                    }
+                    
                 case .failure(let error):
-                    callback { _, _ in OrderListAction.RequestErrorAction(error: error) }
+                    callback { _, _ in
+                        OrderListAction.RequestErrorAction(error: error)
+                    }
                 }
             }
         }
