@@ -65,12 +65,4 @@ class RateListViewController: UIViewController {
                 })
             .addDisposableTo(disposeBag)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
 }

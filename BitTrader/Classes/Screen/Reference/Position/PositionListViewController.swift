@@ -56,8 +56,4 @@ class PositionListViewController: UIViewController {
             })
             .addDisposableTo(disposeBag)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 }

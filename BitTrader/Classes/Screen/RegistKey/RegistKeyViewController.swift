@@ -55,8 +55,4 @@ class RegistKeyViewController: UIViewController {
             .bindTo(settingButton.rx.isEnabled)
             .addDisposableTo(disposeBag)
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 }

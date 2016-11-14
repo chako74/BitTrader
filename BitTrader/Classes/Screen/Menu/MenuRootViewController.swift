@@ -22,10 +22,6 @@ class MenuRootViewController: UIViewController, ViewContainer {
         addChildContainerViewController(navi)
         activeViewController = navi
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 }
 
 extension MenuRootViewController: BitTraderTabRootable {

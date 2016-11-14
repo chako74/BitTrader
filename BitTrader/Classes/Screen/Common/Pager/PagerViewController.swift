@@ -31,14 +31,6 @@ class PagerViewController: UIViewController, ViewContainer {
     }
     
     var currentPage: Int = 0 {
-        willSet {
-            if currentPage != newValue {
-                if let active = activeViewController {
-                    removeChildContainerViewController(active)
-                    activeViewController = nil
-                }
-            }
-        }
         didSet {
             updateCurrentPage()
         }
@@ -71,10 +63,6 @@ class PagerViewController: UIViewController, ViewContainer {
 
             })
             .addDisposableTo(disposeBag)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     private func setupPage() {

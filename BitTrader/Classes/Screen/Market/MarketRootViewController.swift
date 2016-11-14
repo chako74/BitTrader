@@ -21,10 +21,6 @@ class MarketRootViewController: UIViewController, ViewContainer {
             activeViewController = rateViewController
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 }
 
 extension MarketRootViewController: BitTraderTabRootable {

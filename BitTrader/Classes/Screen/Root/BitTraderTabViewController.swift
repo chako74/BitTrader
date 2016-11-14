@@ -19,10 +19,6 @@ class BitTraderTabViewController: UITabBarController {
         
         prepareViewController()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     func prepareViewController() {
 

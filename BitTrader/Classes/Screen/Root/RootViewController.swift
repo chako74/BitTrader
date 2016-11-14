@@ -46,10 +46,6 @@ class RootViewController: UIViewController, ViewContainer {
         .addDisposableTo(disposeBag)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     func prepareViewController() {
         
         switch AppStatus.sharedInstance.viewType.value {

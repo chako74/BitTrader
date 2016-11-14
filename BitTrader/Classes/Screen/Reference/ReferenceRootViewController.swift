@@ -24,10 +24,6 @@ class ReferenceRootViewController: UIViewController, ViewContainer {
 
         activeViewController = navi
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 }
 
 extension ReferenceRootViewController: BitTraderTabRootable {

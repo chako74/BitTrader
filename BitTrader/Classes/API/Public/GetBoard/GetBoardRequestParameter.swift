@@ -16,7 +16,7 @@ extension GetBoardRequestParameter: BitTraderRequestParameter {
         
         var dic = [String: String]()
         if let productCode = self.productCode {
-            dic["product_code"] = productCode.rawValue
+            dic[APIKey.productCode.rawValue] = productCode.rawValue
         }
         
         if 0 < dic.count {
