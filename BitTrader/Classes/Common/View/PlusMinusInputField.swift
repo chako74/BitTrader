@@ -12,10 +12,16 @@ import UIKit
 import RxCocoa
 import RxSwift
 
+protocol PlusMinusInputFieldDelegate: NSObjectProtocol {
+    
+    func didTapedPlusMinusInputField(_ field: PlusMinusInputField)
+    func plusMinusInputField(_ plusMinusInputField: PlusMinusInputField, changedValue: Double?)
+}
+
 class PlusMinusInputField: UIView {
     
-    let didTap = PublishSubject<PlusMinusInputField>()
-
+    weak var delegate: PlusMinusInputFieldDelegate?
+    
     var input = Variable<Double?>(0)
     var upDownUnit = Double(1)
     var min = Double(0)
@@ -23,11 +29,11 @@ class PlusMinusInputField: UIView {
     var format: String = "%f" {
         didSet {
             if let field = inputFieldLabel {
-                guard input.value != nil else {
+                if let value = input.value {
+                    field.text = String(format: format, value)
+                } else {
                     field.text = ""
-                    return
                 }
-                field.text = String(format: format, input.value!)
             }
         }
     }
@@ -65,39 +71,54 @@ class PlusMinusInputField: UIView {
     private func bind() {
         plusButton.rx.tap
             .subscribe(onNext: { [weak self] in
-                guard let input = self?.input.value else {
-                    self?.input.value = Double(0)
+                guard let sSelf = self else {
                     return
                 }
-                self?.input.value = input + (self?.upDownUnit)!
+                if let input = sSelf.input.value {
+                    sSelf.input.value = input + sSelf.upDownUnit
+                } else {
+                    sSelf.input.value = Double(0)
+                }
+                sSelf.delegate?.plusMinusInputField(sSelf, changedValue: sSelf.input.value)
             })
             .addDisposableTo(disposeBag)
         
         minusButton.rx.tap
             .subscribe(onNext: { [weak self] in
-                guard let input = self?.input.value else {
-                    self?.input.value = Double(0)
+                guard let sSelf = self else {
                     return
                 }
-                self?.input.value = input - (self?.upDownUnit)!
-                })
+                if let input = sSelf.input.value {
+                    sSelf.input.value = input - sSelf.upDownUnit
+                } else {
+                    sSelf.input.value = Double(0)
+                }
+                sSelf.delegate?.plusMinusInputField(sSelf, changedValue: sSelf.input.value)
+            })
             .addDisposableTo(disposeBag)
 
         inputFieldButton.rx.tap
             .subscribe(onNext: { [weak self] in
-                self?.didTap.on(.next(self!))
-                })
+                guard let sSelf = self else {
+                    return
+                }
+                sSelf.delegate?.didTapedPlusMinusInputField(sSelf)
+            })
             .addDisposableTo(disposeBag)
         
         input
-            .asObservable()
-            .map { [unowned self] in
-                guard $0 != nil else {
+            .asDriver()
+            .map { [weak self] in
+                guard let sSelf = self else {
                     return ""
                 }
-                return String(format: self.format, $0!)
+                if let value = $0 {
+                    return String(format: sSelf.format, value)
+                } else {
+                    return ""
+                }
             }
-            .bindTo(inputFieldLabel.rx.text)
+            .drive(inputFieldLabel.rx.text)
             .addDisposableTo(disposeBag)
     }
 }

@@ -37,6 +37,8 @@
 		072B67391DA87EF200F276AF /* BalanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B67381DA87EF200F276AF /* BalanceModel.swift */; };
 		072B673B1DA8809C00F276AF /* BitTraderPrivateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B673A1DA8809C00F276AF /* BitTraderPrivateRequest.swift */; };
 		072B67411DAA7A0900F276AF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072B67401DAA7A0900F276AF /* Extension.swift */; };
+		073A01CE1DDB3644001F6E9D /* PlusMinusInputField+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073A01CD1DDB3644001F6E9D /* PlusMinusInputField+Rx.swift */; };
+		073A01D01DDB3705001F6E9D /* RxPlusMinusInputFieldDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073A01CF1DDB3705001F6E9D /* RxPlusMinusInputFieldDelegateProxy.swift */; };
 		07932C681DBCDD6600E38530 /* RateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07932C661DBCDD6600E38530 /* RateListViewController.swift */; };
 		07932C6B1DBCEEB300E38530 /* RateListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07932C6A1DBCEEB300E38530 /* RateListViewModel.swift */; };
 		07932C711DBD023100E38530 /* RateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07932C701DBD023100E38530 /* RateViewModel.swift */; };
@@ -140,6 +142,8 @@
 		072B673A1DA8809C00F276AF /* BitTraderPrivateRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitTraderPrivateRequest.swift; sourceTree = "<group>"; };
 		072B673C1DA9D33800F276AF /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		072B67401DAA7A0900F276AF /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		073A01CD1DDB3644001F6E9D /* PlusMinusInputField+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlusMinusInputField+Rx.swift"; sourceTree = "<group>"; };
+		073A01CF1DDB3705001F6E9D /* RxPlusMinusInputFieldDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxPlusMinusInputFieldDelegateProxy.swift; sourceTree = "<group>"; };
 		07932C661DBCDD6600E38530 /* RateListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateListViewController.swift; sourceTree = "<group>"; };
 		07932C6A1DBCEEB300E38530 /* RateListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateListViewModel.swift; sourceTree = "<group>"; };
 		07932C701DBD023100E38530 /* RateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateViewModel.swift; sourceTree = "<group>"; };
@@ -341,6 +345,8 @@
 			children = (
 				072441B21DAE03120059E872 /* PlusMinusInputField.swift */,
 				072441B41DAE03980059E872 /* PlusMinusInputField.xib */,
+				073A01CD1DDB3644001F6E9D /* PlusMinusInputField+Rx.swift */,
+				073A01CF1DDB3705001F6E9D /* RxPlusMinusInputFieldDelegateProxy.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -933,6 +939,7 @@
 				07AFA1761DD84E9600A8B981 /* OrderListReducer.swift in Sources */,
 				07097DD51DC8C8CF00A08EEA /* StringUtils.swift in Sources */,
 				072441B01DADFA570059E872 /* Protocol.swift in Sources */,
+				073A01CE1DDB3644001F6E9D /* PlusMinusInputField+Rx.swift in Sources */,
 				07FAE33F1DA7C44500089136 /* GetHealthRequest.swift in Sources */,
 				0724419E1DACCA230059E872 /* BitTraderTabViewController.swift in Sources */,
 				0724416D1DABCEFB0059E872 /* GetChildOrdersRequest.swift in Sources */,
@@ -963,6 +970,7 @@
 				07932C741DBD035F00E38530 /* RateTableViewCell.swift in Sources */,
 				07FAE3341DA7BA2500089136 /* AppStatus.swift in Sources */,
 				07B8544D1DB0A128009E3181 /* GetBoardResponse.swift in Sources */,
+				073A01D01DDB3705001F6E9D /* RxPlusMinusInputFieldDelegateProxy.swift in Sources */,
 				072B67411DAA7A0900F276AF /* Extension.swift in Sources */,
 				07B8544B1DB0A072009E3181 /* BoardModel.swift in Sources */,
 				072B67391DA87EF200F276AF /* BalanceModel.swift in Sources */,

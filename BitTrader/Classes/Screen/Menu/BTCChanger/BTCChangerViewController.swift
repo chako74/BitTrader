@@ -57,24 +57,24 @@ class BTCChangerViewController: UIViewController, NumberPadViewDelegate {
         Observable
             .combineLatest(self.btcChangerViewModel.btcAmount.asObservable(),
                            self.btcChangerViewModel.midPrice.asObservable()) { (amount, midPrice) -> String in
-                            guard amount != nil else {
+                            guard let amount = amount else {
                                 return ""
                             }
-                            return String(amount! * Double(midPrice))
+                            return String(amount * Double(midPrice))
             }
             .bindTo(yenLabel!.rx.text)
             .addDisposableTo(disposeBag)
     }
     
     private func bindBtcInput() {
-       
+    
         btcPlusMinusInput!.input
             .asObservable()
             .map() { input -> Double? in
-                guard input != nil else {
+                guard let input = input else {
                     return nil
                 }
-                return input! / 0.00000001
+                return input / 0.00000001
             }
             .filter { $0 != self.satoshiPlusMinusInput?.input.value }
             .subscribe(onNext: { [weak self] input in
@@ -82,7 +82,7 @@ class BTCChangerViewController: UIViewController, NumberPadViewDelegate {
             })
             .addDisposableTo(disposeBag)
 
-        btcPlusMinusInput?.didTap
+        btcPlusMinusInput?.rx.didTaped
             .flatMapLatest { _ in
                 return NumberPadViewController.rx.createWithParent(self.rootViewController()) { $0.delegate = self }
                     .flatMap { $0.rx.didDone }
@@ -95,22 +95,22 @@ class BTCChangerViewController: UIViewController, NumberPadViewDelegate {
     }
     
     private func bindSatoshiInput() {
-        
+  
         satoshiPlusMinusInput!.input
             .asObservable()
             .map { input -> Double? in
-                guard input != nil else {
+                guard let input = input else {
                     return nil
                 }
-                return input! * 0.00000001
+                return input * 0.00000001
             }
             .subscribe(onNext: { [weak self] input in
                 self?.btcPlusMinusInput?.input.value = input
                 self?.btcChangerViewModel.btcAmount.value = input
             })
             .addDisposableTo(disposeBag)
-        
-        satoshiPlusMinusInput?.didTap
+ 
+        satoshiPlusMinusInput?.rx.didTaped
             .flatMapLatest { _ in
                 return NumberPadViewController.rx.createWithParent(self.rootViewController()) { $0.delegate = self }
                     .flatMap { $0.rx.didDone }
