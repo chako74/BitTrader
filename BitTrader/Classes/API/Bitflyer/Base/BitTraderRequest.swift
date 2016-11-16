@@ -13,7 +13,7 @@ public protocol BitTraderRequestParameter {
     func createParameters() -> [String: String]?
 }
 
-protocol BitTraderRequest: Request {
+protocol BitTraderRequest: ApiKitRequestProtocol {
 }
 
 extension BitTraderRequest {
