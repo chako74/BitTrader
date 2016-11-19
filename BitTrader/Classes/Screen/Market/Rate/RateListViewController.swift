@@ -15,19 +15,19 @@ import RxSwift
 class RateListViewController: UIViewController {
 
     private static let RateListCellIdentifier = "RateListCell"
-    
+
     private let disposeBag = DisposeBag()
     private let rateListViewModel = RateListViewModel()
-    
+
     @IBOutlet weak private var tableView: UITableView?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         title = "レート"
-        
+
         edgesForExtendedLayout = []
-        
+
         tableView!.register(UINib(nibName: "RateTableViewCell", bundle: nil),
                             forCellReuseIdentifier: RateListViewController.RateListCellIdentifier)
 
@@ -39,30 +39,67 @@ class RateListViewController: UIViewController {
                     rateCell.update(model: element)
                 }
                 return cell
-        }
-        .addDisposableTo(disposeBag)
-        
-        let rxTimer = Observable<Int>
-            .interval(3.0, scheduler: MainScheduler.instance)
-            .startWith(0)
-            .shareReplay(1)
-        
-        let backgroundScheduler = SerialDispatchQueueScheduler(qos: .default)
-        rxTimer
-            .subscribeOn(backgroundScheduler)
-            .flatMap {_ -> Observable<GetBoardRequest.Response> in
-                let request = GetBoardRequest(requestParameter: GetBoardRequestParameter(productCode: .fxBtcJpy))
-                return Session.rx_sendRequest(request: request)
             }
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] response in
-                let model = RateViewModel(rateType:.bitflyer,
-                                          midPrice: Variable(response.midPrice),
-                                          askPrice: Variable(response.asks[0].price),
-                                          bidPrice: Variable(response.bids[0].price))
-                                          
-                self?.rateListViewModel.rateList.value = [model]
-                })
             .addDisposableTo(disposeBag)
+
+        self.startRequest()
     }
+
+    func startRequest() {
+        
+        let bitflyerTickerRequest = BitflyerTickerRequest()
+        let bitflyerTickerRequestExecuter = ApiKitApiExecuter(bitflyerTickerRequest, responseConverter: { response in
+            return RateViewModel(rateType:.bitflyer,
+                                 midPrice: Variable(response.last),
+                                 askPrice: Variable(response.ask),
+                                 bidPrice: Variable(response.bid))
+        })
+
+        let btcBoxTickerRequest = BtcBoxTickerRequest()
+        let btcBoxTickerRequestExecuter = ApiKitApiExecuter(btcBoxTickerRequest, responseConverter: { response in
+            return RateViewModel(rateType:.btcBox,
+                                 midPrice: Variable(response.last),
+                                 askPrice: Variable(response.sell),
+                                 bidPrice: Variable(response.buy))
+        })
+
+        let coincheckTickerRequest = CoincheckTickerRequest()
+        let coincheckTickerRequestExecuter = ApiKitApiExecuter(coincheckTickerRequest, responseConverter: { response in
+            return RateViewModel(rateType:.coincheck,
+                                 midPrice: Variable(response.last),
+                                 askPrice: Variable(response.ask),
+                                 bidPrice: Variable(response.bid))
+        })
+
+        let krakenTickerRequest = KrakenTickerRequest()
+        let krakenTickerRequestExecuter = ApiKitApiExecuter(krakenTickerRequest, responseConverter: { response in
+            return RateViewModel(rateType:.kraken,
+                                 midPrice: Variable(Int(floor(atof(response.result!.currencyPair.c.first!)))),
+                                 askPrice: Variable(Int(floor(atof(response.result!.currencyPair.a.first!)))),
+                                 bidPrice: Variable(Int(floor(atof(response.result!.currencyPair.b.first!)))))
+        })
+
+        let zaifTickerRequest = ZaifTickerRequest()
+        let zaifTickerRequestExecuter = ApiKitApiExecuter(zaifTickerRequest, responseConverter: { response in
+            return RateViewModel(rateType:.zaif,
+                                 midPrice: Variable(response.last),
+                                 askPrice: Variable(response.ask),
+                                 bidPrice: Variable(response.bid))
+        })
+
+        Observable.combineLatest(Api.rxExecute(bitflyerTickerRequestExecuter),
+                                 Api.rxExecute(btcBoxTickerRequestExecuter),
+                                 Api.rxExecute(coincheckTickerRequestExecuter),
+                                 Api.rxExecute(krakenTickerRequestExecuter),
+                                 Api.rxExecute(zaifTickerRequestExecuter)) { ($0, $1, $2, $3, $4) }
+            .flatMapLatest { (bitflyer, btcBox, coincheck, kraken, zaif) -> Observable<[RateViewModel]> in
+                return .just([bitflyer!, btcBox!, coincheck!, kraken!, zaif!])
+            }
+            .subscribe(onNext: { [weak self] models in
+                self?.rateListViewModel.rateList.value = models
+            })
+            .addDisposableTo(disposeBag)
+        
+    }
+    
 }
