@@ -10,4 +10,7 @@
    <FileRef
       location = "group:RxSample.playground">
    </FileRef>
+   <FileRef
+      location = "group:Tips.playground">
+   </FileRef>
 </Workspace>
