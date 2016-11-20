@@ -46,6 +46,12 @@ enum Bitflyer {
         case stop = "STOP"
     }
     
+    enum TimeInForceType: String {
+        case gtc = "GTC"
+        case ioc = "IOC"
+        case fok = "FOK"
+    }
+    
     enum APIKey: String {
         case productCode = "product_code"
         case side = "side"
@@ -85,9 +91,22 @@ enum Bitflyer {
         case bestAsk =  "best_ask"
         case volume = "volume"
         case timestamp = "timestamp"
+        case minuteToExpire = "minute_to_expire"
+        case timeInForce = "time_in_force"
 
         func keyPath() -> KeyPath {
             return KeyPath.init(rawValue)
         }
+    }
+    
+    
+    enum OrderType {
+        case market
+        case limit(price: Int)
+    }
+
+    enum CancelChildOrderType {
+        case orderId(productCode: ProductCodeType, orderId: String)
+        case acceptanceId(productCode: ProductCodeType, acceptancedId: String)
     }
 }

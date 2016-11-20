@@ -1,5 +1,5 @@
 //
-//  OrderModel.swift
+//  BitflyerOrderModel.swift
 //  BitTrader
 //
 //  Created by chako on 2016/10/10.
@@ -8,7 +8,7 @@
 
 import Himotoki
 
-struct OrderModel {
+struct BitflyerOrderModel {
     let id: Int
     let childOrderId: String
     let productCode: Bitflyer.ProductCodeType
@@ -27,9 +27,9 @@ struct OrderModel {
     let totalCommission: Int
 }
 
-extension OrderModel: Decodable {
+extension BitflyerOrderModel: Decodable {
     
-    static func decode(_ e: Extractor) throws -> OrderModel {
+    static func decode(_ e: Extractor) throws -> BitflyerOrderModel {
         return try self.init(
             id: e <| Bitflyer.APIKey.id.keyPath(),
             childOrderId: e <| Bitflyer.APIKey.childOrderId.keyPath(),

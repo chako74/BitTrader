@@ -16,7 +16,7 @@ class OrderListViewController: UIViewController, StoreSubscriber {
     
     let store = Store<OrderListState>(reducer:OrderListReducer(), state:nil)
     
-    var orderModels = Array<OrderModel>()
+    var orderModels = Array<BitflyerOrderModel>()
     var requestTimer: Timer?
     
     override func viewDidLoad() {
@@ -67,12 +67,12 @@ class OrderListViewController: UIViewController, StoreSubscriber {
     }
     
     func startRequest() {
-        let param = GetChildOrdersParameter(productCode: Bitflyer.ProductCodeType.fxBtcJpy,
-                                            count: nil,
-                                            before: nil,
-                                            after: nil,
-                                            childOrderState: Bitflyer.ChildOrderState.active,
-                                            parentOrderId: nil)
+        let param = BitflyerGetChildOrdersParameter(productCode: Bitflyer.ProductCodeType.fxBtcJpy,
+                                                    count: nil,
+                                                    before: nil,
+                                                    after: nil,
+                                                    childOrderState: Bitflyer.ChildOrderState.active,
+                                                    parentOrderId: nil)
         store.dispatch(OrderListAction.requestOrderListAsyncAction(requestParameter: param))
     }
 }

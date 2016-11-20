@@ -26,7 +26,7 @@ class OrderListTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func updateCell(from orderModel: OrderModel) {
+    func updateCell(from orderModel: BitflyerOrderModel) {
         productLabel?.text = orderModel.productCode.rawValue
         sideLabel?.text = orderModel.side.rawValue
         dateLabel?.text = orderModel.childOrderDate.formatDate(fromFormat: .iso8601, toFormat: .cell)

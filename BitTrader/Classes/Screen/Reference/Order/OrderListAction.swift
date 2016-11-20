@@ -15,22 +15,22 @@ struct OrderListAction {
     struct RequestStartAction: Action {}
     
     struct RequestFinishedAction: Action {
-        let items: Array<OrderModel>
+        let items: Array<BitflyerOrderModel>
     }
     
     struct RequestErrorAction: Action {
         let error: Error
     }
 
-    static func requestOrderListAsyncAction(requestParameter: GetChildOrdersParameter?) -> Store<OrderListState>.AsyncActionCreator {
+    static func requestOrderListAsyncAction(requestParameter: BitflyerGetChildOrdersParameter?) -> Store<OrderListState>.AsyncActionCreator {
         
         return { (state, store, callback) in
             
             callback { _, _ in
                 OrderListAction.RequestStartAction()
             }
-            
-            let request = GetChildOrdersRequest(requestParameter: requestParameter)
+
+            let request = BitflyerGetChildOrdersRequest(requestParameter: requestParameter)            
             Session.send(request) { result in
                 
                 switch result {

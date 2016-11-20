@@ -9,13 +9,13 @@
 import APIKit
 import Himotoki
 
-struct GetBalanceResponse {
-    let balanceModels: [BalanceModel]
+struct BitflyerGetBalanceResponse {
+    let balanceModels: [BitflyerBalanceModel]
 }
 
-extension GetBalanceResponse: Decodable {
+extension BitflyerGetBalanceResponse: Decodable {
     
-    static func decode(_ e: Extractor) throws -> GetBalanceResponse {
+    static func decode(_ e: Extractor) throws -> BitflyerGetBalanceResponse {
         return try self.init(balanceModels: decodeArray(e.rawValue))
     }
 }

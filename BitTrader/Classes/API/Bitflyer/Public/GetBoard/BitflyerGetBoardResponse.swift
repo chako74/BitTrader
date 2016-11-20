@@ -1,5 +1,5 @@
 //
-//  GetBoardResponse.swift
+//  BitflyerGetBoardResponse.swift
 //  BitTrader
 //
 //  Created by chako on 2016/10/14.
@@ -9,15 +9,15 @@
 import APIKit
 import Himotoki
 
-struct GetBoardResponse {
+struct BitflyerGetBoardResponse {
     let midPrice: Int
-    let bids: [BoardModel]
-    let asks: [BoardModel]
+    let bids: [BitflyerBoardModel]
+    let asks: [BitflyerBoardModel]
 }
 
-extension GetBoardResponse: Decodable {
+extension BitflyerGetBoardResponse: Decodable {
     
-    static func decode(_ e: Extractor) throws -> GetBoardResponse {
+    static func decode(_ e: Extractor) throws -> BitflyerGetBoardResponse {
         return try self.init(
             midPrice: e <| Bitflyer.APIKey.midPrice.keyPath(),
             bids: e <|| Bitflyer.APIKey.bids.keyPath(),
