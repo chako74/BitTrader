@@ -43,8 +43,7 @@ class RegistKeyViewController: UIViewController {
         registKeyViewModel.apiSecretKey.asObservable()
             .bindTo(apiSecretKeyTextField.rx.text)
             .addDisposableTo(disposeBag)
-        
-        
+
         settingButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 self?.registKeyViewModel.registApiKeyInformation()

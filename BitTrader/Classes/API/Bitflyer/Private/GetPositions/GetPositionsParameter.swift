@@ -6,7 +6,6 @@
 //  Copyright © 2016年 Bit Trader. All rights reserved.
 //
 
-
 struct GetPositionsParameter {
     
     let productCode: Bitflyer.ProductCodeType = .fxBtcJpy
