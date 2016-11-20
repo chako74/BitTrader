@@ -86,7 +86,6 @@ enum Bitflyer {
         case volume = "volume"
         case timestamp = "timestamp"
 
-        
         func keyPath() -> KeyPath {
             return KeyPath.init(rawValue)
         }
