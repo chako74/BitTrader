@@ -119,6 +119,16 @@ extension NSNumber {
     }
 }
 
+extension Array {
+
+    public mutating func addNotNil(_ newElement: Element?) {
+        guard newElement != nil else {
+            return
+        }
+        self.append(newElement!)
+    }
+}
+
 // MARK: UIView
 extension UIView {
     func addFittingConstraintsFor(childView: UIView) {

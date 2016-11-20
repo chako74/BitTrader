@@ -8,7 +8,14 @@
 
 import Result
 
+protocol ApiExecuterDelegate: NSObjectProtocol {
+    func onSuccess<ApiExecuter: ApiExecuterProtocol, DTO>(_ apiExecuter: ApiExecuter, value: DTO?)
+    func onFailure<ApiExecuter: ApiExecuterProtocol, Error: Swift.Error>(_ apiExecuter: ApiExecuter, value: Error)
+}
+
 protocol ApiExecuterProtocol {
+
+    var delegate: ApiExecuterDelegate? { get }
 
     associatedtype RequestType: RequestProtocol
     associatedtype Error: Swift.Error

@@ -8,10 +8,16 @@
 
 import UIKit
 
-class TradeRootViewController: UIViewController {
+class TradeRootViewController: UIViewController, ViewContainer {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        edgesForExtendedLayout = []
+
+        let navi = UINavigationController(rootViewController: SendOrderViewController())
+        navi.navigationBar.isTranslucent = false
+        addChildContainerViewController(navi)
     }
 }
 
