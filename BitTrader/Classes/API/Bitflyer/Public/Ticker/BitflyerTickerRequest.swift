@@ -9,9 +9,11 @@
 import APIKit
 
 struct BitflyerTickerRequest: BitTraderRequest {
-
+    
     typealias Response = BitflyerTickerResponse
 
+    var requestParameter: BitflyerTickerRequestParameter?
+    
     var method: HTTPMethod {
         return .get
     }

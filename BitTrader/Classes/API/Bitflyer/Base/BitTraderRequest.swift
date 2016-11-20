@@ -14,12 +14,24 @@ public protocol BitTraderRequestParameter {
 }
 
 protocol BitTraderRequest: ApiKitRequestProtocol {
+
+    associatedtype ParameterType: BitTraderRequestParameter
+    
+    var requestParameter: ParameterType? { get set }
 }
 
 extension BitTraderRequest {
-
+    
     var baseURL: URL {
         return URL(string: "https://api.bitflyer.jp")!
+    }
+    
+    var parameters: Any? {
+        if let requestParameter = self.requestParameter {
+            return requestParameter.createParameters()
+        } else {
+            return nil
+        }
     }
 }
 

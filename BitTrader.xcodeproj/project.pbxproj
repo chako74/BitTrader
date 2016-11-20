@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		026314F1AFFCE13E8D9DBFEE /* Pods_BitTraderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71653296D47E56926068FCF7 /* Pods_BitTraderTests.framework */; };
+		07069C9F1DE16DCF002CEC31 /* SendChildOrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069C9E1DE16DCF002CEC31 /* SendChildOrderRequest.swift */; };
+		07069CA11DE16DDA002CEC31 /* SendChildOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CA01DE16DDA002CEC31 /* SendChildOrderResponse.swift */; };
+		07069CA31DE17333002CEC31 /* SendChildOrderRequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CA21DE17333002CEC31 /* SendChildOrderRequestParameter.swift */; };
+		07069CA61DE17E8D002CEC31 /* CancelChildOrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CA51DE17E8D002CEC31 /* CancelChildOrderRequest.swift */; };
+		07069CA81DE17E99002CEC31 /* CancelChildOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CA71DE17E99002CEC31 /* CancelChildOrderResponse.swift */; };
+		07069CAA1DE17EAA002CEC31 /* CancelChildOrderParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CA91DE17EAA002CEC31 /* CancelChildOrderParameter.swift */; };
+		07069CAC1DE19BD4002CEC31 /* GetHealthRequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CAB1DE19BD4002CEC31 /* GetHealthRequestParameter.swift */; };
+		07069CAE1DE19C2D002CEC31 /* BitflyerTickerRequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CAD1DE19C2D002CEC31 /* BitflyerTickerRequestParameter.swift */; };
+		07069CB01DE19C64002CEC31 /* GetBalanceRequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CAF1DE19C64002CEC31 /* GetBalanceRequestParameter.swift */; };
 		07097DD51DC8C8CF00A08EEA /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07097DD41DC8C8CF00A08EEA /* StringUtils.swift */; };
 		072441861DACBEB40059E872 /* RegistKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072441831DACBEB40059E872 /* RegistKeyViewController.swift */; };
 		072441871DACBEB40059E872 /* RegistKeyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072441841DACBEB40059E872 /* RegistKeyViewController.xib */; };
@@ -132,6 +141,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07069C9E1DE16DCF002CEC31 /* SendChildOrderRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendChildOrderRequest.swift; sourceTree = "<group>"; };
+		07069CA01DE16DDA002CEC31 /* SendChildOrderResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendChildOrderResponse.swift; sourceTree = "<group>"; };
+		07069CA21DE17333002CEC31 /* SendChildOrderRequestParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendChildOrderRequestParameter.swift; sourceTree = "<group>"; };
+		07069CA51DE17E8D002CEC31 /* CancelChildOrderRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelChildOrderRequest.swift; sourceTree = "<group>"; };
+		07069CA71DE17E99002CEC31 /* CancelChildOrderResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelChildOrderResponse.swift; sourceTree = "<group>"; };
+		07069CA91DE17EAA002CEC31 /* CancelChildOrderParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelChildOrderParameter.swift; sourceTree = "<group>"; };
+		07069CAB1DE19BD4002CEC31 /* GetHealthRequestParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHealthRequestParameter.swift; sourceTree = "<group>"; };
+		07069CAD1DE19C2D002CEC31 /* BitflyerTickerRequestParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerTickerRequestParameter.swift; sourceTree = "<group>"; };
+		07069CAF1DE19C64002CEC31 /* GetBalanceRequestParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBalanceRequestParameter.swift; sourceTree = "<group>"; };
 		07097DD41DC8C8CF00A08EEA /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		070E9E291DA66F1B0095A671 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		072441791DAC8C760059E872 /* BitTrader.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BitTrader.entitlements; sourceTree = "<group>"; };
@@ -278,6 +296,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07069C9D1DE16D9A002CEC31 /* SendChildOrder */ = {
+			isa = PBXGroup;
+			children = (
+				07069C9E1DE16DCF002CEC31 /* SendChildOrderRequest.swift */,
+				07069CA01DE16DDA002CEC31 /* SendChildOrderResponse.swift */,
+				07069CA21DE17333002CEC31 /* SendChildOrderRequestParameter.swift */,
+			);
+			path = SendChildOrder;
+			sourceTree = "<group>";
+		};
+		07069CA41DE17E62002CEC31 /* CancelChildOrder */ = {
+			isa = PBXGroup;
+			children = (
+				07069CA51DE17E8D002CEC31 /* CancelChildOrderRequest.swift */,
+				07069CA71DE17E99002CEC31 /* CancelChildOrderResponse.swift */,
+				07069CA91DE17EAA002CEC31 /* CancelChildOrderParameter.swift */,
+			);
+			path = CancelChildOrder;
+			sourceTree = "<group>";
+		};
 		07097DD31DC8C8A500A08EEA /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -650,6 +688,8 @@
 		BA4FA2261DDDF61A001038E5 /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				07069CA41DE17E62002CEC31 /* CancelChildOrder */,
+				07069C9D1DE16D9A002CEC31 /* SendChildOrder */,
 				BA4FA2361DDDF66A001038E5 /* GetBalance */,
 				BA4FA2371DDDF67B001038E5 /* GetChildOrders */,
 				BA4FA2381DDDF689001038E5 /* GetPositions */,
@@ -672,6 +712,7 @@
 			children = (
 				BA4FA2321DDDF65B001038E5 /* GetHealthRequest.swift */,
 				BA4FA2331DDDF65B001038E5 /* GetHealthResponse.swift */,
+				07069CAB1DE19BD4002CEC31 /* GetHealthRequestParameter.swift */,
 			);
 			path = GetHealth;
 			sourceTree = "<group>";
@@ -692,6 +733,7 @@
 			children = (
 				BA4FA24A1DDDF6A4001038E5 /* GetBalanceRequest.swift */,
 				BA4FA24B1DDDF6A4001038E5 /* GetBalanceResponse.swift */,
+				07069CAF1DE19C64002CEC31 /* GetBalanceRequestParameter.swift */,
 				BA4FA2491DDDF6A4001038E5 /* BalanceModel.swift */,
 			);
 			path = GetBalance;
@@ -894,6 +936,7 @@
 			children = (
 				BA76BE6F1DDF2FEE005514AC /* BitflyerTickerRequest.swift */,
 				BA76BE711DDF3007005514AC /* BitflyerTickerResponse.swift */,
+				07069CAD1DE19C2D002CEC31 /* BitflyerTickerRequestParameter.swift */,
 			);
 			path = Ticker;
 			sourceTree = "<group>";
@@ -1216,6 +1259,8 @@
 				07932C711DBD023100E38530 /* RateViewModel.swift in Sources */,
 				072441881DACBEB40059E872 /* RegistKeyViewModel.swift in Sources */,
 				07AFA1761DD84E9600A8B981 /* OrderListReducer.swift in Sources */,
+				07069C9F1DE16DCF002CEC31 /* SendChildOrderRequest.swift in Sources */,
+				07069CB01DE19C64002CEC31 /* GetBalanceRequestParameter.swift in Sources */,
 				07097DD51DC8C8CF00A08EEA /* StringUtils.swift in Sources */,
 				BA76BE631DDF2CAB005514AC /* BtcBoxTickerResponse.swift in Sources */,
 				BA76BE701DDF2FEE005514AC /* BitflyerTickerRequest.swift in Sources */,
@@ -1234,8 +1279,10 @@
 				07C7CC591DD4B50E00F7A398 /* OrderListState.swift in Sources */,
 				07BD522A1DA3E4AE00DA54B8 /* AppDelegate.swift in Sources */,
 				07DCBF2C1DCB734800B60008 /* PositionListViewModel.swift in Sources */,
+				07069CAA1DE17EAA002CEC31 /* CancelChildOrderParameter.swift in Sources */,
 				07DCBF2F1DCB737600B60008 /* PositionTableViewCell.swift in Sources */,
 				BA4FA2351DDDF65B001038E5 /* GetHealthResponse.swift in Sources */,
+				07069CA31DE17333002CEC31 /* SendChildOrderRequestParameter.swift in Sources */,
 				07932C681DBCDD6600E38530 /* RateListViewController.swift in Sources */,
 				07B8545A1DB1DCE8009E3181 /* NumberPadViewController.swift in Sources */,
 				07B8545D1DB1ECEF009E3181 /* NumberPadAction.swift in Sources */,
@@ -1259,6 +1306,7 @@
 				BA4FA2471DDDF69D001038E5 /* GetChildOrdersResponse.swift in Sources */,
 				BA4FA24E1DDDF6A4001038E5 /* GetBalanceResponse.swift in Sources */,
 				BA4FA22F1DDDF654001038E5 /* GetBoardRequest.swift in Sources */,
+				07069CAE1DE19C2D002CEC31 /* BitflyerTickerRequestParameter.swift in Sources */,
 				BA4FA24D1DDDF6A4001038E5 /* GetBalanceRequest.swift in Sources */,
 				072441A51DADD5E90059E872 /* BTCChangerViewController.swift in Sources */,
 				BA4FA2521DDDF6B0001038E5 /* BitTraderRequest.swift in Sources */,
@@ -1273,6 +1321,7 @@
 				BA4FA23D1DDDF695001038E5 /* GetPositionsParameter.swift in Sources */,
 				072441931DACC1E70059E872 /* MenuRootViewController.swift in Sources */,
 				BA4FA2301DDDF654001038E5 /* GetBoardRequestParameter.swift in Sources */,
+				07069CA61DE17E8D002CEC31 /* CancelChildOrderRequest.swift in Sources */,
 				BA4FA2401DDDF695001038E5 /* PositionModel.swift in Sources */,
 				BA76BE6D1DDF2F32005514AC /* CoincheckTickerResponse.swift in Sources */,
 				BA4FA22E1DDDF654001038E5 /* BoardModel.swift in Sources */,
@@ -1281,6 +1330,7 @@
 				BA4FA2541DDDF6BA001038E5 /* BitflyerAPIEnum.swift in Sources */,
 				BA76BE611DDF2CA1005514AC /* KrakenTickerResponse.swift in Sources */,
 				07DCBF291DCB718E00B60008 /* PositionListViewController.swift in Sources */,
+				07069CA11DE16DDA002CEC31 /* SendChildOrderResponse.swift in Sources */,
 				0724418F1DACC1D40059E872 /* MarketRootViewController.swift in Sources */,
 				BA4FA2341DDDF65B001038E5 /* GetHealthRequest.swift in Sources */,
 				BA4FA2481DDDF69D001038E5 /* OrderModel.swift in Sources */,
@@ -1288,8 +1338,10 @@
 				BA4FA2461DDDF69D001038E5 /* GetChildOrdersRequest.swift in Sources */,
 				072441B31DAE03120059E872 /* PlusMinusInputField.swift in Sources */,
 				BA51DEC31DCEE59800D5029B /* NumberPadViewController+RxCreate.swift in Sources */,
+				07069CAC1DE19BD4002CEC31 /* GetHealthRequestParameter.swift in Sources */,
 				0724419B1DACC20A0059E872 /* TradeRootViewController.swift in Sources */,
 				BA4FA2511DDDF6B0001038E5 /* BitTraderPrivateRequest.swift in Sources */,
+				07069CA81DE17E99002CEC31 /* CancelChildOrderResponse.swift in Sources */,
 				BA9672851DDCBABC00AB6384 /* RequestProtocol.swift in Sources */,
 				BA96728F1DDCBDEA00AB6384 /* Api.swift in Sources */,
 			);

@@ -12,6 +12,8 @@ struct GetBalanceRequest: BitTraderPrivateRequest {
     
     typealias Response = GetBalanceResponse
     
+    var requestParameter: GetBalanceRequestParameter?
+    
     var method: HTTPMethod {
         return .get
     }

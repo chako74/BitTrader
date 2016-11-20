@@ -12,7 +12,7 @@ struct GetPositionsRequest: BitTraderPrivateRequest {
     
     typealias Response = GetPositionsResponse
     
-    let requestParameter: BitTraderRequestParameter
+    var requestParameter: GetPositionsParameter?
     
     var method: HTTPMethod {
         return .get
@@ -20,9 +20,5 @@ struct GetPositionsRequest: BitTraderPrivateRequest {
     
     var path: String {
         return "/v1/me/getpositions"
-    }
-    
-    var parameters: Any? {
-        return requestParameter.createParameters()
-    }
+    }    
 }

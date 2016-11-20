@@ -12,7 +12,7 @@ struct GetChildOrdersRequest: BitTraderPrivateRequest {
     
     typealias Response = GetChildOrdersResponse
     
-    let requestParameter: BitTraderRequestParameter?
+    var requestParameter: GetChildOrdersParameter?
     
     var method: HTTPMethod {
         return .get
@@ -20,13 +20,5 @@ struct GetChildOrdersRequest: BitTraderPrivateRequest {
     
     var path: String {
         return "/v1/me/getchildorders"
-    }
-    
-    var parameters: Any? {
-        if let requestParameter = self.requestParameter {
-            return requestParameter.createParameters()
-        } else {
-            return nil
-        }
     }
 }

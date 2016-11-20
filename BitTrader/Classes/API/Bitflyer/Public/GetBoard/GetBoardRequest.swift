@@ -9,10 +9,10 @@
 import APIKit
 
 struct GetBoardRequest: BitTraderRequest {
-    
+
     typealias Response = GetBoardResponse
-    
-    let requestParameter: BitTraderRequestParameter?
+
+    var requestParameter: GetBoardRequestParameter?
     
     var method: HTTPMethod {
         return .get
@@ -20,13 +20,5 @@ struct GetBoardRequest: BitTraderRequest {
     
     var path: String {
         return "/v1/getboard"
-    }
-    
-    var parameters: Any? {
-        if let requestParameter = self.requestParameter {
-            return requestParameter.createParameters()
-        } else {
-            return nil
-        }
-    }
+    }    
 }

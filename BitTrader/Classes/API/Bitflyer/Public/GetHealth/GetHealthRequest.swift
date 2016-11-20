@@ -12,6 +12,8 @@ struct GetHealthRequest: BitTraderRequest {
 
     typealias Response = GetHealthResponse
     
+    var requestParameter: GetHealthRequestParameter?
+    
     var method: HTTPMethod {
         return .get
     }

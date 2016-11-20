@@ -29,8 +29,10 @@ struct OrderListAction {
             callback { _, _ in
                 OrderListAction.RequestStartAction()
             }
+
+            var request = GetChildOrdersRequest()
+            request.requestParameter = requestParameter
             
-            let request = GetChildOrdersRequest(requestParameter: requestParameter)
             Session.send(request) { result in
                 
                 switch result {
