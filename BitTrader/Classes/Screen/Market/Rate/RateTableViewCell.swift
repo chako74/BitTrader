@@ -10,10 +10,22 @@ import UIKit
 
 class RateTableViewCell: UITableViewCell {
 
-    @IBOutlet private weak var rateTypeLabel: UILabel?
-    @IBOutlet private weak var midPriceLabel: UILabel?
-    @IBOutlet private weak var askPriceLabel: UILabel?
-    @IBOutlet private weak var bidPriceLabel: UILabel?
+    @IBOutlet private weak var rateTypeLabel: UILabel!
+    @IBOutlet private weak var midPriceLabel: UILabel! {
+        didSet {
+            midPriceLabel.font = midPriceLabel.font.monospacedDigitFont
+        }
+    }
+    @IBOutlet private weak var askPriceLabel: UILabel! {
+        didSet {
+            askPriceLabel.font = askPriceLabel.font.monospacedDigitFont
+        }
+    }
+    @IBOutlet private weak var bidPriceLabel: UILabel! {
+        didSet {
+            bidPriceLabel.font = bidPriceLabel.font.monospacedDigitFont
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

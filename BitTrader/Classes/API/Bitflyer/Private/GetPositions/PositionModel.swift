@@ -11,7 +11,7 @@ import Himotoki
 struct PositionModel {
     
     let productCode: String
-    let side: SideType
+    let side: Bitflyer.SideType
     let price: Int
     let size: Double
     let commission: Int
@@ -27,15 +27,15 @@ extension PositionModel: Decodable {
     static func decode(_ e: Extractor) throws -> PositionModel {
 
         return try self.init(
-            productCode: e <| APIKey.productCode.keyPath(),
-            side: SideType(rawValue:e <| APIKey.side.keyPath())!,
-            price: e <| APIKey.price.keyPath(),
-            size: e <| APIKey.size.keyPath(),
-            commission: e <| APIKey.commission.keyPath(),
-            swapPointAccumulate: e <| APIKey.swapPointAccumulate.keyPath(),
-            requireCollateral: e <| APIKey.requireCollateral.keyPath(),
-            openDate: e <| APIKey.openDate.keyPath(),
-            leverage: e <| APIKey.leverage.keyPath(),
-            pnl: e <| APIKey.pnl.keyPath())
+            productCode: e <| Bitflyer.APIKey.productCode.keyPath(),
+            side: Bitflyer.SideType(rawValue:e <| Bitflyer.APIKey.side.keyPath())!,
+            price: e <| Bitflyer.APIKey.price.keyPath(),
+            size: e <| Bitflyer.APIKey.size.keyPath(),
+            commission: e <| Bitflyer.APIKey.commission.keyPath(),
+            swapPointAccumulate: e <| Bitflyer.APIKey.swapPointAccumulate.keyPath(),
+            requireCollateral: e <| Bitflyer.APIKey.requireCollateral.keyPath(),
+            openDate: e <| Bitflyer.APIKey.openDate.keyPath(),
+            leverage: e <| Bitflyer.APIKey.leverage.keyPath(),
+            pnl: e <| Bitflyer.APIKey.pnl.keyPath())
     }
 }

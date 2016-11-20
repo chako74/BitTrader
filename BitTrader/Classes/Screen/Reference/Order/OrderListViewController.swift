@@ -67,11 +67,11 @@ class OrderListViewController: UIViewController, StoreSubscriber {
     }
     
     func startRequest() {
-        let param = GetChildOrdersParameter(productCode: ProductCodeType.fxBtcJpy,
+        let param = GetChildOrdersParameter(productCode: Bitflyer.ProductCodeType.fxBtcJpy,
                                             count: nil,
                                             before: nil,
                                             after: nil,
-                                            childOrderState: ChildOrderState.active,
+                                            childOrderState: Bitflyer.ChildOrderState.active,
                                             parentOrderId: nil)
         store.dispatch(OrderListAction.requestOrderListAsyncAction(requestParameter: param))
     }

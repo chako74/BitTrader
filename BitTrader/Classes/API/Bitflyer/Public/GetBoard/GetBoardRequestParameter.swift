@@ -7,7 +7,7 @@
 //
 
 struct GetBoardRequestParameter {
-    let productCode: ProductCodeType?
+    let productCode: Bitflyer.ProductCodeType?
 }
 
 extension GetBoardRequestParameter: BitTraderRequestParameter {
@@ -16,7 +16,7 @@ extension GetBoardRequestParameter: BitTraderRequestParameter {
         
         var dic = [String: String]()
         if let productCode = self.productCode {
-            dic[APIKey.productCode.rawValue] = productCode.rawValue
+            dic[Bitflyer.APIKey.productCode.rawValue] = productCode.rawValue
         }
         
         if 0 < dic.count {
