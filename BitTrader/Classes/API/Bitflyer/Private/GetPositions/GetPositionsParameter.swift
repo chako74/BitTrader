@@ -9,14 +9,14 @@
 
 struct GetPositionsParameter {
     
-    let productCode: ProductCodeType = .fxBtcJpy
+    let productCode: Bitflyer.ProductCodeType = .fxBtcJpy
 }
 
 extension GetPositionsParameter: BitTraderRequestParameter {
     
     func createParameters() -> [String : String]? {
         var dic = [String: String]()
-        dic[APIKey.productCode.rawValue] = productCode.rawValue
+        dic[Bitflyer.APIKey.productCode.rawValue] = productCode.rawValue
         
         return dic
     }

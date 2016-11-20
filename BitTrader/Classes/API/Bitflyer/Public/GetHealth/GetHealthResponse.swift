@@ -10,12 +10,12 @@ import Himotoki
 
 struct GetHealthResponse {
     
-    let status: HealthStatus?
+    let status: Bitflyer.HealthStatus?
 }
 
 extension GetHealthResponse: Decodable {
     
     static func decode(_ e: Extractor) throws -> GetHealthResponse {
-        return try self.init(status: HealthStatus(rawValue:e <| APIKey.status.keyPath()))
+        return try self.init(status: Bitflyer.HealthStatus(rawValue:e <| Bitflyer.APIKey.status.keyPath()))
     }
 }

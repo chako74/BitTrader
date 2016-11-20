@@ -11,13 +11,13 @@ import Himotoki
 struct OrderModel {
     let id: Int
     let childOrderId: String
-    let productCode: ProductCodeType
-    let side: SideType
-    let childOrderType: ChildOrderType
+    let productCode: Bitflyer.ProductCodeType
+    let side: Bitflyer.SideType
+    let childOrderType: Bitflyer.ChildOrderType
     let price: Int
     let averagePrice: Int
     let size: Double
-    let childOrderState: ChildOrderState
+    let childOrderState: Bitflyer.ChildOrderState
     let expireDate: String
     let childOrderDate: String
     let childOrderAcceptanceId: String
@@ -31,21 +31,21 @@ extension OrderModel: Decodable {
     
     static func decode(_ e: Extractor) throws -> OrderModel {
         return try self.init(
-            id: e <| APIKey.id.keyPath(),
-            childOrderId: e <| APIKey.childOrderId.keyPath(),
-            productCode: ProductCodeType(rawValue: e <| APIKey.productCode.keyPath())!,
-            side: SideType(rawValue: e <| APIKey.side.keyPath())!,
-            childOrderType: ChildOrderType(rawValue: e <| APIKey.childOrderType.keyPath())!,
-            price: e <| APIKey.price.keyPath(),
-            averagePrice: e <| APIKey.averagePrice.keyPath(),
-            size: e <| APIKey.size.keyPath(),
-            childOrderState: ChildOrderState(rawValue: e <| APIKey.childOrderState.keyPath())!,
-            expireDate: e <| APIKey.expireDate.keyPath(),
-            childOrderDate: e <| APIKey.childOrderDate.keyPath(),
-            childOrderAcceptanceId: e <| APIKey.childOrderAcceptanceId.keyPath(),
-            outstandingSize: e <| APIKey.outstandingSize.keyPath(),
-            cancelSize: e <| APIKey.cancelSize.keyPath(),
-            executedSize: e <| APIKey.executedSize.keyPath(),
-            totalCommission: e <| APIKey.totalCommission.keyPath())
+            id: e <| Bitflyer.APIKey.id.keyPath(),
+            childOrderId: e <| Bitflyer.APIKey.childOrderId.keyPath(),
+            productCode: Bitflyer.ProductCodeType(rawValue: e <| Bitflyer.APIKey.productCode.keyPath())!,
+            side: Bitflyer.SideType(rawValue: e <| Bitflyer.APIKey.side.keyPath())!,
+            childOrderType: Bitflyer.ChildOrderType(rawValue: e <| Bitflyer.APIKey.childOrderType.keyPath())!,
+            price: e <| Bitflyer.APIKey.price.keyPath(),
+            averagePrice: e <| Bitflyer.APIKey.averagePrice.keyPath(),
+            size: e <| Bitflyer.APIKey.size.keyPath(),
+            childOrderState: Bitflyer.ChildOrderState(rawValue: e <| Bitflyer.APIKey.childOrderState.keyPath())!,
+            expireDate: e <| Bitflyer.APIKey.expireDate.keyPath(),
+            childOrderDate: e <| Bitflyer.APIKey.childOrderDate.keyPath(),
+            childOrderAcceptanceId: e <| Bitflyer.APIKey.childOrderAcceptanceId.keyPath(),
+            outstandingSize: e <| Bitflyer.APIKey.outstandingSize.keyPath(),
+            cancelSize: e <| Bitflyer.APIKey.cancelSize.keyPath(),
+            executedSize: e <| Bitflyer.APIKey.executedSize.keyPath(),
+            totalCommission: e <| Bitflyer.APIKey.totalCommission.keyPath())
     }
 }

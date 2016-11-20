@@ -71,6 +71,11 @@ extension String {
         return String(hash)
     }
     
+    enum DateFormat: String {
+        case iso8601 = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+        case cell = "MM/dd HH:mm:ss"
+    }
+
     func formatDate(fromFormat: DateFormat, toFormat: DateFormat) -> String {
         
         let fromDateFormatter = DateFormatter()
