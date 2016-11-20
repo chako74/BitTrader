@@ -1,5 +1,5 @@
 //
-//  GetHealthResponse.swift
+//  BitflyerGetHealthResponse.swift
 //  BitTrader
 //
 //  Created by chako on 2016/10/07.
@@ -8,14 +8,14 @@
 
 import Himotoki
 
-struct GetHealthResponse {
+struct BitflyerGetHealthResponse {
     
     let status: Bitflyer.HealthStatus?
 }
 
-extension GetHealthResponse: Decodable {
+extension BitflyerGetHealthResponse: Decodable {
     
-    static func decode(_ e: Extractor) throws -> GetHealthResponse {
+    static func decode(_ e: Extractor) throws -> BitflyerGetHealthResponse {
         return try self.init(status: Bitflyer.HealthStatus(rawValue:e <| Bitflyer.APIKey.status.keyPath()))
     }
 }

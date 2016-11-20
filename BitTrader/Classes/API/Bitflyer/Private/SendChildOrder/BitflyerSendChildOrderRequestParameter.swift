@@ -1,5 +1,5 @@
 //
-//  SendChildOrderRequestParameter.swift
+//  BitflyerSendChildOrderRequestParameter.swift
 //  BitTrader
 //
 //  Created by chako on 2016/11/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SendChildOrderRequestParameter {
+struct BitflyerSendChildOrderRequestParameter {
     
     let productCode: Bitflyer.ProductCodeType
     let orderType: Bitflyer.OrderType
@@ -18,7 +18,7 @@ struct SendChildOrderRequestParameter {
     let timeInForce: Bitflyer.TimeInForceType?
 }
 
-extension SendChildOrderRequestParameter: BitTraderRequestParameter {
+extension BitflyerSendChildOrderRequestParameter: BitTraderRequestParameter {
     
     func createParameters() -> [String : String]? {
         

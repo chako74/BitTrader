@@ -27,7 +27,7 @@ class PositionTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func update(positionModel: PositionModel) {
+    func update(positionModel: BitflyerPositionModel) {
         
         productLabel!.text = positionModel.productCode
         sideLabel!.text = positionModel.side.rawValue

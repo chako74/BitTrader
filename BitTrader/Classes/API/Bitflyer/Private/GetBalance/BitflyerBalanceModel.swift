@@ -8,15 +8,15 @@
 
 import Himotoki
 
-struct BalanceModel {
+struct BitflyerBalanceModel {
     let currencyCode: Bitflyer.CurrencyCode
     let amount: Double
     let available: Double
 }
 
-extension BalanceModel: Decodable {
+extension BitflyerBalanceModel: Decodable {
     
-    static func decode(_ e: Extractor) throws -> BalanceModel {
+    static func decode(_ e: Extractor) throws -> BitflyerBalanceModel {
         return try self.init(
             currencyCode: Bitflyer.CurrencyCode(rawValue: e <| Bitflyer.APIKey.currencyCode.keyPath())!,
             amount: e <| Bitflyer.APIKey.amount.keyPath(),

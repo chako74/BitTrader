@@ -14,16 +14,16 @@ struct OrderListReducer: Reducer {
         
         switch action {
         case _ as OrderListAction.RequestStartAction:
-            return OrderListState(requestStatus: .requesting, orderList: Array<OrderModel>(), error: nil)
+            return OrderListState(requestStatus: .requesting, orderList: Array<BitflyerOrderModel>(), error: nil)
             
         case let action as OrderListAction.RequestFinishedAction:
             return OrderListState(requestStatus: .requested, orderList: action.items, error: nil)
             
         case let action as OrderListAction.RequestErrorAction:
-            return OrderListState(requestStatus: .requested, orderList: state?.orderList ?? Array<OrderModel>(), error: action.error)
+            return OrderListState(requestStatus: .requested, orderList: state?.orderList ?? Array<BitflyerOrderModel>(), error: action.error)
             
         default:
-            return state ?? OrderListState(requestStatus: .none, orderList: Array<OrderModel>(), error: nil)
+            return state ?? OrderListState(requestStatus: .none, orderList: Array<BitflyerOrderModel>(), error: nil)
         }
     }
 }

@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct CancelChildOrderParameter {
+struct BitflyerCancelChildOrderParameter {
     
     let cancelChildOrderType: Bitflyer.CancelChildOrderType
 }
 
-extension CancelChildOrderParameter: BitTraderRequestParameter {
+extension BitflyerCancelChildOrderParameter: BitTraderRequestParameter {
     
     func createParameters() -> [String : String]? {
         

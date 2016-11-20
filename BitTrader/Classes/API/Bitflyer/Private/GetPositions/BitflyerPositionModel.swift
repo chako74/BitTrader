@@ -1,5 +1,5 @@
 //
-//  PositionModel.swift
+//  BitflyerPositionModel.swift
 //  BitTrader
 //
 //  Created by chako on 2016/11/03.
@@ -8,7 +8,7 @@
 
 import Himotoki
 
-struct PositionModel {
+struct BitflyerPositionModel {
     
     let productCode: String
     let side: Bitflyer.SideType
@@ -22,9 +22,9 @@ struct PositionModel {
     let pnl: Int
 }
 
-extension PositionModel: Decodable {
+extension BitflyerPositionModel: Decodable {
     
-    static func decode(_ e: Extractor) throws -> PositionModel {
+    static func decode(_ e: Extractor) throws -> BitflyerPositionModel {
 
         return try self.init(
             productCode: e <| Bitflyer.APIKey.productCode.keyPath(),

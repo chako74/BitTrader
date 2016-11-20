@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		026314F1AFFCE13E8D9DBFEE /* Pods_BitTraderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71653296D47E56926068FCF7 /* Pods_BitTraderTests.framework */; };
-		07069C9F1DE16DCF002CEC31 /* SendChildOrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069C9E1DE16DCF002CEC31 /* SendChildOrderRequest.swift */; };
-		07069CA11DE16DDA002CEC31 /* SendChildOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CA01DE16DDA002CEC31 /* SendChildOrderResponse.swift */; };
-		07069CA31DE17333002CEC31 /* SendChildOrderRequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CA21DE17333002CEC31 /* SendChildOrderRequestParameter.swift */; };
-		07069CA61DE17E8D002CEC31 /* CancelChildOrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CA51DE17E8D002CEC31 /* CancelChildOrderRequest.swift */; };
-		07069CA81DE17E99002CEC31 /* CancelChildOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CA71DE17E99002CEC31 /* CancelChildOrderResponse.swift */; };
-		07069CAA1DE17EAA002CEC31 /* CancelChildOrderParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CA91DE17EAA002CEC31 /* CancelChildOrderParameter.swift */; };
-		07069CAC1DE19BD4002CEC31 /* GetHealthRequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CAB1DE19BD4002CEC31 /* GetHealthRequestParameter.swift */; };
+		07069C9F1DE16DCF002CEC31 /* BitflyerSendChildOrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069C9E1DE16DCF002CEC31 /* BitflyerSendChildOrderRequest.swift */; };
+		07069CA11DE16DDA002CEC31 /* BitflyerSendChildOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CA01DE16DDA002CEC31 /* BitflyerSendChildOrderResponse.swift */; };
+		07069CA31DE17333002CEC31 /* BitflyerSendChildOrderRequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CA21DE17333002CEC31 /* BitflyerSendChildOrderRequestParameter.swift */; };
+		07069CA61DE17E8D002CEC31 /* BitflyerCancelChildOrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CA51DE17E8D002CEC31 /* BitflyerCancelChildOrderRequest.swift */; };
+		07069CA81DE17E99002CEC31 /* BitflyerCancelChildOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CA71DE17E99002CEC31 /* BitflyerCancelChildOrderResponse.swift */; };
+		07069CAA1DE17EAA002CEC31 /* BitflyerCancelChildOrderParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CA91DE17EAA002CEC31 /* BitflyerCancelChildOrderParameter.swift */; };
+		07069CAC1DE19BD4002CEC31 /* BitflyerGetHealthRequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CAB1DE19BD4002CEC31 /* BitflyerGetHealthRequestParameter.swift */; };
 		07069CAE1DE19C2D002CEC31 /* BitflyerTickerRequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CAD1DE19C2D002CEC31 /* BitflyerTickerRequestParameter.swift */; };
-		07069CB01DE19C64002CEC31 /* GetBalanceRequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CAF1DE19C64002CEC31 /* GetBalanceRequestParameter.swift */; };
+		07069CB01DE19C64002CEC31 /* BitflyerGetBalanceRequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07069CAF1DE19C64002CEC31 /* BitflyerGetBalanceRequestParameter.swift */; };
 		07097DD51DC8C8CF00A08EEA /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07097DD41DC8C8CF00A08EEA /* StringUtils.swift */; };
 		072441861DACBEB40059E872 /* RegistKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072441831DACBEB40059E872 /* RegistKeyViewController.swift */; };
 		072441871DACBEB40059E872 /* RegistKeyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072441841DACBEB40059E872 /* RegistKeyViewController.xib */; };
@@ -79,23 +79,23 @@
 		BA4FA21E1DDDF25B001038E5 /* ApiKitApiExecuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA21C1DDDF25B001038E5 /* ApiKitApiExecuter.swift */; };
 		BA4FA21F1DDDF25B001038E5 /* ApiKitApiExecuterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA21D1DDDF25B001038E5 /* ApiKitApiExecuterProtocol.swift */; };
 		BA4FA2211DDDF262001038E5 /* ApiKitRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2201DDDF262001038E5 /* ApiKitRequestProtocol.swift */; };
-		BA4FA22E1DDDF654001038E5 /* BoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA22A1DDDF654001038E5 /* BoardModel.swift */; };
-		BA4FA22F1DDDF654001038E5 /* GetBoardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA22B1DDDF654001038E5 /* GetBoardRequest.swift */; };
-		BA4FA2301DDDF654001038E5 /* GetBoardRequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA22C1DDDF654001038E5 /* GetBoardRequestParameter.swift */; };
-		BA4FA2311DDDF654001038E5 /* GetBoardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA22D1DDDF654001038E5 /* GetBoardResponse.swift */; };
-		BA4FA2341DDDF65B001038E5 /* GetHealthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2321DDDF65B001038E5 /* GetHealthRequest.swift */; };
-		BA4FA2351DDDF65B001038E5 /* GetHealthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2331DDDF65B001038E5 /* GetHealthResponse.swift */; };
-		BA4FA23D1DDDF695001038E5 /* GetPositionsParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2391DDDF695001038E5 /* GetPositionsParameter.swift */; };
-		BA4FA23E1DDDF695001038E5 /* GetPositionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA23A1DDDF695001038E5 /* GetPositionsRequest.swift */; };
-		BA4FA23F1DDDF695001038E5 /* GetPositionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA23B1DDDF695001038E5 /* GetPositionsResponse.swift */; };
-		BA4FA2401DDDF695001038E5 /* PositionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA23C1DDDF695001038E5 /* PositionModel.swift */; };
-		BA4FA2451DDDF69D001038E5 /* GetChildOrdersParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2411DDDF69D001038E5 /* GetChildOrdersParameter.swift */; };
-		BA4FA2461DDDF69D001038E5 /* GetChildOrdersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2421DDDF69D001038E5 /* GetChildOrdersRequest.swift */; };
-		BA4FA2471DDDF69D001038E5 /* GetChildOrdersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2431DDDF69D001038E5 /* GetChildOrdersResponse.swift */; };
-		BA4FA2481DDDF69D001038E5 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2441DDDF69D001038E5 /* OrderModel.swift */; };
-		BA4FA24C1DDDF6A4001038E5 /* BalanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2491DDDF6A4001038E5 /* BalanceModel.swift */; };
-		BA4FA24D1DDDF6A4001038E5 /* GetBalanceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA24A1DDDF6A4001038E5 /* GetBalanceRequest.swift */; };
-		BA4FA24E1DDDF6A4001038E5 /* GetBalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA24B1DDDF6A4001038E5 /* GetBalanceResponse.swift */; };
+		BA4FA22E1DDDF654001038E5 /* BitflyerBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA22A1DDDF654001038E5 /* BitflyerBoardModel.swift */; };
+		BA4FA22F1DDDF654001038E5 /* BitflyerGetBoardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA22B1DDDF654001038E5 /* BitflyerGetBoardRequest.swift */; };
+		BA4FA2301DDDF654001038E5 /* BitflyerGetBoardRequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA22C1DDDF654001038E5 /* BitflyerGetBoardRequestParameter.swift */; };
+		BA4FA2311DDDF654001038E5 /* BitflyerGetBoardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA22D1DDDF654001038E5 /* BitflyerGetBoardResponse.swift */; };
+		BA4FA2341DDDF65B001038E5 /* BitflyerGetHealthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2321DDDF65B001038E5 /* BitflyerGetHealthRequest.swift */; };
+		BA4FA2351DDDF65B001038E5 /* BitflyerGetHealthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2331DDDF65B001038E5 /* BitflyerGetHealthResponse.swift */; };
+		BA4FA23D1DDDF695001038E5 /* BitflyerGetPositionsParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2391DDDF695001038E5 /* BitflyerGetPositionsParameter.swift */; };
+		BA4FA23E1DDDF695001038E5 /* BitflyerGetPositionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA23A1DDDF695001038E5 /* BitflyerGetPositionsRequest.swift */; };
+		BA4FA23F1DDDF695001038E5 /* BitflyerGetPositionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA23B1DDDF695001038E5 /* BitflyerGetPositionsResponse.swift */; };
+		BA4FA2401DDDF695001038E5 /* BitflyerPositionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA23C1DDDF695001038E5 /* BitflyerPositionModel.swift */; };
+		BA4FA2451DDDF69D001038E5 /* BitflyerGetChildOrdersParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2411DDDF69D001038E5 /* BitflyerGetChildOrdersParameter.swift */; };
+		BA4FA2461DDDF69D001038E5 /* BitflyerGetChildOrdersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2421DDDF69D001038E5 /* BitflyerGetChildOrdersRequest.swift */; };
+		BA4FA2471DDDF69D001038E5 /* BitflyerGetChildOrdersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2431DDDF69D001038E5 /* BitflyerGetChildOrdersResponse.swift */; };
+		BA4FA2481DDDF69D001038E5 /* BitflyerOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2441DDDF69D001038E5 /* BitflyerOrderModel.swift */; };
+		BA4FA24C1DDDF6A4001038E5 /* BitflyerBalanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2491DDDF6A4001038E5 /* BitflyerBalanceModel.swift */; };
+		BA4FA24D1DDDF6A4001038E5 /* BitflyerGetBalanceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA24A1DDDF6A4001038E5 /* BitflyerGetBalanceRequest.swift */; };
+		BA4FA24E1DDDF6A4001038E5 /* BitflyerGetBalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA24B1DDDF6A4001038E5 /* BitflyerGetBalanceResponse.swift */; };
 		BA4FA2511DDDF6B0001038E5 /* BitTraderPrivateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA24F1DDDF6B0001038E5 /* BitTraderPrivateRequest.swift */; };
 		BA4FA2521DDDF6B0001038E5 /* BitTraderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2501DDDF6B0001038E5 /* BitTraderRequest.swift */; };
 		BA4FA2541DDDF6BA001038E5 /* BitflyerAPIEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2531DDDF6BA001038E5 /* BitflyerAPIEnum.swift */; };
@@ -141,15 +141,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07069C9E1DE16DCF002CEC31 /* SendChildOrderRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendChildOrderRequest.swift; sourceTree = "<group>"; };
-		07069CA01DE16DDA002CEC31 /* SendChildOrderResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendChildOrderResponse.swift; sourceTree = "<group>"; };
-		07069CA21DE17333002CEC31 /* SendChildOrderRequestParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendChildOrderRequestParameter.swift; sourceTree = "<group>"; };
-		07069CA51DE17E8D002CEC31 /* CancelChildOrderRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelChildOrderRequest.swift; sourceTree = "<group>"; };
-		07069CA71DE17E99002CEC31 /* CancelChildOrderResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelChildOrderResponse.swift; sourceTree = "<group>"; };
-		07069CA91DE17EAA002CEC31 /* CancelChildOrderParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelChildOrderParameter.swift; sourceTree = "<group>"; };
-		07069CAB1DE19BD4002CEC31 /* GetHealthRequestParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHealthRequestParameter.swift; sourceTree = "<group>"; };
+		07069C9E1DE16DCF002CEC31 /* BitflyerSendChildOrderRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerSendChildOrderRequest.swift; sourceTree = "<group>"; };
+		07069CA01DE16DDA002CEC31 /* BitflyerSendChildOrderResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerSendChildOrderResponse.swift; sourceTree = "<group>"; };
+		07069CA21DE17333002CEC31 /* BitflyerSendChildOrderRequestParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerSendChildOrderRequestParameter.swift; sourceTree = "<group>"; };
+		07069CA51DE17E8D002CEC31 /* BitflyerCancelChildOrderRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerCancelChildOrderRequest.swift; sourceTree = "<group>"; };
+		07069CA71DE17E99002CEC31 /* BitflyerCancelChildOrderResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerCancelChildOrderResponse.swift; sourceTree = "<group>"; };
+		07069CA91DE17EAA002CEC31 /* BitflyerCancelChildOrderParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerCancelChildOrderParameter.swift; sourceTree = "<group>"; };
+		07069CAB1DE19BD4002CEC31 /* BitflyerGetHealthRequestParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerGetHealthRequestParameter.swift; sourceTree = "<group>"; };
 		07069CAD1DE19C2D002CEC31 /* BitflyerTickerRequestParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerTickerRequestParameter.swift; sourceTree = "<group>"; };
-		07069CAF1DE19C64002CEC31 /* GetBalanceRequestParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBalanceRequestParameter.swift; sourceTree = "<group>"; };
+		07069CAF1DE19C64002CEC31 /* BitflyerGetBalanceRequestParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerGetBalanceRequestParameter.swift; sourceTree = "<group>"; };
 		07097DD41DC8C8CF00A08EEA /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		070E9E291DA66F1B0095A671 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		072441791DAC8C760059E872 /* BitTrader.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BitTrader.entitlements; sourceTree = "<group>"; };
@@ -221,23 +221,23 @@
 		BA4FA21C1DDDF25B001038E5 /* ApiKitApiExecuter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKitApiExecuter.swift; sourceTree = "<group>"; };
 		BA4FA21D1DDDF25B001038E5 /* ApiKitApiExecuterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKitApiExecuterProtocol.swift; sourceTree = "<group>"; };
 		BA4FA2201DDDF262001038E5 /* ApiKitRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKitRequestProtocol.swift; sourceTree = "<group>"; };
-		BA4FA22A1DDDF654001038E5 /* BoardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardModel.swift; sourceTree = "<group>"; };
-		BA4FA22B1DDDF654001038E5 /* GetBoardRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBoardRequest.swift; sourceTree = "<group>"; };
-		BA4FA22C1DDDF654001038E5 /* GetBoardRequestParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBoardRequestParameter.swift; sourceTree = "<group>"; };
-		BA4FA22D1DDDF654001038E5 /* GetBoardResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBoardResponse.swift; sourceTree = "<group>"; };
-		BA4FA2321DDDF65B001038E5 /* GetHealthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHealthRequest.swift; sourceTree = "<group>"; };
-		BA4FA2331DDDF65B001038E5 /* GetHealthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHealthResponse.swift; sourceTree = "<group>"; };
-		BA4FA2391DDDF695001038E5 /* GetPositionsParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPositionsParameter.swift; sourceTree = "<group>"; };
-		BA4FA23A1DDDF695001038E5 /* GetPositionsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPositionsRequest.swift; sourceTree = "<group>"; };
-		BA4FA23B1DDDF695001038E5 /* GetPositionsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPositionsResponse.swift; sourceTree = "<group>"; };
-		BA4FA23C1DDDF695001038E5 /* PositionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionModel.swift; sourceTree = "<group>"; };
-		BA4FA2411DDDF69D001038E5 /* GetChildOrdersParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetChildOrdersParameter.swift; sourceTree = "<group>"; };
-		BA4FA2421DDDF69D001038E5 /* GetChildOrdersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetChildOrdersRequest.swift; sourceTree = "<group>"; };
-		BA4FA2431DDDF69D001038E5 /* GetChildOrdersResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetChildOrdersResponse.swift; sourceTree = "<group>"; };
-		BA4FA2441DDDF69D001038E5 /* OrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
-		BA4FA2491DDDF6A4001038E5 /* BalanceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceModel.swift; sourceTree = "<group>"; };
-		BA4FA24A1DDDF6A4001038E5 /* GetBalanceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBalanceRequest.swift; sourceTree = "<group>"; };
-		BA4FA24B1DDDF6A4001038E5 /* GetBalanceResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBalanceResponse.swift; sourceTree = "<group>"; };
+		BA4FA22A1DDDF654001038E5 /* BitflyerBoardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerBoardModel.swift; sourceTree = "<group>"; };
+		BA4FA22B1DDDF654001038E5 /* BitflyerGetBoardRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerGetBoardRequest.swift; sourceTree = "<group>"; };
+		BA4FA22C1DDDF654001038E5 /* BitflyerGetBoardRequestParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerGetBoardRequestParameter.swift; sourceTree = "<group>"; };
+		BA4FA22D1DDDF654001038E5 /* BitflyerGetBoardResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerGetBoardResponse.swift; sourceTree = "<group>"; };
+		BA4FA2321DDDF65B001038E5 /* BitflyerGetHealthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerGetHealthRequest.swift; sourceTree = "<group>"; };
+		BA4FA2331DDDF65B001038E5 /* BitflyerGetHealthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerGetHealthResponse.swift; sourceTree = "<group>"; };
+		BA4FA2391DDDF695001038E5 /* BitflyerGetPositionsParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerGetPositionsParameter.swift; sourceTree = "<group>"; };
+		BA4FA23A1DDDF695001038E5 /* BitflyerGetPositionsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerGetPositionsRequest.swift; sourceTree = "<group>"; };
+		BA4FA23B1DDDF695001038E5 /* BitflyerGetPositionsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerGetPositionsResponse.swift; sourceTree = "<group>"; };
+		BA4FA23C1DDDF695001038E5 /* BitflyerPositionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerPositionModel.swift; sourceTree = "<group>"; };
+		BA4FA2411DDDF69D001038E5 /* BitflyerGetChildOrdersParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerGetChildOrdersParameter.swift; sourceTree = "<group>"; };
+		BA4FA2421DDDF69D001038E5 /* BitflyerGetChildOrdersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerGetChildOrdersRequest.swift; sourceTree = "<group>"; };
+		BA4FA2431DDDF69D001038E5 /* BitflyerGetChildOrdersResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerGetChildOrdersResponse.swift; sourceTree = "<group>"; };
+		BA4FA2441DDDF69D001038E5 /* BitflyerOrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerOrderModel.swift; sourceTree = "<group>"; };
+		BA4FA2491DDDF6A4001038E5 /* BitflyerBalanceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerBalanceModel.swift; sourceTree = "<group>"; };
+		BA4FA24A1DDDF6A4001038E5 /* BitflyerGetBalanceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerGetBalanceRequest.swift; sourceTree = "<group>"; };
+		BA4FA24B1DDDF6A4001038E5 /* BitflyerGetBalanceResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerGetBalanceResponse.swift; sourceTree = "<group>"; };
 		BA4FA24F1DDDF6B0001038E5 /* BitTraderPrivateRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitTraderPrivateRequest.swift; sourceTree = "<group>"; };
 		BA4FA2501DDDF6B0001038E5 /* BitTraderRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitTraderRequest.swift; sourceTree = "<group>"; };
 		BA4FA2531DDDF6BA001038E5 /* BitflyerAPIEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerAPIEnum.swift; sourceTree = "<group>"; };
@@ -299,9 +299,9 @@
 		07069C9D1DE16D9A002CEC31 /* SendChildOrder */ = {
 			isa = PBXGroup;
 			children = (
-				07069C9E1DE16DCF002CEC31 /* SendChildOrderRequest.swift */,
-				07069CA01DE16DDA002CEC31 /* SendChildOrderResponse.swift */,
-				07069CA21DE17333002CEC31 /* SendChildOrderRequestParameter.swift */,
+				07069C9E1DE16DCF002CEC31 /* BitflyerSendChildOrderRequest.swift */,
+				07069CA01DE16DDA002CEC31 /* BitflyerSendChildOrderResponse.swift */,
+				07069CA21DE17333002CEC31 /* BitflyerSendChildOrderRequestParameter.swift */,
 			);
 			path = SendChildOrder;
 			sourceTree = "<group>";
@@ -309,9 +309,9 @@
 		07069CA41DE17E62002CEC31 /* CancelChildOrder */ = {
 			isa = PBXGroup;
 			children = (
-				07069CA51DE17E8D002CEC31 /* CancelChildOrderRequest.swift */,
-				07069CA71DE17E99002CEC31 /* CancelChildOrderResponse.swift */,
-				07069CA91DE17EAA002CEC31 /* CancelChildOrderParameter.swift */,
+				07069CA51DE17E8D002CEC31 /* BitflyerCancelChildOrderRequest.swift */,
+				07069CA71DE17E99002CEC31 /* BitflyerCancelChildOrderResponse.swift */,
+				07069CA91DE17EAA002CEC31 /* BitflyerCancelChildOrderParameter.swift */,
 			);
 			path = CancelChildOrder;
 			sourceTree = "<group>";
@@ -710,9 +710,9 @@
 		BA4FA2281DDDF639001038E5 /* GetHealth */ = {
 			isa = PBXGroup;
 			children = (
-				BA4FA2321DDDF65B001038E5 /* GetHealthRequest.swift */,
-				BA4FA2331DDDF65B001038E5 /* GetHealthResponse.swift */,
-				07069CAB1DE19BD4002CEC31 /* GetHealthRequestParameter.swift */,
+				BA4FA2321DDDF65B001038E5 /* BitflyerGetHealthRequest.swift */,
+				BA4FA2331DDDF65B001038E5 /* BitflyerGetHealthResponse.swift */,
+				07069CAB1DE19BD4002CEC31 /* BitflyerGetHealthRequestParameter.swift */,
 			);
 			path = GetHealth;
 			sourceTree = "<group>";
@@ -720,10 +720,10 @@
 		BA4FA2291DDDF647001038E5 /* GetBoard */ = {
 			isa = PBXGroup;
 			children = (
-				BA4FA22B1DDDF654001038E5 /* GetBoardRequest.swift */,
-				BA4FA22D1DDDF654001038E5 /* GetBoardResponse.swift */,
-				BA4FA22C1DDDF654001038E5 /* GetBoardRequestParameter.swift */,
-				BA4FA22A1DDDF654001038E5 /* BoardModel.swift */,
+				BA4FA22B1DDDF654001038E5 /* BitflyerGetBoardRequest.swift */,
+				BA4FA22D1DDDF654001038E5 /* BitflyerGetBoardResponse.swift */,
+				BA4FA22C1DDDF654001038E5 /* BitflyerGetBoardRequestParameter.swift */,
+				BA4FA22A1DDDF654001038E5 /* BitflyerBoardModel.swift */,
 			);
 			path = GetBoard;
 			sourceTree = "<group>";
@@ -731,10 +731,10 @@
 		BA4FA2361DDDF66A001038E5 /* GetBalance */ = {
 			isa = PBXGroup;
 			children = (
-				BA4FA24A1DDDF6A4001038E5 /* GetBalanceRequest.swift */,
-				BA4FA24B1DDDF6A4001038E5 /* GetBalanceResponse.swift */,
-				07069CAF1DE19C64002CEC31 /* GetBalanceRequestParameter.swift */,
-				BA4FA2491DDDF6A4001038E5 /* BalanceModel.swift */,
+				BA4FA24A1DDDF6A4001038E5 /* BitflyerGetBalanceRequest.swift */,
+				BA4FA24B1DDDF6A4001038E5 /* BitflyerGetBalanceResponse.swift */,
+				07069CAF1DE19C64002CEC31 /* BitflyerGetBalanceRequestParameter.swift */,
+				BA4FA2491DDDF6A4001038E5 /* BitflyerBalanceModel.swift */,
 			);
 			path = GetBalance;
 			sourceTree = "<group>";
@@ -742,10 +742,10 @@
 		BA4FA2371DDDF67B001038E5 /* GetChildOrders */ = {
 			isa = PBXGroup;
 			children = (
-				BA4FA2421DDDF69D001038E5 /* GetChildOrdersRequest.swift */,
-				BA4FA2431DDDF69D001038E5 /* GetChildOrdersResponse.swift */,
-				BA4FA2411DDDF69D001038E5 /* GetChildOrdersParameter.swift */,
-				BA4FA2441DDDF69D001038E5 /* OrderModel.swift */,
+				BA4FA2421DDDF69D001038E5 /* BitflyerGetChildOrdersRequest.swift */,
+				BA4FA2431DDDF69D001038E5 /* BitflyerGetChildOrdersResponse.swift */,
+				BA4FA2411DDDF69D001038E5 /* BitflyerGetChildOrdersParameter.swift */,
+				BA4FA2441DDDF69D001038E5 /* BitflyerOrderModel.swift */,
 			);
 			path = GetChildOrders;
 			sourceTree = "<group>";
@@ -753,10 +753,10 @@
 		BA4FA2381DDDF689001038E5 /* GetPositions */ = {
 			isa = PBXGroup;
 			children = (
-				BA4FA23A1DDDF695001038E5 /* GetPositionsRequest.swift */,
-				BA4FA23B1DDDF695001038E5 /* GetPositionsResponse.swift */,
-				BA4FA2391DDDF695001038E5 /* GetPositionsParameter.swift */,
-				BA4FA23C1DDDF695001038E5 /* PositionModel.swift */,
+				BA4FA23A1DDDF695001038E5 /* BitflyerGetPositionsRequest.swift */,
+				BA4FA23B1DDDF695001038E5 /* BitflyerGetPositionsResponse.swift */,
+				BA4FA2391DDDF695001038E5 /* BitflyerGetPositionsParameter.swift */,
+				BA4FA23C1DDDF695001038E5 /* BitflyerPositionModel.swift */,
 			);
 			path = GetPositions;
 			sourceTree = "<group>";
@@ -1253,14 +1253,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA4FA23F1DDDF695001038E5 /* GetPositionsResponse.swift in Sources */,
+				BA4FA23F1DDDF695001038E5 /* BitflyerGetPositionsResponse.swift in Sources */,
 				07BDF9B81DD1F55E006C99CA /* PagerViewController.swift in Sources */,
 				BA9672931DDCBE2900AB6384 /* ApiExecuterProtocol.swift in Sources */,
 				07932C711DBD023100E38530 /* RateViewModel.swift in Sources */,
 				072441881DACBEB40059E872 /* RegistKeyViewModel.swift in Sources */,
 				07AFA1761DD84E9600A8B981 /* OrderListReducer.swift in Sources */,
-				07069C9F1DE16DCF002CEC31 /* SendChildOrderRequest.swift in Sources */,
-				07069CB01DE19C64002CEC31 /* GetBalanceRequestParameter.swift in Sources */,
+				07069C9F1DE16DCF002CEC31 /* BitflyerSendChildOrderRequest.swift in Sources */,
+				07069CB01DE19C64002CEC31 /* BitflyerGetBalanceRequestParameter.swift in Sources */,
 				07097DD51DC8C8CF00A08EEA /* StringUtils.swift in Sources */,
 				BA76BE631DDF2CAB005514AC /* BtcBoxTickerResponse.swift in Sources */,
 				BA76BE701DDF2FEE005514AC /* BitflyerTickerRequest.swift in Sources */,
@@ -1279,10 +1279,10 @@
 				07C7CC591DD4B50E00F7A398 /* OrderListState.swift in Sources */,
 				07BD522A1DA3E4AE00DA54B8 /* AppDelegate.swift in Sources */,
 				07DCBF2C1DCB734800B60008 /* PositionListViewModel.swift in Sources */,
-				07069CAA1DE17EAA002CEC31 /* CancelChildOrderParameter.swift in Sources */,
+				07069CAA1DE17EAA002CEC31 /* BitflyerCancelChildOrderParameter.swift in Sources */,
 				07DCBF2F1DCB737600B60008 /* PositionTableViewCell.swift in Sources */,
-				BA4FA2351DDDF65B001038E5 /* GetHealthResponse.swift in Sources */,
-				07069CA31DE17333002CEC31 /* SendChildOrderRequestParameter.swift in Sources */,
+				BA4FA2351DDDF65B001038E5 /* BitflyerGetHealthResponse.swift in Sources */,
+				07069CA31DE17333002CEC31 /* BitflyerSendChildOrderRequestParameter.swift in Sources */,
 				07932C681DBCDD6600E38530 /* RateListViewController.swift in Sources */,
 				07B8545A1DB1DCE8009E3181 /* NumberPadViewController.swift in Sources */,
 				07B8545D1DB1ECEF009E3181 /* NumberPadAction.swift in Sources */,
@@ -1299,49 +1299,49 @@
 				BA76BE491DDF2AF2005514AC /* BtcBoxRequest.swift in Sources */,
 				073A01D01DDB3705001F6E9D /* RxPlusMinusInputFieldDelegateProxy.swift in Sources */,
 				072B67411DAA7A0900F276AF /* Extension.swift in Sources */,
-				BA4FA23E1DDDF695001038E5 /* GetPositionsRequest.swift in Sources */,
-				BA4FA2311DDDF654001038E5 /* GetBoardResponse.swift in Sources */,
+				BA4FA23E1DDDF695001038E5 /* BitflyerGetPositionsRequest.swift in Sources */,
+				BA4FA2311DDDF654001038E5 /* BitflyerGetBoardResponse.swift in Sources */,
 				BA76BE5B1DDF2C50005514AC /* KrakenTickerRequest.swift in Sources */,
 				BA4FA2211DDDF262001038E5 /* ApiKitRequestProtocol.swift in Sources */,
-				BA4FA2471DDDF69D001038E5 /* GetChildOrdersResponse.swift in Sources */,
-				BA4FA24E1DDDF6A4001038E5 /* GetBalanceResponse.swift in Sources */,
-				BA4FA22F1DDDF654001038E5 /* GetBoardRequest.swift in Sources */,
+				BA4FA2471DDDF69D001038E5 /* BitflyerGetChildOrdersResponse.swift in Sources */,
+				BA4FA24E1DDDF6A4001038E5 /* BitflyerGetBalanceResponse.swift in Sources */,
+				BA4FA22F1DDDF654001038E5 /* BitflyerGetBoardRequest.swift in Sources */,
 				07069CAE1DE19C2D002CEC31 /* BitflyerTickerRequestParameter.swift in Sources */,
-				BA4FA24D1DDDF6A4001038E5 /* GetBalanceRequest.swift in Sources */,
+				BA4FA24D1DDDF6A4001038E5 /* BitflyerGetBalanceRequest.swift in Sources */,
 				072441A51DADD5E90059E872 /* BTCChangerViewController.swift in Sources */,
 				BA4FA2521DDDF6B0001038E5 /* BitTraderRequest.swift in Sources */,
 				BA76BE4B1DDF2AFE005514AC /* ZaifRequest.swift in Sources */,
 				BA76BE5D1DDF2C7F005514AC /* ZaifTickerRequest.swift in Sources */,
 				07B854621DB24F83009E3181 /* IndentLabel.swift in Sources */,
 				07B8545F1DB205DB009E3181 /* NumberPadState.swift in Sources */,
-				BA4FA24C1DDDF6A4001038E5 /* BalanceModel.swift in Sources */,
+				BA4FA24C1DDDF6A4001038E5 /* BitflyerBalanceModel.swift in Sources */,
 				BA76BE5F1DDF2C96005514AC /* ZaifTickerResponse.swift in Sources */,
 				BAD390221DDF8C8D001FA3F5 /* ResultModel.swift in Sources */,
 				BA76BE4D1DDF2B0D005514AC /* KrakenRequest.swift in Sources */,
-				BA4FA23D1DDDF695001038E5 /* GetPositionsParameter.swift in Sources */,
+				BA4FA23D1DDDF695001038E5 /* BitflyerGetPositionsParameter.swift in Sources */,
 				072441931DACC1E70059E872 /* MenuRootViewController.swift in Sources */,
-				BA4FA2301DDDF654001038E5 /* GetBoardRequestParameter.swift in Sources */,
-				07069CA61DE17E8D002CEC31 /* CancelChildOrderRequest.swift in Sources */,
-				BA4FA2401DDDF695001038E5 /* PositionModel.swift in Sources */,
+				BA4FA2301DDDF654001038E5 /* BitflyerGetBoardRequestParameter.swift in Sources */,
+				07069CA61DE17E8D002CEC31 /* BitflyerCancelChildOrderRequest.swift in Sources */,
+				BA4FA2401DDDF695001038E5 /* BitflyerPositionModel.swift in Sources */,
 				BA76BE6D1DDF2F32005514AC /* CoincheckTickerResponse.swift in Sources */,
-				BA4FA22E1DDDF654001038E5 /* BoardModel.swift in Sources */,
+				BA4FA22E1DDDF654001038E5 /* BitflyerBoardModel.swift in Sources */,
 				072441AA1DADD6F30059E872 /* MenuListViewController.swift in Sources */,
-				BA4FA2451DDDF69D001038E5 /* GetChildOrdersParameter.swift in Sources */,
+				BA4FA2451DDDF69D001038E5 /* BitflyerGetChildOrdersParameter.swift in Sources */,
 				BA4FA2541DDDF6BA001038E5 /* BitflyerAPIEnum.swift in Sources */,
 				BA76BE611DDF2CA1005514AC /* KrakenTickerResponse.swift in Sources */,
 				07DCBF291DCB718E00B60008 /* PositionListViewController.swift in Sources */,
-				07069CA11DE16DDA002CEC31 /* SendChildOrderResponse.swift in Sources */,
+				07069CA11DE16DDA002CEC31 /* BitflyerSendChildOrderResponse.swift in Sources */,
 				0724418F1DACC1D40059E872 /* MarketRootViewController.swift in Sources */,
-				BA4FA2341DDDF65B001038E5 /* GetHealthRequest.swift in Sources */,
-				BA4FA2481DDDF69D001038E5 /* OrderModel.swift in Sources */,
+				BA4FA2341DDDF65B001038E5 /* BitflyerGetHealthRequest.swift in Sources */,
+				BA4FA2481DDDF69D001038E5 /* BitflyerOrderModel.swift in Sources */,
 				072441AD1DADD7080059E872 /* MenuListViewModel.swift in Sources */,
-				BA4FA2461DDDF69D001038E5 /* GetChildOrdersRequest.swift in Sources */,
+				BA4FA2461DDDF69D001038E5 /* BitflyerGetChildOrdersRequest.swift in Sources */,
 				072441B31DAE03120059E872 /* PlusMinusInputField.swift in Sources */,
 				BA51DEC31DCEE59800D5029B /* NumberPadViewController+RxCreate.swift in Sources */,
-				07069CAC1DE19BD4002CEC31 /* GetHealthRequestParameter.swift in Sources */,
+				07069CAC1DE19BD4002CEC31 /* BitflyerGetHealthRequestParameter.swift in Sources */,
 				0724419B1DACC20A0059E872 /* TradeRootViewController.swift in Sources */,
 				BA4FA2511DDDF6B0001038E5 /* BitTraderPrivateRequest.swift in Sources */,
-				07069CA81DE17E99002CEC31 /* CancelChildOrderResponse.swift in Sources */,
+				07069CA81DE17E99002CEC31 /* BitflyerCancelChildOrderResponse.swift in Sources */,
 				BA9672851DDCBABC00AB6384 /* RequestProtocol.swift in Sources */,
 				BA96728F1DDCBDEA00AB6384 /* Api.swift in Sources */,
 			);

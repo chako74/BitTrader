@@ -11,5 +11,5 @@ import RxSwift
 
 struct PositionListViewModel {
     
-    let positionList: Variable<[PositionModel]> = Variable([])
+    let positionList: Variable<[BitflyerPositionModel]> = Variable([])
 }

@@ -18,7 +18,7 @@ enum RequestStatus: Int {
 struct OrderListState: StateType {
 
     let requestStatus: RequestStatus
-    let orderList: Array<OrderModel>
+    let orderList: Array<BitflyerOrderModel>
     let error: Error?
     
     func isNetworkActivityIndicatorVisible() -> Bool {

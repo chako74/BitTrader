@@ -46,8 +46,8 @@ class PositionListViewController: UIViewController {
         let backgroundScheduler = SerialDispatchQueueScheduler(qos: .default)
         rxTimer
             .subscribeOn(backgroundScheduler)
-            .flatMap {_ -> Observable<GetPositionsRequest.Response> in
-                let request = GetPositionsRequest(requestParameter: GetPositionsParameter())
+            .flatMap {_ -> Observable<BitflyerGetPositionsRequest.Response> in
+                let request = BitflyerGetPositionsRequest(requestParameter: BitflyerGetPositionsParameter())
                 return Session.rx_sendRequest(request: request)
             }
             .observeOn(MainScheduler.instance)

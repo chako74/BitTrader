@@ -1,5 +1,5 @@
 //
-//  SendChildOrderResponse.swift
+//  BitflyerSendChildOrderResponse.swift
 //  BitTrader
 //
 //  Created by chako on 2016/11/20.
@@ -9,13 +9,13 @@
 import APIKit
 import Himotoki
 
-struct SendChildOrderResponse {
+struct BitflyerSendChildOrderResponse {
     let childOrderAcceptanceId: String
 }
 
-extension SendChildOrderResponse: Decodable {
+extension BitflyerSendChildOrderResponse: Decodable {
     
-    static func decode(_ e: Extractor) throws -> SendChildOrderResponse {
+    static func decode(_ e: Extractor) throws -> BitflyerSendChildOrderResponse {
         return try self.init(
             childOrderAcceptanceId: e <| Bitflyer.APIKey.childOrderAcceptanceId.keyPath())
     }

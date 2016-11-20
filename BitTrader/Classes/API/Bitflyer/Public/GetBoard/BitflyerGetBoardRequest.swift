@@ -1,5 +1,5 @@
 //
-//  GetBoardRequest.swift
+//  BitflyerGetBoardRequest.swift
 //  BitTrader
 //
 //  Created by chako on 2016/10/14.
@@ -8,11 +8,11 @@
 
 import APIKit
 
-struct GetBoardRequest: BitTraderRequest {
+struct BitflyerGetBoardRequest: BitTraderRequest {
 
-    typealias Response = GetBoardResponse
+    typealias Response = BitflyerGetBoardResponse
 
-    var requestParameter: GetBoardRequestParameter?
+    var requestParameter: BitflyerGetBoardRequestParameter?
     
     var method: HTTPMethod {
         return .get

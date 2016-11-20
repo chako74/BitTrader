@@ -132,8 +132,8 @@ class BTCChangerViewController: UIViewController, NumberPadViewDelegate {
         let backgroundScheduler = SerialDispatchQueueScheduler(qos: .default)
         rxTimer
             .subscribeOn(backgroundScheduler)
-            .flatMap {_ -> Observable<GetBoardRequest.Response> in
-                let request = GetBoardRequest(requestParameter: GetBoardRequestParameter(productCode: .fxBtcJpy))
+            .flatMap {_ -> Observable<BitflyerGetBoardRequest.Response> in
+                let request = BitflyerGetBoardRequest(requestParameter: BitflyerGetBoardRequestParameter(productCode: .fxBtcJpy))
                 return Session.rx_sendRequest(request: request)
             }
             .observeOn(MainScheduler.instance)

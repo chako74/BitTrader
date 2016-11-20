@@ -1,5 +1,5 @@
 //
-//  CancelChildOrderRequest.swift
+//  BitflyerCancelChildOrderRequest.swift
 //  BitTrader
 //
 //  Created by chako on 2016/11/20.
@@ -8,11 +8,11 @@
 
 import APIKit
 
-struct CancelChildOrderRequest: BitTraderPrivateRequest {
+struct BitflyerCancelChildOrderRequest: BitTraderPrivateRequest {
     
-    typealias Response = CancelChildOrderResponse
+    typealias Response = BitflyerCancelChildOrderResponse
     
-    var requestParameter: CancelChildOrderParameter?
+    var requestParameter: BitflyerCancelChildOrderParameter?
     
     var method: HTTPMethod {
         return .get

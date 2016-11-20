@@ -9,11 +9,11 @@
 import APIKit
 import Himotoki
 
-struct CancelChildOrderResponse {
+struct BitflyerCancelChildOrderResponse {
 }
 
-extension CancelChildOrderResponse: Decodable {
-    static func decode(_ e: Extractor) throws -> CancelChildOrderResponse {
+extension BitflyerCancelChildOrderResponse: Decodable {
+    static func decode(_ e: Extractor) throws -> BitflyerCancelChildOrderResponse {
         return self.init()
     }
 }

@@ -6,10 +6,10 @@
 //  Copyright © 2016年 Bit Trader. All rights reserved.
 //
 
-struct GetBalanceRequestParameter {
+struct BitflyerGetBalanceRequestParameter {
 }
 
-extension GetBalanceRequestParameter: BitTraderRequestParameter {
+extension BitflyerGetBalanceRequestParameter: BitTraderRequestParameter {
     
     func createParameters() -> [String : String]? {
         return nil

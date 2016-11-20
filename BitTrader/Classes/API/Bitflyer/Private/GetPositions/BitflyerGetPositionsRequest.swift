@@ -1,5 +1,5 @@
 //
-//  GetPositionsRequest.swift
+//  BitflyerGetPositionsRequest.swift
 //  BitTrader
 //
 //  Created by chako on 2016/11/03.
@@ -8,11 +8,11 @@
 
 import APIKit
 
-struct GetPositionsRequest: BitTraderPrivateRequest {
+struct BitflyerGetPositionsRequest: BitTraderPrivateRequest {
     
-    typealias Response = GetPositionsResponse
+    typealias Response = BitflyerGetPositionsResponse
     
-    var requestParameter: GetPositionsParameter?
+    var requestParameter: BitflyerGetPositionsParameter?
     
     var method: HTTPMethod {
         return .get

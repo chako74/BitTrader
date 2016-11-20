@@ -1,5 +1,5 @@
 //
-//  GetBalanceRequest.swift
+//  BitflyerGetBalanceRequest.swift
 //  BitTrader
 //
 //  Created by chako on 2016/10/08.
@@ -8,11 +8,11 @@
 
 import APIKit
 
-struct GetBalanceRequest: BitTraderPrivateRequest {
+struct BitflyerGetBalanceRequest: BitTraderPrivateRequest {
     
-    typealias Response = GetBalanceResponse
+    typealias Response = BitflyerGetBalanceResponse
     
-    var requestParameter: GetBalanceRequestParameter?
+    var requestParameter: BitflyerGetBalanceRequestParameter?
     
     var method: HTTPMethod {
         return .get

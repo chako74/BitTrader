@@ -1,5 +1,5 @@
 //
-//  SendChildOrderRequest.swift
+//  BitflyerSendChildOrderRequest.swift
 //  BitTrader
 //
 //  Created by chako on 2016/11/20.
@@ -8,11 +8,11 @@
 
 import APIKit
 
-struct SendChildOrderRequest: BitTraderPrivateRequest {
+struct BitflyerSendChildOrderRequest: BitTraderPrivateRequest {
     
-    typealias Response = SendChildOrderResponse
+    typealias Response = BitflyerSendChildOrderResponse
     
-    var requestParameter: SendChildOrderRequestParameter?
+    var requestParameter: BitflyerSendChildOrderRequestParameter?
     
     var method: HTTPMethod {
         return .post

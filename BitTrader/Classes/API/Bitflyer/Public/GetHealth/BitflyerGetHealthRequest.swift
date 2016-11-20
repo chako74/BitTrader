@@ -1,5 +1,5 @@
 //
-//  GetHealthRequest.swift
+//  BitflyerGetHealthRequest.swift
 //  BitTrader
 //
 //  Created by chako on 2016/10/07.
@@ -8,11 +8,11 @@
 
 import APIKit
 
-struct GetHealthRequest: BitTraderRequest {
+struct BitflyerGetHealthRequest: BitTraderRequest {
 
-    typealias Response = GetHealthResponse
+    typealias Response = BitflyerGetHealthResponse
     
-    var requestParameter: GetHealthRequestParameter?
+    var requestParameter: BitflyerGetHealthRequestParameter?
     
     var method: HTTPMethod {
         return .get
