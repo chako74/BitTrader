@@ -17,6 +17,6 @@ extension BitflyerSendChildOrderResponse: Decodable {
     
     static func decode(_ e: Extractor) throws -> BitflyerSendChildOrderResponse {
         return try self.init(
-            childOrderAcceptanceId: e <| Bitflyer.APIKey.childOrderAcceptanceId.keyPath())
+            childOrderAcceptanceId: e <| Bitflyer.ApiKey.childOrderAcceptanceId.keyPath())
     }
 }

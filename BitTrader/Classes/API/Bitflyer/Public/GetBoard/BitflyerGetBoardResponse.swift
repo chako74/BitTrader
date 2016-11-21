@@ -19,8 +19,8 @@ extension BitflyerGetBoardResponse: Decodable {
     
     static func decode(_ e: Extractor) throws -> BitflyerGetBoardResponse {
         return try self.init(
-            midPrice: e <| Bitflyer.APIKey.midPrice.keyPath(),
-            bids: e <|| Bitflyer.APIKey.bids.keyPath(),
-            asks: e <|| Bitflyer.APIKey.asks.keyPath())
+            midPrice: e <| Bitflyer.ApiKey.midPrice.keyPath(),
+            bids: e <|| Bitflyer.ApiKey.bids.keyPath(),
+            asks: e <|| Bitflyer.ApiKey.asks.keyPath())
     }
 }

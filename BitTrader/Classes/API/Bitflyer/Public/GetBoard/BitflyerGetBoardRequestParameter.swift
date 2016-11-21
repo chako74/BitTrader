@@ -16,7 +16,7 @@ extension BitflyerGetBoardRequestParameter: BitTraderRequestParameter {
         
         var dic = [String: String]()
         if let productCode = self.productCode {
-            dic[Bitflyer.APIKey.productCode.rawValue] = productCode.rawValue
+            dic[Bitflyer.ApiKey.productCode.rawValue] = productCode.rawValue
         }
         
         if 0 < dic.count {

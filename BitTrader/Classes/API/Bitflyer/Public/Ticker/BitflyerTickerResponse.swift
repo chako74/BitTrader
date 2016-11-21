@@ -21,11 +21,11 @@ extension BitflyerTickerResponse: Decodable {
 
     static func decode(_ e: Extractor) throws -> BitflyerTickerResponse {
         return try self.init(
-            last: e <| Bitflyer.APIKey.ltp.keyPath(),
-            bid: e <| Bitflyer.APIKey.bestBid.keyPath(),
-            ask: e <| Bitflyer.APIKey.bestAsk.keyPath(),
-            volume: e <| Bitflyer.APIKey.volume.keyPath(),
-            timestamp: e <| Bitflyer.APIKey.timestamp.keyPath()
+            last: e <| Bitflyer.ApiKey.ltp.keyPath(),
+            bid: e <| Bitflyer.ApiKey.bestBid.keyPath(),
+            ask: e <| Bitflyer.ApiKey.bestAsk.keyPath(),
+            volume: e <| Bitflyer.ApiKey.volume.keyPath(),
+            timestamp: e <| Bitflyer.ApiKey.timestamp.keyPath()
         )
     }
 }
