@@ -1,5 +1,5 @@
 //
-//  BitflyerAPIEnum.swift
+//  BitflyerApiEnum.swift
 //  BitTrader
 //
 //  Created by chako on 2016/10/14.
@@ -52,7 +52,7 @@ enum Bitflyer {
         case fok = "FOK"
     }
     
-    enum APIKey: String {
+    enum ApiKey: String {
         case productCode = "product_code"
         case side = "side"
         case price = "price"
@@ -98,7 +98,6 @@ enum Bitflyer {
             return KeyPath.init(rawValue)
         }
     }
-    
     
     enum OrderType {
         case market

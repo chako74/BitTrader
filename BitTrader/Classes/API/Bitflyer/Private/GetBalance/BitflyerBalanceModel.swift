@@ -18,8 +18,8 @@ extension BitflyerBalanceModel: Decodable {
     
     static func decode(_ e: Extractor) throws -> BitflyerBalanceModel {
         return try self.init(
-            currencyCode: Bitflyer.CurrencyCode(rawValue: e <| Bitflyer.APIKey.currencyCode.keyPath())!,
-            amount: e <| Bitflyer.APIKey.amount.keyPath(),
-            available: e <| Bitflyer.APIKey.available.keyPath())
+            currencyCode: Bitflyer.CurrencyCode(rawValue: e <| Bitflyer.ApiKey.currencyCode.keyPath())!,
+            amount: e <| Bitflyer.ApiKey.amount.keyPath(),
+            available: e <| Bitflyer.ApiKey.available.keyPath())
     }
 }

@@ -17,7 +17,7 @@ extension BitflyerBoardModel: Decodable {
     
     static func decode(_ e: Extractor) throws -> BitflyerBoardModel {
         return try self.init(
-            price: e <| Bitflyer.APIKey.price.keyPath(),
-            size: e <| Bitflyer.APIKey.size.keyPath())
+            price: e <| Bitflyer.ApiKey.price.keyPath(),
+            size: e <| Bitflyer.ApiKey.size.keyPath())
     }
 }

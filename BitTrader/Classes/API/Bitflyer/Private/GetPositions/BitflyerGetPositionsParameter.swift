@@ -14,7 +14,7 @@ extension BitflyerGetPositionsParameter: BitTraderRequestParameter {
     
     func createParameters() -> [String : String]? {
         var dic = [String: String]()
-        dic[Bitflyer.APIKey.productCode.rawValue] = productCode.rawValue
+        dic[Bitflyer.ApiKey.productCode.rawValue] = productCode.rawValue
         
         return dic
     }

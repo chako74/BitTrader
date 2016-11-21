@@ -21,12 +21,12 @@ extension BitflyerCancelChildOrderParameter: BitTraderRequestParameter {
         
         switch cancelChildOrderType {
         case let .orderId(productCode, orderId):
-            dic[Bitflyer.APIKey.productCode.rawValue] = productCode.rawValue
-            dic[Bitflyer.APIKey.childOrderId.rawValue] = orderId
+            dic[Bitflyer.ApiKey.productCode.rawValue] = productCode.rawValue
+            dic[Bitflyer.ApiKey.childOrderId.rawValue] = orderId
             
         case let .acceptanceId(productCode, acceptanceId):
-            dic[Bitflyer.APIKey.productCode.rawValue] = productCode.rawValue
-            dic[Bitflyer.APIKey.childOrderAcceptanceId.rawValue] = acceptanceId
+            dic[Bitflyer.ApiKey.productCode.rawValue] = productCode.rawValue
+            dic[Bitflyer.ApiKey.childOrderAcceptanceId.rawValue] = acceptanceId
         }
         
         return dic

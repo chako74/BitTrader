@@ -23,22 +23,22 @@ extension BitflyerSendChildOrderRequestParameter: BitTraderRequestParameter {
     func createParameters() -> [String : String]? {
         
         var dic = [String: String]()
-        dic[Bitflyer.APIKey.productCode.rawValue] = productCode.rawValue
-        dic[Bitflyer.APIKey.side.rawValue] = side.rawValue
+        dic[Bitflyer.ApiKey.productCode.rawValue] = productCode.rawValue
+        dic[Bitflyer.ApiKey.side.rawValue] = side.rawValue
         
         switch orderType {
         case .market:
-            dic[Bitflyer.APIKey.childOrderType.rawValue] = Bitflyer.ChildOrderType.market.rawValue
+            dic[Bitflyer.ApiKey.childOrderType.rawValue] = Bitflyer.ChildOrderType.market.rawValue
         case let .limit(price):
-            dic[Bitflyer.APIKey.childOrderType.rawValue] = Bitflyer.ChildOrderType.limit.rawValue
-            dic[Bitflyer.APIKey.price.rawValue] = String(price)
+            dic[Bitflyer.ApiKey.childOrderType.rawValue] = Bitflyer.ChildOrderType.limit.rawValue
+            dic[Bitflyer.ApiKey.price.rawValue] = String(price)
         }
-        dic[Bitflyer.APIKey.size.rawValue] = String(size)
+        dic[Bitflyer.ApiKey.size.rawValue] = String(size)
         if let minuteToExpire = self.minuteToExpire {
-            dic[Bitflyer.APIKey.minuteToExpire.rawValue] = String(minuteToExpire)
+            dic[Bitflyer.ApiKey.minuteToExpire.rawValue] = String(minuteToExpire)
         }
         if let timeInForce = self.timeInForce {
-            dic[Bitflyer.APIKey.timeInForce.rawValue] = timeInForce.rawValue
+            dic[Bitflyer.ApiKey.timeInForce.rawValue] = timeInForce.rawValue
         }
                 
         return dic

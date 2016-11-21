@@ -98,7 +98,7 @@
 		BA4FA24E1DDDF6A4001038E5 /* BitflyerGetBalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA24B1DDDF6A4001038E5 /* BitflyerGetBalanceResponse.swift */; };
 		BA4FA2511DDDF6B0001038E5 /* BitTraderPrivateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA24F1DDDF6B0001038E5 /* BitTraderPrivateRequest.swift */; };
 		BA4FA2521DDDF6B0001038E5 /* BitTraderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2501DDDF6B0001038E5 /* BitTraderRequest.swift */; };
-		BA4FA2541DDDF6BA001038E5 /* BitflyerAPIEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2531DDDF6BA001038E5 /* BitflyerAPIEnum.swift */; };
+		BA4FA2541DDDF6BA001038E5 /* BitflyerApiEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2531DDDF6BA001038E5 /* BitflyerApiEnum.swift */; };
 		BA51DEC31DCEE59800D5029B /* NumberPadViewController+RxCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51DEC21DCEE59800D5029B /* NumberPadViewController+RxCreate.swift */; };
 		BA699AE61DD0D369007B650F /* RxNumberPadViewDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA699AE51DD0D369007B650F /* RxNumberPadViewDelegateProxy.swift */; };
 		BA699AE81DD0D5F6007B650F /* NumberPadViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA699AE71DD0D5F6007B650F /* NumberPadViewController+Rx.swift */; };
@@ -240,7 +240,7 @@
 		BA4FA24B1DDDF6A4001038E5 /* BitflyerGetBalanceResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerGetBalanceResponse.swift; sourceTree = "<group>"; };
 		BA4FA24F1DDDF6B0001038E5 /* BitTraderPrivateRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitTraderPrivateRequest.swift; sourceTree = "<group>"; };
 		BA4FA2501DDDF6B0001038E5 /* BitTraderRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitTraderRequest.swift; sourceTree = "<group>"; };
-		BA4FA2531DDDF6BA001038E5 /* BitflyerAPIEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerAPIEnum.swift; sourceTree = "<group>"; };
+		BA4FA2531DDDF6BA001038E5 /* BitflyerApiEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerApiEnum.swift; sourceTree = "<group>"; };
 		BA51DEC21DCEE59800D5029B /* NumberPadViewController+RxCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NumberPadViewController+RxCreate.swift"; sourceTree = "<group>"; };
 		BA699AE51DD0D369007B650F /* RxNumberPadViewDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxNumberPadViewDelegateProxy.swift; sourceTree = "<group>"; };
 		BA699AE71DD0D5F6007B650F /* NumberPadViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NumberPadViewController+Rx.swift"; sourceTree = "<group>"; };
@@ -668,7 +668,7 @@
 		BA4FA2241DDDF5BB001038E5 /* Bitflyer */ = {
 			isa = PBXGroup;
 			children = (
-				BA4FA2531DDDF6BA001038E5 /* BitflyerAPIEnum.swift */,
+				BA4FA2531DDDF6BA001038E5 /* BitflyerApiEnum.swift */,
 				BA4FA2251DDDF604001038E5 /* Base */,
 				BA4FA2261DDDF61A001038E5 /* Private */,
 				BA4FA2271DDDF628001038E5 /* Public */,
@@ -1327,7 +1327,7 @@
 				BA4FA22E1DDDF654001038E5 /* BitflyerBoardModel.swift in Sources */,
 				072441AA1DADD6F30059E872 /* MenuListViewController.swift in Sources */,
 				BA4FA2451DDDF69D001038E5 /* BitflyerGetChildOrdersParameter.swift in Sources */,
-				BA4FA2541DDDF6BA001038E5 /* BitflyerAPIEnum.swift in Sources */,
+				BA4FA2541DDDF6BA001038E5 /* BitflyerApiEnum.swift in Sources */,
 				BA76BE611DDF2CA1005514AC /* KrakenTickerResponse.swift in Sources */,
 				07DCBF291DCB718E00B60008 /* PositionListViewController.swift in Sources */,
 				07069CA11DE16DDA002CEC31 /* BitflyerSendChildOrderResponse.swift in Sources */,

@@ -31,21 +31,21 @@ extension BitflyerOrderModel: Decodable {
     
     static func decode(_ e: Extractor) throws -> BitflyerOrderModel {
         return try self.init(
-            id: e <| Bitflyer.APIKey.id.keyPath(),
-            childOrderId: e <| Bitflyer.APIKey.childOrderId.keyPath(),
-            productCode: Bitflyer.ProductCodeType(rawValue: e <| Bitflyer.APIKey.productCode.keyPath())!,
-            side: Bitflyer.SideType(rawValue: e <| Bitflyer.APIKey.side.keyPath())!,
-            childOrderType: Bitflyer.ChildOrderType(rawValue: e <| Bitflyer.APIKey.childOrderType.keyPath())!,
-            price: e <| Bitflyer.APIKey.price.keyPath(),
-            averagePrice: e <| Bitflyer.APIKey.averagePrice.keyPath(),
-            size: e <| Bitflyer.APIKey.size.keyPath(),
-            childOrderState: Bitflyer.ChildOrderState(rawValue: e <| Bitflyer.APIKey.childOrderState.keyPath())!,
-            expireDate: e <| Bitflyer.APIKey.expireDate.keyPath(),
-            childOrderDate: e <| Bitflyer.APIKey.childOrderDate.keyPath(),
-            childOrderAcceptanceId: e <| Bitflyer.APIKey.childOrderAcceptanceId.keyPath(),
-            outstandingSize: e <| Bitflyer.APIKey.outstandingSize.keyPath(),
-            cancelSize: e <| Bitflyer.APIKey.cancelSize.keyPath(),
-            executedSize: e <| Bitflyer.APIKey.executedSize.keyPath(),
-            totalCommission: e <| Bitflyer.APIKey.totalCommission.keyPath())
+            id: e <| Bitflyer.ApiKey.id.keyPath(),
+            childOrderId: e <| Bitflyer.ApiKey.childOrderId.keyPath(),
+            productCode: Bitflyer.ProductCodeType(rawValue: e <| Bitflyer.ApiKey.productCode.keyPath())!,
+            side: Bitflyer.SideType(rawValue: e <| Bitflyer.ApiKey.side.keyPath())!,
+            childOrderType: Bitflyer.ChildOrderType(rawValue: e <| Bitflyer.ApiKey.childOrderType.keyPath())!,
+            price: e <| Bitflyer.ApiKey.price.keyPath(),
+            averagePrice: e <| Bitflyer.ApiKey.averagePrice.keyPath(),
+            size: e <| Bitflyer.ApiKey.size.keyPath(),
+            childOrderState: Bitflyer.ChildOrderState(rawValue: e <| Bitflyer.ApiKey.childOrderState.keyPath())!,
+            expireDate: e <| Bitflyer.ApiKey.expireDate.keyPath(),
+            childOrderDate: e <| Bitflyer.ApiKey.childOrderDate.keyPath(),
+            childOrderAcceptanceId: e <| Bitflyer.ApiKey.childOrderAcceptanceId.keyPath(),
+            outstandingSize: e <| Bitflyer.ApiKey.outstandingSize.keyPath(),
+            cancelSize: e <| Bitflyer.ApiKey.cancelSize.keyPath(),
+            executedSize: e <| Bitflyer.ApiKey.executedSize.keyPath(),
+            totalCommission: e <| Bitflyer.ApiKey.totalCommission.keyPath())
     }
 }

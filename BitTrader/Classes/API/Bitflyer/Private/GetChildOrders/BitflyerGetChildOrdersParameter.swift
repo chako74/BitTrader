@@ -22,22 +22,22 @@ extension BitflyerGetChildOrdersParameter: BitTraderRequestParameter {
         
         var dic = [String: String]()
         if let productCode = self.productCode {
-            dic[Bitflyer.APIKey.productCode.rawValue] = productCode.rawValue
+            dic[Bitflyer.ApiKey.productCode.rawValue] = productCode.rawValue
         }
         if let count = self.count {
-            dic[Bitflyer.APIKey.count.rawValue] = String(count)
+            dic[Bitflyer.ApiKey.count.rawValue] = String(count)
         }
         if let before = self.before {
-            dic[Bitflyer.APIKey.before.rawValue] = String(before)
+            dic[Bitflyer.ApiKey.before.rawValue] = String(before)
         }
         if let after = self.after {
-            dic[Bitflyer.APIKey.after.rawValue] = String(after)
+            dic[Bitflyer.ApiKey.after.rawValue] = String(after)
         }
         if let childOrderState = self.childOrderState {
-            dic[Bitflyer.APIKey.childOrderState.rawValue] = childOrderState.rawValue
+            dic[Bitflyer.ApiKey.childOrderState.rawValue] = childOrderState.rawValue
         }
         if let parentOrderId = self.parentOrderId {
-            dic[Bitflyer.APIKey.parentOrderId.rawValue] = parentOrderId
+            dic[Bitflyer.ApiKey.parentOrderId.rawValue] = parentOrderId
         }
         
         return dic

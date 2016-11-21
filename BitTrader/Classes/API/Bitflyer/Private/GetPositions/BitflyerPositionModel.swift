@@ -27,15 +27,15 @@ extension BitflyerPositionModel: Decodable {
     static func decode(_ e: Extractor) throws -> BitflyerPositionModel {
 
         return try self.init(
-            productCode: e <| Bitflyer.APIKey.productCode.keyPath(),
-            side: Bitflyer.SideType(rawValue:e <| Bitflyer.APIKey.side.keyPath())!,
-            price: e <| Bitflyer.APIKey.price.keyPath(),
-            size: e <| Bitflyer.APIKey.size.keyPath(),
-            commission: e <| Bitflyer.APIKey.commission.keyPath(),
-            swapPointAccumulate: e <| Bitflyer.APIKey.swapPointAccumulate.keyPath(),
-            requireCollateral: e <| Bitflyer.APIKey.requireCollateral.keyPath(),
-            openDate: e <| Bitflyer.APIKey.openDate.keyPath(),
-            leverage: e <| Bitflyer.APIKey.leverage.keyPath(),
-            pnl: e <| Bitflyer.APIKey.pnl.keyPath())
+            productCode: e <| Bitflyer.ApiKey.productCode.keyPath(),
+            side: Bitflyer.SideType(rawValue:e <| Bitflyer.ApiKey.side.keyPath())!,
+            price: e <| Bitflyer.ApiKey.price.keyPath(),
+            size: e <| Bitflyer.ApiKey.size.keyPath(),
+            commission: e <| Bitflyer.ApiKey.commission.keyPath(),
+            swapPointAccumulate: e <| Bitflyer.ApiKey.swapPointAccumulate.keyPath(),
+            requireCollateral: e <| Bitflyer.ApiKey.requireCollateral.keyPath(),
+            openDate: e <| Bitflyer.ApiKey.openDate.keyPath(),
+            leverage: e <| Bitflyer.ApiKey.leverage.keyPath(),
+            pnl: e <| Bitflyer.ApiKey.pnl.keyPath())
     }
 }

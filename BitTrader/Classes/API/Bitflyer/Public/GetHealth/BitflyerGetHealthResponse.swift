@@ -16,6 +16,6 @@ struct BitflyerGetHealthResponse {
 extension BitflyerGetHealthResponse: Decodable {
     
     static func decode(_ e: Extractor) throws -> BitflyerGetHealthResponse {
-        return try self.init(status: Bitflyer.HealthStatus(rawValue:e <| Bitflyer.APIKey.status.keyPath()))
+        return try self.init(status: Bitflyer.HealthStatus(rawValue:e <| Bitflyer.ApiKey.status.keyPath()))
     }
 }
