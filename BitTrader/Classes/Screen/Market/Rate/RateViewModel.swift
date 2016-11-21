@@ -13,6 +13,7 @@ import RxSwift
 
 enum RateType: Int {
     case bitflyer
+    case bitflyerFx
     case btcBox
     case coincheck
     case kraken
@@ -22,6 +23,8 @@ enum RateType: Int {
         switch self {
         case .bitflyer:
             return "Bitflyer"
+        case .bitflyerFx:
+            return "Bitflyer FX"
         case .btcBox:
             return "BtcBox"
         case .coincheck:

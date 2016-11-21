@@ -47,14 +47,24 @@ class RateListViewController: UIViewController {
 
     func startRequest() {
         
-        let bitflyerTickerRequest = BitflyerTickerRequest()
+        let bitflyerTickerReuqestParameter = BitflyerTickerRequestParameter(productCode: .btcjpy)
+        let bitflyerTickerRequest = BitflyerTickerRequest(requestParameter: bitflyerTickerReuqestParameter)
         let bitflyerTickerRequestExecuter = ApiKitApiExecuter(bitflyerTickerRequest, responseConverter: { response in
             return RateViewModel(rateType:.bitflyer,
-                                 midPrice: Variable(response.last),
-                                 askPrice: Variable(response.ask),
-                                 bidPrice: Variable(response.bid))
+                                 midPrice: Variable(response.ltp),
+                                 askPrice: Variable(response.bestAsk),
+                                 bidPrice: Variable(response.bestBid))
         })
 
+        let bitflyerFxTickerReuqestParameter = BitflyerTickerRequestParameter(productCode: .fxBtcJpy)
+        let bitflyerFxTickerRequest = BitflyerTickerRequest(requestParameter: bitflyerFxTickerReuqestParameter)
+        let bitflyerFxTickerRequestExecuter = ApiKitApiExecuter(bitflyerFxTickerRequest, responseConverter: { response in
+            return RateViewModel(rateType:.bitflyerFx,
+                                 midPrice: Variable(response.ltp),
+                                 askPrice: Variable(response.bestAsk),
+                                 bidPrice: Variable(response.bestBid))
+        })
+        
         let btcBoxTickerRequest = BtcBoxTickerRequest()
         let btcBoxTickerRequestExecuter = ApiKitApiExecuter(btcBoxTickerRequest, responseConverter: { response in
             return RateViewModel(rateType:.btcBox,
@@ -88,12 +98,13 @@ class RateListViewController: UIViewController {
         })
 
         Observable.combineLatest(Api.rxExecute(bitflyerTickerRequestExecuter),
+                                 Api.rxExecute(bitflyerFxTickerRequestExecuter),
                                  Api.rxExecute(btcBoxTickerRequestExecuter),
                                  Api.rxExecute(coincheckTickerRequestExecuter),
                                  Api.rxExecute(krakenTickerRequestExecuter),
-                                 Api.rxExecute(zaifTickerRequestExecuter)) { ($0, $1, $2, $3, $4) }
-            .flatMapLatest { (bitflyer, btcBox, coincheck, kraken, zaif) -> Observable<[RateViewModel]> in
-                return .just([bitflyer!, btcBox!, coincheck!, kraken!, zaif!])
+                                 Api.rxExecute(zaifTickerRequestExecuter)) { ($0, $1, $2, $3, $4, $5) }
+            .flatMapLatest { (bitflyer, bitflyerFx, btcBox, coincheck, kraken, zaif) -> Observable<[RateViewModel]> in
+                return .just([bitflyer!, bitflyerFx!, btcBox!, coincheck!, kraken!, zaif!])
             }
             .subscribe(onNext: { [weak self] models in
                 self?.rateListViewModel.rateList.value = models
@@ -101,5 +112,4 @@ class RateListViewController: UIViewController {
             .addDisposableTo(disposeBag)
         
     }
-    
 }
