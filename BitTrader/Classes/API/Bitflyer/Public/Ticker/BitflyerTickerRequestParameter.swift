@@ -7,11 +7,16 @@
 //
 
 struct BitflyerTickerRequestParameter {
+    let productCode: Bitflyer.ProductCodeType
 }
 
 extension BitflyerTickerRequestParameter: BitTraderRequestParameter {
     
     func createParameters() -> [String : String]? {
-        return nil
+        
+        var dic = [String: String]()
+        dic[Bitflyer.ApiKey.productCode.rawValue] = productCode.rawValue
+        
+        return dic
     }
 }

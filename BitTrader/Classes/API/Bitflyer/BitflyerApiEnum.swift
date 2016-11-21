@@ -93,7 +93,13 @@ enum Bitflyer {
         case timestamp = "timestamp"
         case minuteToExpire = "minute_to_expire"
         case timeInForce = "time_in_force"
-
+        case tickId = "tick_id"
+        case bestBidSize = "best_bid_size"
+        case bestAskSize = "best_ask_size"
+        case totalBidDepth = "total_bid_depth"
+        case totalAskDepth = "total_ask_depth"
+        case volumeByProduct = "volume_by_product"
+        
         func keyPath() -> KeyPath {
             return KeyPath.init(rawValue)
         }
