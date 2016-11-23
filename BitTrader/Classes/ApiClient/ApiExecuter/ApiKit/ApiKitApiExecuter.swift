@@ -12,6 +12,8 @@ import Result
 
 class ApiKitApiExecuter<RequestType: ApiKitRequestProtocol, DTO>: ApiKitApiExecuterProtocol {
 
+    weak var delegate: ApiExecuterDelegate?
+
     typealias Error = SessionTaskError
     typealias ResultType = Result<RequestType.Response, Error>
     typealias ResponseConverter = (RequestType.Response) -> DTO?

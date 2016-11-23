@@ -121,6 +121,8 @@
 		BA9672931DDCBE2900AB6384 /* ApiExecuterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9672911DDCBE2900AB6384 /* ApiExecuterProtocol.swift */; };
 		BAD390221DDF8C8D001FA3F5 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD390211DDF8C8D001FA3F5 /* ResultModel.swift */; };
 		BAD390241DDF8D38001FA3F5 /* KrakenTickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD390231DDF8D38001FA3F5 /* KrakenTickerModel.swift */; };
+		E94FD3411DE34042000650EF /* SendOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94FD33F1DE34042000650EF /* SendOrderViewController.swift */; };
+		E94FD3421DE34042000650EF /* SendOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E94FD3401DE34042000650EF /* SendOrderViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -267,6 +269,8 @@
 		CC4B7FDBD26058AF1B3EC060 /* Pods-BitTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTrader.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitTrader/Pods-BitTrader.release.xcconfig"; sourceTree = "<group>"; };
 		CEFF4274892F4ACA1287631A /* Pods-BitTraderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTraderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitTraderTests/Pods-BitTraderTests.release.xcconfig"; sourceTree = "<group>"; };
 		E525F9CF272892EAA3DF1AA6 /* Pods_BitTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E94FD33F1DE34042000650EF /* SendOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendOrderViewController.swift; sourceTree = "<group>"; };
+		E94FD3401DE34042000650EF /* SendOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendOrderViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,6 +349,7 @@
 		072441891DACC08D0059E872 /* Trade */ = {
 			isa = PBXGroup;
 			children = (
+				E94FD33E1DE3402D000650EF /* Order */,
 				072441991DACC20A0059E872 /* TradeRootViewController.swift */,
 				0724419A1DACC20A0059E872 /* TradeRootViewController.xib */,
 			);
@@ -980,6 +985,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E94FD33E1DE3402D000650EF /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				E94FD33F1DE34042000650EF /* SendOrderViewController.swift */,
+				E94FD3401DE34042000650EF /* SendOrderViewController.xib */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1120,6 +1134,7 @@
 				072441981DACC1FB0059E872 /* ReferenceRootViewController.xib in Resources */,
 				07BD522E1DA3E67A00DA54B8 /* Assets.xcassets in Resources */,
 				07BDF9BE1DD370A5006C99CA /* OrderListViewController.xib in Resources */,
+				E94FD3421DE34042000650EF /* SendOrderViewController.xib in Resources */,
 				0724419C1DACC20A0059E872 /* TradeRootViewController.xib in Resources */,
 				079E4A7A1DC630770004EB78 /* RateList.storyboard in Resources */,
 			);
@@ -1290,6 +1305,7 @@
 				BA699AE61DD0D369007B650F /* RxNumberPadViewDelegateProxy.swift in Sources */,
 				07FAE3291DA778E500089136 /* RootViewController.swift in Sources */,
 				BA76BE591DDF2C44005514AC /* BtcBoxTickerRequest.swift in Sources */,
+				E94FD3411DE34042000650EF /* SendOrderViewController.swift in Sources */,
 				BA4FA21F1DDDF25B001038E5 /* ApiKitApiExecuterProtocol.swift in Sources */,
 				072441971DACC1FB0059E872 /* ReferenceRootViewController.swift in Sources */,
 				07932C6B1DBCEEB300E38530 /* RateListViewModel.swift in Sources */,

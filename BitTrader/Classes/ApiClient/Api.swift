@@ -14,10 +14,10 @@ class Api {
     private init() {
     }
 
-    static func execute<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter) {
+    static func execute<ApiExecuter: ApiKitApiExecuterProtocol>(_ apiExecuter: ApiExecuter) {
 
         if let error = apiExecuter.isValid(apiExecuter.request) {
-            _ = apiExecuter.onFailure(error)
+            apiExecuter.delegate?.onFailure(apiExecuter, value: apiExecuter.onFailure(error))
             return
         }
 
@@ -29,14 +29,14 @@ class Api {
 
             switch result {
             case .success(let res):
-                _ = apiExecuter.onSuccess(res)
-            case .failure(let err):
-                _ = apiExecuter.onFailure(err)
+                apiExecuter.delegate?.onSuccess(apiExecuter, value: apiExecuter.onSuccess(res))
+            case .failure(let error):
+                apiExecuter.delegate?.onFailure(apiExecuter, value: apiExecuter.onFailure(error))
             }
         }
     }
 
-    static func rxExecute<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, _ period: TimeInterval = 3.0)
+    static func rxExecute<ApiExecuter: ApiKitApiExecuterProtocol>(_ apiExecuter: ApiExecuter, _ period: TimeInterval = 3.0)
         -> Observable<ApiExecuter.DTO?> {
 
             return Observable<Int>
@@ -67,6 +67,7 @@ class Api {
 
                         return Disposables.create()
                     }
+                    .startWith(nil)
             }
     }
 }

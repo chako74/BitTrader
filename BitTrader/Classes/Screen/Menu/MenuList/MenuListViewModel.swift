@@ -34,7 +34,6 @@ struct MenuListViewModel {
     init() {
         menus.value.append(.apiKey)
         menus.value.append(.btcChanger)
-        // TODO: 動作確認用
         menus.value.append(.numberPad)
     }
 }
