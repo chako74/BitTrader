@@ -46,12 +46,12 @@ class RateListViewController: UIViewController {
     }
 
     private func startRequest() {
-        Observable.combineLatest(Api.rxExecute(createBitflyerTickerRequestExecuter()),
-                                 Api.rxExecute(createBitflyerFxTickerRequestExecuter()),
-                                 Api.rxExecute(createBtcBoxTickerRequestExecuter()),
-                                 Api.rxExecute(createCoincheckTickerRequestExecuter()),
-                                 Api.rxExecute(createKrakenTickerRequestExecuter()),
-                                 Api.rxExecute(createZaifTickerRequestExecuter())) { r in r }
+        Observable.combineLatest(ApiClient.rxExecute(createBitflyerTickerRequestExecuter()),
+                                 ApiClient.rxExecute(createBitflyerFxTickerRequestExecuter()),
+                                 ApiClient.rxExecute(createBtcBoxTickerRequestExecuter()),
+                                 ApiClient.rxExecute(createCoincheckTickerRequestExecuter()),
+                                 ApiClient.rxExecute(createKrakenTickerRequestExecuter()),
+                                 ApiClient.rxExecute(createZaifTickerRequestExecuter())) { r in r }
             .scan((nil, nil, nil, nil, nil, nil)) { [weak self] (x, y) throws -> (RateViewModel?, RateViewModel?, RateViewModel?, RateViewModel?, RateViewModel?, RateViewModel?) in
                 let v0 = self?.checkNext(x.0, y.0)
                 let v1 = self?.checkNext(x.1, y.1)
@@ -63,12 +63,12 @@ class RateListViewController: UIViewController {
             }
             .flatMapLatest { (bitflyer, bitflyerFx, btcBox, coincheck, kraken, zaif) -> Observable<[RateViewModel]> in
                 var models = Array<RateViewModel>()
-                models.addNotNil(bitflyer)
-                models.addNotNil(bitflyerFx)
-                models.addNotNil(btcBox)
-                models.addNotNil(coincheck)
-                models.addNotNil(kraken)
-                models.addNotNil(zaif)
+                models.appendNotNil(element: bitflyer)
+                models.appendNotNil(element: bitflyerFx)
+                models.appendNotNil(element: btcBox)
+                models.appendNotNil(element: coincheck)
+                models.appendNotNil(element: kraken)
+                models.appendNotNil(element: zaif)
                 return .just(models)
             }
             .subscribe(onNext: { [weak self] models in

@@ -121,11 +121,11 @@ extension NSNumber {
 
 extension Array {
 
-    public mutating func addNotNil(_ newElement: Element?) {
-        guard newElement != nil else {
+    public mutating func appendNotNil(element: Element?) {
+        guard element != nil else {
             return
         }
-        self.append(newElement!)
+        self.append(element!)
     }
 }
 
@@ -156,6 +156,20 @@ extension UIFont {
         return UIFont(descriptor: newFontDescriptor, size: 0)
     }
     
+}
+
+extension UIColor {
+    func toImage() -> UIImage {
+        let size = CGSize(width: 1, height: 1)
+        UIGraphicsBeginImageContext(size)
+        let rect = CGRect(origin: CGPoint.zero, size: size)
+        let context = UIGraphicsGetCurrentContext()
+        context!.setFillColor(self.cgColor)
+        context!.fill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
 }
 
 private extension UIFontDescriptor {

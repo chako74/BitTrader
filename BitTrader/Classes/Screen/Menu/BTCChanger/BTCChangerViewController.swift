@@ -36,12 +36,10 @@ class BTCChangerViewController: UIViewController, NumberPadViewDelegate {
     
     func didDone(_ numberPadViewController: NumberPadViewController, value: String) {
         // 通常のdelegate呼び出し
-        print("didDone:" + value)
     }
 
     func didCancel(_ numberPadViewController: NumberPadViewController) {
         // 通常のdelegate呼び出し
-        print("didCancel")
     }
 
     private func bind() {

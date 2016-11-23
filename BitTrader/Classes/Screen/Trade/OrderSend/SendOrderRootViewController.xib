@@ -6,8 +6,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SendOrderViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SendOrderRootViewController" customModule="BitTrader" customModuleProvider="target">
             <connections>
+                <outlet property="askRateLabel" destination="71g-YF-fvj" id="VuK-AU-8Pb"/>
+                <outlet property="bidRateLabel" destination="A1V-Nv-9Nr" id="x8r-Tk-qqp"/>
+                <outlet property="containerView" destination="7Oe-Di-nPI" id="vV8-3c-kLJ"/>
                 <outlet property="pickerView" destination="QOo-5B-Jl2" id="Buu-Ag-F5x"/>
                 <outlet property="view" destination="iN0-l3-epB" id="F9S-uk-y2A"/>
             </connections>
@@ -19,35 +22,61 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJg-Ru-TbI">
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="A1V-Nv-9Nr">
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="A1V-Nv-9Nr" firstAttribute="leading" secondItem="oJg-Ru-TbI" secondAttribute="leading" constant="2" id="5DV-An-Fo8"/>
-                        <constraint firstItem="A1V-Nv-9Nr" firstAttribute="top" secondItem="oJg-Ru-TbI" secondAttribute="top" constant="2" id="6ng-4o-9UD"/>
-                        <constraint firstAttribute="height" constant="40" id="BeM-Jc-lSF"/>
-                        <constraint firstAttribute="trailing" secondItem="A1V-Nv-9Nr" secondAttribute="trailing" constant="2" id="Pd8-FL-PB1"/>
-                        <constraint firstAttribute="bottom" secondItem="A1V-Nv-9Nr" secondAttribute="bottom" constant="2" id="iwE-eI-sDH"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zg5-xM-C5T">
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="71g-YF-fvj">
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XO-DZ-He3">
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="onBidButton:" destination="-1" eventType="touchUpInside" id="xUy-ac-MNf"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="A1V-Nv-9Nr">
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="A1V-Nv-9Nr" firstAttribute="leading" secondItem="oJg-Ru-TbI" secondAttribute="leading" constant="2" id="5DV-An-Fo8"/>
+                        <constraint firstItem="A1V-Nv-9Nr" firstAttribute="top" secondItem="oJg-Ru-TbI" secondAttribute="top" constant="2" id="6ng-4o-9UD"/>
+                        <constraint firstItem="1XO-DZ-He3" firstAttribute="top" secondItem="oJg-Ru-TbI" secondAttribute="top" id="AYP-fi-Oz0"/>
+                        <constraint firstAttribute="trailing" secondItem="1XO-DZ-He3" secondAttribute="trailing" id="BBn-AE-Ls2"/>
+                        <constraint firstAttribute="height" constant="40" id="BeM-Jc-lSF"/>
+                        <constraint firstAttribute="trailing" secondItem="A1V-Nv-9Nr" secondAttribute="trailing" constant="2" id="Pd8-FL-PB1"/>
+                        <constraint firstAttribute="bottom" secondItem="1XO-DZ-He3" secondAttribute="bottom" id="ZMw-gj-48o"/>
+                        <constraint firstAttribute="bottom" secondItem="A1V-Nv-9Nr" secondAttribute="bottom" constant="2" id="iwE-eI-sDH"/>
+                        <constraint firstItem="1XO-DZ-He3" firstAttribute="leading" secondItem="oJg-Ru-TbI" secondAttribute="leading" id="zm1-sP-t8J"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zg5-xM-C5T">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slP-im-1zr">
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="onAskButton:" destination="-1" eventType="touchUpInside" id="4tR-2X-eyv"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="71g-YF-fvj">
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                    <constraints>
                         <constraint firstItem="71g-YF-fvj" firstAttribute="top" secondItem="Zg5-xM-C5T" secondAttribute="top" constant="2" id="AbH-I8-roC"/>
                         <constraint firstAttribute="trailing" secondItem="71g-YF-fvj" secondAttribute="trailing" constant="2" id="DFm-DD-vA5"/>
                         <constraint firstAttribute="height" constant="40" id="EAi-3e-qZ9"/>
                         <constraint firstAttribute="bottom" secondItem="71g-YF-fvj" secondAttribute="bottom" constant="2" id="ITC-AN-0jO"/>
+                        <constraint firstItem="slP-im-1zr" firstAttribute="leading" secondItem="Zg5-xM-C5T" secondAttribute="leading" id="KNw-v7-ef3"/>
+                        <constraint firstItem="slP-im-1zr" firstAttribute="top" secondItem="Zg5-xM-C5T" secondAttribute="top" id="N4N-jL-Bbk"/>
+                        <constraint firstAttribute="bottom" secondItem="slP-im-1zr" secondAttribute="bottom" id="ZZz-fZ-58m"/>
+                        <constraint firstAttribute="trailing" secondItem="slP-im-1zr" secondAttribute="trailing" id="ny9-M5-Ndx"/>
                         <constraint firstItem="71g-YF-fvj" firstAttribute="leading" secondItem="Zg5-xM-C5T" secondAttribute="leading" constant="2" id="z5v-hT-mg6"/>
                     </constraints>
                 </view>
@@ -57,22 +86,7 @@
                     </constraints>
                 </pickerView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Oe-Di-nPI">
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCV-iw-TM5">
-                            <constraints>
-                                <constraint firstAttribute="height" constant="21" id="XzZ-pX-lEb"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
                     <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="SCV-iw-TM5" firstAttribute="leading" secondItem="7Oe-Di-nPI" secondAttribute="leading" id="Llu-jR-58c"/>
-                        <constraint firstAttribute="bottom" secondItem="SCV-iw-TM5" secondAttribute="bottom" id="m6N-FL-Mgq"/>
-                        <constraint firstAttribute="trailing" secondItem="SCV-iw-TM5" secondAttribute="trailing" id="sU4-sL-fZc"/>
-                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

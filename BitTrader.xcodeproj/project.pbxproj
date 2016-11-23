@@ -80,9 +80,6 @@
 		07FAE3301DA77CE600089136 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FAE32F1DA77CE600089136 /* RootViewController.xib */; };
 		07FAE3341DA7BA2500089136 /* AppStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE3331DA7BA2500089136 /* AppStatus.swift */; };
 		82857357A68650A1A1556799 /* Pods_BitTrader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E525F9CF272892EAA3DF1AA6 /* Pods_BitTrader.framework */; };
-		BA4FA21E1DDDF25B001038E5 /* ApiKitApiExecuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA21C1DDDF25B001038E5 /* ApiKitApiExecuter.swift */; };
-		BA4FA21F1DDDF25B001038E5 /* ApiKitApiExecuterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA21D1DDDF25B001038E5 /* ApiKitApiExecuterProtocol.swift */; };
-		BA4FA2211DDDF262001038E5 /* ApiKitRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA2201DDDF262001038E5 /* ApiKitRequestProtocol.swift */; };
 		BA4FA22E1DDDF654001038E5 /* BitflyerBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA22A1DDDF654001038E5 /* BitflyerBoardModel.swift */; };
 		BA4FA22F1DDDF654001038E5 /* BitflyerGetBoardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA22B1DDDF654001038E5 /* BitflyerGetBoardRequest.swift */; };
 		BA4FA2301DDDF654001038E5 /* BitflyerGetBoardRequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FA22C1DDDF654001038E5 /* BitflyerGetBoardRequestParameter.swift */; };
@@ -120,13 +117,40 @@
 		BA76BE701DDF2FEE005514AC /* BitflyerTickerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA76BE6F1DDF2FEE005514AC /* BitflyerTickerRequest.swift */; };
 		BA76BE721DDF3007005514AC /* BitflyerTickerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA76BE711DDF3007005514AC /* BitflyerTickerResponse.swift */; };
 		BA76BE741DDF30EF005514AC /* CoincheckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA76BE731DDF30EF005514AC /* CoincheckRequest.swift */; };
-		BA9672851DDCBABC00AB6384 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9672841DDCBABC00AB6384 /* RequestProtocol.swift */; };
-		BA96728F1DDCBDEA00AB6384 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA96728E1DDCBDEA00AB6384 /* Api.swift */; };
-		BA9672931DDCBE2900AB6384 /* ApiExecuterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9672911DDCBE2900AB6384 /* ApiExecuterProtocol.swift */; };
 		BAD390221DDF8C8D001FA3F5 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD390211DDF8C8D001FA3F5 /* ResultModel.swift */; };
 		BAD390241DDF8D38001FA3F5 /* KrakenTickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD390231DDF8D38001FA3F5 /* KrakenTickerModel.swift */; };
-		E94FD3411DE34042000650EF /* SendOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94FD33F1DE34042000650EF /* SendOrderViewController.swift */; };
-		E94FD3421DE34042000650EF /* SendOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E94FD3401DE34042000650EF /* SendOrderViewController.xib */; };
+		E964B2D11DE5BE93003A719F /* SendOrderRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B2CF1DE5BE93003A719F /* SendOrderRootViewController.swift */; };
+		E964B2D21DE5BE93003A719F /* SendOrderRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E964B2D01DE5BE93003A719F /* SendOrderRootViewController.xib */; };
+		E964B2DE1DE5C145003A719F /* SimpleOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B2DD1DE5C145003A719F /* SimpleOrderViewController.swift */; };
+		E964B2E01DE5C14E003A719F /* IfdOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B2DF1DE5C14E003A719F /* IfdOrderViewController.swift */; };
+		E964B2E21DE5C156003A719F /* OcoOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B2E11DE5C156003A719F /* OcoOrderViewController.swift */; };
+		E964B2E41DE5C15F003A719F /* IfdocoOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B2E31DE5C15F003A719F /* IfdocoOrderViewController.swift */; };
+		E964B2E61DE5C16C003A719F /* SimpleOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E964B2E51DE5C16C003A719F /* SimpleOrderViewController.xib */; };
+		E964B2E81DE5C173003A719F /* IfdOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E964B2E71DE5C173003A719F /* IfdOrderViewController.xib */; };
+		E964B2EA1DE5C17B003A719F /* OcoOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E964B2E91DE5C17B003A719F /* OcoOrderViewController.xib */; };
+		E964B2EC1DE5C181003A719F /* IfdocoOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E964B2EB1DE5C181003A719F /* IfdocoOrderViewController.xib */; };
+		E964B2FE1DE5C50C003A719F /* LimitOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B2FD1DE5C50C003A719F /* LimitOrderViewController.swift */; };
+		E964B3001DE5C515003A719F /* MarketOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B2FF1DE5C515003A719F /* MarketOrderViewController.swift */; };
+		E964B3021DE5C51A003A719F /* StopOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B3011DE5C51A003A719F /* StopOrderViewController.swift */; };
+		E964B3041DE5C520003A719F /* StopLimitOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B3031DE5C520003A719F /* StopLimitOrderViewController.swift */; };
+		E964B3061DE5C526003A719F /* TrailOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B3051DE5C526003A719F /* TrailOrderViewController.swift */; };
+		E964B3081DE5C52F003A719F /* LimitOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E964B3071DE5C52F003A719F /* LimitOrderViewController.xib */; };
+		E964B30A1DE5C54A003A719F /* MarketOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E964B3091DE5C54A003A719F /* MarketOrderViewController.xib */; };
+		E964B30C1DE5C558003A719F /* StopOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E964B30B1DE5C558003A719F /* StopOrderViewController.xib */; };
+		E964B30E1DE5C566003A719F /* StopLimitOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E964B30D1DE5C566003A719F /* StopLimitOrderViewController.xib */; };
+		E964B3101DE5C573003A719F /* TrailOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E964B30F1DE5C573003A719F /* TrailOrderViewController.xib */; };
+		E964B3151DE5CA09003A719F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B3141DE5CA09003A719F /* ApiClient.swift */; };
+		E964B3181DE5CA23003A719F /* ApiExecuterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B3171DE5CA23003A719F /* ApiExecuterProtocol.swift */; };
+		E964B31C1DE5CA3A003A719F /* ApiKitApiExecuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B31A1DE5CA3A003A719F /* ApiKitApiExecuter.swift */; };
+		E964B31D1DE5CA3A003A719F /* ApiKitApiExecuterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B31B1DE5CA3A003A719F /* ApiKitApiExecuterProtocol.swift */; };
+		E964B3221DE5CA81003A719F /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B3211DE5CA81003A719F /* RequestProtocol.swift */; };
+		E964B3241DE5CA87003A719F /* ApiKitRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B3231DE5CA87003A719F /* ApiKitRequestProtocol.swift */; };
+		E964B3271DE5CB3F003A719F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B3261DE5CB3F003A719F /* Enums.swift */; };
+		E96D3FC91DE97B440072E80C /* SendOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D3FC81DE97B440072E80C /* SendOrderViewModel.swift */; };
+		E96D3FCC1DE9B9910072E80C /* BitTraderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D3FCB1DE9B9910072E80C /* BitTraderError.swift */; };
+		E96D3FD41DE9C0CE0072E80C /* BaseSendOrderCommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D3FD31DE9C0CE0072E80C /* BaseSendOrderCommonViewController.swift */; };
+		E96D3FD61DE9C15A0072E80C /* BaseSendOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D3FD51DE9C15A0072E80C /* BaseSendOrderViewController.swift */; };
+		E9F68A0E1DEA30320026B41D /* ApiResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F68A0D1DEA30320026B41D /* ApiResponseError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -228,9 +252,6 @@
 		07FAE3331DA7BA2500089136 /* AppStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStatus.swift; sourceTree = "<group>"; };
 		71653296D47E56926068FCF7 /* Pods_BitTraderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitTraderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4915E65A73E188106ABD949 /* Pods-BitTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTrader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitTrader/Pods-BitTrader.debug.xcconfig"; sourceTree = "<group>"; };
-		BA4FA21C1DDDF25B001038E5 /* ApiKitApiExecuter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKitApiExecuter.swift; sourceTree = "<group>"; };
-		BA4FA21D1DDDF25B001038E5 /* ApiKitApiExecuterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKitApiExecuterProtocol.swift; sourceTree = "<group>"; };
-		BA4FA2201DDDF262001038E5 /* ApiKitRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKitRequestProtocol.swift; sourceTree = "<group>"; };
 		BA4FA22A1DDDF654001038E5 /* BitflyerBoardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerBoardModel.swift; sourceTree = "<group>"; };
 		BA4FA22B1DDDF654001038E5 /* BitflyerGetBoardRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerGetBoardRequest.swift; sourceTree = "<group>"; };
 		BA4FA22C1DDDF654001038E5 /* BitflyerGetBoardRequestParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerGetBoardRequestParameter.swift; sourceTree = "<group>"; };
@@ -268,17 +289,44 @@
 		BA76BE6F1DDF2FEE005514AC /* BitflyerTickerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerTickerRequest.swift; sourceTree = "<group>"; };
 		BA76BE711DDF3007005514AC /* BitflyerTickerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerTickerResponse.swift; sourceTree = "<group>"; };
 		BA76BE731DDF30EF005514AC /* CoincheckRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoincheckRequest.swift; sourceTree = "<group>"; };
-		BA9672841DDCBABC00AB6384 /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
-		BA96728E1DDCBDEA00AB6384 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
-		BA9672911DDCBE2900AB6384 /* ApiExecuterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiExecuterProtocol.swift; sourceTree = "<group>"; };
 		BAD390211DDF8C8D001FA3F5 /* ResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		BAD390231DDF8D38001FA3F5 /* KrakenTickerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KrakenTickerModel.swift; sourceTree = "<group>"; };
 		C724E1701441F1D7C5862AD3 /* Pods-BitTraderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTraderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitTraderTests/Pods-BitTraderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC4B7FDBD26058AF1B3EC060 /* Pods-BitTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTrader.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitTrader/Pods-BitTrader.release.xcconfig"; sourceTree = "<group>"; };
 		CEFF4274892F4ACA1287631A /* Pods-BitTraderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTraderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitTraderTests/Pods-BitTraderTests.release.xcconfig"; sourceTree = "<group>"; };
 		E525F9CF272892EAA3DF1AA6 /* Pods_BitTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E94FD33F1DE34042000650EF /* SendOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendOrderViewController.swift; sourceTree = "<group>"; };
-		E94FD3401DE34042000650EF /* SendOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendOrderViewController.xib; sourceTree = "<group>"; };
+		E964B2CF1DE5BE93003A719F /* SendOrderRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendOrderRootViewController.swift; sourceTree = "<group>"; };
+		E964B2D01DE5BE93003A719F /* SendOrderRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendOrderRootViewController.xib; sourceTree = "<group>"; };
+		E964B2DD1DE5C145003A719F /* SimpleOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleOrderViewController.swift; sourceTree = "<group>"; };
+		E964B2DF1DE5C14E003A719F /* IfdOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IfdOrderViewController.swift; sourceTree = "<group>"; };
+		E964B2E11DE5C156003A719F /* OcoOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OcoOrderViewController.swift; sourceTree = "<group>"; };
+		E964B2E31DE5C15F003A719F /* IfdocoOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IfdocoOrderViewController.swift; sourceTree = "<group>"; };
+		E964B2E51DE5C16C003A719F /* SimpleOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleOrderViewController.xib; sourceTree = "<group>"; };
+		E964B2E71DE5C173003A719F /* IfdOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IfdOrderViewController.xib; sourceTree = "<group>"; };
+		E964B2E91DE5C17B003A719F /* OcoOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OcoOrderViewController.xib; sourceTree = "<group>"; };
+		E964B2EB1DE5C181003A719F /* IfdocoOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IfdocoOrderViewController.xib; sourceTree = "<group>"; };
+		E964B2FD1DE5C50C003A719F /* LimitOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimitOrderViewController.swift; sourceTree = "<group>"; };
+		E964B2FF1DE5C515003A719F /* MarketOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketOrderViewController.swift; sourceTree = "<group>"; };
+		E964B3011DE5C51A003A719F /* StopOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopOrderViewController.swift; sourceTree = "<group>"; };
+		E964B3031DE5C520003A719F /* StopLimitOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopLimitOrderViewController.swift; sourceTree = "<group>"; };
+		E964B3051DE5C526003A719F /* TrailOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailOrderViewController.swift; sourceTree = "<group>"; };
+		E964B3071DE5C52F003A719F /* LimitOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LimitOrderViewController.xib; sourceTree = "<group>"; };
+		E964B3091DE5C54A003A719F /* MarketOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarketOrderViewController.xib; sourceTree = "<group>"; };
+		E964B30B1DE5C558003A719F /* StopOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StopOrderViewController.xib; sourceTree = "<group>"; };
+		E964B30D1DE5C566003A719F /* StopLimitOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StopLimitOrderViewController.xib; sourceTree = "<group>"; };
+		E964B30F1DE5C573003A719F /* TrailOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrailOrderViewController.xib; sourceTree = "<group>"; };
+		E964B3141DE5CA09003A719F /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		E964B3171DE5CA23003A719F /* ApiExecuterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiExecuterProtocol.swift; sourceTree = "<group>"; };
+		E964B31A1DE5CA3A003A719F /* ApiKitApiExecuter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKitApiExecuter.swift; sourceTree = "<group>"; };
+		E964B31B1DE5CA3A003A719F /* ApiKitApiExecuterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKitApiExecuterProtocol.swift; sourceTree = "<group>"; };
+		E964B3211DE5CA81003A719F /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		E964B3231DE5CA87003A719F /* ApiKitRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKitRequestProtocol.swift; sourceTree = "<group>"; };
+		E964B3261DE5CB3F003A719F /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		E96D3FC81DE97B440072E80C /* SendOrderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendOrderViewModel.swift; sourceTree = "<group>"; };
+		E96D3FCB1DE9B9910072E80C /* BitTraderError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitTraderError.swift; sourceTree = "<group>"; };
+		E96D3FD31DE9C0CE0072E80C /* BaseSendOrderCommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSendOrderCommonViewController.swift; sourceTree = "<group>"; };
+		E96D3FD51DE9C15A0072E80C /* BaseSendOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSendOrderViewController.swift; sourceTree = "<group>"; };
+		E9F68A0D1DEA30320026B41D /* ApiResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponseError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,7 +405,7 @@
 		072441891DACC08D0059E872 /* Trade */ = {
 			isa = PBXGroup;
 			children = (
-				E94FD33E1DE3402D000650EF /* Order */,
+				E964B2CE1DE5BE4D003A719F /* OrderSend */,
 				072441991DACC20A0059E872 /* TradeRootViewController.swift */,
 				0724419A1DACC20A0059E872 /* TradeRootViewController.xib */,
 			);
@@ -551,7 +599,6 @@
 		07BD52271DA3E33500DA54B8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				BA9672811DDCBA8900AB6384 /* ApiClient */,
 				072B673F1DAA79E900F276AF /* Extension */,
 				07FAE3311DA7898100089136 /* API */,
 				07FAE3251DA7785D00089136 /* Common */,
@@ -610,6 +657,8 @@
 		07FAE3251DA7785D00089136 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E96D3FCA1DE9B96B0072E80C /* Error */,
+				E964B3251DE5CAE2003A719F /* Enum */,
 				07097DD31DC8C8A500A08EEA /* Util */,
 				07B854601DB24F6C009E3181 /* Control */,
 				07FAE3321DA7B9F500089136 /* AppStatus */,
@@ -646,6 +695,7 @@
 		07FAE3311DA7898100089136 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				E964B3111DE5C8A0003A719F /* Client */,
 				BA4FA2241DDDF5BB001038E5 /* Bitflyer */,
 				BA76BE3E1DDF2984005514AC /* BtcBox */,
 				BA76BE641DDF2EC7005514AC /* Coincheck */,
@@ -670,23 +720,6 @@
 				71653296D47E56926068FCF7 /* Pods_BitTraderTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BA4FA21A1DDDF200001038E5 /* ApiKit */ = {
-			isa = PBXGroup;
-			children = (
-				BA4FA21D1DDDF25B001038E5 /* ApiKitApiExecuterProtocol.swift */,
-				BA4FA21C1DDDF25B001038E5 /* ApiKitApiExecuter.swift */,
-			);
-			path = ApiKit;
-			sourceTree = "<group>";
-		};
-		BA4FA21B1DDDF20C001038E5 /* ApiKit */ = {
-			isa = PBXGroup;
-			children = (
-				BA4FA2201DDDF262001038E5 /* ApiKitRequestProtocol.swift */,
-			);
-			path = ApiKit;
 			sourceTree = "<group>";
 		};
 		BA4FA2241DDDF5BB001038E5 /* Bitflyer */ = {
@@ -966,34 +999,6 @@
 			path = Ticker;
 			sourceTree = "<group>";
 		};
-		BA9672811DDCBA8900AB6384 /* ApiClient */ = {
-			isa = PBXGroup;
-			children = (
-				BA96728E1DDCBDEA00AB6384 /* Api.swift */,
-				BA9672901DDCBE1300AB6384 /* ApiExecuter */,
-				BA9672831DDCBAA300AB6384 /* Request */,
-			);
-			path = ApiClient;
-			sourceTree = "<group>";
-		};
-		BA9672831DDCBAA300AB6384 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				BA9672841DDCBABC00AB6384 /* RequestProtocol.swift */,
-				BA4FA21B1DDDF20C001038E5 /* ApiKit */,
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
-		BA9672901DDCBE1300AB6384 /* ApiExecuter */ = {
-			isa = PBXGroup;
-			children = (
-				BA9672911DDCBE2900AB6384 /* ApiExecuterProtocol.swift */,
-				BA4FA21A1DDDF200001038E5 /* ApiKit */,
-			);
-			path = ApiExecuter;
-			sourceTree = "<group>";
-		};
 		DC686BCE6AAAC37F9CCAD49A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1005,13 +1010,184 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		E94FD33E1DE3402D000650EF /* Order */ = {
+		E964B2CE1DE5BE4D003A719F /* OrderSend */ = {
 			isa = PBXGroup;
 			children = (
-				E94FD33F1DE34042000650EF /* SendOrderViewController.swift */,
-				E94FD3401DE34042000650EF /* SendOrderViewController.xib */,
+				E964B2CF1DE5BE93003A719F /* SendOrderRootViewController.swift */,
+				E964B2D01DE5BE93003A719F /* SendOrderRootViewController.xib */,
+				E96D3FD51DE9C15A0072E80C /* BaseSendOrderViewController.swift */,
+				E964B2D31DE5BF2E003A719F /* Simple */,
+				E964B2D41DE5BF71003A719F /* Ifd */,
+				E964B2D51DE5C012003A719F /* Oco */,
+				E964B2D61DE5C018003A719F /* Ifdoco */,
+				E964B2ED1DE5C294003A719F /* Common */,
 			);
-			path = Order;
+			path = OrderSend;
+			sourceTree = "<group>";
+		};
+		E964B2D31DE5BF2E003A719F /* Simple */ = {
+			isa = PBXGroup;
+			children = (
+				E964B2DD1DE5C145003A719F /* SimpleOrderViewController.swift */,
+				E964B2E51DE5C16C003A719F /* SimpleOrderViewController.xib */,
+			);
+			path = Simple;
+			sourceTree = "<group>";
+		};
+		E964B2D41DE5BF71003A719F /* Ifd */ = {
+			isa = PBXGroup;
+			children = (
+				E964B2DF1DE5C14E003A719F /* IfdOrderViewController.swift */,
+				E964B2E71DE5C173003A719F /* IfdOrderViewController.xib */,
+			);
+			path = Ifd;
+			sourceTree = "<group>";
+		};
+		E964B2D51DE5C012003A719F /* Oco */ = {
+			isa = PBXGroup;
+			children = (
+				E964B2E11DE5C156003A719F /* OcoOrderViewController.swift */,
+				E964B2E91DE5C17B003A719F /* OcoOrderViewController.xib */,
+			);
+			path = Oco;
+			sourceTree = "<group>";
+		};
+		E964B2D61DE5C018003A719F /* Ifdoco */ = {
+			isa = PBXGroup;
+			children = (
+				E964B2E31DE5C15F003A719F /* IfdocoOrderViewController.swift */,
+				E964B2EB1DE5C181003A719F /* IfdocoOrderViewController.xib */,
+			);
+			path = Ifdoco;
+			sourceTree = "<group>";
+		};
+		E964B2ED1DE5C294003A719F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E96D3FD31DE9C0CE0072E80C /* BaseSendOrderCommonViewController.swift */,
+				E96D3FC81DE97B440072E80C /* SendOrderViewModel.swift */,
+				E964B2F81DE5C475003A719F /* Limit */,
+				E964B2FC1DE5C4B3003A719F /* Market */,
+				E964B2FB1DE5C4AA003A719F /* Stop */,
+				E964B2FA1DE5C4A1003A719F /* StopLimit */,
+				E964B2F91DE5C494003A719F /* Trail */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E964B2F81DE5C475003A719F /* Limit */ = {
+			isa = PBXGroup;
+			children = (
+				E964B2FD1DE5C50C003A719F /* LimitOrderViewController.swift */,
+				E964B3071DE5C52F003A719F /* LimitOrderViewController.xib */,
+			);
+			path = Limit;
+			sourceTree = "<group>";
+		};
+		E964B2F91DE5C494003A719F /* Trail */ = {
+			isa = PBXGroup;
+			children = (
+				E964B3051DE5C526003A719F /* TrailOrderViewController.swift */,
+				E964B30F1DE5C573003A719F /* TrailOrderViewController.xib */,
+			);
+			path = Trail;
+			sourceTree = "<group>";
+		};
+		E964B2FA1DE5C4A1003A719F /* StopLimit */ = {
+			isa = PBXGroup;
+			children = (
+				E964B3031DE5C520003A719F /* StopLimitOrderViewController.swift */,
+				E964B30D1DE5C566003A719F /* StopLimitOrderViewController.xib */,
+			);
+			path = StopLimit;
+			sourceTree = "<group>";
+		};
+		E964B2FB1DE5C4AA003A719F /* Stop */ = {
+			isa = PBXGroup;
+			children = (
+				E964B3011DE5C51A003A719F /* StopOrderViewController.swift */,
+				E964B30B1DE5C558003A719F /* StopOrderViewController.xib */,
+			);
+			path = Stop;
+			sourceTree = "<group>";
+		};
+		E964B2FC1DE5C4B3003A719F /* Market */ = {
+			isa = PBXGroup;
+			children = (
+				E964B2FF1DE5C515003A719F /* MarketOrderViewController.swift */,
+				E964B3091DE5C54A003A719F /* MarketOrderViewController.xib */,
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
+		E964B3111DE5C8A0003A719F /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				E964B3141DE5CA09003A719F /* ApiClient.swift */,
+				E964B3161DE5CA12003A719F /* ApiExecuter */,
+				E964B31F1DE5CA69003A719F /* Request */,
+				E9F68A0C1DEA300B0026B41D /* Response */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		E964B3161DE5CA12003A719F /* ApiExecuter */ = {
+			isa = PBXGroup;
+			children = (
+				E964B3171DE5CA23003A719F /* ApiExecuterProtocol.swift */,
+				E964B3191DE5CA2D003A719F /* ApiKit */,
+			);
+			path = ApiExecuter;
+			sourceTree = "<group>";
+		};
+		E964B3191DE5CA2D003A719F /* ApiKit */ = {
+			isa = PBXGroup;
+			children = (
+				E964B31B1DE5CA3A003A719F /* ApiKitApiExecuterProtocol.swift */,
+				E964B31A1DE5CA3A003A719F /* ApiKitApiExecuter.swift */,
+			);
+			path = ApiKit;
+			sourceTree = "<group>";
+		};
+		E964B31F1DE5CA69003A719F /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				E964B3211DE5CA81003A719F /* RequestProtocol.swift */,
+				E964B3201DE5CA75003A719F /* ApiKit */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		E964B3201DE5CA75003A719F /* ApiKit */ = {
+			isa = PBXGroup;
+			children = (
+				E964B3231DE5CA87003A719F /* ApiKitRequestProtocol.swift */,
+			);
+			path = ApiKit;
+			sourceTree = "<group>";
+		};
+		E964B3251DE5CAE2003A719F /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				E964B3261DE5CB3F003A719F /* Enums.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		E96D3FCA1DE9B96B0072E80C /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				E96D3FCB1DE9B9910072E80C /* BitTraderError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		E9F68A0C1DEA300B0026B41D /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				E9F68A0D1DEA30320026B41D /* ApiResponseError.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1139,22 +1315,31 @@
 			files = (
 				07BD52011DA3DECD00DA54B8 /* LaunchScreen.storyboard in Resources */,
 				07932C751DBD035F00E38530 /* RateTableViewCell.xib in Resources */,
+				E964B30E1DE5C566003A719F /* StopLimitOrderViewController.xib in Resources */,
+				E964B3081DE5C52F003A719F /* LimitOrderViewController.xib in Resources */,
+				E964B3101DE5C573003A719F /* TrailOrderViewController.xib in Resources */,
 				07DCBF301DCB737600B60008 /* PositionTableViewCell.xib in Resources */,
+				E964B2E81DE5C173003A719F /* IfdOrderViewController.xib in Resources */,
 				07B8545B1DB1DCE8009E3181 /* NumberPadViewController.xib in Resources */,
+				E964B2EC1DE5C181003A719F /* IfdocoOrderViewController.xib in Resources */,
+				E964B30A1DE5C54A003A719F /* MarketOrderViewController.xib in Resources */,
+				E964B30C1DE5C558003A719F /* StopOrderViewController.xib in Resources */,
 				072441941DACC1E70059E872 /* MenuRootViewController.xib in Resources */,
 				07BDF9B91DD1F55E006C99CA /* PagerViewController.xib in Resources */,
 				07AFA17C1DD89CBC00A8B981 /* OrderListTableViewCell.xib in Resources */,
 				07DCBF2A1DCB718E00B60008 /* PositionListViewController.xib in Resources */,
 				072441901DACC1D40059E872 /* MarketRootViewController.xib in Resources */,
 				072441B51DAE03980059E872 /* PlusMinusInputField.xib in Resources */,
+				E964B2E61DE5C16C003A719F /* SimpleOrderViewController.xib in Resources */,
 				07B854471DAF2D84009E3181 /* BTCChangerViewController.xib in Resources */,
 				07FAE3301DA77CE600089136 /* RootViewController.xib in Resources */,
 				072441AB1DADD6F30059E872 /* MenuListViewController.xib in Resources */,
+				E964B2D21DE5BE93003A719F /* SendOrderRootViewController.xib in Resources */,
+				E964B2EA1DE5C17B003A719F /* OcoOrderViewController.xib in Resources */,
 				072441871DACBEB40059E872 /* RegistKeyViewController.xib in Resources */,
 				072441981DACC1FB0059E872 /* ReferenceRootViewController.xib in Resources */,
 				07BD522E1DA3E67A00DA54B8 /* Assets.xcassets in Resources */,
 				07BDF9BE1DD370A5006C99CA /* OrderListViewController.xib in Resources */,
-				E94FD3421DE34042000650EF /* SendOrderViewController.xib in Resources */,
 				0724419C1DACC20A0059E872 /* TradeRootViewController.xib in Resources */,
 				079E4A7A1DC630770004EB78 /* RateList.storyboard in Resources */,
 			);
@@ -1290,13 +1475,15 @@
 			files = (
 				BA4FA23F1DDDF695001038E5 /* BitflyerGetPositionsResponse.swift in Sources */,
 				07BDF9B81DD1F55E006C99CA /* PagerViewController.swift in Sources */,
-				BA9672931DDCBE2900AB6384 /* ApiExecuterProtocol.swift in Sources */,
 				07932C711DBD023100E38530 /* RateViewModel.swift in Sources */,
+				E964B3061DE5C526003A719F /* TrailOrderViewController.swift in Sources */,
 				072441881DACBEB40059E872 /* RegistKeyViewModel.swift in Sources */,
 				07AFA1761DD84E9600A8B981 /* OrderListReducer.swift in Sources */,
 				07069C9F1DE16DCF002CEC31 /* BitflyerSendChildOrderRequest.swift in Sources */,
 				07069CB01DE19C64002CEC31 /* BitflyerGetBalanceRequestParameter.swift in Sources */,
 				07097DD51DC8C8CF00A08EEA /* StringUtils.swift in Sources */,
+				E964B2E41DE5C15F003A719F /* IfdocoOrderViewController.swift in Sources */,
+				E964B2DE1DE5C145003A719F /* SimpleOrderViewController.swift in Sources */,
 				BA76BE631DDF2CAB005514AC /* BtcBoxTickerResponse.swift in Sources */,
 				BA76BE701DDF2FEE005514AC /* BitflyerTickerRequest.swift in Sources */,
 				072441B01DADFA570059E872 /* Protocol.swift in Sources */,
@@ -1305,34 +1492,40 @@
 				07AFA1791DD8571400A8B981 /* OrderListTableViewCell.swift in Sources */,
 				BAD390241DDF8D38001FA3F5 /* KrakenTickerModel.swift in Sources */,
 				07AFA1741DD84DE200A8B981 /* OrderListAction.swift in Sources */,
-				BA4FA21E1DDDF25B001038E5 /* ApiKitApiExecuter.swift in Sources */,
 				0755CBCE1DE5D05C005A7873 /* BitflyerSendParentOrderResponse.swift in Sources */,
+				E96D3FC91DE97B440072E80C /* SendOrderViewModel.swift in Sources */,
 				072441861DACBEB40059E872 /* RegistKeyViewController.swift in Sources */,
 				07BDF9BD1DD370A5006C99CA /* OrderListViewController.swift in Sources */,
 				BA76BE741DDF30EF005514AC /* CoincheckRequest.swift in Sources */,
+				E964B3271DE5CB3F003A719F /* Enums.swift in Sources */,
+				E96D3FD41DE9C0CE0072E80C /* BaseSendOrderCommonViewController.swift in Sources */,
 				07B854551DB1C11F009E3181 /* BTCChangerViewModel.swift in Sources */,
 				BA76BE6C1DDF2F32005514AC /* CoincheckTickerRequest.swift in Sources */,
 				07C7CC591DD4B50E00F7A398 /* OrderListState.swift in Sources */,
 				07BD522A1DA3E4AE00DA54B8 /* AppDelegate.swift in Sources */,
 				07DCBF2C1DCB734800B60008 /* PositionListViewModel.swift in Sources */,
 				07069CAA1DE17EAA002CEC31 /* BitflyerCancelChildOrderParameter.swift in Sources */,
+				E964B31D1DE5CA3A003A719F /* ApiKitApiExecuterProtocol.swift in Sources */,
 				07DCBF2F1DCB737600B60008 /* PositionTableViewCell.swift in Sources */,
 				BA4FA2351DDDF65B001038E5 /* BitflyerGetHealthResponse.swift in Sources */,
 				07069CA31DE17333002CEC31 /* BitflyerSendChildOrderRequestParameter.swift in Sources */,
 				07932C681DBCDD6600E38530 /* RateListViewController.swift in Sources */,
+				E964B3001DE5C515003A719F /* MarketOrderViewController.swift in Sources */,
 				07B8545A1DB1DCE8009E3181 /* NumberPadViewController.swift in Sources */,
 				07B8545D1DB1ECEF009E3181 /* NumberPadAction.swift in Sources */,
+				E964B3151DE5CA09003A719F /* ApiClient.swift in Sources */,
 				BA699AE81DD0D5F6007B650F /* NumberPadViewController+Rx.swift in Sources */,
 				BA699AE61DD0D369007B650F /* RxNumberPadViewDelegateProxy.swift in Sources */,
 				07FAE3291DA778E500089136 /* RootViewController.swift in Sources */,
+				E96D3FD61DE9C15A0072E80C /* BaseSendOrderViewController.swift in Sources */,
+				E964B2E01DE5C14E003A719F /* IfdOrderViewController.swift in Sources */,
 				BA76BE591DDF2C44005514AC /* BtcBoxTickerRequest.swift in Sources */,
-				E94FD3411DE34042000650EF /* SendOrderViewController.swift in Sources */,
-				BA4FA21F1DDDF25B001038E5 /* ApiKitApiExecuterProtocol.swift in Sources */,
 				072441971DACC1FB0059E872 /* ReferenceRootViewController.swift in Sources */,
 				07932C6B1DBCEEB300E38530 /* RateListViewModel.swift in Sources */,
 				07932C741DBD035F00E38530 /* RateTableViewCell.swift in Sources */,
 				07FAE3341DA7BA2500089136 /* AppStatus.swift in Sources */,
 				BA76BE721DDF3007005514AC /* BitflyerTickerResponse.swift in Sources */,
+				E9F68A0E1DEA30320026B41D /* ApiResponseError.swift in Sources */,
 				BA76BE491DDF2AF2005514AC /* BtcBoxRequest.swift in Sources */,
 				073A01D01DDB3705001F6E9D /* RxPlusMinusInputFieldDelegateProxy.swift in Sources */,
 				072B67411DAA7A0900F276AF /* Extension.swift in Sources */,
@@ -1340,28 +1533,35 @@
 				BA4FA23E1DDDF695001038E5 /* BitflyerGetPositionsRequest.swift in Sources */,
 				BA4FA2311DDDF654001038E5 /* BitflyerGetBoardResponse.swift in Sources */,
 				BA76BE5B1DDF2C50005514AC /* KrakenTickerRequest.swift in Sources */,
-				BA4FA2211DDDF262001038E5 /* ApiKitRequestProtocol.swift in Sources */,
 				BA4FA2471DDDF69D001038E5 /* BitflyerGetChildOrdersResponse.swift in Sources */,
+				E964B2D11DE5BE93003A719F /* SendOrderRootViewController.swift in Sources */,
 				BA4FA24E1DDDF6A4001038E5 /* BitflyerGetBalanceResponse.swift in Sources */,
 				BA4FA22F1DDDF654001038E5 /* BitflyerGetBoardRequest.swift in Sources */,
 				07069CAE1DE19C2D002CEC31 /* BitflyerTickerRequestParameter.swift in Sources */,
 				BA4FA24D1DDDF6A4001038E5 /* BitflyerGetBalanceRequest.swift in Sources */,
+				E964B3241DE5CA87003A719F /* ApiKitRequestProtocol.swift in Sources */,
 				072441A51DADD5E90059E872 /* BTCChangerViewController.swift in Sources */,
 				BA4FA2521DDDF6B0001038E5 /* BitTraderRequest.swift in Sources */,
 				BA76BE4B1DDF2AFE005514AC /* ZaifRequest.swift in Sources */,
+				E964B3021DE5C51A003A719F /* StopOrderViewController.swift in Sources */,
 				BA76BE5D1DDF2C7F005514AC /* ZaifTickerRequest.swift in Sources */,
 				07B854621DB24F83009E3181 /* IndentLabel.swift in Sources */,
 				07B8545F1DB205DB009E3181 /* NumberPadState.swift in Sources */,
 				BA4FA24C1DDDF6A4001038E5 /* BitflyerBalanceModel.swift in Sources */,
 				BA76BE5F1DDF2C96005514AC /* ZaifTickerResponse.swift in Sources */,
 				BAD390221DDF8C8D001FA3F5 /* ResultModel.swift in Sources */,
+				E96D3FCC1DE9B9910072E80C /* BitTraderError.swift in Sources */,
 				BA76BE4D1DDF2B0D005514AC /* KrakenRequest.swift in Sources */,
 				BA4FA23D1DDDF695001038E5 /* BitflyerGetPositionsParameter.swift in Sources */,
 				072441931DACC1E70059E872 /* MenuRootViewController.swift in Sources */,
+				E964B3041DE5C520003A719F /* StopLimitOrderViewController.swift in Sources */,
 				BA4FA2301DDDF654001038E5 /* BitflyerGetBoardRequestParameter.swift in Sources */,
+				E964B3181DE5CA23003A719F /* ApiExecuterProtocol.swift in Sources */,
 				07069CA61DE17E8D002CEC31 /* BitflyerCancelChildOrderRequest.swift in Sources */,
+				E964B31C1DE5CA3A003A719F /* ApiKitApiExecuter.swift in Sources */,
 				BA4FA2401DDDF695001038E5 /* BitflyerPositionModel.swift in Sources */,
 				BA76BE6D1DDF2F32005514AC /* CoincheckTickerResponse.swift in Sources */,
+				E964B3221DE5CA81003A719F /* RequestProtocol.swift in Sources */,
 				BA4FA22E1DDDF654001038E5 /* BitflyerBoardModel.swift in Sources */,
 				072441AA1DADD6F30059E872 /* MenuListViewController.swift in Sources */,
 				0755CBCC1DE5D04F005A7873 /* BitflyerSendParentOrderRequest.swift in Sources */,
@@ -1376,14 +1576,14 @@
 				BA4FA2481DDDF69D001038E5 /* BitflyerOrderModel.swift in Sources */,
 				072441AD1DADD7080059E872 /* MenuListViewModel.swift in Sources */,
 				BA4FA2461DDDF69D001038E5 /* BitflyerGetChildOrdersRequest.swift in Sources */,
+				E964B2FE1DE5C50C003A719F /* LimitOrderViewController.swift in Sources */,
 				072441B31DAE03120059E872 /* PlusMinusInputField.swift in Sources */,
+				E964B2E21DE5C156003A719F /* OcoOrderViewController.swift in Sources */,
 				BA51DEC31DCEE59800D5029B /* NumberPadViewController+RxCreate.swift in Sources */,
 				07069CAC1DE19BD4002CEC31 /* BitflyerGetHealthRequestParameter.swift in Sources */,
 				0724419B1DACC20A0059E872 /* TradeRootViewController.swift in Sources */,
 				BA4FA2511DDDF6B0001038E5 /* BitTraderPrivateRequest.swift in Sources */,
 				07069CA81DE17E99002CEC31 /* BitflyerCancelChildOrderResponse.swift in Sources */,
-				BA9672851DDCBABC00AB6384 /* RequestProtocol.swift in Sources */,
-				BA96728F1DDCBDEA00AB6384 /* Api.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,14 +10,17 @@ import UIKit
 
 class TradeRootViewController: UIViewController, ViewContainer {
 
+    private var activeViewController: UIViewController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         edgesForExtendedLayout = []
 
-        let navi = UINavigationController(rootViewController: SendOrderViewController())
+        let navi = UINavigationController(rootViewController: SendOrderRootViewController())
         navi.navigationBar.isTranslucent = false
         addChildContainerViewController(navi)
+        activeViewController = navi
     }
 }
 

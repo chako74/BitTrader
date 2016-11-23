@@ -10,22 +10,18 @@ import APIKit
 import Himotoki
 import Result
 
-class ApiKitApiExecuter<RequestType: ApiKitRequestProtocol, DTO>: ApiKitApiExecuterProtocol {
+class ApiKitApiExecuter<RequestType: ApiKitRequestProtocol, ModelType>: ApiKitApiExecuterProtocol {
 
     weak var delegate: ApiExecuterDelegate?
 
-    typealias Error = SessionTaskError
+    typealias Error = ApiResponseError
     typealias ResultType = Result<RequestType.Response, Error>
-    typealias ResponseConverter = (RequestType.Response) -> DTO?
+    typealias ResponseConverter = (RequestType.Response) -> ModelType?
 
     private let _request: RequestType
-    private var _responseConverter: ResponseConverter = { r in r as? DTO }
+    private var _responseConverter: ResponseConverter
 
-    required init(_ request: RequestType) {
-        _request = request
-    }
-
-    required init(_ request: RequestType, responseConverter: @escaping ResponseConverter) {
+    required init(_ request: RequestType, responseConverter: @escaping ResponseConverter = { r in r as? ModelType }) {
         _request = request
         _responseConverter = responseConverter
     }
@@ -36,12 +32,21 @@ class ApiKitApiExecuter<RequestType: ApiKitRequestProtocol, DTO>: ApiKitApiExecu
 
     func execute(_ request: RequestType, _ callback: @escaping (ResultType) -> Void) {
         Session.send(ApiKitRequestAdapter(request)) { result in
-            callback(result)
+            switch result {
+            case .success(let res):
+                callback(.success(res))
+            case .failure(.responseError(let apiResponseError as ApiResponseError)):
+                callback(.failure(apiResponseError))
+            default:
+                callback(.failure(ApiResponseError(status: 500,
+                                                   message: "Internal Server Error",
+                                                   data: nil)))
+            }
         }
     }
 
-    func onSuccess(_ response: RequestType.Response) -> DTO? {
-        return _responseConverter(response)
+    func onSuccess(_ response: RequestType.Response) -> ModelType {
+        return _responseConverter(response)!
     }
 
     func onFailure(_ error: Error) -> Error {
