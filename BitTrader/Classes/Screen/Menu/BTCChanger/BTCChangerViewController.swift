@@ -25,6 +25,8 @@ class BTCChangerViewController: UIViewController, NumberPadViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        edgesForExtendedLayout = []
+        
         btcPlusMinusInput!.format = "%.8f"
         satoshiPlusMinusInput!.format = "%.0f"
         
