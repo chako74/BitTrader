@@ -49,6 +49,8 @@ class NumberPadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        edgesForExtendedLayout = []
+        
         bind()
     }
 
