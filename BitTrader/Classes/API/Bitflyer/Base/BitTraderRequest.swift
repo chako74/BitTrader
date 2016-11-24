@@ -10,7 +10,7 @@ import APIKit
 import Himotoki
 
 public protocol BitTraderRequestParameter {
-    func createParameters() -> [String: String]?
+    func createParameters() -> [String: Any]?
 }
 
 protocol BitTraderRequest: ApiKitRequestProtocol {

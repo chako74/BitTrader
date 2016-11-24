@@ -11,7 +11,7 @@ struct BitflyerGetBalanceRequestParameter {
 
 extension BitflyerGetBalanceRequestParameter: BitTraderRequestParameter {
     
-    func createParameters() -> [String : String]? {
+    func createParameters() -> [String : Any]? {
         return nil
     }
 }

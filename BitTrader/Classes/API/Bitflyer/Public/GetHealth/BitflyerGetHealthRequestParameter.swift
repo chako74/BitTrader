@@ -11,7 +11,7 @@ struct BitflyerGetHealthRequestParameter {
 
 extension BitflyerGetHealthRequestParameter: BitTraderRequestParameter {
     
-    func createParameters() -> [String : String]? {
+    func createParameters() -> [String : Any]? {
         return nil
     }
 }
