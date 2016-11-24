@@ -15,7 +15,7 @@ struct BitflyerCancelChildOrderParameter {
 
 extension BitflyerCancelChildOrderParameter: BitTraderRequestParameter {
     
-    func createParameters() -> [String : String]? {
+    func createParameters() -> [String : Any]? {
         
         var dic = [String: String]()
         

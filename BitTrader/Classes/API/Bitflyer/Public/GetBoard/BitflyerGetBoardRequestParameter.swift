@@ -12,9 +12,9 @@ struct BitflyerGetBoardRequestParameter {
 
 extension BitflyerGetBoardRequestParameter: BitTraderRequestParameter {
     
-    func createParameters() -> [String : String]? {
+    func createParameters() -> [String : Any]? {
         
-        var dic = [String: String]()
+        var dic = [String: Any]()
         if let productCode = self.productCode {
             dic[Bitflyer.ApiKey.productCode.rawValue] = productCode.rawValue
         }

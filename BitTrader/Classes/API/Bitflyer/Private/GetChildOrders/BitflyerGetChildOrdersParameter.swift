@@ -18,20 +18,20 @@ struct BitflyerGetChildOrdersParameter {
 
 extension BitflyerGetChildOrdersParameter: BitTraderRequestParameter {
     
-    func createParameters() -> [String: String]? {
+    func createParameters() -> [String: Any]? {
         
-        var dic = [String: String]()
+        var dic = [String: Any]()
         if let productCode = self.productCode {
             dic[Bitflyer.ApiKey.productCode.rawValue] = productCode.rawValue
         }
         if let count = self.count {
-            dic[Bitflyer.ApiKey.count.rawValue] = String(count)
+            dic[Bitflyer.ApiKey.count.rawValue] = count
         }
         if let before = self.before {
-            dic[Bitflyer.ApiKey.before.rawValue] = String(before)
+            dic[Bitflyer.ApiKey.before.rawValue] = before
         }
         if let after = self.after {
-            dic[Bitflyer.ApiKey.after.rawValue] = String(after)
+            dic[Bitflyer.ApiKey.after.rawValue] = after
         }
         if let childOrderState = self.childOrderState {
             dic[Bitflyer.ApiKey.childOrderState.rawValue] = childOrderState.rawValue

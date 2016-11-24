@@ -11,7 +11,7 @@ import Foundation
 struct BitflyerSendChildOrderRequestParameter {
     
     let productCode: Bitflyer.ProductCodeType
-    let orderType: Bitflyer.OrderType
+    let orderType: Bitflyer.NomalOrderType
     let side: Bitflyer.SideType
     let size: Double
     let minuteToExpire: Int?
@@ -20,9 +20,9 @@ struct BitflyerSendChildOrderRequestParameter {
 
 extension BitflyerSendChildOrderRequestParameter: BitTraderRequestParameter {
     
-    func createParameters() -> [String : String]? {
+    func createParameters() -> [String : Any]? {
         
-        var dic = [String: String]()
+        var dic = [String: Any]()
         dic[Bitflyer.ApiKey.productCode.rawValue] = productCode.rawValue
         dic[Bitflyer.ApiKey.side.rawValue] = side.rawValue
         
@@ -31,9 +31,9 @@ extension BitflyerSendChildOrderRequestParameter: BitTraderRequestParameter {
             dic[Bitflyer.ApiKey.childOrderType.rawValue] = Bitflyer.ChildOrderType.market.rawValue
         case let .limit(price):
             dic[Bitflyer.ApiKey.childOrderType.rawValue] = Bitflyer.ChildOrderType.limit.rawValue
-            dic[Bitflyer.ApiKey.price.rawValue] = String(price)
+            dic[Bitflyer.ApiKey.price.rawValue] = price
         }
-        dic[Bitflyer.ApiKey.size.rawValue] = String(size)
+        dic[Bitflyer.ApiKey.size.rawValue] = size
         if let minuteToExpire = self.minuteToExpire {
             dic[Bitflyer.ApiKey.minuteToExpire.rawValue] = String(minuteToExpire)
         }

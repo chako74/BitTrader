@@ -12,8 +12,8 @@ struct BitflyerGetPositionsParameter {
 
 extension BitflyerGetPositionsParameter: BitTraderRequestParameter {
     
-    func createParameters() -> [String : String]? {
-        var dic = [String: String]()
+    func createParameters() -> [String : Any]? {
+        var dic = [String: Any]()
         dic[Bitflyer.ApiKey.productCode.rawValue] = productCode.rawValue
         
         return dic

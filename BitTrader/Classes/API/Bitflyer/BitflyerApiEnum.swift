@@ -52,6 +52,21 @@ enum Bitflyer {
         case fok = "FOK"
     }
     
+    enum OrderMethodType: String {
+        case simple = "SIMPLE"
+        case ifd = "IFD"
+        case oco = "OCO"
+        case ifdoco = "IFDOCO"
+    }
+    
+    enum ConditionType: String {
+        case limit = "LIMIT"
+        case market = "MARKET"
+        case stop = "STOP"
+        case stopLimit = "STOP_LIMIT"
+        case trail = "TRAIL"
+    }
+    
     enum ApiKey: String {
         case productCode = "product_code"
         case side = "side"
@@ -99,13 +114,19 @@ enum Bitflyer {
         case totalBidDepth = "total_bid_depth"
         case totalAskDepth = "total_ask_depth"
         case volumeByProduct = "volume_by_product"
+        case orderMethod = "order_method"
+        case conditionType = "condition_type"
+        case triggerPrice = "trigger_price"
+        case offset = "offset"
+        case parameters = "parameters"
+        case parentOrderAcceptanceId = "parent_order_acceptance_id"
         
         func keyPath() -> KeyPath {
             return KeyPath.init(rawValue)
         }
     }
     
-    enum OrderType {
+    enum NomalOrderType {
         case market
         case limit(price: Int)
     }
@@ -113,5 +134,13 @@ enum Bitflyer {
     enum CancelChildOrderType {
         case orderId(productCode: ProductCodeType, orderId: String)
         case acceptanceId(productCode: ProductCodeType, acceptancedId: String)
+    }
+    
+    enum SpecialOrderType {
+        case market
+        case limit(price: Int)
+        case stop(triggerPrice: Int)
+        case stopLimit(price: Int, triggerPrice: Int)
+        case trail(trailDistance: Int)
     }
 }
