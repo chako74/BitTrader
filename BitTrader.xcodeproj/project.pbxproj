@@ -407,7 +407,7 @@
 		072441891DACC08D0059E872 /* Trade */ = {
 			isa = PBXGroup;
 			children = (
-				E964B2CE1DE5BE4D003A719F /* OrderSend */,
+				E964B2CE1DE5BE4D003A719F /* SendOrder */,
 				072441991DACC20A0059E872 /* TradeRootViewController.swift */,
 				0724419A1DACC20A0059E872 /* TradeRootViewController.xib */,
 			);
@@ -1013,7 +1013,7 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		E964B2CE1DE5BE4D003A719F /* OrderSend */ = {
+		E964B2CE1DE5BE4D003A719F /* SendOrder */ = {
 			isa = PBXGroup;
 			children = (
 				E964B2CF1DE5BE93003A719F /* SendOrderRootViewController.swift */,
@@ -1025,7 +1025,8 @@
 				E964B2D61DE5C018003A719F /* Ifdoco */,
 				E964B2ED1DE5C294003A719F /* Common */,
 			);
-			path = OrderSend;
+			name = SendOrder;
+			path = SendOrder;
 			sourceTree = "<group>";
 		};
 		E964B2D31DE5BF2E003A719F /* Simple */ = {
@@ -1479,7 +1480,6 @@
 				BA4FA23F1DDDF695001038E5 /* BitflyerGetPositionsResponse.swift in Sources */,
 				07BDF9B81DD1F55E006C99CA /* PagerViewController.swift in Sources */,
 				E964B3061DE5C526003A719F /* TrailOrderViewController.swift in Sources */,
-				BA9672931DDCBE2900AB6384 /* ApiExecuterProtocol.swift in Sources */,
 				07932C711DBD023100E38530 /* RateModel.swift in Sources */,
 				072441881DACBEB40059E872 /* RegistKeyViewModel.swift in Sources */,
 				07AFA1761DD84E9600A8B981 /* OrderListReducer.swift in Sources */,
