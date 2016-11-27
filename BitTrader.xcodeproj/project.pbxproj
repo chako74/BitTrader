@@ -44,6 +44,7 @@
 		0755CBCE1DE5D05C005A7873 /* BitflyerSendParentOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0755CBCD1DE5D05C005A7873 /* BitflyerSendParentOrderResponse.swift */; };
 		0755CBD01DE5D06A005A7873 /* BitflyerSendParentOrderParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0755CBCF1DE5D06A005A7873 /* BitflyerSendParentOrderParameter.swift */; };
 		0755CBD21DE5D20A005A7873 /* SendOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0755CBD11DE5D20A005A7873 /* SendOrderModel.swift */; };
+		078065D71DE8898100448BB8 /* RateListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078065D61DE8898100448BB8 /* RateListModel.swift */; };
 		07932C681DBCDD6600E38530 /* RateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07932C661DBCDD6600E38530 /* RateListViewController.swift */; };
 		07932C6B1DBCEEB300E38530 /* RateListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07932C6A1DBCEEB300E38530 /* RateListViewModel.swift */; };
 		07932C711DBD023100E38530 /* RateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07932C701DBD023100E38530 /* RateModel.swift */; };
@@ -210,6 +211,7 @@
 		0755CBCD1DE5D05C005A7873 /* BitflyerSendParentOrderResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerSendParentOrderResponse.swift; sourceTree = "<group>"; };
 		0755CBCF1DE5D06A005A7873 /* BitflyerSendParentOrderParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitflyerSendParentOrderParameter.swift; sourceTree = "<group>"; };
 		0755CBD11DE5D20A005A7873 /* SendOrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendOrderModel.swift; sourceTree = "<group>"; };
+		078065D61DE8898100448BB8 /* RateListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateListModel.swift; sourceTree = "<group>"; };
 		07932C661DBCDD6600E38530 /* RateListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateListViewController.swift; sourceTree = "<group>"; };
 		07932C6A1DBCEEB300E38530 /* RateListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateListViewModel.swift; sourceTree = "<group>"; };
 		07932C701DBD023100E38530 /* RateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateModel.swift; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 			children = (
 				07932C661DBCDD6600E38530 /* RateListViewController.swift */,
 				07932C6A1DBCEEB300E38530 /* RateListViewModel.swift */,
+				078065D61DE8898100448BB8 /* RateListModel.swift */,
 				07932C721DBD035F00E38530 /* RateTableViewCell.swift */,
 				07932C731DBD035F00E38530 /* RateTableViewCell.xib */,
 				07932C701DBD023100E38530 /* RateModel.swift */,
@@ -1475,8 +1478,9 @@
 			files = (
 				BA4FA23F1DDDF695001038E5 /* BitflyerGetPositionsResponse.swift in Sources */,
 				07BDF9B81DD1F55E006C99CA /* PagerViewController.swift in Sources */,
-				07932C711DBD023100E38530 /* RateModel.swift in Sources */,
 				E964B3061DE5C526003A719F /* TrailOrderViewController.swift in Sources */,
+				BA9672931DDCBE2900AB6384 /* ApiExecuterProtocol.swift in Sources */,
+				07932C711DBD023100E38530 /* RateModel.swift in Sources */,
 				072441881DACBEB40059E872 /* RegistKeyViewModel.swift in Sources */,
 				07AFA1761DD84E9600A8B981 /* OrderListReducer.swift in Sources */,
 				07069C9F1DE16DCF002CEC31 /* BitflyerSendChildOrderRequest.swift in Sources */,
@@ -1580,6 +1584,7 @@
 				072441B31DAE03120059E872 /* PlusMinusInputField.swift in Sources */,
 				E964B2E21DE5C156003A719F /* OcoOrderViewController.swift in Sources */,
 				BA51DEC31DCEE59800D5029B /* NumberPadViewController+RxCreate.swift in Sources */,
+				078065D71DE8898100448BB8 /* RateListModel.swift in Sources */,
 				07069CAC1DE19BD4002CEC31 /* BitflyerGetHealthRequestParameter.swift in Sources */,
 				0724419B1DACC20A0059E872 /* TradeRootViewController.swift in Sources */,
 				BA4FA2511DDDF6B0001038E5 /* BitTraderPrivateRequest.swift in Sources */,
