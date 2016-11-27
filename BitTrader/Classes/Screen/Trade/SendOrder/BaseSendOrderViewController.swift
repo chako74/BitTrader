@@ -55,7 +55,7 @@ class BaseSendOrderViewController: UIViewController {
     func makeErrorMessage(_ viewModel: SendOrderViewModel) -> String {
         var message = "\(viewModel.orderType.name)\n"
         message += "\(viewModel.side.rawValue)\n"
-        message += "数量：\(viewModel.size)\n"
+        message += "数量:\(viewModel.size)\n"
         message += viewModel.orderType.condition
         return message
     }
