@@ -34,14 +34,6 @@ class ReSimpleOrderViewController: ReBaseSendOrderViewController, ViewContainer,
         addChildContainerViewController(newAvc, atContainerView: containerView)
     }
 
-    override func updateBidRate(rate: String) {
-        activeViewController?.updateBidRate(rate: rate)
-    }
-
-    override func updateAskRate(rate: String) {
-        activeViewController?.updateAskRate(rate: rate)
-    }
-
     func onSuccess<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType) {
         showAlert(message: "complete")
     }

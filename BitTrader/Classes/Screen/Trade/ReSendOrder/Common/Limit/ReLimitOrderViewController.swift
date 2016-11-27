@@ -7,10 +7,9 @@
 //
 
 import UIKit
+import ReSwift
 
-class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinusInputFieldDelegate, NumberPadViewDelegate {
-
-    weak var delegate: ReSendOrderRootViewControllerProtocol?
+class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinusInputFieldDelegate, NumberPadViewDelegate, StoreSubscriber {
 
     private var bidAsk: Enums.BidAsk
     private var targetField: PlusMinusInputField?
@@ -20,9 +19,8 @@ class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinus
     @IBOutlet weak var amountPlusMinusInput: PlusMinusInputField!
     @IBOutlet weak var pricePlusMinusInput: PlusMinusInputField!
 
-    init(bidAsk: Enums.BidAsk, delegete: ReSendOrderRootViewControllerProtocol) {
+    init(bidAsk: Enums.BidAsk) {
         self.bidAsk = bidAsk
-        self.delegate = delegete
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -39,6 +37,24 @@ class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinus
         super.viewWillAppear(animated)
 
         changeBidAsk(bidAsk: bidAsk)
+
+        store.subscribe(self) { state in
+            state.sendOrderState
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        store.unsubscribe(self)
+    }
+
+    func newState(state: SendOrderState) {
+        guard let rate = state.rate, !rate.isEmpty else {
+            changeBidAsk(bidAsk: state.bidAsk)
+            return
+        }
+        updateRate(bidAsk: state.bidAsk, rate: Double(rate)!)
     }
 
     func initComponent() {
@@ -62,14 +78,6 @@ class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinus
 
         pricePlusMinusInput.format = "%.0f"
         pricePlusMinusInput.delegate = self
-    }
-
-    override func updateBidRate(rate: String) {
-        updateRate(bidAsk: .bid, rate: Double(rate)!)
-    }
-
-    override func updateAskRate(rate: String) {
-        updateRate(bidAsk: .ask, rate: Double(rate)!)
     }
 
     override func reSendOrderViewModel() throws -> ReSendOrderViewModel {
@@ -116,17 +124,11 @@ class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinus
     }
 
     @IBAction func onBidButton(_ sender: UIButton) {
-        guard let rate = self.delegate?.willNeedBidRate(rateType: .bitflyerFx) else {
-            return
-        }
-        updateRate(bidAsk: .bid, rate: Double(rate)!)
+        store.dispatch(SendOrderAction(bidAsk: .bid, rate: nil))
     }
 
     @IBAction func onAskButton(_ sender: UIButton) {
-        guard let rate = self.delegate?.willNeedAskRate(rateType: .bitflyerFx) else {
-            return
-        }
-        updateRate(bidAsk: .ask, rate: Double(rate)!)
+        store.dispatch(SendOrderAction(bidAsk: .ask, rate: nil))
     }
 
     private func updateRate(bidAsk: Enums.BidAsk, rate: Double) {

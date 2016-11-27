@@ -7,13 +7,9 @@
 //
 
 import UIKit
+import ReSwift
 
-protocol ReSendOrderRootViewControllerProtocol: NSObjectProtocol {
-    func willNeedBidRate(rateType: RateType) -> String?
-    func willNeedAskRate(rateType: RateType) -> String?
-}
-
-class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerViewDelegate, UIPickerViewDataSource, ApiExecuterDelegate, ReSendOrderRootViewControllerProtocol {
+class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerViewDelegate, UIPickerViewDataSource, ApiExecuterDelegate, StoreSubscriber {
 
     private var activeViewController: ReBaseSendOrderViewController?
 
@@ -42,8 +38,16 @@ class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
         selectedOrder = Enums.Order(rawValue: 0)
         selectedCondition = Enums.Condition(rawValue: 0)
 
-        activeViewController = ReSimpleOrderViewController(productType: productType, condition: .limit, delegete: self)
+        activeViewController = ReSimpleOrderViewController(productType: productType, condition: .limit)
         addChildContainerViewController(activeViewController!, atContainerView: containerView)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        store.subscribe(self) { state in
+            state.sendOrderState
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -56,10 +60,31 @@ class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
         timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.ratePolling), userInfo: nil, repeats: true)
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        store.unsubscribe(self)
+    }
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
         timer?.invalidate()
+    }
+
+    func newState(state: SendOrderState) {
+        guard state.rate == nil, let response = response else {
+            return
+        }
+
+        let reta: String
+        switch state.bidAsk {
+        case .bid:
+            reta = String(describing: response.bestBid)
+        case .ask:
+            reta = String(describing: response.bestAsk)
+        }
+        store.dispatch(SendOrderAction(bidAsk: state.bidAsk, rate: reta))
     }
 
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -91,20 +116,6 @@ class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
 
     func onFailure<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, error: ApiResponseError) {
 
-    }
-
-    func willNeedBidRate(rateType: RateType) -> String? {
-        guard let response = response else {
-            return nil
-        }
-        return String(describing: response.bestBid)
-    }
-
-    func willNeedAskRate(rateType: RateType) -> String? {
-        guard let response = response else {
-            return nil
-        }
-        return String(describing: response.bestAsk)
     }
 
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -146,28 +157,32 @@ class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
 
     @IBAction func onBidButton(_ sender: UIButton) {
         guard let response = response else {
+            store.dispatch(SendOrderAction(bidAsk: .bid, rate: nil))
             return
         }
-        activeViewController?.updateBidRate(rate: String(describing: response.bestBid))
+
+        store.dispatch(SendOrderAction(bidAsk: .bid, rate: String(describing: response.bestBid)))
     }
 
     @IBAction func onAskButton(_ sender: UIButton) {
         guard let response = response else {
+            store.dispatch(SendOrderAction(bidAsk: .ask, rate: nil))
             return
         }
-        activeViewController?.updateAskRate(rate: String(describing: response.bestAsk))
+
+        store.dispatch(SendOrderAction(bidAsk: .ask, rate: String(describing: response.bestAsk)))
     }
 
     private func RecreateOrderViewController(_ productType: Bitflyer.ProductCodeType, _ order: Enums.Order, _ condition: Enums.Condition) -> ReBaseSendOrderViewController? {
         switch order {
         case .simple:
-            return ReSimpleOrderViewController(productType: productType, condition: condition, delegete: self)
+            return ReSimpleOrderViewController(productType: productType, condition: condition)
         case .ifd:
-            return ReIfdOrderViewController(productType: productType, condition: condition, delegete: self)
+            return ReIfdOrderViewController(productType: productType, condition: condition)
         case .oco:
-            return ReOcoOrderViewController(productType: productType, condition: condition, delegete: self)
+            return ReOcoOrderViewController(productType: productType, condition: condition)
         case .ifdoco:
-            return ReIfdocoOrderViewController(productType: productType, condition: condition, delegete: self)
+            return ReIfdocoOrderViewController(productType: productType, condition: condition)
         default:
             return nil
         }

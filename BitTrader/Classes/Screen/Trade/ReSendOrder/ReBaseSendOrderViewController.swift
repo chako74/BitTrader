@@ -10,13 +10,11 @@ import UIKit
 
 class ReBaseSendOrderViewController: UIViewController {
 
-    weak var delegate: ReSendOrderRootViewControllerProtocol?
     var condition: Enums.Condition
     var productType: Bitflyer.ProductCodeType
 
-    init(productType: Bitflyer.ProductCodeType, condition: Enums.Condition, delegete: ReSendOrderRootViewControllerProtocol) {
+    init(productType: Bitflyer.ProductCodeType, condition: Enums.Condition) {
         self.condition = condition
-        self.delegate = delegete
         self.productType = productType
         super.init(nibName: nil, bundle: nil)
     }
@@ -28,17 +26,11 @@ class ReBaseSendOrderViewController: UIViewController {
     func updateCondition(_ condition: Enums.Condition) {
         fatalError("updateCondition(:) has not been implemented")
     }
-    func updateBidRate(rate: String) {
-        fatalError("updateBidRate(rate:) has not been implemented")
-    }
-    func updateAskRate(rate: String) {
-        fatalError("updateAskRate(rate:) has not been implemented")
-    }
 
     func RemackSendOrderChildViewController(condition: Enums.Condition) -> ReBaseSendOrderCommonViewController? {
         switch condition {
         case .limit:
-            return ReLimitOrderViewController(bidAsk: .bid, delegete: delegate!)
+            return ReLimitOrderViewController(bidAsk: .bid)
         case .market:
             return ReMarketOrderViewController()
         case .stop:
