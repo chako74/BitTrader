@@ -35,10 +35,10 @@ class RateTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func update(model: RateViewModel) {
+    func update(model: RateModel) {
         rateTypeLabel!.text = model.rateType.text()
-        midPriceLabel!.text = NSNumber(integerLiteral: model.midPrice.value).formatComma()
-        askPriceLabel!.text = NSNumber(integerLiteral: model.askPrice.value).formatComma()
-        bidPriceLabel!.text = NSNumber(integerLiteral: model.bidPrice.value).formatComma()
+        midPriceLabel!.text = NSNumber(integerLiteral: model.midPrice).formatComma()
+        askPriceLabel!.text = NSNumber(integerLiteral: model.askPrice).formatComma()
+        bidPriceLabel!.text = NSNumber(integerLiteral: model.bidPrice).formatComma()
     }
 }
