@@ -56,6 +56,7 @@ class LimitOrderViewController: BaseSendOrderCommonViewController, PlusMinusInpu
         askButton.setBackgroundImage(askSelectedImage, for: .selected)
         askButton.setBackgroundImage(askImage, for: .disabled)
 
+        amountPlusMinusInput.upDownUnit = Double(0.001)
         amountPlusMinusInput.format = "%.3f"
         amountPlusMinusInput.delegate = self
 
