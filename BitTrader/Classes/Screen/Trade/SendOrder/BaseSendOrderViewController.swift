@@ -91,9 +91,9 @@ class BaseSendOrderViewController: UIViewController {
         let type: Bitflyer.SideType
         switch bidAsk {
         case .bid:
-            type = .buy
-        case .ask:
             type = .sell
+        case .ask:
+            type = .buy
         }
         return type
     }

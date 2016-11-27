@@ -85,8 +85,8 @@ class SendOrderRootViewController: UIViewController, ViewContainer, UIPickerView
             return
         }
         self.response = response
-        bidRateLabel.text = String(describing: response.bestBid)
-        askRateLabel.text = String(describing: response.bestAsk)
+        bidRateLabel.text = NSNumber(integerLiteral: response.bestBid).formatComma()
+        askRateLabel.text = NSNumber(integerLiteral: response.bestAsk).formatComma()
     }
 
     func onFailure<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, error: ApiResponseError) {
