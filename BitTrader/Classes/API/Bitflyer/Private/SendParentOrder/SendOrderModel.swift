@@ -11,7 +11,7 @@ import Foundation
 struct SendOrderModel {
     let productCode: Bitflyer.ProductCodeType
     let side: Bitflyer.SideType
-    let size: Int
+    let size: Double
     let orderType: Bitflyer.SpecialOrderType
 }
 
@@ -45,7 +45,7 @@ extension SendOrderModel: BitTraderRequestParameter {
             dic[Bitflyer.ApiKey.offset.rawValue] = trailDistance
         }
         dic[Bitflyer.ApiKey.side.rawValue] = side.rawValue
-        dic[Bitflyer.ApiKey.side.rawValue] = size
+        dic[Bitflyer.ApiKey.size.rawValue] = size
         
         return dic
     }

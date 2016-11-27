@@ -9,8 +9,8 @@
 import Result
 
 protocol ApiExecuterDelegate: NSObjectProtocol {
-    func onSuccess<ApiExecuter: ApiExecuterProtocol, DTO>(_ apiExecuter: ApiExecuter, value: DTO?)
-    func onFailure<ApiExecuter: ApiExecuterProtocol, Error: Swift.Error>(_ apiExecuter: ApiExecuter, value: Error)
+    func onSuccess<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType)
+    func onFailure<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, error: ApiResponseError)
 }
 
 protocol ApiExecuterProtocol {
@@ -18,15 +18,15 @@ protocol ApiExecuterProtocol {
     var delegate: ApiExecuterDelegate? { get }
 
     associatedtype RequestType: RequestProtocol
-    associatedtype Error: Swift.Error
-    associatedtype DTO
+    associatedtype ModelType
+    typealias Error = ApiResponseError
     typealias ResultType = Result<RequestType.Response, Error>
-    typealias ResponseConverter = (RequestType.Response) -> DTO?
+    typealias ResponseConverter = (RequestType.Response) -> ModelType?
     typealias HTTPMethodType = String
 
     var request: RequestType { get }
+    var dtoType: Any.Type { get }
 
-    init(_ request: RequestType)
     init(_ request: RequestType, responseConverter: @escaping ResponseConverter)
 
     func isValid(_ request: RequestType) -> Error?
@@ -37,17 +37,17 @@ protocol ApiExecuterProtocol {
 
     func didExcecute(_ result: ResultType)
 
-    func onSuccess(_ response: RequestType.Response) -> DTO?
+    func onSuccess(_ response: RequestType.Response) -> ModelType
 
     func onFailure(_ error: Error) -> Error
 }
 
 extension ApiExecuterProtocol {
 
-    init(_ request: RequestType, responseConverter: @escaping ResponseConverter) {
-        self.init(request)
+    var dtoType: Any.Type {
+        return ModelType.self
     }
-
+    
     func isValid(_ request: RequestType) -> Error? {
         return nil
     }

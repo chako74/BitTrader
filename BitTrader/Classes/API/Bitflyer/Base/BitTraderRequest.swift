@@ -33,6 +33,18 @@ extension BitTraderRequest {
             return nil
         }
     }
+
+    func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
+        guard (200..<300).contains(urlResponse.statusCode) else {
+            guard let dic = object as? [String: Any] else {
+                return object
+            }
+            throw ApiResponseError(status: dic["status"] as? Int ?? 500,
+                                   message: dic["error_message"] as? String ?? "",
+                                   data: dic["data"])
+        }
+        return object
+    }
 }
 
 extension BitTraderRequest where Response: Decodable {

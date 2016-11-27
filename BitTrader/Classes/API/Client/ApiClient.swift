@@ -9,7 +9,7 @@
 import Result
 import RxSwift
 
-class Api {
+class ApiClient {
 
     private init() {
     }
@@ -17,7 +17,7 @@ class Api {
     static func execute<ApiExecuter: ApiKitApiExecuterProtocol>(_ apiExecuter: ApiExecuter) {
 
         if let error = apiExecuter.isValid(apiExecuter.request) {
-            apiExecuter.delegate?.onFailure(apiExecuter, value: apiExecuter.onFailure(error))
+            apiExecuter.delegate?.onFailure(apiExecuter, error: apiExecuter.onFailure(error))
             return
         }
 
@@ -31,20 +31,20 @@ class Api {
             case .success(let res):
                 apiExecuter.delegate?.onSuccess(apiExecuter, value: apiExecuter.onSuccess(res))
             case .failure(let error):
-                apiExecuter.delegate?.onFailure(apiExecuter, value: apiExecuter.onFailure(error))
+                apiExecuter.delegate?.onFailure(apiExecuter, error: apiExecuter.onFailure(error))
             }
         }
     }
 
     static func rxExecute<ApiExecuter: ApiKitApiExecuterProtocol>(_ apiExecuter: ApiExecuter, _ period: TimeInterval = 3.0)
-        -> Observable<ApiExecuter.DTO?> {
+        -> Observable<ApiExecuter.ModelType?> {
 
             return Observable<Int>
                 .interval(period, scheduler: MainScheduler.instance)
                 .shareReplay(1)
                 .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
-                .flatMap {_ -> Observable<ApiExecuter.DTO?> in
-                    return Observable<ApiExecuter.DTO?>.create { observer in
+                .flatMap {_ -> Observable<ApiExecuter.ModelType?> in
+                    return Observable<ApiExecuter.ModelType?>.create { observer in
 
                         if let error = apiExecuter.isValid(apiExecuter.request) {
                             observer.onError(apiExecuter.onFailure(error))
