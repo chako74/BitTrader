@@ -46,7 +46,7 @@
 		0755CBD21DE5D20A005A7873 /* SendOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0755CBD11DE5D20A005A7873 /* SendOrderModel.swift */; };
 		07932C681DBCDD6600E38530 /* RateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07932C661DBCDD6600E38530 /* RateListViewController.swift */; };
 		07932C6B1DBCEEB300E38530 /* RateListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07932C6A1DBCEEB300E38530 /* RateListViewModel.swift */; };
-		07932C711DBD023100E38530 /* RateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07932C701DBD023100E38530 /* RateViewModel.swift */; };
+		07932C711DBD023100E38530 /* RateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07932C701DBD023100E38530 /* RateModel.swift */; };
 		07932C741DBD035F00E38530 /* RateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07932C721DBD035F00E38530 /* RateTableViewCell.swift */; };
 		07932C751DBD035F00E38530 /* RateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07932C731DBD035F00E38530 /* RateTableViewCell.xib */; };
 		079E4A7A1DC630770004EB78 /* RateList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079E4A791DC630770004EB78 /* RateList.storyboard */; };
@@ -212,7 +212,7 @@
 		0755CBD11DE5D20A005A7873 /* SendOrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendOrderModel.swift; sourceTree = "<group>"; };
 		07932C661DBCDD6600E38530 /* RateListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateListViewController.swift; sourceTree = "<group>"; };
 		07932C6A1DBCEEB300E38530 /* RateListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateListViewModel.swift; sourceTree = "<group>"; };
-		07932C701DBD023100E38530 /* RateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateViewModel.swift; sourceTree = "<group>"; };
+		07932C701DBD023100E38530 /* RateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateModel.swift; sourceTree = "<group>"; };
 		07932C721DBD035F00E38530 /* RateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateTableViewCell.swift; sourceTree = "<group>"; };
 		07932C731DBD035F00E38530 /* RateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RateTableViewCell.xib; sourceTree = "<group>"; };
 		079E4A791DC630770004EB78 /* RateList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RateList.storyboard; sourceTree = "<group>"; };
@@ -509,7 +509,7 @@
 				07932C6A1DBCEEB300E38530 /* RateListViewModel.swift */,
 				07932C721DBD035F00E38530 /* RateTableViewCell.swift */,
 				07932C731DBD035F00E38530 /* RateTableViewCell.xib */,
-				07932C701DBD023100E38530 /* RateViewModel.swift */,
+				07932C701DBD023100E38530 /* RateModel.swift */,
 				079E4A791DC630770004EB78 /* RateList.storyboard */,
 			);
 			path = Rate;
@@ -1475,7 +1475,7 @@
 			files = (
 				BA4FA23F1DDDF695001038E5 /* BitflyerGetPositionsResponse.swift in Sources */,
 				07BDF9B81DD1F55E006C99CA /* PagerViewController.swift in Sources */,
-				07932C711DBD023100E38530 /* RateViewModel.swift in Sources */,
+				07932C711DBD023100E38530 /* RateModel.swift in Sources */,
 				E964B3061DE5C526003A719F /* TrailOrderViewController.swift in Sources */,
 				072441881DACBEB40059E872 /* RegistKeyViewModel.swift in Sources */,
 				07AFA1761DD84E9600A8B981 /* OrderListReducer.swift in Sources */,

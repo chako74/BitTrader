@@ -52,7 +52,7 @@ class RateListViewController: UIViewController {
                                  ApiClient.rxExecute(createCoincheckTickerRequestExecuter()),
                                  ApiClient.rxExecute(createKrakenTickerRequestExecuter()),
                                  ApiClient.rxExecute(createZaifTickerRequestExecuter())) { r in r }
-            .scan((nil, nil, nil, nil, nil, nil)) { [weak self] (x, y) throws -> (RateViewModel?, RateViewModel?, RateViewModel?, RateViewModel?, RateViewModel?, RateViewModel?) in
+            .scan((nil, nil, nil, nil, nil, nil)) { [weak self] (x, y) throws -> (RateModel?, RateModel?, RateModel?, RateModel?, RateModel?, RateModel?) in
                 let v0 = self?.checkNext(x.0, y.0)
                 let v1 = self?.checkNext(x.1, y.1)
                 let v2 = self?.checkNext(x.2, y.2)
@@ -61,8 +61,8 @@ class RateListViewController: UIViewController {
                 let v5 = self?.checkNext(x.5, y.5)
                 return (v0, v1, v2, v3, v4, v5)
             }
-            .flatMapLatest { (bitflyer, bitflyerFx, btcBox, coincheck, kraken, zaif) -> Observable<[RateViewModel]> in
-                var models = Array<RateViewModel>()
+            .flatMapLatest { (bitflyer, bitflyerFx, btcBox, coincheck, kraken, zaif) -> Observable<[RateModel]> in
+                var models = Array<RateModel>()
                 models.appendNotNil(element: bitflyer)
                 models.appendNotNil(element: bitflyerFx)
                 models.appendNotNil(element: btcBox)
@@ -77,69 +77,69 @@ class RateListViewController: UIViewController {
             .addDisposableTo(disposeBag)
     }
 
-    private func createBitflyerTickerRequestExecuter() -> ApiKitApiExecuter<BitflyerTickerRequest, RateViewModel> {
+    private func createBitflyerTickerRequestExecuter() -> ApiKitApiExecuter<BitflyerTickerRequest, RateModel> {
         let bitflyerTickerReuqestParameter = BitflyerTickerRequestParameter(productCode: .btcjpy)
         let bitflyerTickerRequest = BitflyerTickerRequest(requestParameter: bitflyerTickerReuqestParameter)
         return ApiKitApiExecuter(bitflyerTickerRequest, responseConverter: { response in
-            return RateViewModel(rateType:.bitflyer,
-                                 midPrice: Variable(response.ltp),
-                                 askPrice: Variable(response.bestAsk),
-                                 bidPrice: Variable(response.bestBid))
+            return RateModel(rateType:.bitflyer,
+                             midPrice: response.ltp,
+                             askPrice: response.bestAsk,
+                             bidPrice: response.bestBid)
         })
     }
 
-    private func createBitflyerFxTickerRequestExecuter() -> ApiKitApiExecuter<BitflyerTickerRequest, RateViewModel> {
+    private func createBitflyerFxTickerRequestExecuter() -> ApiKitApiExecuter<BitflyerTickerRequest, RateModel> {
         let bitflyerFxTickerReuqestParameter = BitflyerTickerRequestParameter(productCode: .fxBtcJpy)
         let bitflyerFxTickerRequest = BitflyerTickerRequest(requestParameter: bitflyerFxTickerReuqestParameter)
         return ApiKitApiExecuter(bitflyerFxTickerRequest, responseConverter: { response in
-            return RateViewModel(rateType:.bitflyerFx,
-                                 midPrice: Variable(response.ltp),
-                                 askPrice: Variable(response.bestAsk),
-                                 bidPrice: Variable(response.bestBid))
+            return RateModel(rateType:.bitflyerFx,
+                             midPrice: response.ltp,
+                             askPrice: response.bestAsk,
+                             bidPrice: response.bestBid)
         })
     }
 
-    private func createBtcBoxTickerRequestExecuter() -> ApiKitApiExecuter<BtcBoxTickerRequest, RateViewModel> {
+    private func createBtcBoxTickerRequestExecuter() -> ApiKitApiExecuter<BtcBoxTickerRequest, RateModel> {
         let btcBoxTickerRequest = BtcBoxTickerRequest()
         return ApiKitApiExecuter(btcBoxTickerRequest, responseConverter: { response in
-            return RateViewModel(rateType:.btcBox,
-                                 midPrice: Variable(response.last),
-                                 askPrice: Variable(response.sell),
-                                 bidPrice: Variable(response.buy))
+            return RateModel(rateType:.btcBox,
+                             midPrice: response.last,
+                             askPrice: response.sell,
+                             bidPrice: response.buy)
         })
     }
 
-    private func createCoincheckTickerRequestExecuter() -> ApiKitApiExecuter<CoincheckTickerRequest, RateViewModel> {
+    private func createCoincheckTickerRequestExecuter() -> ApiKitApiExecuter<CoincheckTickerRequest, RateModel> {
         let coincheckTickerRequest = CoincheckTickerRequest()
         return ApiKitApiExecuter(coincheckTickerRequest, responseConverter: { response in
-            return RateViewModel(rateType:.coincheck,
-                                 midPrice: Variable(response.last),
-                                 askPrice: Variable(response.ask),
-                                 bidPrice: Variable(response.bid))
+            return RateModel(rateType:.coincheck,
+                             midPrice: response.last,
+                             askPrice: response.ask,
+                             bidPrice: response.bid)
         })
     }
 
-    private func createKrakenTickerRequestExecuter() -> ApiKitApiExecuter<KrakenTickerRequest, RateViewModel> {
+    private func createKrakenTickerRequestExecuter() -> ApiKitApiExecuter<KrakenTickerRequest, RateModel> {
         let krakenTickerRequest = KrakenTickerRequest()
         return ApiKitApiExecuter(krakenTickerRequest, responseConverter: { response in
-            return RateViewModel(rateType:.kraken,
-                                 midPrice: Variable(Int(floor(atof(response.result!.currencyPair.c.first!)))),
-                                 askPrice: Variable(Int(floor(atof(response.result!.currencyPair.a.first!)))),
-                                 bidPrice: Variable(Int(floor(atof(response.result!.currencyPair.b.first!)))))
+            return RateModel(rateType:.kraken,
+                             midPrice: Int(floor(atof(response.result!.currencyPair.c.first!))),
+                             askPrice: Int(floor(atof(response.result!.currencyPair.a.first!))),
+                             bidPrice: Int(floor(atof(response.result!.currencyPair.b.first!))))
         })
     }
 
-    private func createZaifTickerRequestExecuter() -> ApiKitApiExecuter<ZaifTickerRequest, RateViewModel> {
+    private func createZaifTickerRequestExecuter() -> ApiKitApiExecuter<ZaifTickerRequest, RateModel> {
         let zaifTickerRequest = ZaifTickerRequest()
         return ApiKitApiExecuter(zaifTickerRequest, responseConverter: { response in
-            return RateViewModel(rateType:.zaif,
-                                 midPrice: Variable(response.last),
-                                 askPrice: Variable(response.ask),
-                                 bidPrice: Variable(response.bid))
+            return RateModel(rateType:.zaif,
+                             midPrice: response.last,
+                             askPrice: response.ask,
+                             bidPrice: response.bid)
         })
     }
 
-    private func checkNext(_ prev: RateViewModel?, _ next: RateViewModel?) -> RateViewModel? {
+    private func checkNext(_ prev: RateModel?, _ next: RateModel?) -> RateModel? {
         if prev != nil && next == nil {
             return prev
         }

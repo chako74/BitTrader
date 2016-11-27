@@ -1,5 +1,5 @@
 //
-//  RateViewModel.swift
+//  RateModel.swift
 //  BitTrader
 //
 //  Created by chako on 2016/10/23.
@@ -7,9 +7,6 @@
 //
 
 import Foundation
-
-import RxCocoa
-import RxSwift
 
 enum RateType: Int {
     case bitflyer
@@ -37,10 +34,10 @@ enum RateType: Int {
     }
 }
 
-struct RateViewModel {
+struct RateModel {
     
     let rateType: RateType
-    let midPrice: Variable<Int>
-    let askPrice: Variable<Int>
-    let bidPrice: Variable<Int>
+    let midPrice: Int
+    let askPrice: Int
+    let bidPrice: Int
 }

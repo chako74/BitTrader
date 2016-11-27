@@ -13,5 +13,5 @@ import RxSwift
 
 struct RateListViewModel {
     
-    let rateList: Variable<[RateViewModel]> = Variable([])
+    let rateList: Variable<[RateModel]> = Variable([])
 }
