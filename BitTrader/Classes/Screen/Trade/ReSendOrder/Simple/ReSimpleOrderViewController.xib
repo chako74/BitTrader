@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReSimpleOrderViewController" customModule="BitTrader" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="Z9n-r2-TfG" id="d3l-kv-0RI"/>
+                <outlet property="sendOrderButton" destination="8d7-iS-qyg" id="C0m-eq-DRD"/>
+                <outlet property="view" destination="iN0-l3-epB" id="T5D-sd-3eI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9n-r2-TfG">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKL-pd-Fr1">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8d7-iS-qyg">
+                            <state key="normal" title="発注"/>
+                            <connections>
+                                <action selector="onSendOrderButton:" destination="-1" eventType="touchUpInside" id="Wpz-tM-dkv"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="8d7-iS-qyg" firstAttribute="centerX" secondItem="VKL-pd-Fr1" secondAttribute="centerX" id="3yU-Xg-OQa"/>
+                        <constraint firstAttribute="height" constant="30" id="BxA-vW-XWp"/>
+                        <constraint firstItem="8d7-iS-qyg" firstAttribute="centerY" secondItem="VKL-pd-Fr1" secondAttribute="centerY" id="Ywo-Eg-Td2"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Z9n-r2-TfG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5Iu-YT-znD"/>
+                <constraint firstItem="VKL-pd-Fr1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ITE-O5-R79"/>
+                <constraint firstAttribute="trailing" secondItem="VKL-pd-Fr1" secondAttribute="trailing" id="J2m-dq-hMV"/>
+                <constraint firstItem="Z9n-r2-TfG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WA4-sz-MnL"/>
+                <constraint firstAttribute="bottom" secondItem="VKL-pd-Fr1" secondAttribute="bottom" constant="20" id="WSu-bV-7JE"/>
+                <constraint firstItem="VKL-pd-Fr1" firstAttribute="top" secondItem="Z9n-r2-TfG" secondAttribute="bottom" id="rOQ-Y6-go5"/>
+                <constraint firstAttribute="trailing" secondItem="Z9n-r2-TfG" secondAttribute="trailing" id="ubk-EB-LeN"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
