@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReStopLimitOrderViewController" customModule="BitTrader" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="jKP-t3-RdK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rh-21-eg4">
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s59-WA-jne">
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPb-9y-8k2">
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="売り" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YMw-WI-L4Q">
+                                    <accessibility key="accessibilityConfiguration">
+                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                    </accessibility>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="kPb-9y-8k2" firstAttribute="top" secondItem="s59-WA-jne" secondAttribute="top" id="1bP-eW-nBj"/>
+                                <constraint firstItem="YMw-WI-L4Q" firstAttribute="top" secondItem="s59-WA-jne" secondAttribute="top" constant="2" id="ESk-Mh-IaC"/>
+                                <constraint firstAttribute="trailing" secondItem="YMw-WI-L4Q" secondAttribute="trailing" constant="2" id="NP8-kB-e4a"/>
+                                <constraint firstAttribute="height" constant="40" id="cG7-Cz-WGi"/>
+                                <constraint firstAttribute="trailing" secondItem="kPb-9y-8k2" secondAttribute="trailing" id="fk9-hT-17z"/>
+                                <constraint firstAttribute="bottom" secondItem="YMw-WI-L4Q" secondAttribute="bottom" constant="2" id="ibB-ok-SB3"/>
+                                <constraint firstItem="kPb-9y-8k2" firstAttribute="leading" secondItem="s59-WA-jne" secondAttribute="leading" id="jM1-s5-eUZ"/>
+                                <constraint firstAttribute="bottom" secondItem="kPb-9y-8k2" secondAttribute="bottom" id="rEC-3e-Ijb"/>
+                                <constraint firstItem="YMw-WI-L4Q" firstAttribute="leading" secondItem="s59-WA-jne" secondAttribute="leading" constant="2" id="so9-Zf-f88"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWZ-WB-ami">
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PM-vO-OiX">
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="買い" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VHP-EX-eOU">
+                                    <accessibility key="accessibilityConfiguration">
+                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                    </accessibility>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="VHP-EX-eOU" firstAttribute="top" secondItem="aWZ-WB-ami" secondAttribute="top" constant="2" id="0ia-0A-88b"/>
+                                <constraint firstItem="VHP-EX-eOU" firstAttribute="leading" secondItem="aWZ-WB-ami" secondAttribute="leading" constant="2" id="5Zr-Ka-kKT"/>
+                                <constraint firstAttribute="height" constant="40" id="B0Q-n1-qeM"/>
+                                <constraint firstAttribute="trailing" secondItem="6PM-vO-OiX" secondAttribute="trailing" id="I52-ig-BV5"/>
+                                <constraint firstAttribute="trailing" secondItem="VHP-EX-eOU" secondAttribute="trailing" constant="2" id="I9J-27-qyI"/>
+                                <constraint firstAttribute="bottom" secondItem="6PM-vO-OiX" secondAttribute="bottom" id="aox-KS-KAK"/>
+                                <constraint firstItem="6PM-vO-OiX" firstAttribute="leading" secondItem="aWZ-WB-ami" secondAttribute="leading" id="jJg-jb-mev"/>
+                                <constraint firstItem="6PM-vO-OiX" firstAttribute="top" secondItem="aWZ-WB-ami" secondAttribute="top" id="slM-SN-e01"/>
+                                <constraint firstAttribute="bottom" secondItem="VHP-EX-eOU" secondAttribute="bottom" constant="2" id="xq4-2J-BqI"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="aWZ-WB-ami" firstAttribute="width" secondItem="s59-WA-jne" secondAttribute="width" id="UV3-px-KKk"/>
+                    </constraints>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0U-Y8-Erz">
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="数量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3e3-cW-6op">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="REC-zQ-0b2"/>
+                                <constraint firstAttribute="width" constant="70" id="Xo4-zs-ifr"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1p-qV-sU7" customClass="PlusMinusInputField" customModule="BitTrader" customModuleProvider="target">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="3e3-cW-6op" firstAttribute="centerY" secondItem="k0U-Y8-Erz" secondAttribute="centerY" id="Hvo-px-Ctv"/>
+                        <constraint firstAttribute="trailing" secondItem="Y1p-qV-sU7" secondAttribute="trailing" id="Ltz-hZ-DH4"/>
+                        <constraint firstAttribute="height" constant="60" id="OjR-3K-ujK"/>
+                        <constraint firstItem="Y1p-qV-sU7" firstAttribute="top" secondItem="k0U-Y8-Erz" secondAttribute="top" id="Xhz-s4-bmx"/>
+                        <constraint firstItem="3e3-cW-6op" firstAttribute="leading" secondItem="k0U-Y8-Erz" secondAttribute="leading" id="dgX-vh-BrN"/>
+                        <constraint firstItem="Y1p-qV-sU7" firstAttribute="leading" secondItem="3e3-cW-6op" secondAttribute="trailing" constant="10" id="nrq-Ik-Z54"/>
+                        <constraint firstAttribute="bottom" secondItem="Y1p-qV-sU7" secondAttribute="bottom" id="obB-72-5gO"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9BQ-8w-5yd">
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="価格" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6W9-O7-qzH">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="KSv-EZ-sWg"/>
+                                <constraint firstAttribute="height" constant="21" id="jKt-Kd-bFx"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vtx-mX-qXV" customClass="PlusMinusInputField" customModule="BitTrader" customModuleProvider="target">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="6W9-O7-qzH" firstAttribute="leading" secondItem="9BQ-8w-5yd" secondAttribute="leading" id="06n-WM-7Nu"/>
+                        <constraint firstAttribute="height" constant="60" id="5aa-AA-9Re"/>
+                        <constraint firstAttribute="bottom" secondItem="Vtx-mX-qXV" secondAttribute="bottom" id="Ikw-E4-06k"/>
+                        <constraint firstAttribute="trailing" secondItem="Vtx-mX-qXV" secondAttribute="trailing" id="LUG-5d-Pyo"/>
+                        <constraint firstItem="Vtx-mX-qXV" firstAttribute="leading" secondItem="6W9-O7-qzH" secondAttribute="trailing" constant="10" id="PsQ-Cs-oGy"/>
+                        <constraint firstItem="Vtx-mX-qXV" firstAttribute="top" secondItem="9BQ-8w-5yd" secondAttribute="top" id="XHk-f7-ReK"/>
+                        <constraint firstItem="6W9-O7-qzH" firstAttribute="centerY" secondItem="9BQ-8w-5yd" secondAttribute="centerY" id="l5L-Uv-KKU"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXD-b6-ljZ">
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="トリガー価格" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iSi-2C-oZM">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="Io6-ib-xYd"/>
+                                <constraint firstAttribute="width" constant="70" id="yjt-Cr-wRK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyr-5y-iR4" customClass="PlusMinusInputField" customModule="BitTrader" customModuleProvider="target">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="gyr-5y-iR4" firstAttribute="top" secondItem="wXD-b6-ljZ" secondAttribute="top" id="6Z6-tq-gKi"/>
+                        <constraint firstItem="gyr-5y-iR4" firstAttribute="leading" secondItem="iSi-2C-oZM" secondAttribute="trailing" constant="10" id="Nza-y6-KIy"/>
+                        <constraint firstItem="iSi-2C-oZM" firstAttribute="leading" secondItem="wXD-b6-ljZ" secondAttribute="leading" id="lxM-NF-8m2"/>
+                        <constraint firstAttribute="bottom" secondItem="gyr-5y-iR4" secondAttribute="bottom" id="nyV-Vk-gDf"/>
+                        <constraint firstAttribute="height" constant="60" id="tae-kG-VTl"/>
+                        <constraint firstItem="iSi-2C-oZM" firstAttribute="centerY" secondItem="wXD-b6-ljZ" secondAttribute="centerY" id="u5W-VM-TN2"/>
+                        <constraint firstAttribute="trailing" secondItem="gyr-5y-iR4" secondAttribute="trailing" id="xXl-V7-Qok"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="3rh-21-eg4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1BU-lF-i7f"/>
+                <constraint firstAttribute="trailing" secondItem="3rh-21-eg4" secondAttribute="trailing" constant="16" id="DP6-6F-U0t"/>
+                <constraint firstAttribute="trailing" secondItem="wXD-b6-ljZ" secondAttribute="trailing" constant="16" id="HSG-Pa-PfR"/>
+                <constraint firstAttribute="trailing" secondItem="9BQ-8w-5yd" secondAttribute="trailing" constant="16" id="Q8V-EW-s4r"/>
+                <constraint firstAttribute="trailing" secondItem="k0U-Y8-Erz" secondAttribute="trailing" constant="16" id="VBj-g9-czq"/>
+                <constraint firstItem="9BQ-8w-5yd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="VTD-fT-LTQ"/>
+                <constraint firstItem="k0U-Y8-Erz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="WMy-qR-9iQ"/>
+                <constraint firstItem="wXD-b6-ljZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="a4x-me-zWJ"/>
+                <constraint firstItem="k0U-Y8-Erz" firstAttribute="top" secondItem="3rh-21-eg4" secondAttribute="bottom" constant="20" id="bx6-DK-bXs"/>
+                <constraint firstItem="wXD-b6-ljZ" firstAttribute="top" secondItem="9BQ-8w-5yd" secondAttribute="bottom" constant="20" id="dSC-Na-qv9"/>
+                <constraint firstItem="9BQ-8w-5yd" firstAttribute="top" secondItem="k0U-Y8-Erz" secondAttribute="bottom" constant="20" id="fdo-jB-xDn"/>
+                <constraint firstItem="3rh-21-eg4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="nbu-4P-Vql"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+        </view>
+    </objects>
+</document>
