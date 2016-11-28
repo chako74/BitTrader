@@ -12,7 +12,7 @@ struct AppReducer: Reducer {
 
     func handleAction(action: Action, state: State?) -> State {
         return State(
-            sendOrderState: SendOrderReducer(state: state?.sendOrderState, action: action)
+            sendOrderState: SendOrderReducer.handle(state: state?.sendOrderState, action: action)
         )
     }
 }

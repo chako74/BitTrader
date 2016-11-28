@@ -18,9 +18,9 @@ class TradeRootViewController: UIViewController, ViewContainer {
         edgesForExtendedLayout = []
 
         // 通常
-        let navi = UINavigationController(rootViewController: SendOrderRootViewController())
+//        let navi = UINavigationController(rootViewController: SendOrderRootViewController())
         // Re版
-        //let navi = UINavigationController(rootViewController: ReSendOrderRootViewController())
+        let navi = UINavigationController(rootViewController: ReSendOrderRootViewController())
         // Rx版
         //let navi = UINavigationController(rootViewController: RxSendOrderRootViewController())
         navi.navigationBar.isTranslucent = false
