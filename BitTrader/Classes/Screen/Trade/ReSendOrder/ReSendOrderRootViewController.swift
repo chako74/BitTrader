@@ -106,7 +106,7 @@ class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
     }
 
     func onSuccess<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType) {
-        guard apiExecuter.dtoType == BitflyerTickerResponse.self, let response = value as? BitflyerTickerResponse else {
+        guard apiExecuter.modelType == BitflyerTickerResponse.self, let response = value as? BitflyerTickerResponse else {
             return
         }
         self.response = response
@@ -152,7 +152,7 @@ class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
         }
         let apiExecuter = createBitflyerFxTickerRequestExecuter(productType)
         apiExecuter.delegate = self
-        ApiClient.execute(apiExecuter)
+        apiExecuter.execute()
     }
 
     @IBAction func onBidButton(_ sender: UIButton) {

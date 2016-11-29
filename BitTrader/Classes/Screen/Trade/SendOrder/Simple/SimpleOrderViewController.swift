@@ -21,12 +21,12 @@ class SimpleOrderViewController: BaseSendOrderViewController, ViewContainer, Api
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        activeViewController = mackSendOrderChildViewController(condition: condition)
+        activeViewController = makeSendOrderChildViewController(condition: condition)
         addChildContainerViewController(activeViewController!, atContainerView: containerView)
     }
 
     override func updateCondition(_ condition: Enums.Condition) {
-        guard let activeViewController = activeViewController, let newAvc = mackSendOrderChildViewController(condition: condition) else {
+        guard let activeViewController = activeViewController, let newAvc = makeSendOrderChildViewController(condition: condition) else {
             return
         }
         removeChildContainerViewController(activeViewController)
@@ -88,7 +88,7 @@ class SimpleOrderViewController: BaseSendOrderViewController, ViewContainer, Api
 
         let apiExecuter = ApiKitApiExecuter<BitflyerSendChildOrderRequest, BitflyerSendChildOrderResponse>(request)
         apiExecuter.delegate = self
-        ApiClient.execute(apiExecuter)
+        apiExecuter.execute()
     }
 
     private func sendParentOrder(_ viewModel: SendOrderViewModel) {
@@ -98,7 +98,7 @@ class SimpleOrderViewController: BaseSendOrderViewController, ViewContainer, Api
 
         let apiExecuter = ApiKitApiExecuter<BitflyerSendParentOrderRequest, BitflyerSendParentOrderResponse>(request)
         apiExecuter.delegate = self
-        ApiClient.execute(apiExecuter)
+        apiExecuter.execute()
     }
 
     private func showAlert(message: String, handler: ((UIAlertAction) -> Void)? = nil) {

@@ -88,7 +88,7 @@ class RxSimpleOrderViewController: RxBaseSendOrderViewController, ViewContainer,
 
         let apiExecuter = ApiKitApiExecuter<BitflyerSendChildOrderRequest, BitflyerSendChildOrderResponse>(request)
         apiExecuter.delegate = self
-        ApiClient.execute(apiExecuter)
+        apiExecuter.execute()
     }
 
     private func sendParentOrder(_ viewModel: RxSendOrderViewModel) {
@@ -98,7 +98,7 @@ class RxSimpleOrderViewController: RxBaseSendOrderViewController, ViewContainer,
 
         let apiExecuter = ApiKitApiExecuter<BitflyerSendParentOrderRequest, BitflyerSendParentOrderResponse>(request)
         apiExecuter.delegate = self
-        ApiClient.execute(apiExecuter)
+        apiExecuter.execute()
     }
 
     private func showAlert(message: String, handler: ((UIAlertAction) -> Void)? = nil) {

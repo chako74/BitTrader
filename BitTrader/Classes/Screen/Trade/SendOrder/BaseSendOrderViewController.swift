@@ -35,7 +35,7 @@ class BaseSendOrderViewController: UIViewController {
         fatalError("updateAskRate(rate:) has not been implemented")
     }
 
-    func mackSendOrderChildViewController(condition: Enums.Condition) -> BaseSendOrderCommonViewController? {
+    func makeSendOrderChildViewController(condition: Enums.Condition) -> BaseSendOrderCommonViewController? {
         switch condition {
         case .limit:
             return LimitOrderViewController(bidAsk: .bid, delegete: delegate!)
