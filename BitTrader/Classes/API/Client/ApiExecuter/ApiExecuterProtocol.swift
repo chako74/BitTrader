@@ -19,13 +19,12 @@ protocol ApiExecuterProtocol {
 
     associatedtype RequestType: RequestProtocol
     associatedtype ModelType
-    typealias Error = ApiResponseError
+    associatedtype Error: Swift.Error
     typealias ResultType = Result<RequestType.Response, Error>
     typealias ResponseConverter = (RequestType.Response) -> ModelType?
-    typealias HTTPMethodType = String
 
     var request: RequestType { get }
-    var dtoType: Any.Type { get }
+    var modelType: Any.Type { get }
 
     init(_ request: RequestType, responseConverter: @escaping ResponseConverter)
 
@@ -34,8 +33,9 @@ protocol ApiExecuterProtocol {
     func willExcecute(_ request: RequestType)
 
     func execute(_ request: RequestType, _ callback: @escaping (ResultType) -> Void)
+    func execute()
 
-    func didExcecute(_ result: ResultType)
+    func didExcecute(_ result: Any)
 
     func onSuccess(_ response: RequestType.Response) -> ModelType
 
@@ -44,7 +44,7 @@ protocol ApiExecuterProtocol {
 
 extension ApiExecuterProtocol {
 
-    var dtoType: Any.Type {
+    var modelType: Any.Type {
         return ModelType.self
     }
     
@@ -55,6 +55,11 @@ extension ApiExecuterProtocol {
     func willExcecute(_ request: RequestType) {
     }
 
-    func didExcecute(_ result: ResultType) {
+    func execute(_ request: RequestType, _ callback: @escaping (ResultType) -> Void) {
+    }
+    func execute() {
+    }
+
+    func didExcecute(_ result: Any) {
     }
 }

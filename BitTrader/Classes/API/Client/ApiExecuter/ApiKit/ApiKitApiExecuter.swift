@@ -30,6 +30,32 @@ class ApiKitApiExecuter<RequestType: ApiKitRequestProtocol, ModelType>: ApiKitAp
         return _request
     }
 
+    func execute() {
+
+        if let error = isValid(request) {
+            delegate?.onFailure(self, error: onFailure(error))
+            return
+        }
+
+        willExcecute(request)
+
+        Session.send(ApiKitRequestAdapter(request)) { result in
+
+            self.didExcecute(result)
+
+            switch result {
+            case .success(let res):
+                self.delegate?.onSuccess(self, value: self.onSuccess(res))
+
+            case .failure(.responseError(let apiResponseError as ApiResponseError)):
+                self.delegate?.onFailure(self, error: self.onFailure(apiResponseError))
+
+            default:
+                break
+            }
+        }
+    }
+
     func execute(_ request: RequestType, _ callback: @escaping (ResultType) -> Void) {
         Session.send(ApiKitRequestAdapter(request)) { result in
             switch result {
@@ -38,9 +64,7 @@ class ApiKitApiExecuter<RequestType: ApiKitRequestProtocol, ModelType>: ApiKitAp
             case .failure(.responseError(let apiResponseError as ApiResponseError)):
                 callback(.failure(apiResponseError))
             default:
-                callback(.failure(ApiResponseError(status: 500,
-                                                   message: "Internal Server Error",
-                                                   data: nil)))
+                fatalError("can't convert response.")
             }
         }
     }

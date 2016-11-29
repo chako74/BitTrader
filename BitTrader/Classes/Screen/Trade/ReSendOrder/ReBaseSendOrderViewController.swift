@@ -27,7 +27,7 @@ class ReBaseSendOrderViewController: UIViewController {
         fatalError("updateCondition(:) has not been implemented")
     }
 
-    func RemackSendOrderChildViewController(condition: Enums.Condition) -> ReBaseSendOrderCommonViewController? {
+    func remakeSendOrderChildViewController(condition: Enums.Condition) -> ReBaseSendOrderCommonViewController? {
         switch condition {
         case .limit:
             return ReLimitOrderViewController(bidAsk: .bid)

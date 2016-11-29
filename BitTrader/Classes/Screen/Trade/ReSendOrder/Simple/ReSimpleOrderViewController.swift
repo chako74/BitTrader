@@ -21,12 +21,12 @@ class ReSimpleOrderViewController: ReBaseSendOrderViewController, ViewContainer,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        activeViewController = RemackSendOrderChildViewController(condition: condition)
+        activeViewController = remakeSendOrderChildViewController(condition: condition)
         addChildContainerViewController(activeViewController!, atContainerView: containerView)
     }
 
     override func updateCondition(_ condition: Enums.Condition) {
-        guard let activeViewController = activeViewController, let newAvc = RemackSendOrderChildViewController(condition: condition) else {
+        guard let activeViewController = activeViewController, let newAvc = remakeSendOrderChildViewController(condition: condition) else {
             return
         }
         removeChildContainerViewController(activeViewController)
@@ -80,7 +80,7 @@ class ReSimpleOrderViewController: ReBaseSendOrderViewController, ViewContainer,
 
         let apiExecuter = ApiKitApiExecuter<BitflyerSendChildOrderRequest, BitflyerSendChildOrderResponse>(request)
         apiExecuter.delegate = self
-        ApiClient.execute(apiExecuter)
+        apiExecuter.execute()
     }
 
     private func sendParentOrder(_ viewModel: ReSendOrderViewModel) {
@@ -90,7 +90,7 @@ class ReSimpleOrderViewController: ReBaseSendOrderViewController, ViewContainer,
 
         let apiExecuter = ApiKitApiExecuter<BitflyerSendParentOrderRequest, BitflyerSendParentOrderResponse>(request)
         apiExecuter.delegate = self
-        ApiClient.execute(apiExecuter)
+        apiExecuter.execute()
     }
 
     private func showAlert(message: String, handler: ((UIAlertAction) -> Void)? = nil) {

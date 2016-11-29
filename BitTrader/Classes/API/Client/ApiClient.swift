@@ -14,28 +14,6 @@ class ApiClient {
     private init() {
     }
 
-    static func execute<ApiExecuter: ApiKitApiExecuterProtocol>(_ apiExecuter: ApiExecuter) {
-
-        if let error = apiExecuter.isValid(apiExecuter.request) {
-            apiExecuter.delegate?.onFailure(apiExecuter, error: apiExecuter.onFailure(error))
-            return
-        }
-
-        apiExecuter.willExcecute(apiExecuter.request)
-
-        apiExecuter.execute(apiExecuter.request) { result in
-
-            apiExecuter.didExcecute(result)
-
-            switch result {
-            case .success(let res):
-                apiExecuter.delegate?.onSuccess(apiExecuter, value: apiExecuter.onSuccess(res))
-            case .failure(let error):
-                apiExecuter.delegate?.onFailure(apiExecuter, error: apiExecuter.onFailure(error))
-            }
-        }
-    }
-
     static func rxExecute<ApiExecuter: ApiKitApiExecuterProtocol>(_ apiExecuter: ApiExecuter, _ period: TimeInterval = 3.0)
         -> Observable<ApiExecuter.ModelType?> {
 
