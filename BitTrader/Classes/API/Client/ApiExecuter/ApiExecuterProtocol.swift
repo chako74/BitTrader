@@ -32,8 +32,9 @@ protocol ApiExecuterProtocol {
 
     func willExcecute(_ request: RequestType)
 
-    func execute(_ request: RequestType, _ callback: @escaping (ResultType) -> Void)
     func execute()
+    
+    func execute(_ request: RequestType, _ callback: @escaping (ResultType) -> Void)
 
     func didExcecute(_ result: Any)
 
@@ -55,9 +56,10 @@ extension ApiExecuterProtocol {
     func willExcecute(_ request: RequestType) {
     }
 
-    func execute(_ request: RequestType, _ callback: @escaping (ResultType) -> Void) {
-    }
     func execute() {
+    }
+
+    func execute(_ request: RequestType, _ callback: @escaping (ResultType) -> Void) {
     }
 
     func didExcecute(_ result: Any) {

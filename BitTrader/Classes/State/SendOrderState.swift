@@ -9,6 +9,10 @@
 import ReSwift
 
 struct SendOrderState: StateType {
+    var productType: Bitflyer.ProductCodeType
+    var order: Enums.Order
+    var condition: Enums.Condition
     var bidAsk: Enums.BidAsk
-    var rate: String?
+    var response: BitflyerTickerResponse?
+    var simpleOrder: SimpleOrderState
 }

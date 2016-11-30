@@ -46,12 +46,10 @@ class ApiKitApiExecuter<RequestType: ApiKitRequestProtocol, ModelType>: ApiKitAp
             switch result {
             case .success(let res):
                 self.delegate?.onSuccess(self, value: self.onSuccess(res))
-
             case .failure(.responseError(let apiResponseError as ApiResponseError)):
                 self.delegate?.onFailure(self, error: self.onFailure(apiResponseError))
-
             default:
-                break
+                fatalError("can't convert response.")
             }
         }
     }

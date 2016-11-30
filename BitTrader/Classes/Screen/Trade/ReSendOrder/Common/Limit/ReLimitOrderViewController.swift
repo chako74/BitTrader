@@ -11,22 +11,12 @@ import ReSwift
 
 class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinusInputFieldDelegate, NumberPadViewDelegate, StoreSubscriber {
 
-    private var bidAsk: Enums.BidAsk
     private var targetField: PlusMinusInputField?
 
     @IBOutlet weak var bidButton: UIButton!
     @IBOutlet weak var askButton: UIButton!
     @IBOutlet weak var amountPlusMinusInput: PlusMinusInputField!
     @IBOutlet weak var pricePlusMinusInput: PlusMinusInputField!
-
-    init(bidAsk: Enums.BidAsk) {
-        self.bidAsk = bidAsk
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +26,8 @@ class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinus
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        changeBidAsk(bidAsk: bidAsk)
-
         store.subscribe(self) { state in
-            state.sendOrderState
+            state.sendOrderState.simpleOrder.sendOrderCommon.limitOrder
         }
     }
 
@@ -49,12 +37,17 @@ class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinus
         store.unsubscribe(self)
     }
 
-    func newState(state: SendOrderState) {
-        guard let rate = state.rate, !rate.isEmpty else {
-            changeBidAsk(bidAsk: state.bidAsk)
-            return
+    func newState(state: LimitOrderState) {
+
+        changeBidAsk(bidAsk: state.bidAsk)
+
+        if let amount = state.amount {
+            amountPlusMinusInput.input.value = Double(amount)
         }
-        updateRate(bidAsk: state.bidAsk, rate: Double(rate)!)
+
+        if let rate = state.rate {
+            pricePlusMinusInput.input.value = Double(rate)
+        }
     }
 
     func initComponent() {
@@ -81,16 +74,16 @@ class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinus
     }
 
     override func reSendOrderViewModel() throws -> ReSendOrderViewModel {
-        guard let size = amountPlusMinusInput.input.value else {
+        guard let size = store.state.sendOrderState.simpleOrder.sendOrderCommon.limitOrder.amount else {
             throw BitTraderError.ValidationError(message: "size is required")
         }
-        guard let price = pricePlusMinusInput.input.value else {
+        guard let price = store.state.sendOrderState.simpleOrder.sendOrderCommon.limitOrder.rate else {
             throw BitTraderError.ValidationError(message: "price is required")
         }
 
-        return ReSendOrderViewModel(side: bidButton.isSelected ? .bid : .ask,
-                                  size: size,
-                                  orderType: .limit(price: Int(price)))
+        return ReSendOrderViewModel(side: store.state.sendOrderState.simpleOrder.sendOrderCommon.limitOrder.bidAsk,
+                                    size: Double(size)!,
+                                    orderType: .limit(price: Int(price)))
     }
 
     func didTapedPlusMinusInputField(_ field: PlusMinusInputField) {
@@ -106,13 +99,28 @@ class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinus
     }
 
     func plusMinusInputField(_ plusMinusInputField: PlusMinusInputField, changedValue: Double?) {
-    }
-
-    func didDone(_ NumberPadViewController: NumberPadViewController, value: String) {
-        guard let rootViewController = rootViewController(), let field = targetField else {
+        guard let value = changedValue else {
             return
         }
-        field.input.value = Double(value)
+
+        if plusMinusInputField == amountPlusMinusInput {
+            store.dispatch(LimitOrderAction.Amount(String(value)))
+        } else if plusMinusInputField == pricePlusMinusInput {
+            store.dispatch(LimitOrderAction.Rate(value))
+        }
+    }
+
+    func didDone(_ numberPadViewController: NumberPadViewController, value: String) {
+        guard let rootViewController = rootViewController() else {
+            return
+        }
+
+        if targetField == amountPlusMinusInput {
+            store.dispatch(LimitOrderAction.Amount(value))
+        } else if targetField == pricePlusMinusInput {
+            store.dispatch(LimitOrderAction.Rate(Double(value)!))
+        }
+
         rootViewController.dismiss(animated: true, completion: nil)
     }
 
@@ -124,16 +132,11 @@ class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinus
     }
 
     @IBAction func onBidButton(_ sender: UIButton) {
-        store.dispatch(SendOrderAction(bidAsk: .bid, rate: nil))
+        store.dispatch(LimitOrderAction.BidAsk(.bid))
     }
 
     @IBAction func onAskButton(_ sender: UIButton) {
-        store.dispatch(SendOrderAction(bidAsk: .ask, rate: nil))
-    }
-
-    private func updateRate(bidAsk: Enums.BidAsk, rate: Double) {
-        changeBidAsk(bidAsk: bidAsk)
-        pricePlusMinusInput.input.value = rate
+        store.dispatch(LimitOrderAction.BidAsk(.ask))
     }
 
     private func changeBidAsk(bidAsk: Enums.BidAsk) {

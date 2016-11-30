@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import ReSwift
 
-class ReSimpleOrderViewController: ReBaseSendOrderViewController, ViewContainer, ApiExecuterDelegate {
+class ReSimpleOrderViewController: ReBaseSendOrderViewController, ViewContainer, ApiExecuterDelegate, StoreSubscriber {
     
     private var activeViewController: ReBaseSendOrderCommonViewController?
     @IBOutlet weak var containerView: UIView!
@@ -23,6 +24,19 @@ class ReSimpleOrderViewController: ReBaseSendOrderViewController, ViewContainer,
 
         activeViewController = remakeSendOrderChildViewController(condition: condition)
         addChildContainerViewController(activeViewController!, atContainerView: containerView)
+
+        store.subscribe(self) { state in
+            state.sendOrderState.simpleOrder
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        store.unsubscribe(self)
+    }
+
+    func newState(state: SimpleOrderState) {
     }
 
     override func updateCondition(_ condition: Enums.Condition) {

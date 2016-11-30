@@ -30,7 +30,7 @@ class ReBaseSendOrderViewController: UIViewController {
     func remakeSendOrderChildViewController(condition: Enums.Condition) -> ReBaseSendOrderCommonViewController? {
         switch condition {
         case .limit:
-            return ReLimitOrderViewController(bidAsk: .bid)
+            return ReLimitOrderViewController()
         case .market:
             return ReMarketOrderViewController()
         case .stop:

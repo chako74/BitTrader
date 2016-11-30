@@ -8,7 +8,10 @@
 
 import ReSwift
 
-struct SendOrderAction: Action {
-    let bidAsk: Enums.BidAsk
-    let rate: String?
+enum SendOrderAction: Action {
+    case ProductCodeType(Bitflyer.ProductCodeType)
+    case Order(Enums.Order)
+    case Condition(Enums.Condition)
+    case BidAsk(Enums.BidAsk)
+    case Response(BitflyerTickerResponse?)
 }
