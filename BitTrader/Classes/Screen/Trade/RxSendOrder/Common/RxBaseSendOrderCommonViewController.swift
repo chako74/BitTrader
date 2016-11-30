@@ -11,7 +11,7 @@ import UIKit
 protocol RxSendOrderViewControllerProtocol: NSObjectProtocol {
     func updateBidRate(rate: String)
     func updateAskRate(rate: String)
-    func sendOrderViewModel() throws -> RxSendOrderViewModel
+    func sendOrderViewModel() throws -> RxSendOrderModel
 }
 
 class RxBaseSendOrderCommonViewController: UIViewController, RxSendOrderViewControllerProtocol {
@@ -24,7 +24,7 @@ class RxBaseSendOrderCommonViewController: UIViewController, RxSendOrderViewCont
         fatalError("updateAskRate(rate:) has not been implemented")
     }
 
-    func sendOrderViewModel() throws -> RxSendOrderViewModel {
+    func sendOrderViewModel() throws -> RxSendOrderModel {
         fatalError("sendOrderViewModel() has not been implemented")
     }
 

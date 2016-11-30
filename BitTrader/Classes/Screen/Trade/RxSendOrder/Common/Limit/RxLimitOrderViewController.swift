@@ -72,7 +72,7 @@ class RxLimitOrderViewController: RxBaseSendOrderCommonViewController, PlusMinus
         updateRate(bidAsk: .ask, rate: Double(rate)!)
     }
 
-    override func sendOrderViewModel() throws -> RxSendOrderViewModel {
+    override func sendOrderViewModel() throws -> RxSendOrderModel {
         guard let size = amountPlusMinusInput.input.value else {
             throw BitTraderError.ValidationError(message: "size is required")
         }
@@ -80,9 +80,9 @@ class RxLimitOrderViewController: RxBaseSendOrderCommonViewController, PlusMinus
             throw BitTraderError.ValidationError(message: "price is required")
         }
 
-        return RxSendOrderViewModel(side: bidButton.isSelected ? .bid : .ask,
-                                    size: size,
-                                    orderType: .limit(price: Int(price)))
+        return RxSendOrderModel(side: bidButton.isSelected ? .bid : .ask,
+                                size: size,
+                                orderType: .limit(price: Int(price)))
     }
 
     func didTapedPlusMinusInputField(_ field: PlusMinusInputField) {

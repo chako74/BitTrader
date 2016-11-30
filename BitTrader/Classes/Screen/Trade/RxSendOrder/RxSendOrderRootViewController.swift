@@ -8,6 +8,9 @@
 
 import UIKit
 
+import RxCocoa
+import RxSwift
+
 protocol RxSendOrderRootViewControllerProtocol: NSObjectProtocol {
     func willNeedBidRate(rateType: RateType) -> String?
     func willNeedAskRate(rateType: RateType) -> String?
@@ -15,11 +18,11 @@ protocol RxSendOrderRootViewControllerProtocol: NSObjectProtocol {
 
 class RxSendOrderRootViewController: UIViewController, ViewContainer, UIPickerViewDelegate, UIPickerViewDataSource, ApiExecuterDelegate, RxSendOrderRootViewControllerProtocol {
 
+    private let disposeBag = DisposeBag()
+    private let viewModel = RxSendOrderViewModel(productType: .fxBtcJpy, order: .simple, condition: .limit)
+    
     private var activeViewController: RxBaseSendOrderViewController?
-
-    private var productType: Bitflyer.ProductCodeType?
-    private var selectedOrder: Enums.Order?
-    private var selectedCondition: Enums.Condition?
+    
     private var response: BitflyerTickerResponse?
     private var timer: Timer?
 
@@ -31,27 +34,58 @@ class RxSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        productType = .fxBtcJpy
+        // 銘柄変更
+        viewModel.productType
+            .asDriver()
+            .drive(onNext: { [weak self] productType in
+                self?.title = productType.rawValue
+            })
+        .addDisposableTo(disposeBag)
 
-        guard let productType = productType else {
-            return
-        }
-
-        title = productType.rawValue
-
-        selectedOrder = Enums.Order(rawValue: 0)
-        selectedCondition = Enums.Condition(rawValue: 0)
-
-        activeViewController = RxSimpleOrderViewController(productType: productType, condition: .limit, delegete: self)
+        // 注文種別変更
+        viewModel.selectedOrder
+            .asDriver()
+            .drive(onNext: { [weak self] order in
+                
+                guard let sSelf = self,
+                    let active = sSelf.activeViewController else {
+                    return
+                }
+                if let controller = sSelf.makeOrderViewController(sSelf.viewModel.productType.value, order, sSelf.viewModel.selectedCondition.value) {
+                    sSelf.removeChildContainerViewController(active)
+                    sSelf.activeViewController = controller
+                    sSelf.addChildContainerViewController(controller, atContainerView: sSelf.containerView)
+                }
+            })
+        .addDisposableTo(disposeBag)
+        
+        // 注文条件変更
+        viewModel.selectedCondition
+            .asDriver()
+            .drive(onNext: { [weak self] condition in
+                
+                self?.activeViewController?.updateCondition(condition)
+            })
+        .addDisposableTo(disposeBag)
+        
+        /* PickerのRx化はdatasource,delegateのRx化も必要なので、今後調査
+        pickerView.rx.itemSelected
+            .subscribe(onNext: { [weak self] element in
+                print(element)
+            })
+            .addDisposableTo(disposeBag)
+         */
+        
+        let controller = RxSimpleOrderViewController(viewModel: self.viewModel)
+        controller.delegate = self
+        
+        activeViewController = controller
         addChildContainerViewController(activeViewController!, atContainerView: containerView)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        self.pickerView.dataSource = self
-        self.pickerView.delegate = self
-
+        
         ratePolling()
         timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.ratePolling), userInfo: nil, repeats: true)
     }
@@ -108,38 +142,12 @@ class RxSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
     }
 
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        switch component {
-        case 0:
-            // 注文方法の更新
-            selectedOrder = Enums.Order(rawValue: row)
-            guard let activeViewController = activeViewController,
-                let productType = productType,
-                let selectedOrder = selectedOrder,
-                let selectedCondition = selectedCondition,
-                let newAvc = createOrderViewController(productType, selectedOrder, selectedCondition) else {
-                return
-            }
-            removeChildContainerViewController(activeViewController)
-            self.activeViewController = newAvc
-            addChildContainerViewController(newAvc, atContainerView: containerView)
-
-        case 1:
-            // 注文の執行条件の更新
-            selectedCondition = Enums.Condition(rawValue: row)
-            guard let selectedCondition = selectedCondition else {
-                return
-            }
-            activeViewController?.updateCondition(selectedCondition)
-        default:
-            break
-        }
+        
+        viewModel.updateDidSelectedPicker(row: row, inComponent: component)        
     }
 
     func ratePolling() {
-        guard let productType = productType else {
-            return
-        }
-        let apiExecuter = createBitflyerFxTickerRequestExecuter(productType)
+        let apiExecuter = createBitflyerFxTickerRequestExecuter(self.viewModel.productType.value)
         apiExecuter.delegate = self
         apiExecuter.execute()
     }
@@ -158,16 +166,24 @@ class RxSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
         activeViewController?.updateAskRate(rate: String(describing: response.bestAsk))
     }
 
-    private func createOrderViewController(_ productType: Bitflyer.ProductCodeType, _ order: Enums.Order, _ condition: Enums.Condition) -> RxBaseSendOrderViewController? {
+    private func makeOrderViewController(_ productType: Bitflyer.ProductCodeType, _ order: Enums.Order, _ condition: Enums.Condition) -> RxBaseSendOrderViewController? {
         switch order {
         case .simple:
-            return RxSimpleOrderViewController(productType: productType, condition: condition, delegete: self)
+            let controller = RxSimpleOrderViewController(viewModel: self.viewModel)
+            controller.delegate = self
+            return controller
         case .ifd:
-            return RxIfdOrderViewController(productType: productType, condition: condition, delegete: self)
+            let controller = RxIfdOrderViewController(viewModel: self.viewModel)
+            controller.delegate = self
+            return controller
         case .oco:
-            return RxOcoOrderViewController(productType: productType, condition: condition, delegete: self)
+            let controller = RxOcoOrderViewController(viewModel: self.viewModel)
+            controller.delegate = self
+            return controller
         case .ifdoco:
-            return RxIfdocoOrderViewController(productType: productType, condition: condition, delegete: self)
+            let controller = RxIfdocoOrderViewController(viewModel: self.viewModel)
+            controller.delegate = self
+            return controller
         default:
             return nil
         }

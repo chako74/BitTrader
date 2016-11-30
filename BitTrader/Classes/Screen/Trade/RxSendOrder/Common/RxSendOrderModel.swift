@@ -1,5 +1,5 @@
 //
-//  RxSendOrderViewModel.swift
+//  RxSendOrderModel.swift
 //  BitTrader
 //
 //  Created by chako on 2016/11/26.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RxSendOrderViewModel {
+struct RxSendOrderModel {
     let side: Enums.BidAsk
     let size: Double
     let orderType: Enums.OrderType
