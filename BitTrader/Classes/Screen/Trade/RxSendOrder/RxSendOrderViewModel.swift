@@ -22,6 +22,27 @@ class RxSendOrderViewModel {
         self.selectedCondition = Variable(condition)
     }
     
+    func tradeTypeComponentCount() -> Int {
+        return 2
+    }
+    
+    func tradeTypeCount(numberOfRowsInComponent component: Int) -> Int {        
+        if component == 0 {
+            return Enums.Order.count
+        }
+        return Enums.Condition.count
+    }
+    
+    func tradeTypeTitleForRow(_ row: Int, forComponent component: Int) -> String? {
+        if component == 0 {
+            return Enums.Order(rawValue: row)?.name
+        } else if component == 1 {
+            return Enums.Condition(rawValue: row)?.name
+        } else {
+            return nil
+        }
+    }
+    
     func updateDidSelectedPicker(row: Int, inComponent component: Int) {
         
         if component == 0 {

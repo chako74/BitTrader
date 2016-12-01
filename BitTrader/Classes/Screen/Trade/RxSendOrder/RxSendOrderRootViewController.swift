@@ -97,21 +97,15 @@ class RxSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
     }
 
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+        return viewModel.tradeTypeComponentCount()
     }
 
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if component == 0 {
-            return Enums.Order.count
-        }
-        return Enums.Condition.count
+        return viewModel.tradeTypeCount(numberOfRowsInComponent: component)
     }
 
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if component == 0 {
-            return Enums.Order(rawValue: row)?.name
-        }
-        return Enums.Condition(rawValue: row)?.name
+        return viewModel.tradeTypeTitleForRow(row, forComponent: component)
     }
 
     func onSuccess<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType) {
