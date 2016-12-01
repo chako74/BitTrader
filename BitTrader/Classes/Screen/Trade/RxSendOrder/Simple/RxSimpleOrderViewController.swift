@@ -9,7 +9,7 @@
 import UIKit
 
 class RxSimpleOrderViewController: RxBaseSendOrderViewController, ViewContainer, ApiExecuterDelegate {
-    
+        
     private var activeViewController: RxBaseSendOrderCommonViewController?
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var sendOrderButton: UIButton!
@@ -21,7 +21,7 @@ class RxSimpleOrderViewController: RxBaseSendOrderViewController, ViewContainer,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        activeViewController = makeSendOrderChildViewController(condition: condition)
+        activeViewController = makeSendOrderChildViewController(condition: self.viewModel.selectedCondition.value)
         addChildContainerViewController(activeViewController!, atContainerView: containerView)
     }
 
@@ -55,9 +55,9 @@ class RxSimpleOrderViewController: RxBaseSendOrderViewController, ViewContainer,
             return
         }
 
-        let sendOrderViewModel: RxSendOrderViewModel
+        let sendOrderModel: RxSendOrderModel
         do {
-            sendOrderViewModel = try activeViewController.sendOrderViewModel()
+            sendOrderModel = try activeViewController.sendOrderViewModel()
         } catch (let error) {
             guard let error = error as? BitTraderError else {
                 showAlert(message: "Invalid Input value")
@@ -67,12 +67,12 @@ class RxSimpleOrderViewController: RxBaseSendOrderViewController, ViewContainer,
             return
         }
 
-        showConfirmAlert(message: makeErrorMessage(sendOrderViewModel),
+        showConfirmAlert(message: makeErrorMessage(sendOrderModel),
                          cancelHandler: nil,
-                         agreeHandler: { [weak self] _ in self?.sendChildOrder(sendOrderViewModel) })
+                         agreeHandler: { [weak self] _ in self?.sendChildOrder(sendOrderModel) })
     }
 
-    private func sendChildOrder(_ viewModel: RxSendOrderViewModel) {
+    private func sendChildOrder(_ viewModel: RxSendOrderModel) {
         let requestParameter: BitflyerSendChildOrderRequestParameter!
         do {
             requestParameter = try makeChildOrderParameter(model: viewModel)
@@ -91,7 +91,7 @@ class RxSimpleOrderViewController: RxBaseSendOrderViewController, ViewContainer,
         apiExecuter.execute()
     }
 
-    private func sendParentOrder(_ viewModel: RxSendOrderViewModel) {
+    private func sendParentOrder(_ viewModel: RxSendOrderModel) {
         let sendOrderModel = convert(viewModel)
         let requestParameter = makeParentOrderParameter(orderMethodType: .simple, parameters: [sendOrderModel])
         let request = BitflyerSendParentOrderRequest(requestParameter: requestParameter)

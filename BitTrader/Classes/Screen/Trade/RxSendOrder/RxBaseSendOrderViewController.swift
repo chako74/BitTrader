@@ -11,13 +11,12 @@ import UIKit
 class RxBaseSendOrderViewController: UIViewController {
 
     weak var delegate: RxSendOrderRootViewControllerProtocol?
-    var condition: Enums.Condition
-    var productType: Bitflyer.ProductCodeType
+    
+    let viewModel: RxSendOrderViewModel
 
-    init(productType: Bitflyer.ProductCodeType, condition: Enums.Condition, delegete: RxSendOrderRootViewControllerProtocol) {
-        self.condition = condition
-        self.delegate = delegete
-        self.productType = productType
+    init(viewModel: RxSendOrderViewModel) {
+        self.viewModel = viewModel
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -52,7 +51,7 @@ class RxBaseSendOrderViewController: UIViewController {
         }
     }
 
-    func makeErrorMessage(_ viewModel: RxSendOrderViewModel) -> String {
+    func makeErrorMessage(_ viewModel: RxSendOrderModel) -> String {
         var message = "\(viewModel.orderType.name)\n"
         message += "\(viewModel.side.rawValue)\n"
         message += "数量:\(viewModel.size)\n"
@@ -60,15 +59,15 @@ class RxBaseSendOrderViewController: UIViewController {
         return message
     }
 
-    func convert(_ model: RxSendOrderViewModel) -> SendOrderModel {
-        return SendOrderModel(productCode: productType,
+    func convert(_ model: RxSendOrderModel) -> SendOrderModel {
+        return SendOrderModel(productCode: viewModel.productType.value,
                               side: convert(model.side),
                               size: model.size,
                               orderType: convert(model.orderType))
     }
 
-    func makeChildOrderParameter(model: RxSendOrderViewModel) throws -> BitflyerSendChildOrderRequestParameter {
-        return BitflyerSendChildOrderRequestParameter(productCode: productType,
+    func makeChildOrderParameter(model: RxSendOrderModel) throws -> BitflyerSendChildOrderRequestParameter {
+        return BitflyerSendChildOrderRequestParameter(productCode: viewModel.productType.value,
                                                       orderType: try convert(model.orderType),
                                                       side: convert(model.side),
                                                       size: model.size,

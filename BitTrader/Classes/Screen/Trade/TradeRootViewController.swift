@@ -20,9 +20,9 @@ class TradeRootViewController: UIViewController, ViewContainer {
         // 通常
 //        let navi = UINavigationController(rootViewController: SendOrderRootViewController())
         // Re版
-        let navi = UINavigationController(rootViewController: ReSendOrderRootViewController())
+//        let navi = UINavigationController(rootViewController: ReSendOrderRootViewController())
         // Rx版
-        //let navi = UINavigationController(rootViewController: RxSendOrderRootViewController())
+        let navi = UINavigationController(rootViewController: RxSendOrderRootViewController())
         navi.navigationBar.isTranslucent = false
         addChildContainerViewController(navi)
         activeViewController = navi
