@@ -17,42 +17,49 @@ class ReSimpleOrderViewController: ReBaseSendOrderViewController, ViewContainer,
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let state = store.state.parentOrderState.simple else {
+            return
+        }
+        activeViewController = remakeSendOrderChildViewController(place: .First, condition: state.condition.enums)
+        addChildContainerViewController(activeViewController!, atContainerView: containerView)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        activeViewController = remakeSendOrderChildViewController(condition: condition)
-        addChildContainerViewController(activeViewController!, atContainerView: containerView)
-
         store.subscribe(self) { state in
-            state.sendOrderState.simpleOrder
+            state.parentOrderState
         }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
         store.unsubscribe(self)
     }
 
-    func newState(state: SimpleOrderState) {
-    }
-
-    override func updateCondition(_ condition: Enums.Condition) {
-        guard let activeViewController = activeViewController, let newAvc = remakeSendOrderChildViewController(condition: condition) else {
+    func newState(state: ParentOrderState) {
+        guard let orderState = state.simple else {
             return
         }
+        updateCondition(orderState.condition.enums)
+    }
+
+    func updateCondition(_ condition: Enums.Condition) {
+        guard let activeViewController = activeViewController,
+            let newAvc = remakeSendOrderChildViewController(place: .First, condition: condition),
+            type(of: activeViewController) != type(of: newAvc) else {
+                return
+        }
+
         removeChildContainerViewController(activeViewController)
         self.activeViewController = newAvc
         addChildContainerViewController(newAvc, atContainerView: containerView)
     }
 
-    func onSuccess<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType) {
+    func success<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType) {
         showAlert(message: "complete")
     }
 
-    func onFailure<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, error: ApiResponseError) {
+    func failure<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, error: ApiResponseError) {
         showAlert(message: error.message)
     }
 

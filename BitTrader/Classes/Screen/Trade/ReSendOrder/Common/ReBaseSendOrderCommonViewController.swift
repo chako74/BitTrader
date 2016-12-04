@@ -14,6 +14,17 @@ protocol ReSendOrderViewControllerProtocol: NSObjectProtocol {
 
 class ReBaseSendOrderCommonViewController: UIViewController, ReSendOrderViewControllerProtocol {
 
+    var place: Enums.Place
+
+    init(place: Enums.Place) {
+        self.place = place
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     func reSendOrderViewModel() throws -> ReSendOrderViewModel {
         fatalError("reSendOrderViewModel() has not been implemented")
     }

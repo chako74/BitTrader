@@ -9,7 +9,8 @@
 import UIKit
 import ReSwift
 
-var store = Store<State>(reducer: AppReducer(), state: nil)
+let reducer = CombinedReducer([SendOrderReducer(), ParentOrderReducer()])
+var store = Store<State>(reducer: reducer, state: nil)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

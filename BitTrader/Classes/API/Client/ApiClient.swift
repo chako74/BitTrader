@@ -14,7 +14,7 @@ class ApiClient {
     private init() {
     }
 
-    static func rxExecute<ApiExecuter: ApiKitApiExecuterProtocol>(_ apiExecuter: ApiExecuter, _ period: TimeInterval = 3.0)
+    static func rxExecute<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, _ period: TimeInterval = 3.0)
         -> Observable<ApiExecuter.ModelType?> {
 
             return Observable<Int>
@@ -24,22 +24,13 @@ class ApiClient {
                 .flatMap {_ -> Observable<ApiExecuter.ModelType?> in
                     return Observable<ApiExecuter.ModelType?>.create { observer in
 
-                        if let error = apiExecuter.isValid(apiExecuter.request) {
-                            observer.onError(apiExecuter.onFailure(error))
-                        }
-
-                        apiExecuter.willExcecute(apiExecuter.request)
-
                         apiExecuter.execute(apiExecuter.request) { result in
-
-                            apiExecuter.didExcecute(result)
-
                             switch result {
-                            case .success(let res):
-                                observer.on(.next(apiExecuter.onSuccess(res)))
+                            case .success(let response):
+                                observer.on(.next(response))
                                 observer.on(.completed)
-                            case .failure(let err):
-                                observer.onError(apiExecuter.onFailure(err))
+                            case .failure(let error):
+                                observer.onError(error)
                             }
                         }
 

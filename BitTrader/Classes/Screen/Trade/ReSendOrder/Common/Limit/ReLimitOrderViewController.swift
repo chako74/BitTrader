@@ -27,26 +27,26 @@ class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinus
         super.viewWillAppear(animated)
 
         store.subscribe(self) { state in
-            state.sendOrderState.simpleOrder.sendOrderCommon.limitOrder
+            state.parentOrderState
         }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
         store.unsubscribe(self)
     }
 
-    func newState(state: LimitOrderState) {
+    func newState(state: ParentOrderState) {
+        let cos = SendOrderUtils.selectOrderState(parentOrderState: state, place: place)
 
-        changeBidAsk(bidAsk: state.bidAsk)
+        changeBidAsk(bidAsk: cos.condition.bidAsk)
 
-        if let amount = state.amount {
+        if let amount = cos.condition.amount {
             amountPlusMinusInput.input.value = Double(amount)
         }
 
-        if let rate = state.rate {
-            pricePlusMinusInput.input.value = Double(rate)
+        if let price = cos.condition.price {
+            pricePlusMinusInput.input.value = Double(price)
         }
     }
 
@@ -74,14 +74,19 @@ class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinus
     }
 
     override func reSendOrderViewModel() throws -> ReSendOrderViewModel {
-        guard let size = store.state.sendOrderState.simpleOrder.sendOrderCommon.limitOrder.amount else {
+
+        guard let state = store.state.parentOrderState.simple else {
+            fatalError("state is nil")
+        }
+
+        guard let size = state.condition.amount else {
             throw BitTraderError.ValidationError(message: "size is required")
         }
-        guard let price = store.state.sendOrderState.simpleOrder.sendOrderCommon.limitOrder.rate else {
+        guard let price = state.condition.price else {
             throw BitTraderError.ValidationError(message: "price is required")
         }
 
-        return ReSendOrderViewModel(side: store.state.sendOrderState.simpleOrder.sendOrderCommon.limitOrder.bidAsk,
+        return ReSendOrderViewModel(side: state.condition.bidAsk,
                                     size: Double(size)!,
                                     orderType: .limit(price: Int(price)))
     }
@@ -104,9 +109,9 @@ class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinus
         }
 
         if plusMinusInputField == amountPlusMinusInput {
-            store.dispatch(LimitOrderAction.Amount(String(value)))
+            store.dispatch(AppAction.Amount(.First, value: String(value)))
         } else if plusMinusInputField == pricePlusMinusInput {
-            store.dispatch(LimitOrderAction.Rate(value))
+            store.dispatch(AppAction.Rate(.First, value: value))
         }
     }
 
@@ -116,9 +121,9 @@ class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinus
         }
 
         if targetField == amountPlusMinusInput {
-            store.dispatch(LimitOrderAction.Amount(value))
+            store.dispatch(AppAction.Amount(.First, value: value))
         } else if targetField == pricePlusMinusInput {
-            store.dispatch(LimitOrderAction.Rate(Double(value)!))
+            store.dispatch(AppAction.Rate(.First, value: Double(value)!))
         }
 
         rootViewController.dismiss(animated: true, completion: nil)
@@ -132,11 +137,11 @@ class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinus
     }
 
     @IBAction func onBidButton(_ sender: UIButton) {
-        store.dispatch(LimitOrderAction.BidAsk(.bid))
+        store.dispatch(AppAction.BidAsk(.First, value: .bid))
     }
 
     @IBAction func onAskButton(_ sender: UIButton) {
-        store.dispatch(LimitOrderAction.BidAsk(.ask))
+        store.dispatch(AppAction.BidAsk(.First, value: .ask))
     }
 
     private func changeBidAsk(bidAsk: Enums.BidAsk) {
