@@ -34,12 +34,12 @@ class SimpleOrderViewController: BaseSendOrderViewController, ViewContainer, Api
         addChildContainerViewController(newAvc, atContainerView: containerView)
     }
 
-    override func updateBidRate(rate: String) {
-        activeViewController?.updateBidRate(rate: rate)
+    override func updateBidPrice(price: String) {
+        activeViewController?.updateBidPrice(price: price)
     }
 
-    override func updateAskRate(rate: String) {
-        activeViewController?.updateAskRate(rate: rate)
+    override func updateAskPrice(price: String) {
+        activeViewController?.updateAskPrice(price: price)
     }
 
     func success<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType) {

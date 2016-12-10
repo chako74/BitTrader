@@ -12,8 +12,8 @@ import RxCocoa
 import RxSwift
 
 protocol RxSendOrderRootViewControllerProtocol: NSObjectProtocol {
-    func willNeedBidRate(rateType: RateType) -> String?
-    func willNeedAskRate(rateType: RateType) -> String?
+    func willNeedBidPrice(rateType: RateType) -> String?
+    func willNeedAskPrice(rateType: RateType) -> String?
 }
 
 class RxSendOrderRootViewController: UIViewController, ViewContainer, UIPickerViewDelegate, UIPickerViewDataSource, ApiExecuterDelegate, RxSendOrderRootViewControllerProtocol {
@@ -86,8 +86,8 @@ class RxSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        ratePolling()
-        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.ratePolling), userInfo: nil, repeats: true)
+        priceApi()
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.priceApi), userInfo: nil, repeats: true)
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -121,14 +121,14 @@ class RxSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
 
     }
 
-    func willNeedBidRate(rateType: RateType) -> String? {
+    func willNeedBidPrice(rateType: RateType) -> String? {
         guard let response = response else {
             return nil
         }
         return String(describing: response.bestBid)
     }
 
-    func willNeedAskRate(rateType: RateType) -> String? {
+    func willNeedAskPrice(rateType: RateType) -> String? {
         guard let response = response else {
             return nil
         }
@@ -140,7 +140,7 @@ class RxSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
         viewModel.updateDidSelectedPicker(row: row, inComponent: component)        
     }
 
-    func ratePolling() {
+    func priceApi() {
         let apiExecuter = createBitflyerFxTickerRequestExecuter(self.viewModel.productType.value)
         apiExecuter.delegate = self
         apiExecuter.execute()
@@ -150,14 +150,14 @@ class RxSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
         guard let response = response else {
             return
         }
-        activeViewController?.updateBidRate(rate: String(describing: response.bestBid))
+        activeViewController?.updateBidPrice(price: String(describing: response.bestBid))
     }
 
     @IBAction func onAskButton(_ sender: UIButton) {
         guard let response = response else {
             return
         }
-        activeViewController?.updateAskRate(rate: String(describing: response.bestAsk))
+        activeViewController?.updateAskPrice(price: String(describing: response.bestAsk))
     }
 
     private func makeOrderViewController(_ productType: Bitflyer.ProductCodeType, _ order: Enums.Order, _ condition: Enums.Condition) -> RxBaseSendOrderViewController? {

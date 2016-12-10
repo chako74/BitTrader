@@ -27,11 +27,11 @@ class RxBaseSendOrderViewController: UIViewController {
     func updateCondition(_ condition: Enums.Condition) {
         fatalError("updateCondition(:) has not been implemented")
     }
-    func updateBidRate(rate: String) {
-        fatalError("updateBidRate(rate:) has not been implemented")
+    func updateBidPrice(price: String) {
+        fatalError("updateBidPrice(price:) has not been implemented")
     }
-    func updateAskRate(rate: String) {
-        fatalError("updateAskRate(rate:) has not been implemented")
+    func updateAskPrice(price: String) {
+        fatalError("updateAskPrice(price:) has not been implemented")
     }
 
     func makeSendOrderChildViewController(condition: Enums.Condition) -> RxBaseSendOrderCommonViewController? {

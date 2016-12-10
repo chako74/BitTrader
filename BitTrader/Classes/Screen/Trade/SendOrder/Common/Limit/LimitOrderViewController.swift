@@ -64,12 +64,12 @@ class LimitOrderViewController: BaseSendOrderCommonViewController, PlusMinusInpu
         pricePlusMinusInput.delegate = self
     }
 
-    override func updateBidRate(rate: String) {
-        updateRate(bidAsk: .bid, rate: Double(rate)!)
+    override func updateBidPrice(price: String) {
+        updatePrice(bidAsk: .bid, price: Double(price)!)
     }
 
-    override func updateAskRate(rate: String) {
-        updateRate(bidAsk: .ask, rate: Double(rate)!)
+    override func updateAskPrice(price: String) {
+        updatePrice(bidAsk: .ask, price: Double(price)!)
     }
 
     override func sendOrderViewModel() throws -> SendOrderViewModel {
@@ -116,22 +116,22 @@ class LimitOrderViewController: BaseSendOrderCommonViewController, PlusMinusInpu
     }
 
     @IBAction func onBidButton(_ sender: UIButton) {
-        guard let rate = self.delegate?.willNeedBidRate(rateType: .bitflyerFx) else {
+        guard let price = self.delegate?.willNeedBidPrice(rateType: .bitflyerFx) else {
             return
         }
-        updateRate(bidAsk: .bid, rate: Double(rate)!)
+        updatePrice(bidAsk: .bid, price: Double(price)!)
     }
 
     @IBAction func onAskButton(_ sender: UIButton) {
-        guard let rate = self.delegate?.willNeedAskRate(rateType: .bitflyerFx) else {
+        guard let price = self.delegate?.willNeedAskPrice(rateType: .bitflyerFx) else {
             return
         }
-        updateRate(bidAsk: .ask, rate: Double(rate)!)
+        updatePrice(bidAsk: .ask, price: Double(price)!)
     }
 
-    private func updateRate(bidAsk: Enums.BidAsk, rate: Double) {
+    private func updatePrice(bidAsk: Enums.BidAsk, price: Double) {
         changeBidAsk(bidAsk: bidAsk)
-        pricePlusMinusInput.input.value = rate
+        pricePlusMinusInput.input.value = price
     }
 
     private func changeBidAsk(bidAsk: Enums.BidAsk) {

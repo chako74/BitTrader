@@ -9,19 +9,19 @@
 import UIKit
 
 protocol RxSendOrderViewControllerProtocol: NSObjectProtocol {
-    func updateBidRate(rate: String)
-    func updateAskRate(rate: String)
+    func updateBidPrice(price: String)
+    func updateAskPrice(price: String)
     func sendOrderViewModel() throws -> RxSendOrderModel
 }
 
 class RxBaseSendOrderCommonViewController: UIViewController, RxSendOrderViewControllerProtocol {
 
-    func updateBidRate(rate: String) {
-        fatalError("updateBidRate(rate:) has not been implemented")
+    func updateBidPrice(price: String) {
+        fatalError("updateBidPrice(price:) has not been implemented")
     }
 
-    func updateAskRate(rate: String) {
-        fatalError("updateAskRate(rate:) has not been implemented")
+    func updateAskPrice(price: String) {
+        fatalError("updateAskPrice(price:) has not been implemented")
     }
 
     func sendOrderViewModel() throws -> RxSendOrderModel {

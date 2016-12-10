@@ -40,7 +40,7 @@ struct ParentOrderReducer: Reducer {
         switch action {
         case .BidAsk(let place, let bidAsk):
             var cos = SendOrderUtils.selectOrderState(parentOrderState: orderState, place: place)
-            cos.condition = makeCondition(condition: cos.condition, bidAsk: bidAsk, price: bidAskRate(bidAsk, rateModel: state.rateModel))
+            cos.condition = makeCondition(condition: cos.condition, bidAsk: bidAsk, price: bidAskPrice(bidAsk, rateModel: state.rateModel))
             orderState = makeOrderState(parentOrderState: orderState, place: place, hasCondition: cos)
 
         case .Amount(let place, let amount):
@@ -48,12 +48,12 @@ struct ParentOrderReducer: Reducer {
             cos.condition = makeCondition(condition: cos.condition, amount: amount)
             orderState = makeOrderState(parentOrderState: orderState, place: place, hasCondition: cos)
 
-        case .Rate(let place, let price):
+        case .Price(let place, let price):
             var cos = SendOrderUtils.selectOrderState(parentOrderState: orderState, place: place)
             cos.condition = makeCondition(condition: cos.condition, price: price)
             orderState = makeOrderState(parentOrderState: orderState, place: place, hasCondition: cos)
 
-        case .TriggerRate(let place, let triggerPrice):
+        case .TriggerPrice(let place, let triggerPrice):
             var cos = SendOrderUtils.selectOrderState(parentOrderState: orderState, place: place)
             cos.condition = makeCondition(condition: cos.condition, triggerPrice: triggerPrice)
             orderState = makeOrderState(parentOrderState: orderState, place: place, hasCondition: cos)
@@ -71,18 +71,18 @@ struct ParentOrderReducer: Reducer {
         return state
     }
 
-    private func bidAskRate(_ bidAsk: Enums.BidAsk, rateModel: RateModel?) -> Double? {
+    private func bidAskPrice(_ bidAsk: Enums.BidAsk, rateModel: RateModel?) -> Double? {
         guard let rateModel = rateModel else {
             return nil
         }
-        let rate: Int
+        let price: Int
         switch bidAsk {
         case .bid:
-            rate = rateModel.bidPrice
+            price = rateModel.bidPrice
         case .ask:
-            rate = rateModel.askPrice
+            price = rateModel.askPrice
         }
-        return Double(rate)
+        return Double(price)
     }
 
     private func makeCondition(condition: ChildOrderCondition, bidAsk: Enums.BidAsk, price: Double?) -> ChildOrderCondition {

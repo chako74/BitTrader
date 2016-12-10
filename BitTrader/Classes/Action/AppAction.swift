@@ -19,8 +19,8 @@ enum AppAction: Action {
 
     case BidAsk(Enums.Place, value: Enums.BidAsk)
     case Amount(Enums.Place, value: String?)
-    case Rate(Enums.Place, value: Double?)
-    case TriggerRate(Enums.Place, value: Double?)
+    case Price(Enums.Place, value: Double?)
+    case TriggerPrice(Enums.Place, value: Double?)
     case Offset(Enums.Place, value: Double?)
 }
 
