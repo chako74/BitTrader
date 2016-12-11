@@ -169,19 +169,10 @@
 		E91FE6051DEAD64900D2632C /* ReBaseSendOrderCommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91FE6031DEAD64900D2632C /* ReBaseSendOrderCommonViewController.swift */; };
 		E91FE6061DEAD64900D2632C /* ReSendOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91FE6041DEAD64900D2632C /* ReSendOrderViewModel.swift */; };
 		E91FE6611DEB249900D2632C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91FE6601DEB249900D2632C /* State.swift */; };
-		E91FE6631DEB24E900D2632C /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91FE6621DEB24E900D2632C /* AppReducer.swift */; };
-		E91FE6991DEB26CF00D2632C /* SendOrderAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91FE6981DEB26CF00D2632C /* SendOrderAction.swift */; };
-		E91FE69B1DEB271700D2632C /* SendOrderState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91FE69A1DEB271700D2632C /* SendOrderState.swift */; };
-		E95B76B71DEDE80E00287C87 /* SendOrderReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B76B61DEDE80E00287C87 /* SendOrderReducer.swift */; };
-		E95B76BB1DEDE87800287C87 /* SimpleOrderReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B76BA1DEDE87800287C87 /* SimpleOrderReducer.swift */; };
-		E95B76BD1DEDE88100287C87 /* SendOrderCommonReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B76BC1DEDE88100287C87 /* SendOrderCommonReducer.swift */; };
-		E95B76C01DEDE89700287C87 /* LimitOrderReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B76BF1DEDE89700287C87 /* LimitOrderReducer.swift */; };
-		E95B76CA1DEDE95D00287C87 /* SimpleOrderState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B76C91DEDE95D00287C87 /* SimpleOrderState.swift */; };
-		E95B76CC1DEDE97600287C87 /* SendOrderCommonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B76CB1DEDE97600287C87 /* SendOrderCommonState.swift */; };
-		E95B76CE1DEDE98E00287C87 /* LimitOrderState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B76CD1DEDE98E00287C87 /* LimitOrderState.swift */; };
-		E95B76D01DEDE9CE00287C87 /* SimpleOrderAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B76CF1DEDE9CE00287C87 /* SimpleOrderAction.swift */; };
-		E95B76D21DEDE9E500287C87 /* SendOrderCommonAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B76D11DEDE9E500287C87 /* SendOrderCommonAction.swift */; };
-		E95B76D41DEDE9FB00287C87 /* LimitOrderAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B76D31DEDE9FB00287C87 /* LimitOrderAction.swift */; };
+		E93E67191DFAEC410062F2A2 /* SendOrderUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93E67181DFAEC410062F2A2 /* SendOrderUtils.swift */; };
+		E96473F61DF7023300A4B619 /* ParentOrderReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96473F41DF7023300A4B619 /* ParentOrderReducer.swift */; };
+		E96473F71DF7023300A4B619 /* SendOrderReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96473F51DF7023300A4B619 /* SendOrderReducer.swift */; };
+		E96473F91DF7029200A4B619 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96473F81DF7029200A4B619 /* AppAction.swift */; };
 		E964B2D11DE5BE93003A719F /* SendOrderRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B2CF1DE5BE93003A719F /* SendOrderRootViewController.swift */; };
 		E964B2D21DE5BE93003A719F /* SendOrderRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E964B2D01DE5BE93003A719F /* SendOrderRootViewController.xib */; };
 		E964B2DE1DE5C145003A719F /* SimpleOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B2DD1DE5C145003A719F /* SimpleOrderViewController.swift */; };
@@ -205,7 +196,6 @@
 		E964B3151DE5CA09003A719F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B3141DE5CA09003A719F /* ApiClient.swift */; };
 		E964B3181DE5CA23003A719F /* ApiExecuterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B3171DE5CA23003A719F /* ApiExecuterProtocol.swift */; };
 		E964B31C1DE5CA3A003A719F /* ApiKitApiExecuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B31A1DE5CA3A003A719F /* ApiKitApiExecuter.swift */; };
-		E964B31D1DE5CA3A003A719F /* ApiKitApiExecuterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B31B1DE5CA3A003A719F /* ApiKitApiExecuterProtocol.swift */; };
 		E964B3221DE5CA81003A719F /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B3211DE5CA81003A719F /* RequestProtocol.swift */; };
 		E964B3241DE5CA87003A719F /* ApiKitRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B3231DE5CA87003A719F /* ApiKitRequestProtocol.swift */; };
 		E964B3271DE5CB3F003A719F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B3261DE5CB3F003A719F /* Enums.swift */; };
@@ -408,19 +398,10 @@
 		E91FE6031DEAD64900D2632C /* ReBaseSendOrderCommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReBaseSendOrderCommonViewController.swift; sourceTree = "<group>"; };
 		E91FE6041DEAD64900D2632C /* ReSendOrderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReSendOrderViewModel.swift; sourceTree = "<group>"; };
 		E91FE6601DEB249900D2632C /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		E91FE6621DEB24E900D2632C /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
-		E91FE6981DEB26CF00D2632C /* SendOrderAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendOrderAction.swift; path = BitTrader/Classes/Action/SendOrderAction.swift; sourceTree = SOURCE_ROOT; };
-		E91FE69A1DEB271700D2632C /* SendOrderState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendOrderState.swift; path = BitTrader/Classes/State/SendOrderState.swift; sourceTree = SOURCE_ROOT; };
-		E95B76B61DEDE80E00287C87 /* SendOrderReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendOrderReducer.swift; sourceTree = "<group>"; };
-		E95B76BA1DEDE87800287C87 /* SimpleOrderReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleOrderReducer.swift; sourceTree = "<group>"; };
-		E95B76BC1DEDE88100287C87 /* SendOrderCommonReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendOrderCommonReducer.swift; sourceTree = "<group>"; };
-		E95B76BF1DEDE89700287C87 /* LimitOrderReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimitOrderReducer.swift; sourceTree = "<group>"; };
-		E95B76C91DEDE95D00287C87 /* SimpleOrderState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleOrderState.swift; sourceTree = "<group>"; };
-		E95B76CB1DEDE97600287C87 /* SendOrderCommonState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendOrderCommonState.swift; sourceTree = "<group>"; };
-		E95B76CD1DEDE98E00287C87 /* LimitOrderState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimitOrderState.swift; sourceTree = "<group>"; };
-		E95B76CF1DEDE9CE00287C87 /* SimpleOrderAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleOrderAction.swift; sourceTree = "<group>"; };
-		E95B76D11DEDE9E500287C87 /* SendOrderCommonAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendOrderCommonAction.swift; sourceTree = "<group>"; };
-		E95B76D31DEDE9FB00287C87 /* LimitOrderAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimitOrderAction.swift; sourceTree = "<group>"; };
+		E93E67181DFAEC410062F2A2 /* SendOrderUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendOrderUtils.swift; sourceTree = "<group>"; };
+		E96473F41DF7023300A4B619 /* ParentOrderReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentOrderReducer.swift; sourceTree = "<group>"; };
+		E96473F51DF7023300A4B619 /* SendOrderReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendOrderReducer.swift; sourceTree = "<group>"; };
+		E96473F81DF7029200A4B619 /* AppAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
 		E964B2CF1DE5BE93003A719F /* SendOrderRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendOrderRootViewController.swift; sourceTree = "<group>"; };
 		E964B2D01DE5BE93003A719F /* SendOrderRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendOrderRootViewController.xib; sourceTree = "<group>"; };
 		E964B2DD1DE5C145003A719F /* SimpleOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleOrderViewController.swift; sourceTree = "<group>"; };
@@ -444,7 +425,6 @@
 		E964B3141DE5CA09003A719F /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		E964B3171DE5CA23003A719F /* ApiExecuterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiExecuterProtocol.swift; sourceTree = "<group>"; };
 		E964B31A1DE5CA3A003A719F /* ApiKitApiExecuter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKitApiExecuter.swift; sourceTree = "<group>"; };
-		E964B31B1DE5CA3A003A719F /* ApiKitApiExecuterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKitApiExecuterProtocol.swift; sourceTree = "<group>"; };
 		E964B3211DE5CA81003A719F /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		E964B3231DE5CA87003A719F /* ApiKitRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKitRequestProtocol.swift; sourceTree = "<group>"; };
 		E964B3261DE5CB3F003A719F /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
@@ -617,6 +597,7 @@
 			isa = PBXGroup;
 			children = (
 				07097DD41DC8C8CF00A08EEA /* StringUtils.swift */,
+				E93E67181DFAEC410062F2A2 /* SendOrderUtils.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1368,7 +1349,6 @@
 			isa = PBXGroup;
 			children = (
 				E91FE6601DEB249900D2632C /* State.swift */,
-				E95B76C11DEDE8C500287C87 /* SendOrder */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -1376,7 +1356,7 @@
 		E91FE65E1DEB241600D2632C /* Action */ = {
 			isa = PBXGroup;
 			children = (
-				E95B76C51DEDE91300287C87 /* SendOrder */,
+				E96473F81DF7029200A4B619 /* AppAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -1384,115 +1364,10 @@
 		E91FE65F1DEB242300D2632C /* Reducer */ = {
 			isa = PBXGroup;
 			children = (
-				E91FE6621DEB24E900D2632C /* AppReducer.swift */,
-				E95B76B51DEDE7EE00287C87 /* SendOrder */,
+				E96473F51DF7023300A4B619 /* SendOrderReducer.swift */,
+				E96473F41DF7023300A4B619 /* ParentOrderReducer.swift */,
 			);
 			path = Reducer;
-			sourceTree = "<group>";
-		};
-		E95B76B51DEDE7EE00287C87 /* SendOrder */ = {
-			isa = PBXGroup;
-			children = (
-				E95B76B61DEDE80E00287C87 /* SendOrderReducer.swift */,
-				E95B76B91DEDE86B00287C87 /* Simple */,
-				E95B76B81DEDE85B00287C87 /* Common */,
-			);
-			path = SendOrder;
-			sourceTree = "<group>";
-		};
-		E95B76B81DEDE85B00287C87 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				E95B76BC1DEDE88100287C87 /* SendOrderCommonReducer.swift */,
-				E95B76BE1DEDE88D00287C87 /* Limit */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		E95B76B91DEDE86B00287C87 /* Simple */ = {
-			isa = PBXGroup;
-			children = (
-				E95B76BA1DEDE87800287C87 /* SimpleOrderReducer.swift */,
-			);
-			path = Simple;
-			sourceTree = "<group>";
-		};
-		E95B76BE1DEDE88D00287C87 /* Limit */ = {
-			isa = PBXGroup;
-			children = (
-				E95B76BF1DEDE89700287C87 /* LimitOrderReducer.swift */,
-			);
-			path = Limit;
-			sourceTree = "<group>";
-		};
-		E95B76C11DEDE8C500287C87 /* SendOrder */ = {
-			isa = PBXGroup;
-			children = (
-				E91FE69A1DEB271700D2632C /* SendOrderState.swift */,
-				E95B76C21DEDE8DC00287C87 /* Simple */,
-				E95B76C31DEDE8EF00287C87 /* Common */,
-			);
-			path = SendOrder;
-			sourceTree = "<group>";
-		};
-		E95B76C21DEDE8DC00287C87 /* Simple */ = {
-			isa = PBXGroup;
-			children = (
-				E95B76C91DEDE95D00287C87 /* SimpleOrderState.swift */,
-			);
-			path = Simple;
-			sourceTree = "<group>";
-		};
-		E95B76C31DEDE8EF00287C87 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				E95B76CB1DEDE97600287C87 /* SendOrderCommonState.swift */,
-				E95B76C41DEDE90000287C87 /* Limit */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		E95B76C41DEDE90000287C87 /* Limit */ = {
-			isa = PBXGroup;
-			children = (
-				E95B76CD1DEDE98E00287C87 /* LimitOrderState.swift */,
-			);
-			path = Limit;
-			sourceTree = "<group>";
-		};
-		E95B76C51DEDE91300287C87 /* SendOrder */ = {
-			isa = PBXGroup;
-			children = (
-				E91FE6981DEB26CF00D2632C /* SendOrderAction.swift */,
-				E95B76C61DEDE91F00287C87 /* Simple */,
-				E95B76C71DEDE92A00287C87 /* Common */,
-			);
-			path = SendOrder;
-			sourceTree = "<group>";
-		};
-		E95B76C61DEDE91F00287C87 /* Simple */ = {
-			isa = PBXGroup;
-			children = (
-				E95B76CF1DEDE9CE00287C87 /* SimpleOrderAction.swift */,
-			);
-			path = Simple;
-			sourceTree = "<group>";
-		};
-		E95B76C71DEDE92A00287C87 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				E95B76D11DEDE9E500287C87 /* SendOrderCommonAction.swift */,
-				E95B76C81DEDE93600287C87 /* Limit */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		E95B76C81DEDE93600287C87 /* Limit */ = {
-			isa = PBXGroup;
-			children = (
-				E95B76D31DEDE9FB00287C87 /* LimitOrderAction.swift */,
-			);
-			path = Limit;
 			sourceTree = "<group>";
 		};
 		E964B2CE1DE5BE4D003A719F /* SendOrder */ = {
@@ -1628,7 +1503,6 @@
 		E964B3191DE5CA2D003A719F /* ApiKit */ = {
 			isa = PBXGroup;
 			children = (
-				E964B31B1DE5CA3A003A719F /* ApiKitApiExecuterProtocol.swift */,
 				E964B31A1DE5CA3A003A719F /* ApiKitApiExecuter.swift */,
 			);
 			path = ApiKit;
@@ -1981,7 +1855,6 @@
 				BA4FA23F1DDDF695001038E5 /* BitflyerGetPositionsResponse.swift in Sources */,
 				070936521DEC6F500091B972 /* RxBaseSendOrderViewController.swift in Sources */,
 				07BDF9B81DD1F55E006C99CA /* PagerViewController.swift in Sources */,
-				E95B76CA1DEDE95D00287C87 /* SimpleOrderState.swift in Sources */,
 				070936531DEC6F500091B972 /* RxBaseSendOrderCommonViewController.swift in Sources */,
 				E964B3061DE5C526003A719F /* TrailOrderViewController.swift in Sources */,
 				07932C711DBD023100E38530 /* RateModel.swift in Sources */,
@@ -1991,7 +1864,6 @@
 				E91FE5E31DEAD57B00D2632C /* ReIfdocoOrderViewController.swift in Sources */,
 				07AFA1761DD84E9600A8B981 /* OrderListReducer.swift in Sources */,
 				07069C9F1DE16DCF002CEC31 /* BitflyerSendChildOrderRequest.swift in Sources */,
-				E95B76B71DEDE80E00287C87 /* SendOrderReducer.swift in Sources */,
 				07069CB01DE19C64002CEC31 /* BitflyerGetBalanceRequestParameter.swift in Sources */,
 				07097DD51DC8C8CF00A08EEA /* StringUtils.swift in Sources */,
 				E964B2E41DE5C15F003A719F /* IfdocoOrderViewController.swift in Sources */,
@@ -2002,6 +1874,7 @@
 				E91FE5D71DEAD4F500D2632C /* ReSendOrderRootViewController.swift in Sources */,
 				073A01CE1DDB3644001F6E9D /* PlusMinusInputField+Rx.swift in Sources */,
 				0724419E1DACCA230059E872 /* BitTraderTabViewController.swift in Sources */,
+				E96473F91DF7029200A4B619 /* AppAction.swift in Sources */,
 				07AFA1791DD8571400A8B981 /* OrderListTableViewCell.swift in Sources */,
 				BAD390241DDF8D38001FA3F5 /* KrakenTickerModel.swift in Sources */,
 				07AFA1741DD84DE200A8B981 /* OrderListAction.swift in Sources */,
@@ -2014,26 +1887,23 @@
 				E91FE5D61DEAD4F500D2632C /* ReBaseSendOrderViewController.swift in Sources */,
 				E96D3FD41DE9C0CE0072E80C /* BaseSendOrderCommonViewController.swift in Sources */,
 				07B854551DB1C11F009E3181 /* BTCChangerViewModel.swift in Sources */,
-				E91FE6631DEB24E900D2632C /* AppReducer.swift in Sources */,
 				BA76BE6C1DDF2F32005514AC /* CoincheckTickerRequest.swift in Sources */,
-				E95B76CE1DEDE98E00287C87 /* LimitOrderState.swift in Sources */,
 				07C7CC591DD4B50E00F7A398 /* OrderListState.swift in Sources */,
 				07BD522A1DA3E4AE00DA54B8 /* AppDelegate.swift in Sources */,
 				07DCBF2C1DCB734800B60008 /* PositionListViewModel.swift in Sources */,
 				07069CAA1DE17EAA002CEC31 /* BitflyerCancelChildOrderParameter.swift in Sources */,
-				E964B31D1DE5CA3A003A719F /* ApiKitApiExecuterProtocol.swift in Sources */,
 				07DCBF2F1DCB737600B60008 /* PositionTableViewCell.swift in Sources */,
 				BA4FA2351DDDF65B001038E5 /* BitflyerGetHealthResponse.swift in Sources */,
 				E91FE5F51DEAD60D00D2632C /* ReStopLimitOrderViewController.swift in Sources */,
 				07069CA31DE17333002CEC31 /* BitflyerSendChildOrderRequestParameter.swift in Sources */,
 				07932C681DBCDD6600E38530 /* RateListViewController.swift in Sources */,
-				E95B76D41DEDE9FB00287C87 /* LimitOrderAction.swift in Sources */,
 				E964B3001DE5C515003A719F /* MarketOrderViewController.swift in Sources */,
 				07B8545A1DB1DCE8009E3181 /* NumberPadViewController.swift in Sources */,
 				07B8545D1DB1ECEF009E3181 /* NumberPadAction.swift in Sources */,
 				E964B3151DE5CA09003A719F /* ApiClient.swift in Sources */,
 				BA699AE81DD0D5F6007B650F /* NumberPadViewController+Rx.swift in Sources */,
 				BA699AE61DD0D369007B650F /* RxNumberPadViewDelegateProxy.swift in Sources */,
+				E96473F61DF7023300A4B619 /* ParentOrderReducer.swift in Sources */,
 				07FAE3291DA778E500089136 /* RootViewController.swift in Sources */,
 				E96D3FD61DE9C15A0072E80C /* BaseSendOrderViewController.swift in Sources */,
 				E91FE5F91DEAD61300D2632C /* ReStopOrderViewController.swift in Sources */,
@@ -2046,10 +1916,9 @@
 				07932C741DBD035F00E38530 /* RateTableViewCell.swift in Sources */,
 				07FAE3341DA7BA2500089136 /* AppStatus.swift in Sources */,
 				BA76BE721DDF3007005514AC /* BitflyerTickerResponse.swift in Sources */,
+				E93E67191DFAEC410062F2A2 /* SendOrderUtils.swift in Sources */,
 				0709366F1DF04EBD0091B972 /* RxSendOrderViewModel.swift in Sources */,
-				E91FE69B1DEB271700D2632C /* SendOrderState.swift in Sources */,
 				E9F68A0E1DEA30320026B41D /* ApiResponseError.swift in Sources */,
-				E95B76D21DEDE9E500287C87 /* SendOrderCommonAction.swift in Sources */,
 				0709365D1DEC6F500091B972 /* RxTrailOrderViewController.swift in Sources */,
 				BA76BE491DDF2AF2005514AC /* BtcBoxRequest.swift in Sources */,
 				070936561DEC6F500091B972 /* RxMarketOrderViewController.swift in Sources */,
@@ -2078,20 +1947,17 @@
 				E91FE5DB1DEAD55A00D2632C /* ReSimpleOrderViewController.swift in Sources */,
 				E91FE5E81DEAD58800D2632C /* ReOcoOrderViewController.swift in Sources */,
 				07B854621DB24F83009E3181 /* IndentLabel.swift in Sources */,
-				E91FE6991DEB26CF00D2632C /* SendOrderAction.swift in Sources */,
 				07B8545F1DB205DB009E3181 /* NumberPadState.swift in Sources */,
 				BA4FA24C1DDDF6A4001038E5 /* BitflyerBalanceModel.swift in Sources */,
 				BA76BE5F1DDF2C96005514AC /* ZaifTickerResponse.swift in Sources */,
 				BAD390221DDF8C8D001FA3F5 /* ResultModel.swift in Sources */,
 				E96D3FCC1DE9B9910072E80C /* BitTraderError.swift in Sources */,
-				E95B76C01DEDE89700287C87 /* LimitOrderReducer.swift in Sources */,
 				BA76BE4D1DDF2B0D005514AC /* KrakenRequest.swift in Sources */,
 				BA4FA23D1DDDF695001038E5 /* BitflyerGetPositionsParameter.swift in Sources */,
 				072441931DACC1E70059E872 /* MenuRootViewController.swift in Sources */,
 				070936631DEC6F500091B972 /* RxOcoOrderViewController.swift in Sources */,
 				E964B3041DE5C520003A719F /* StopLimitOrderViewController.swift in Sources */,
 				BA4FA2301DDDF654001038E5 /* BitflyerGetBoardRequestParameter.swift in Sources */,
-				E95B76D01DEDE9CE00287C87 /* SimpleOrderAction.swift in Sources */,
 				E964B3181DE5CA23003A719F /* ApiExecuterProtocol.swift in Sources */,
 				07069CA61DE17E8D002CEC31 /* BitflyerCancelChildOrderRequest.swift in Sources */,
 				E964B31C1DE5CA3A003A719F /* ApiKitApiExecuter.swift in Sources */,
@@ -2105,7 +1971,6 @@
 				072441AA1DADD6F30059E872 /* MenuListViewController.swift in Sources */,
 				E91FE6051DEAD64900D2632C /* ReBaseSendOrderCommonViewController.swift in Sources */,
 				0755CBCC1DE5D04F005A7873 /* BitflyerSendParentOrderRequest.swift in Sources */,
-				E95B76CC1DEDE97600287C87 /* SendOrderCommonState.swift in Sources */,
 				0755CBD01DE5D06A005A7873 /* BitflyerSendParentOrderParameter.swift in Sources */,
 				BA4FA2451DDDF69D001038E5 /* BitflyerGetChildOrdersParameter.swift in Sources */,
 				BA4FA2541DDDF6BA001038E5 /* BitflyerApiEnum.swift in Sources */,
@@ -2118,13 +1983,12 @@
 				072441AD1DADD7080059E872 /* MenuListViewModel.swift in Sources */,
 				BA4FA2461DDDF69D001038E5 /* BitflyerGetChildOrdersRequest.swift in Sources */,
 				E964B2FE1DE5C50C003A719F /* LimitOrderViewController.swift in Sources */,
-				E95B76BB1DEDE87800287C87 /* SimpleOrderReducer.swift in Sources */,
 				072441B31DAE03120059E872 /* PlusMinusInputField.swift in Sources */,
 				070936651DEC6F500091B972 /* RxSendOrderRootViewController.swift in Sources */,
 				E91FE5FD1DEAD61800D2632C /* ReMarketOrderViewController.swift in Sources */,
+				E96473F71DF7023300A4B619 /* SendOrderReducer.swift in Sources */,
 				E964B2E21DE5C156003A719F /* OcoOrderViewController.swift in Sources */,
 				BA51DEC31DCEE59800D5029B /* NumberPadViewController+RxCreate.swift in Sources */,
-				E95B76BD1DEDE88100287C87 /* SendOrderCommonReducer.swift in Sources */,
 				0709365B1DEC6F500091B972 /* RxStopLimitOrderViewController.swift in Sources */,
 				078065D71DE8898100448BB8 /* RateListModel.swift in Sources */,
 				07069CAC1DE19BD4002CEC31 /* BitflyerGetHealthRequestParameter.swift in Sources */,

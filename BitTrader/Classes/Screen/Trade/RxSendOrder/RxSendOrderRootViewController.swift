@@ -108,7 +108,7 @@ class RxSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
         return viewModel.tradeTypeTitleForRow(row, forComponent: component)
     }
 
-    func onSuccess<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType) {
+    func success<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType) {
         guard apiExecuter.modelType == BitflyerTickerResponse.self, let response = value as? BitflyerTickerResponse else {
             return
         }
@@ -117,7 +117,7 @@ class RxSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
         askRateLabel.text = NSNumber(integerLiteral: response.bestAsk).formatComma()
     }
 
-    func onFailure<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, error: ApiResponseError) {
+    func failure<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, error: ApiResponseError) {
 
     }
 

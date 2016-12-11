@@ -10,11 +10,9 @@ import UIKit
 
 class ReBaseSendOrderViewController: UIViewController {
 
-    var condition: Enums.Condition
     var productType: Bitflyer.ProductCodeType
 
-    init(productType: Bitflyer.ProductCodeType, condition: Enums.Condition) {
-        self.condition = condition
+    init(productType: Bitflyer.ProductCodeType) {
         self.productType = productType
         super.init(nibName: nil, bundle: nil)
     }
@@ -23,22 +21,18 @@ class ReBaseSendOrderViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func updateCondition(_ condition: Enums.Condition) {
-        fatalError("updateCondition(:) has not been implemented")
-    }
-
-    func remakeSendOrderChildViewController(condition: Enums.Condition) -> ReBaseSendOrderCommonViewController? {
+    func remakeSendOrderChildViewController(place: Enums.Place, condition: Enums.Condition) -> ReBaseSendOrderCommonViewController? {
         switch condition {
         case .limit:
-            return ReLimitOrderViewController()
+            return ReLimitOrderViewController(place: place)
         case .market:
-            return ReMarketOrderViewController()
+            return ReMarketOrderViewController(place: place)
         case .stop:
-            return ReStopOrderViewController()
+            return ReStopOrderViewController(place: place)
         case .stopLimit:
-            return ReStopLimitOrderViewController()
+            return ReStopLimitOrderViewController(place: place)
         case .trail:
-            return ReTrailOrderViewController()
+            return ReTrailOrderViewController(place: place)
         default:
             return nil
         }

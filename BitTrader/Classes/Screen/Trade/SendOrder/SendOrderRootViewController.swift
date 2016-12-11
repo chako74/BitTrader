@@ -80,7 +80,7 @@ class SendOrderRootViewController: UIViewController, ViewContainer, UIPickerView
         return Enums.Condition(rawValue: row)?.name
     }
 
-    func onSuccess<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType) {
+    func success<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType) {
         guard apiExecuter.modelType == BitflyerTickerResponse.self, let response = value as? BitflyerTickerResponse else {
             return
         }
@@ -89,7 +89,7 @@ class SendOrderRootViewController: UIViewController, ViewContainer, UIPickerView
         askRateLabel.text = NSNumber(integerLiteral: response.bestAsk).formatComma()
     }
 
-    func onFailure<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, error: ApiResponseError) {
+    func failure<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, error: ApiResponseError) {
 
     }
 

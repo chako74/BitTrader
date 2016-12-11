@@ -36,6 +36,12 @@ enum Enums {
         }
     }
 
+    enum Place {
+        case First
+        case Second
+        case Third
+    }
+
     enum Condition: Int {
         case limit
         case market

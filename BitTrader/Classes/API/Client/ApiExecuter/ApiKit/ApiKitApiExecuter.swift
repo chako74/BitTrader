@@ -10,13 +10,25 @@ import APIKit
 import Himotoki
 import Result
 
-class ApiKitApiExecuter<RequestType: ApiKitRequestProtocol, ModelType>: ApiKitApiExecuterProtocol {
+protocol ApiExecuterDelegate {
+    func success<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType)
+    func failure<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, error: ApiResponseError)
+}
 
-    weak var delegate: ApiExecuterDelegate?
+protocol ApiExecuterSubscriber {
+    associatedtype ApiExecuter: ApiExecuterProtocol
+    func success(value: ApiExecuter.ModelType)
+    func failure(error: ApiResponseError)
+}
+
+class ApiKitApiExecuter<RequestType: ApiKitRequestProtocol, ModelType>: ApiExecuterProtocol {
+
+    var delegate: ApiExecuterDelegate?
 
     typealias Error = ApiResponseError
-    typealias ResultType = Result<RequestType.Response, Error>
+    typealias ResultType = Result<ModelType, Error>
     typealias ResponseConverter = (RequestType.Response) -> ModelType?
+    typealias CallbackType = (ResultType) -> Void
 
     private let _request: RequestType
     private var _responseConverter: ResponseConverter
@@ -31,48 +43,49 @@ class ApiKitApiExecuter<RequestType: ApiKitRequestProtocol, ModelType>: ApiKitAp
     }
 
     func execute() {
-
-        if let error = isValid(request) {
-            delegate?.onFailure(self, error: onFailure(error))
-            return
-        }
-
-        willExcecute(request)
-
-        Session.send(ApiKitRequestAdapter(request)) { result in
-
-            self.didExcecute(result)
-
+        execute(request) { result in
             switch result {
-            case .success(let res):
-                self.delegate?.onSuccess(self, value: self.onSuccess(res))
-            case .failure(.responseError(let apiResponseError as ApiResponseError)):
-                self.delegate?.onFailure(self, error: self.onFailure(apiResponseError))
-            default:
-                fatalError("can't convert response.")
+            case .success(let response):
+                self.delegate?.success(self, value: response)
+            case .failure(let error):
+                self.delegate?.failure(self, error: error)
             }
         }
     }
 
-    func execute(_ request: RequestType, _ callback: @escaping (ResultType) -> Void) {
+    func execute(callback: @escaping CallbackType) {
+        execute(request, callback)
+    }
+
+    func execute<ApiExecuter: ApiExecuterProtocol, API: ApiExecuterSubscriber>(_ api: API)
+        where API.ApiExecuter == ApiExecuter, API.ApiExecuter.ModelType == ModelType, ApiExecuter.ModelType == ModelType {
+            execute(request) { result in
+                switch result {
+                case .success(let response):
+                    api.success(value: response)
+                case .failure(let error):
+                    api.failure(error: error)
+                }
+            }
+    }
+
+    func execute(_ request: RequestType, _ callback: @escaping CallbackType) {
+
+        if let error = isValid(request) {
+            callback(.failure(error))
+            return
+        }
+
         Session.send(ApiKitRequestAdapter(request)) { result in
             switch result {
-            case .success(let res):
-                callback(.success(res))
+            case .success(let response):
+                callback(.success(self._responseConverter(response)!))
             case .failure(.responseError(let apiResponseError as ApiResponseError)):
                 callback(.failure(apiResponseError))
             default:
                 fatalError("can't convert response.")
             }
         }
-    }
-
-    func onSuccess(_ response: RequestType.Response) -> ModelType {
-        return _responseConverter(response)!
-    }
-
-    func onFailure(_ error: Error) -> Error {
-        return error
     }
 
 }

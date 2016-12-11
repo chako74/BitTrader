@@ -42,11 +42,11 @@ class SimpleOrderViewController: BaseSendOrderViewController, ViewContainer, Api
         activeViewController?.updateAskRate(rate: rate)
     }
 
-    func onSuccess<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType) {
+    func success<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType) {
         showAlert(message: "complete")
     }
 
-    func onFailure<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, error: ApiResponseError) {
+    func failure<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, error: ApiResponseError) {
         showAlert(message: error.message)
     }
 

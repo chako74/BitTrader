@@ -9,9 +9,9 @@
 import UIKit
 import ReSwift
 
-class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerViewDelegate, UIPickerViewDataSource, ApiExecuterDelegate, StoreSubscriber {
+class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerViewDelegate, UIPickerViewDataSource, StoreSubscriber {
 
-    private var activeViewController: ReBaseSendOrderViewController?
+    private var activeViewController: ReBaseSendOrderViewController = ReSimpleOrderViewController(productType: store.state.sendOrderState.productType)
     private var timer: Timer?
 
     @IBOutlet weak var containerView: UIView!
@@ -24,17 +24,13 @@ class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
 
         title = store.state.sendOrderState.productType.rawValue
 
-        activeViewController = ReSimpleOrderViewController(productType: store.state.sendOrderState.productType,
-                                                           condition: store.state.sendOrderState.condition)
-        addChildContainerViewController(activeViewController!, atContainerView: containerView)
+        addChildContainerViewController(activeViewController, atContainerView: containerView)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        store.subscribe(self) { state in
-            state.sendOrderState
-        }
+        store.subscribe(self)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -59,14 +55,13 @@ class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
         timer?.invalidate()
     }
 
-    func newState(state: SendOrderState) {
+    func newState(state: State) {
 
-        exchangeChildContainerView(productType: state.productType, order: state.order, condition: state.condition)
+        exchangeChildContainerView(productType: state.sendOrderState.productType, order: state.sendOrderState.order)
 
-        if let response = state.response {
-
-            bidRateLabel.text = NSNumber(integerLiteral: response.bestBid).formatComma()
-            askRateLabel.text = NSNumber(integerLiteral: response.bestAsk).formatComma()
+        if let rateModel = state.rateModel {
+            bidRateLabel.text = NSNumber(integerLiteral: rateModel.bidPrice).formatComma()
+            askRateLabel.text = NSNumber(integerLiteral: rateModel.askPrice).formatComma()
         }
     }
 
@@ -91,55 +86,34 @@ class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch component {
         case 0:
-            // 注文方法の更新
-            guard let order = Enums.Order(rawValue: row) else {
-                return
+            if let order = Enums.Order(rawValue: row) {
+                store.dispatch(AppAction.Order(order))
             }
-            store.dispatch(SendOrderAction.Order(order))
-
         case 1:
-            // 注文の執行条件の更新
-            guard let condition = Enums.Condition(rawValue: row) else {
-                return
+            if let condition = Enums.Condition(rawValue: row) {
+                store.dispatch(childOrderCondition(place: .First, condition: condition))
             }
-            store.dispatch(SendOrderAction.Condition(condition))
-
         default:
             break
         }
     }
 
-    func onSuccess<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType) {
-        guard apiExecuter.modelType == BitflyerTickerResponse.self, let response = value as? BitflyerTickerResponse else {
-            return
-        }
-
-        store.dispatch(SendOrderAction.Response(response))
-    }
-
-    func onFailure<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, error: ApiResponseError) {
-        store.dispatch(SendOrderAction.Response(nil))
-    }
-
     func ratePolling() {
-        let productType = store.state.sendOrderState.productType
-        let apiExecuter = createBitflyerFxTickerRequestExecuter(productType)
-        apiExecuter.delegate = self
-        apiExecuter.execute()
+        store.dispatch(executeApi)
     }
 
     @IBAction func onBidButton(_ sender: UIButton) {
-        store.dispatch(SendOrderAction.BidAsk(.bid))
+        store.dispatch(AppAction.BidAsk(.First, value: .bid))
     }
 
     @IBAction func onAskButton(_ sender: UIButton) {
-        store.dispatch(SendOrderAction.BidAsk(.ask))
+        store.dispatch(AppAction.BidAsk(.First, value: .ask))
     }
 
-    private func exchangeChildContainerView(productType: Bitflyer.ProductCodeType, order: Enums.Order, condition: Enums.Condition) {
+    private func exchangeChildContainerView(productType: Bitflyer.ProductCodeType, order: Enums.Order) {
 
-        guard let activeViewController = activeViewController,
-            let newAvc = recreateOrderViewController(productType, order, condition) else {
+        guard let newAvc = recreateOrderViewController(productType, order),
+            type(of: activeViewController) != type(of: newAvc) else {
             return
         }
 
@@ -149,25 +123,18 @@ class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
     }
 
     private func recreateOrderViewController(_ productType: Bitflyer.ProductCodeType,
-                                             _ order: Enums.Order,
-                                             _ condition: Enums.Condition) -> ReBaseSendOrderViewController? {
+                                             _ order: Enums.Order) -> ReBaseSendOrderViewController? {
         switch order {
         case .simple:
-            return ReSimpleOrderViewController(productType: productType, condition: condition)
+            return ReSimpleOrderViewController(productType: productType)
         case .ifd:
-            return ReIfdOrderViewController(productType: productType, condition: condition)
+            return ReIfdOrderViewController(productType: productType)
         case .oco:
-            return ReOcoOrderViewController(productType: productType, condition: condition)
+            return ReOcoOrderViewController(productType: productType)
         case .ifdoco:
-            return ReIfdocoOrderViewController(productType: productType, condition: condition)
+            return ReIfdocoOrderViewController(productType: productType)
         default:
             return nil
         }
-    }
-
-    private func createBitflyerFxTickerRequestExecuter(_ productType: Bitflyer.ProductCodeType) -> ApiKitApiExecuter<BitflyerTickerRequest, BitflyerTickerResponse> {
-        let bitflyerFxTickerReuqestParameter = BitflyerTickerRequestParameter(productCode: productType)
-        let bitflyerFxTickerRequest = BitflyerTickerRequest(requestParameter: bitflyerFxTickerReuqestParameter)
-        return ApiKitApiExecuter<BitflyerTickerRequest, BitflyerTickerResponse>(bitflyerFxTickerRequest)
     }
 }
