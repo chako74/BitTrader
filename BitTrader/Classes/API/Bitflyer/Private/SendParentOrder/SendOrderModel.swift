@@ -31,9 +31,9 @@ extension SendOrderModel: BitTraderRequestParameter {
             dic[Bitflyer.ApiKey.conditionType.rawValue] = Bitflyer.ConditionType.limit.rawValue
             dic[Bitflyer.ApiKey.price.rawValue] = price
             
-        case let .stop(price):
+        case let .stop(triggerPrice):
             dic[Bitflyer.ApiKey.conditionType.rawValue] = Bitflyer.ConditionType.stop.rawValue
-            dic[Bitflyer.ApiKey.price.rawValue] = price
+            dic[Bitflyer.ApiKey.triggerPrice.rawValue] = triggerPrice
             
         case let .stopLimit(price, triggerPrice):
             dic[Bitflyer.ApiKey.conditionType.rawValue] = Bitflyer.ConditionType.stopLimit.rawValue

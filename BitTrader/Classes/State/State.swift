@@ -40,7 +40,7 @@ enum ChildOrderCondition {
     case market(bidAsk: Enums.BidAsk, amount: String?)
     case stop(bidAsk: Enums.BidAsk, amount: String?, triggerPrice: Double?)
     case stopLimit(bidAsk: Enums.BidAsk, amount: String?, price: Double?, triggerPrice: Double?)
-    case trail(bidAsk: Enums.BidAsk, amount: String?, offset: Double?)
+    case trail(bidAsk: Enums.BidAsk, amount: String?, trailDistance: Double?)
 }
 
 extension State {

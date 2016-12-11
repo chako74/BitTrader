@@ -8,6 +8,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TrailOrderViewController" customModule="BitTrader" customModuleProvider="target">
             <connections>
+                <outlet property="amountPlusMinusInput" destination="FZR-dz-kim" id="kBw-0C-x9u"/>
+                <outlet property="askButton" destination="34A-4G-DGb" id="bQM-d1-Nkj"/>
+                <outlet property="bidButton" destination="vyF-VM-ekL" id="IFP-up-R3l"/>
+                <outlet property="trailDistancePlusMinusInput" destination="Ea8-HF-euK" id="1Vn-Wb-HyZ"/>
                 <outlet property="view" destination="iN0-l3-epB" id="HfV-QP-7Q9"/>
             </connections>
         </placeholder>
@@ -20,55 +24,39 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zl-xB-J7E">
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyF-VM-ekL">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyF-VM-ekL" customClass="BidAskButton" customModule="BitTrader" customModuleProvider="target">
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="onBidButton:" destination="-1" eventType="touchUpInside" id="sG2-rj-rQX"/>
+                                    </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="売り" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ffq-t3-SiJ">
-                                    <accessibility key="accessibilityConfiguration">
-                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                    </accessibility>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="Ffq-t3-SiJ" firstAttribute="top" secondItem="4zl-xB-J7E" secondAttribute="top" constant="2" id="DQN-IN-iKr"/>
                                 <constraint firstItem="vyF-VM-ekL" firstAttribute="top" secondItem="4zl-xB-J7E" secondAttribute="top" id="Dkb-t9-npp"/>
                                 <constraint firstItem="vyF-VM-ekL" firstAttribute="leading" secondItem="4zl-xB-J7E" secondAttribute="leading" id="E1T-YH-tit"/>
-                                <constraint firstItem="Ffq-t3-SiJ" firstAttribute="leading" secondItem="4zl-xB-J7E" secondAttribute="leading" constant="2" id="IeK-Df-1x0"/>
                                 <constraint firstAttribute="trailing" secondItem="vyF-VM-ekL" secondAttribute="trailing" id="P4Z-mY-dmJ"/>
-                                <constraint firstAttribute="trailing" secondItem="Ffq-t3-SiJ" secondAttribute="trailing" constant="2" id="REk-w7-Npi"/>
                                 <constraint firstAttribute="bottom" secondItem="vyF-VM-ekL" secondAttribute="bottom" id="dLZ-Y1-rck"/>
-                                <constraint firstAttribute="bottom" secondItem="Ffq-t3-SiJ" secondAttribute="bottom" constant="2" id="e54-9T-L7O"/>
                                 <constraint firstAttribute="height" constant="40" id="psh-lg-Ozc"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ru0-Cw-1G3">
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34A-4G-DGb">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34A-4G-DGb" customClass="BidAskButton" customModule="BitTrader" customModuleProvider="target">
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="onAskButton:" destination="-1" eventType="touchUpInside" id="8Gu-T8-zhk"/>
+                                    </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="買い" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ErJ-mb-vFP">
-                                    <accessibility key="accessibilityConfiguration">
-                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                    </accessibility>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="34A-4G-DGb" firstAttribute="top" secondItem="Ru0-Cw-1G3" secondAttribute="top" id="76j-Qb-sZ7"/>
                                 <constraint firstAttribute="bottom" secondItem="34A-4G-DGb" secondAttribute="bottom" id="FLT-71-cqm"/>
-                                <constraint firstItem="ErJ-mb-vFP" firstAttribute="top" secondItem="Ru0-Cw-1G3" secondAttribute="top" constant="2" id="QWx-0K-bdM"/>
-                                <constraint firstAttribute="trailing" secondItem="ErJ-mb-vFP" secondAttribute="trailing" constant="2" id="TDg-OT-FEy"/>
                                 <constraint firstItem="34A-4G-DGb" firstAttribute="leading" secondItem="Ru0-Cw-1G3" secondAttribute="leading" id="Wb3-Va-7cd"/>
-                                <constraint firstAttribute="bottom" secondItem="ErJ-mb-vFP" secondAttribute="bottom" constant="2" id="leJ-PB-aRU"/>
                                 <constraint firstAttribute="height" constant="40" id="qZd-2C-ZTc"/>
-                                <constraint firstItem="ErJ-mb-vFP" firstAttribute="leading" secondItem="Ru0-Cw-1G3" secondAttribute="leading" constant="2" id="urh-Ko-4Zr"/>
                                 <constraint firstAttribute="trailing" secondItem="34A-4G-DGb" secondAttribute="trailing" id="vqJ-bl-wE9"/>
                             </constraints>
                         </view>

@@ -11,13 +11,11 @@ import UIKit
 class BaseSendOrderViewController: UIViewController {
 
     weak var delegate: SendOrderRootViewControllerProtocol?
-    var condition: Enums.Condition
     var productType: Bitflyer.ProductCodeType
 
-    init(productType: Bitflyer.ProductCodeType, condition: Enums.Condition, delegete: SendOrderRootViewControllerProtocol) {
-        self.condition = condition
-        self.delegate = delegete
+    init(productType: Bitflyer.ProductCodeType, delegete: SendOrderRootViewControllerProtocol) {
         self.productType = productType
+        self.delegate = delegete
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -25,12 +23,10 @@ class BaseSendOrderViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func updateCondition(_ condition: Enums.Condition) {
-        fatalError("updateCondition(:) has not been implemented")
-    }
     func updateBidPrice(price: String) {
         fatalError("updateBidPrice(price:) has not been implemented")
     }
+    
     func updateAskPrice(price: String) {
         fatalError("updateAskPrice(price:) has not been implemented")
     }
@@ -40,13 +36,13 @@ class BaseSendOrderViewController: UIViewController {
         case .limit:
             return LimitOrderViewController(bidAsk: .bid, delegete: delegate!)
         case .market:
-            return MarketOrderViewController()
+            return MarketOrderViewController(bidAsk: .bid, delegete: delegate!)
         case .stop:
-            return StopOrderViewController()
+            return StopOrderViewController(bidAsk: .bid, delegete: delegate!)
         case .stopLimit:
-            return StopLimitOrderViewController()
+            return StopLimitOrderViewController(bidAsk: .bid, delegete: delegate!)
         case .trail:
-            return TrailOrderViewController()
+            return TrailOrderViewController(bidAsk: .bid, delegete: delegate!)
         default:
             return nil
         }

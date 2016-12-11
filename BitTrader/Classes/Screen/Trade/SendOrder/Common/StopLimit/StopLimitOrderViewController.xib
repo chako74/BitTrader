@@ -8,6 +8,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StopLimitOrderViewController" customModule="BitTrader" customModuleProvider="target">
             <connections>
+                <outlet property="amountPlusMinusInput" destination="Y1p-qV-sU7" id="QOu-tZ-adC"/>
+                <outlet property="askButton" destination="6PM-vO-OiX" id="Cb4-b4-Mm2"/>
+                <outlet property="bidButton" destination="kPb-9y-8k2" id="pRA-lv-sbe"/>
+                <outlet property="pricePlusMinusInput" destination="Vtx-mX-qXV" id="Lfu-yu-5xJ"/>
+                <outlet property="triggerPricePlusMinusInput" destination="gyr-5y-iR4" id="Ysp-Yn-Xau"/>
                 <outlet property="view" destination="iN0-l3-epB" id="jKP-t3-RdK"/>
             </connections>
         </placeholder>
@@ -20,56 +25,40 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s59-WA-jne">
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPb-9y-8k2">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPb-9y-8k2" customClass="BidAskButton" customModule="BitTrader" customModuleProvider="target">
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="onBidButton:" destination="-1" eventType="touchUpInside" id="65a-9x-8AT"/>
+                                    </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="売り" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YMw-WI-L4Q">
-                                    <accessibility key="accessibilityConfiguration">
-                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                    </accessibility>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="kPb-9y-8k2" firstAttribute="top" secondItem="s59-WA-jne" secondAttribute="top" id="1bP-eW-nBj"/>
-                                <constraint firstItem="YMw-WI-L4Q" firstAttribute="top" secondItem="s59-WA-jne" secondAttribute="top" constant="2" id="ESk-Mh-IaC"/>
-                                <constraint firstAttribute="trailing" secondItem="YMw-WI-L4Q" secondAttribute="trailing" constant="2" id="NP8-kB-e4a"/>
                                 <constraint firstAttribute="height" constant="40" id="cG7-Cz-WGi"/>
                                 <constraint firstAttribute="trailing" secondItem="kPb-9y-8k2" secondAttribute="trailing" id="fk9-hT-17z"/>
-                                <constraint firstAttribute="bottom" secondItem="YMw-WI-L4Q" secondAttribute="bottom" constant="2" id="ibB-ok-SB3"/>
                                 <constraint firstItem="kPb-9y-8k2" firstAttribute="leading" secondItem="s59-WA-jne" secondAttribute="leading" id="jM1-s5-eUZ"/>
                                 <constraint firstAttribute="bottom" secondItem="kPb-9y-8k2" secondAttribute="bottom" id="rEC-3e-Ijb"/>
-                                <constraint firstItem="YMw-WI-L4Q" firstAttribute="leading" secondItem="s59-WA-jne" secondAttribute="leading" constant="2" id="so9-Zf-f88"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWZ-WB-ami">
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PM-vO-OiX">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PM-vO-OiX" customClass="BidAskButton" customModule="BitTrader" customModuleProvider="target">
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="onAskButton:" destination="-1" eventType="touchUpInside" id="aDq-Qt-wqm"/>
+                                    </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="買い" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VHP-EX-eOU">
-                                    <accessibility key="accessibilityConfiguration">
-                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                    </accessibility>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="VHP-EX-eOU" firstAttribute="top" secondItem="aWZ-WB-ami" secondAttribute="top" constant="2" id="0ia-0A-88b"/>
-                                <constraint firstItem="VHP-EX-eOU" firstAttribute="leading" secondItem="aWZ-WB-ami" secondAttribute="leading" constant="2" id="5Zr-Ka-kKT"/>
                                 <constraint firstAttribute="height" constant="40" id="B0Q-n1-qeM"/>
                                 <constraint firstAttribute="trailing" secondItem="6PM-vO-OiX" secondAttribute="trailing" id="I52-ig-BV5"/>
-                                <constraint firstAttribute="trailing" secondItem="VHP-EX-eOU" secondAttribute="trailing" constant="2" id="I9J-27-qyI"/>
                                 <constraint firstAttribute="bottom" secondItem="6PM-vO-OiX" secondAttribute="bottom" id="aox-KS-KAK"/>
                                 <constraint firstItem="6PM-vO-OiX" firstAttribute="leading" secondItem="aWZ-WB-ami" secondAttribute="leading" id="jJg-jb-mev"/>
                                 <constraint firstItem="6PM-vO-OiX" firstAttribute="top" secondItem="aWZ-WB-ami" secondAttribute="top" id="slM-SN-e01"/>
-                                <constraint firstAttribute="bottom" secondItem="VHP-EX-eOU" secondAttribute="bottom" constant="2" id="xq4-2J-BqI"/>
                             </constraints>
                         </view>
                     </subviews>

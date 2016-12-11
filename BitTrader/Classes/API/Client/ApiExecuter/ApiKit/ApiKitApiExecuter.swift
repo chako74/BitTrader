@@ -58,7 +58,7 @@ class ApiKitApiExecuter<RequestType: ApiKitRequestProtocol, ModelType>: ApiExecu
     }
 
     func execute<ApiExecuter: ApiExecuterProtocol, API: ApiExecuterSubscriber>(_ api: API)
-        where API.ApiExecuter == ApiExecuter, API.ApiExecuter.ModelType == ModelType, ApiExecuter.ModelType == ModelType {
+        where API.ApiExecuter == ApiExecuter, ApiExecuter.ModelType == ModelType {
             execute(request) { result in
                 switch result {
                 case .success(let response):
