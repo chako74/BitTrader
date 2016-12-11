@@ -9,8 +9,8 @@
 import UIKit
 
 protocol SendOrderRootViewControllerProtocol: NSObjectProtocol {
-    func willNeedBidRate(rateType: RateType) -> String?
-    func willNeedAskRate(rateType: RateType) -> String?
+    func willNeedBidPrice(rateType: RateType) -> String?
+    func willNeedAskPrice(rateType: RateType) -> String?
 }
 
 class SendOrderRootViewController: UIViewController, ViewContainer, UIPickerViewDelegate, UIPickerViewDataSource, ApiExecuterDelegate, SendOrderRootViewControllerProtocol {
@@ -52,8 +52,8 @@ class SendOrderRootViewController: UIViewController, ViewContainer, UIPickerView
         self.pickerView.dataSource = self
         self.pickerView.delegate = self
 
-        ratePolling()
-        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.ratePolling), userInfo: nil, repeats: true)
+        priceApi()
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.priceApi), userInfo: nil, repeats: true)
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -93,14 +93,14 @@ class SendOrderRootViewController: UIViewController, ViewContainer, UIPickerView
 
     }
 
-    func willNeedBidRate(rateType: RateType) -> String? {
+    func willNeedBidPrice(rateType: RateType) -> String? {
         guard let response = response else {
             return nil
         }
         return String(describing: response.bestBid)
     }
 
-    func willNeedAskRate(rateType: RateType) -> String? {
+    func willNeedAskPrice(rateType: RateType) -> String? {
         guard let response = response else {
             return nil
         }
@@ -135,7 +135,7 @@ class SendOrderRootViewController: UIViewController, ViewContainer, UIPickerView
         }
     }
 
-    func ratePolling() {
+    func priceApi() {
         guard let productType = productType else {
             return
         }
@@ -148,14 +148,14 @@ class SendOrderRootViewController: UIViewController, ViewContainer, UIPickerView
         guard let response = response else {
             return
         }
-        activeViewController?.updateBidRate(rate: String(describing: response.bestBid))
+        activeViewController?.updateBidPrice(price: String(describing: response.bestBid))
     }
 
     @IBAction func onAskButton(_ sender: UIButton) {
         guard let response = response else {
             return
         }
-        activeViewController?.updateAskRate(rate: String(describing: response.bestAsk))
+        activeViewController?.updateAskPrice(price: String(describing: response.bestAsk))
     }
 
     private func createOrderViewController(_ productType: Bitflyer.ProductCodeType, _ order: Enums.Order, _ condition: Enums.Condition) -> BaseSendOrderViewController? {

@@ -111,7 +111,7 @@ class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinus
         if plusMinusInputField == amountPlusMinusInput {
             store.dispatch(AppAction.Amount(.First, value: String(value)))
         } else if plusMinusInputField == pricePlusMinusInput {
-            store.dispatch(AppAction.Rate(.First, value: value))
+            store.dispatch(AppAction.Price(.First, value: value))
         }
     }
 
@@ -123,7 +123,7 @@ class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinus
         if targetField == amountPlusMinusInput {
             store.dispatch(AppAction.Amount(.First, value: value))
         } else if targetField == pricePlusMinusInput {
-            store.dispatch(AppAction.Rate(.First, value: Double(value)!))
+            store.dispatch(AppAction.Price(.First, value: Double(value)!))
         }
 
         rootViewController.dismiss(animated: true, completion: nil)

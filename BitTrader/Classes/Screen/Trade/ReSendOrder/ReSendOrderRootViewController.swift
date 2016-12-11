@@ -39,8 +39,8 @@ class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
         self.pickerView.dataSource = self
         self.pickerView.delegate = self
 
-        ratePolling()
-        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.ratePolling), userInfo: nil, repeats: true)
+        priceApi()
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.priceApi), userInfo: nil, repeats: true)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -98,7 +98,7 @@ class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
         }
     }
 
-    func ratePolling() {
+    func priceApi() {
         store.dispatch(executeApi)
     }
 
