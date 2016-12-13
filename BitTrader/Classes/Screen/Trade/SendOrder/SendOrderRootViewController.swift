@@ -19,31 +19,17 @@ class SendOrderRootViewController: UIViewController, ViewContainer, UIPickerView
 
     private var productType: Bitflyer.ProductCodeType?
     private var selectedOrder: Enums.Order?
-    private var selectedCondition: Enums.Condition?
     private var response: BitflyerTickerResponse?
     private var timer: Timer?
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var bidRateLabel: UILabel!
-    @IBOutlet weak var askRateLabel: UILabel!
+    @IBOutlet weak var bidButton: BidAskButton!
+    @IBOutlet weak var askButton: BidAskButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        productType = .fxBtcJpy
-
-        guard let productType = productType else {
-            return
-        }
-
-        title = productType.rawValue
-
-        selectedOrder = Enums.Order(rawValue: 0)
-        selectedCondition = Enums.Condition(rawValue: 0)
-
-        activeViewController = SimpleOrderViewController(productType: productType, condition: .limit, delegete: self)
-        addChildContainerViewController(activeViewController!, atContainerView: containerView)
+        initComponent()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -63,21 +49,28 @@ class SendOrderRootViewController: UIViewController, ViewContainer, UIPickerView
     }
 
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+        return 1
     }
 
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if component == 0 {
-            return Enums.Order.count
-        }
-        return Enums.Condition.count
+        return Enums.Order.count
     }
 
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if component == 0 {
-            return Enums.Order(rawValue: row)?.name
+        return Enums.Order(rawValue: row)?.name
+    }
+
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedOrder = Enums.Order(rawValue: row)
+        guard let activeViewController = activeViewController,
+            let productType = productType,
+            let selectedOrder = selectedOrder,
+            let newAvc = createOrderViewController(productType, selectedOrder) else {
+                return
         }
-        return Enums.Condition(rawValue: row)?.name
+        removeChildContainerViewController(activeViewController)
+        self.activeViewController = newAvc
+        addChildContainerViewController(newAvc, atContainerView: containerView)
     }
 
     func success<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType) {
@@ -85,8 +78,8 @@ class SendOrderRootViewController: UIViewController, ViewContainer, UIPickerView
             return
         }
         self.response = response
-        bidRateLabel.text = NSNumber(integerLiteral: response.bestBid).formatComma()
-        askRateLabel.text = NSNumber(integerLiteral: response.bestAsk).formatComma()
+        bidButton.title(NSNumber(integerLiteral: response.bestBid).formatComma())
+        askButton.title(NSNumber(integerLiteral: response.bestAsk).formatComma())
     }
 
     func failure<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, error: ApiResponseError) {
@@ -107,32 +100,24 @@ class SendOrderRootViewController: UIViewController, ViewContainer, UIPickerView
         return String(describing: response.bestAsk)
     }
 
-    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        switch component {
-        case 0:
-            // 注文方法の更新
-            selectedOrder = Enums.Order(rawValue: row)
-            guard let activeViewController = activeViewController,
-                let productType = productType,
-                let selectedOrder = selectedOrder,
-                let selectedCondition = selectedCondition,
-                let newAvc = createOrderViewController(productType, selectedOrder, selectedCondition) else {
-                return
-            }
-            removeChildContainerViewController(activeViewController)
-            self.activeViewController = newAvc
-            addChildContainerViewController(newAvc, atContainerView: containerView)
+    func initComponent() {
+        productType = .fxBtcJpy
 
-        case 1:
-            // 注文の執行条件の更新
-            selectedCondition = Enums.Condition(rawValue: row)
-            guard let selectedCondition = selectedCondition else {
-                return
-            }
-            activeViewController?.updateCondition(selectedCondition)
-        default:
-            break
+        guard let productType = productType else {
+            return
         }
+
+        title = productType.rawValue
+
+        selectedOrder = Enums.Order(rawValue: 0)
+
+        bidButton.initBidAsk(.bid)
+        bidButton.font(UIFont(name: (bidButton.titleLabel?.font.fontName)!, size: 30.0)!)
+        askButton.initBidAsk(.ask)
+        askButton.font(UIFont(name: (askButton.titleLabel?.font.fontName)!, size: 30.0)!)
+
+        activeViewController = SimpleOrderViewController(productType: productType, delegete: self)
+        addChildContainerViewController(activeViewController!, atContainerView: containerView)
     }
 
     func priceApi() {
@@ -158,16 +143,16 @@ class SendOrderRootViewController: UIViewController, ViewContainer, UIPickerView
         activeViewController?.updateAskPrice(price: String(describing: response.bestAsk))
     }
 
-    private func createOrderViewController(_ productType: Bitflyer.ProductCodeType, _ order: Enums.Order, _ condition: Enums.Condition) -> BaseSendOrderViewController? {
+    private func createOrderViewController(_ productType: Bitflyer.ProductCodeType, _ order: Enums.Order) -> BaseSendOrderViewController? {
         switch order {
         case .simple:
-            return SimpleOrderViewController(productType: productType, condition: condition, delegete: self)
+            return SimpleOrderViewController(productType: productType, delegete: self)
         case .ifd:
-            return IfdOrderViewController(productType: productType, condition: condition, delegete: self)
+            return IfdOrderViewController(productType: productType, delegete: self)
         case .oco:
-            return OcoOrderViewController(productType: productType, condition: condition, delegete: self)
+            return OcoOrderViewController(productType: productType, delegete: self)
         case .ifdoco:
-            return IfdocoOrderViewController(productType: productType, condition: condition, delegete: self)
+            return IfdocoOrderViewController(productType: productType, delegete: self)
         default:
             return nil
         }

@@ -9,8 +9,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LimitOrderViewController" customModule="BitTrader" customModuleProvider="target">
             <connections>
                 <outlet property="amountPlusMinusInput" destination="iE6-5g-Qng" id="EXM-Wu-Mtg"/>
-                <outlet property="askButton" destination="hjk-da-XNT" id="WTe-ik-JUs"/>
-                <outlet property="bidButton" destination="oM2-I0-pEl" id="6v1-3y-2Q1"/>
+                <outlet property="askButton" destination="hjk-da-XNT" id="4zR-eh-Sgg"/>
+                <outlet property="bidButton" destination="oM2-I0-pEl" id="oSd-Ad-qcH"/>
                 <outlet property="pricePlusMinusInput" destination="Prp-h8-rvh" id="JGC-U0-JjA"/>
                 <outlet property="view" destination="iN0-l3-epB" id="3lj-cH-KBs"/>
             </connections>
@@ -24,62 +24,46 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="648-1V-zMN">
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oM2-I0-pEl">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oM2-I0-pEl" customClass="BidAskButton" customModule="BitTrader" customModuleProvider="target">
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <state key="normal">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
                                     <connections>
                                         <action selector="onBidButton:" destination="-1" eventType="touchUpInside" id="IGD-nd-IZL"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="売り" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dB2-Fd-T2E">
-                                    <accessibility key="accessibilityConfiguration">
-                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                    </accessibility>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="oM2-I0-pEl" secondAttribute="trailing" id="5pc-24-upb"/>
                                 <constraint firstItem="oM2-I0-pEl" firstAttribute="leading" secondItem="648-1V-zMN" secondAttribute="leading" id="B9u-4g-VXy"/>
                                 <constraint firstItem="oM2-I0-pEl" firstAttribute="top" secondItem="648-1V-zMN" secondAttribute="top" id="Bw5-Db-3To"/>
-                                <constraint firstAttribute="bottom" secondItem="dB2-Fd-T2E" secondAttribute="bottom" constant="2" id="L3A-7k-U0U"/>
                                 <constraint firstAttribute="height" constant="40" id="WWy-iK-61S"/>
-                                <constraint firstAttribute="trailing" secondItem="dB2-Fd-T2E" secondAttribute="trailing" constant="2" id="pBB-vo-4j3"/>
                                 <constraint firstAttribute="bottom" secondItem="oM2-I0-pEl" secondAttribute="bottom" id="wuo-Xp-97R"/>
-                                <constraint firstItem="dB2-Fd-T2E" firstAttribute="leading" secondItem="648-1V-zMN" secondAttribute="leading" constant="2" id="yy1-K5-Wab"/>
-                                <constraint firstItem="dB2-Fd-T2E" firstAttribute="top" secondItem="648-1V-zMN" secondAttribute="top" constant="2" id="zzm-Ri-hjd"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOo-Q9-Zt2">
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjk-da-XNT">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjk-da-XNT" customClass="BidAskButton" customModule="BitTrader" customModuleProvider="target">
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <state key="normal">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
                                     <connections>
                                         <action selector="onAskButton:" destination="-1" eventType="touchUpInside" id="iXP-J9-9Yq"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="買い" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Zbj-Cc-hrm">
-                                    <accessibility key="accessibilityConfiguration">
-                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                    </accessibility>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="Zbj-Cc-hrm" firstAttribute="top" secondItem="tOo-Q9-Zt2" secondAttribute="top" constant="2" id="Blr-sz-1G7"/>
                                 <constraint firstItem="hjk-da-XNT" firstAttribute="leading" secondItem="tOo-Q9-Zt2" secondAttribute="leading" id="Qva-D5-0Vr"/>
                                 <constraint firstItem="hjk-da-XNT" firstAttribute="top" secondItem="tOo-Q9-Zt2" secondAttribute="top" id="RSd-bb-dGt"/>
-                                <constraint firstAttribute="trailing" secondItem="Zbj-Cc-hrm" secondAttribute="trailing" constant="2" id="V4Y-LM-Spp"/>
                                 <constraint firstAttribute="bottom" secondItem="hjk-da-XNT" secondAttribute="bottom" id="VnQ-yU-LGE"/>
-                                <constraint firstAttribute="bottom" secondItem="Zbj-Cc-hrm" secondAttribute="bottom" constant="2" id="YSP-Jb-nMJ"/>
-                                <constraint firstItem="Zbj-Cc-hrm" firstAttribute="leading" secondItem="tOo-Q9-Zt2" secondAttribute="leading" constant="2" id="Yir-qq-f0p"/>
                                 <constraint firstAttribute="height" constant="40" id="q3E-Kx-j6M"/>
                                 <constraint firstAttribute="trailing" secondItem="hjk-da-XNT" secondAttribute="trailing" id="rJb-rg-6m2"/>
                             </constraints>

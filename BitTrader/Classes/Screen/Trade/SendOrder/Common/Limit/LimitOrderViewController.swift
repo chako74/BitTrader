@@ -8,53 +8,12 @@
 
 import UIKit
 
-class LimitOrderViewController: BaseSendOrderCommonViewController, PlusMinusInputFieldDelegate, NumberPadViewDelegate {
+class LimitOrderViewController: BaseSendOrderCommonViewController {
 
-    weak var delegate: SendOrderRootViewControllerProtocol?
-
-    private var bidAsk: Enums.BidAsk
-    private var targetField: PlusMinusInputField?
-
-    @IBOutlet weak var bidButton: UIButton!
-    @IBOutlet weak var askButton: UIButton!
     @IBOutlet weak var amountPlusMinusInput: PlusMinusInputField!
     @IBOutlet weak var pricePlusMinusInput: PlusMinusInputField!
 
-    init(bidAsk: Enums.BidAsk, delegete: SendOrderRootViewControllerProtocol) {
-        self.bidAsk = bidAsk
-        self.delegate = delegete
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        initComponent()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        changeBidAsk(bidAsk: bidAsk)
-    }
-
-    func initComponent() {
-        let bidImage = UIColor.init(red: 0.0, green: 0.0, blue: 1.0, alpha: 0.3).toImage()
-        let bidSelectedImage = UIColor.init(red: 0.0, green: 0.0, blue: 1.0, alpha: 0.7).toImage()
-        bidButton.setBackgroundImage(bidImage, for: .normal)
-        bidButton.setBackgroundImage(bidImage, for: .highlighted)
-        bidButton.setBackgroundImage(bidSelectedImage, for: .selected)
-        bidButton.setBackgroundImage(bidImage, for: .disabled)
-
-        let askImage = UIColor.init(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.3).toImage()
-        let askSelectedImage = UIColor.init(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.7).toImage()
-        askButton.setBackgroundImage(askImage, for: .normal)
-        askButton.setBackgroundImage(askImage, for: .highlighted)
-        askButton.setBackgroundImage(askSelectedImage, for: .selected)
-        askButton.setBackgroundImage(askImage, for: .disabled)
+    override func initComponent() {
 
         amountPlusMinusInput.upDownUnit = Double(0.001)
         amountPlusMinusInput.format = "%.3f"
@@ -64,14 +23,6 @@ class LimitOrderViewController: BaseSendOrderCommonViewController, PlusMinusInpu
         pricePlusMinusInput.delegate = self
     }
 
-    override func updateBidPrice(price: String) {
-        updatePrice(bidAsk: .bid, price: Double(price)!)
-    }
-
-    override func updateAskPrice(price: String) {
-        updatePrice(bidAsk: .ask, price: Double(price)!)
-    }
-
     override func sendOrderViewModel() throws -> SendOrderViewModel {
         guard let size = amountPlusMinusInput.input.value else {
             throw BitTraderError.ValidationError(message: "size is required")
@@ -79,69 +30,12 @@ class LimitOrderViewController: BaseSendOrderCommonViewController, PlusMinusInpu
         guard let price = pricePlusMinusInput.input.value else {
             throw BitTraderError.ValidationError(message: "price is required")
         }
-
         return SendOrderViewModel(side: bidButton.isSelected ? .bid : .ask,
                                   size: size,
                                   orderType: .limit(price: Int(price)))
     }
 
-    func didTapedPlusMinusInputField(_ field: PlusMinusInputField) {
-        targetField = field
-        guard let rootViewController = rootViewController() else {
-            return
-        }
-        let numberPad = NumberPadViewController()
-        numberPad.delegate = self
-        numberPad.modalPresentationStyle = .overCurrentContext
-        numberPad.view.backgroundColor = UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.6)
-        rootViewController.present(numberPad, animated: true, completion: nil)
-    }
-
-    func plusMinusInputField(_ plusMinusInputField: PlusMinusInputField, changedValue: Double?) {
-    }
-
-    func didDone(_ numberPadViewController: NumberPadViewController, value: String) {
-        guard let rootViewController = rootViewController(), let field = targetField else {
-            return
-        }
-        field.input.value = Double(value)
-        rootViewController.dismiss(animated: true, completion: nil)
-    }
-
-    func didCancel(_ numberPadViewController: NumberPadViewController) {
-        guard let rootViewController = rootViewController() else {
-            return
-        }
-        rootViewController.dismiss(animated: true, completion: nil)
-    }
-
-    @IBAction func onBidButton(_ sender: UIButton) {
-        guard let price = self.delegate?.willNeedBidPrice(rateType: .bitflyerFx) else {
-            return
-        }
-        updatePrice(bidAsk: .bid, price: Double(price)!)
-    }
-
-    @IBAction func onAskButton(_ sender: UIButton) {
-        guard let price = self.delegate?.willNeedAskPrice(rateType: .bitflyerFx) else {
-            return
-        }
-        updatePrice(bidAsk: .ask, price: Double(price)!)
-    }
-
-    private func updatePrice(bidAsk: Enums.BidAsk, price: Double) {
-        changeBidAsk(bidAsk: bidAsk)
+    override func updatePrice(bidAsk: Enums.BidAsk, price: Double) {
         pricePlusMinusInput.input.value = price
-    }
-
-    private func changeBidAsk(bidAsk: Enums.BidAsk) {
-        switch bidAsk {
-        case .bid:
-            bidButton.isSelected = true
-            askButton.isSelected = false
-        case .ask:
-            bidButton.isSelected = false
-            askButton.isSelected = true
-        }
     }
 }

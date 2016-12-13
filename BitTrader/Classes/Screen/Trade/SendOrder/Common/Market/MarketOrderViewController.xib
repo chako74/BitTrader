@@ -8,6 +8,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MarketOrderViewController" customModule="BitTrader" customModuleProvider="target">
             <connections>
+                <outlet property="amountPlusMinusInput" destination="nwd-wx-4rS" id="rEf-Ls-hew"/>
+                <outlet property="askButton" destination="hyw-CV-rC1" id="7oi-rR-leJ"/>
+                <outlet property="bidButton" destination="8cu-vm-AkP" id="R0G-jf-k4f"/>
                 <outlet property="view" destination="iN0-l3-epB" id="qFT-6m-aqa"/>
             </connections>
         </placeholder>
@@ -20,56 +23,40 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Klw-Kb-ajA">
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cu-vm-AkP">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cu-vm-AkP" customClass="BidAskButton" customModule="BitTrader" customModuleProvider="target">
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="onBidButton:" destination="-1" eventType="touchUpInside" id="JZZ-fU-oMj"/>
+                                    </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="売り" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9gA-3G-NUx">
-                                    <accessibility key="accessibilityConfiguration">
-                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                    </accessibility>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="9gA-3G-NUx" firstAttribute="top" secondItem="Klw-Kb-ajA" secondAttribute="top" constant="2" id="FHm-D4-A0V"/>
                                 <constraint firstItem="8cu-vm-AkP" firstAttribute="top" secondItem="Klw-Kb-ajA" secondAttribute="top" id="GFG-Rc-M2e"/>
                                 <constraint firstItem="8cu-vm-AkP" firstAttribute="leading" secondItem="Klw-Kb-ajA" secondAttribute="leading" id="RcM-oZ-g1P"/>
-                                <constraint firstAttribute="trailing" secondItem="9gA-3G-NUx" secondAttribute="trailing" constant="2" id="jBO-b7-5HG"/>
                                 <constraint firstAttribute="trailing" secondItem="8cu-vm-AkP" secondAttribute="trailing" id="ksv-6Q-kYy"/>
-                                <constraint firstItem="9gA-3G-NUx" firstAttribute="leading" secondItem="Klw-Kb-ajA" secondAttribute="leading" constant="2" id="mcj-eR-el8"/>
                                 <constraint firstAttribute="bottom" secondItem="8cu-vm-AkP" secondAttribute="bottom" id="mvd-jv-Byw"/>
                                 <constraint firstAttribute="height" constant="40" id="p53-FK-e8H"/>
-                                <constraint firstAttribute="bottom" secondItem="9gA-3G-NUx" secondAttribute="bottom" constant="2" id="zXK-1h-1Ta"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aby-hp-SzU">
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyw-CV-rC1">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyw-CV-rC1" customClass="BidAskButton" customModule="BitTrader" customModuleProvider="target">
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="onAskButton:" destination="-1" eventType="touchUpInside" id="vyD-aY-uKG"/>
+                                    </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="買い" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wdi-1s-Stz">
-                                    <accessibility key="accessibilityConfiguration">
-                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                    </accessibility>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="Wdi-1s-Stz" secondAttribute="bottom" constant="2" id="0Rr-SC-Ztn"/>
                                 <constraint firstItem="hyw-CV-rC1" firstAttribute="top" secondItem="Aby-hp-SzU" secondAttribute="top" id="1mb-fZ-4eo"/>
                                 <constraint firstItem="hyw-CV-rC1" firstAttribute="leading" secondItem="Aby-hp-SzU" secondAttribute="leading" id="PJU-tM-7cx"/>
                                 <constraint firstAttribute="height" constant="40" id="WNJ-Eo-pGG"/>
-                                <constraint firstItem="Wdi-1s-Stz" firstAttribute="leading" secondItem="Aby-hp-SzU" secondAttribute="leading" constant="2" id="cJy-xK-HHM"/>
-                                <constraint firstAttribute="trailing" secondItem="Wdi-1s-Stz" secondAttribute="trailing" constant="2" id="h74-Hk-f3v"/>
                                 <constraint firstAttribute="bottom" secondItem="hyw-CV-rC1" secondAttribute="bottom" id="nXe-ms-neY"/>
                                 <constraint firstAttribute="trailing" secondItem="hyw-CV-rC1" secondAttribute="trailing" id="sSE-p7-sbq"/>
-                                <constraint firstItem="Wdi-1s-Stz" firstAttribute="top" secondItem="Aby-hp-SzU" secondAttribute="top" constant="2" id="xiH-fp-Dbc"/>
                             </constraints>
                         </view>
                     </subviews>

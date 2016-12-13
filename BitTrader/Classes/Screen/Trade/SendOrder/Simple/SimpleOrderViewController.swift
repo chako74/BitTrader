@@ -8,11 +8,14 @@
 
 import UIKit
 
-class SimpleOrderViewController: BaseSendOrderViewController, ViewContainer, ApiExecuterDelegate {
+class SimpleOrderViewController: BaseSendOrderViewController, ViewContainer, ApiExecuterDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     private var activeViewController: BaseSendOrderCommonViewController?
+    private var selectedCondition: Enums.Condition?
+    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var sendOrderButton: UIButton!
+    @IBOutlet weak var pickerView: UIPickerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,17 +24,15 @@ class SimpleOrderViewController: BaseSendOrderViewController, ViewContainer, Api
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        activeViewController = makeSendOrderChildViewController(condition: condition)
+        activeViewController = makeSendOrderChildViewController(condition: .limit)
         addChildContainerViewController(activeViewController!, atContainerView: containerView)
     }
 
-    override func updateCondition(_ condition: Enums.Condition) {
-        guard let activeViewController = activeViewController, let newAvc = makeSendOrderChildViewController(condition: condition) else {
-            return
-        }
-        removeChildContainerViewController(activeViewController)
-        self.activeViewController = newAvc
-        addChildContainerViewController(newAvc, atContainerView: containerView)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.pickerView.dataSource = self
+        self.pickerView.delegate = self
     }
 
     override func updateBidPrice(price: String) {
@@ -40,6 +41,26 @@ class SimpleOrderViewController: BaseSendOrderViewController, ViewContainer, Api
 
     override func updateAskPrice(price: String) {
         activeViewController?.updateAskPrice(price: price)
+    }
+
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Enums.Condition.count
+    }
+
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return Enums.Condition(rawValue: row)?.name
+    }
+
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedCondition = Enums.Condition(rawValue: row)
+        guard let selectedCondition = selectedCondition else {
+            return
+        }
+        updateCondition(selectedCondition)
     }
 
     func success<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType) {
@@ -69,7 +90,16 @@ class SimpleOrderViewController: BaseSendOrderViewController, ViewContainer, Api
 
         showConfirmAlert(message: makeErrorMessage(sendOrderViewModel),
                          cancelHandler: nil,
-                         agreeHandler: { [weak self] _ in self?.sendChildOrder(sendOrderViewModel) })
+                         agreeHandler: { [weak self] _ in self?.sendOrder(sendOrderViewModel) })
+    }
+
+    private func sendOrder(_ viewModel: SendOrderViewModel) {
+        switch viewModel.orderType {
+        case .limit, .market:
+            sendChildOrder(viewModel)
+        case .stop, .stopLimit, .trail:
+            sendParentOrder(viewModel)
+        }
     }
 
     private func sendChildOrder(_ viewModel: SendOrderViewModel) {
@@ -136,5 +166,14 @@ class SimpleOrderViewController: BaseSendOrderViewController, ViewContainer, Api
         alertController.addAction(cancelAction)
         alertController.addAction(agreeAction)
         rootViewController()?.present(alertController, animated: true, completion: nil)
+    }
+
+    private func updateCondition(_ condition: Enums.Condition) {
+        guard let activeViewController = activeViewController, let newAvc = makeSendOrderChildViewController(condition: condition) else {
+            return
+        }
+        removeChildContainerViewController(activeViewController)
+        self.activeViewController = newAvc
+        addChildContainerViewController(newAvc, atContainerView: containerView)
     }
 }

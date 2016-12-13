@@ -58,9 +58,9 @@ struct ParentOrderReducer: Reducer {
             cos.condition = makeCondition(condition: cos.condition, triggerPrice: triggerPrice)
             orderState = makeOrderState(parentOrderState: orderState, place: place, hasCondition: cos)
 
-        case .Offset(let place, let offset):
+        case .TrailDistance(let place, let trailDistance):
             var cos = SendOrderUtils.selectOrderState(parentOrderState: orderState, place: place)
-            cos.condition = makeCondition(condition: cos.condition, offset: offset)
+            cos.condition = makeCondition(condition: cos.condition, trailDistance: trailDistance)
             orderState = makeOrderState(parentOrderState: orderState, place: place, hasCondition: cos)
 
         default:
@@ -95,8 +95,8 @@ struct ParentOrderReducer: Reducer {
             return .stop(bidAsk: bidAsk, amount: amount, triggerPrice: triggerPrice)
         case .stopLimit(_, let amount, _, let triggerPrice):
             return .stopLimit(bidAsk: bidAsk, amount: amount, price: price, triggerPrice: triggerPrice)
-        case .trail(_, let amount, let offset):
-            return .trail(bidAsk: bidAsk, amount: amount, offset: offset)
+        case .trail(_, let amount, let trailDistance):
+            return .trail(bidAsk: bidAsk, amount: amount, trailDistance: trailDistance)
         }
     }
 
@@ -110,8 +110,8 @@ struct ParentOrderReducer: Reducer {
             return .stop(bidAsk: bidAsk, amount: amount, triggerPrice: triggerPrice)
         case .stopLimit(let bidAsk, _, let price, let triggerPrice):
             return .stopLimit(bidAsk: bidAsk, amount: amount, price: price, triggerPrice: triggerPrice)
-        case .trail(let bidAsk, _, let offset):
-            return .trail(bidAsk: bidAsk, amount: amount, offset: offset)
+        case .trail(let bidAsk, _, let trailDistance):
+            return .trail(bidAsk: bidAsk, amount: amount, trailDistance: trailDistance)
         }
     }
 
@@ -137,10 +137,10 @@ struct ParentOrderReducer: Reducer {
         }
     }
 
-    private func makeCondition(condition: ChildOrderCondition, offset: Double?) -> ChildOrderCondition {
+    private func makeCondition(condition: ChildOrderCondition, trailDistance: Double?) -> ChildOrderCondition {
         switch condition {
         case .trail(let bidAsk, let amount, _):
-            return .trail(bidAsk: bidAsk, amount: amount, offset: offset)
+            return .trail(bidAsk: bidAsk, amount: amount, trailDistance: trailDistance)
         default:
             return condition
         }

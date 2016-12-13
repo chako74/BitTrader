@@ -21,7 +21,7 @@ enum AppAction: Action {
     case Amount(Enums.Place, value: String?)
     case Price(Enums.Place, value: Double?)
     case TriggerPrice(Enums.Place, value: Double?)
-    case Offset(Enums.Place, value: Double?)
+    case TrailDistance(Enums.Place, value: Double?)
 }
 
 func childOrderCondition(place: Enums.Place, condition: Enums.Condition) -> Store<State>.ActionCreator {
@@ -36,7 +36,7 @@ func childOrderCondition(place: Enums.Place, condition: Enums.Condition) -> Stor
         case .stopLimit:
             store.dispatch(AppAction.ChildOrderCondition(place, value: .stopLimit(bidAsk: .bid, amount: nil, price: nil, triggerPrice: nil)))
         case .trail:
-            store.dispatch(AppAction.ChildOrderCondition(place, value: .trail(bidAsk: .bid, amount: nil, offset: nil)))
+            store.dispatch(AppAction.ChildOrderCondition(place, value: .trail(bidAsk: .bid, amount: nil, trailDistance: nil)))
         default:
             break
         }

@@ -145,6 +145,7 @@
 		BA76BE741DDF30EF005514AC /* CoincheckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA76BE731DDF30EF005514AC /* CoincheckRequest.swift */; };
 		BAD390221DDF8C8D001FA3F5 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD390211DDF8C8D001FA3F5 /* ResultModel.swift */; };
 		BAD390241DDF8D38001FA3F5 /* KrakenTickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD390231DDF8D38001FA3F5 /* KrakenTickerModel.swift */; };
+		E903DF191DFF068A00EC0652 /* BidAskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E903DF181DFF068A00EC0652 /* BidAskButton.swift */; };
 		E91FE5D61DEAD4F500D2632C /* ReBaseSendOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91FE5D31DEAD4F500D2632C /* ReBaseSendOrderViewController.swift */; };
 		E91FE5D71DEAD4F500D2632C /* ReSendOrderRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91FE5D41DEAD4F500D2632C /* ReSendOrderRootViewController.swift */; };
 		E91FE5D81DEAD4F500D2632C /* ReSendOrderRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91FE5D51DEAD4F500D2632C /* ReSendOrderRootViewController.xib */; };
@@ -169,6 +170,7 @@
 		E91FE6051DEAD64900D2632C /* ReBaseSendOrderCommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91FE6031DEAD64900D2632C /* ReBaseSendOrderCommonViewController.swift */; };
 		E91FE6061DEAD64900D2632C /* ReSendOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91FE6041DEAD64900D2632C /* ReSendOrderViewModel.swift */; };
 		E91FE6611DEB249900D2632C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91FE6601DEB249900D2632C /* State.swift */; };
+		E938ECE51DFDA4EB00125B77 /* BaseSendOrderCommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938ECE41DFDA4EB00125B77 /* BaseSendOrderCommonViewController.swift */; };
 		E93E67191DFAEC410062F2A2 /* SendOrderUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93E67181DFAEC410062F2A2 /* SendOrderUtils.swift */; };
 		E96473F61DF7023300A4B619 /* ParentOrderReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96473F41DF7023300A4B619 /* ParentOrderReducer.swift */; };
 		E96473F71DF7023300A4B619 /* SendOrderReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96473F51DF7023300A4B619 /* SendOrderReducer.swift */; };
@@ -201,7 +203,6 @@
 		E964B3271DE5CB3F003A719F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B3261DE5CB3F003A719F /* Enums.swift */; };
 		E96D3FC91DE97B440072E80C /* SendOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D3FC81DE97B440072E80C /* SendOrderViewModel.swift */; };
 		E96D3FCC1DE9B9910072E80C /* BitTraderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D3FCB1DE9B9910072E80C /* BitTraderError.swift */; };
-		E96D3FD41DE9C0CE0072E80C /* BaseSendOrderCommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D3FD31DE9C0CE0072E80C /* BaseSendOrderCommonViewController.swift */; };
 		E96D3FD61DE9C15A0072E80C /* BaseSendOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D3FD51DE9C15A0072E80C /* BaseSendOrderViewController.swift */; };
 		E9F68A0E1DEA30320026B41D /* ApiResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F68A0D1DEA30320026B41D /* ApiResponseError.swift */; };
 /* End PBXBuildFile section */
@@ -374,6 +375,7 @@
 		CC4B7FDBD26058AF1B3EC060 /* Pods-BitTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTrader.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitTrader/Pods-BitTrader.release.xcconfig"; sourceTree = "<group>"; };
 		CEFF4274892F4ACA1287631A /* Pods-BitTraderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitTraderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitTraderTests/Pods-BitTraderTests.release.xcconfig"; sourceTree = "<group>"; };
 		E525F9CF272892EAA3DF1AA6 /* Pods_BitTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E903DF181DFF068A00EC0652 /* BidAskButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidAskButton.swift; sourceTree = "<group>"; };
 		E91FE5D31DEAD4F500D2632C /* ReBaseSendOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReBaseSendOrderViewController.swift; sourceTree = "<group>"; };
 		E91FE5D41DEAD4F500D2632C /* ReSendOrderRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReSendOrderRootViewController.swift; sourceTree = "<group>"; };
 		E91FE5D51DEAD4F500D2632C /* ReSendOrderRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReSendOrderRootViewController.xib; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 		E91FE6031DEAD64900D2632C /* ReBaseSendOrderCommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReBaseSendOrderCommonViewController.swift; sourceTree = "<group>"; };
 		E91FE6041DEAD64900D2632C /* ReSendOrderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReSendOrderViewModel.swift; sourceTree = "<group>"; };
 		E91FE6601DEB249900D2632C /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		E938ECE41DFDA4EB00125B77 /* BaseSendOrderCommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSendOrderCommonViewController.swift; sourceTree = "<group>"; };
 		E93E67181DFAEC410062F2A2 /* SendOrderUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendOrderUtils.swift; sourceTree = "<group>"; };
 		E96473F41DF7023300A4B619 /* ParentOrderReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentOrderReducer.swift; sourceTree = "<group>"; };
 		E96473F51DF7023300A4B619 /* SendOrderReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendOrderReducer.swift; sourceTree = "<group>"; };
@@ -430,7 +433,6 @@
 		E964B3261DE5CB3F003A719F /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		E96D3FC81DE97B440072E80C /* SendOrderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendOrderViewModel.swift; sourceTree = "<group>"; };
 		E96D3FCB1DE9B9910072E80C /* BitTraderError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitTraderError.swift; sourceTree = "<group>"; };
-		E96D3FD31DE9C0CE0072E80C /* BaseSendOrderCommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSendOrderCommonViewController.swift; sourceTree = "<group>"; };
 		E96D3FD51DE9C15A0072E80C /* BaseSendOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSendOrderViewController.swift; sourceTree = "<group>"; };
 		E9F68A0D1DEA30320026B41D /* ApiResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponseError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -882,12 +884,13 @@
 		07FAE3251DA7785D00089136 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				E96D3FCA1DE9B96B0072E80C /* Error */,
-				E964B3251DE5CAE2003A719F /* Enum */,
-				07097DD31DC8C8A500A08EEA /* Util */,
-				07B854601DB24F6C009E3181 /* Control */,
 				07FAE3321DA7B9F500089136 /* AppStatus */,
+				E938ECDB1DFD6BC100125B77 /* Button */,
+				07B854601DB24F6C009E3181 /* Control */,
+				E964B3251DE5CAE2003A719F /* Enum */,
+				E96D3FCA1DE9B96B0072E80C /* Error */,
 				072441AE1DADFA3D0059E872 /* Protocol */,
+				07097DD31DC8C8A500A08EEA /* Util */,
 				072441B11DAE02EB0059E872 /* View */,
 			);
 			path = Common;
@@ -1235,6 +1238,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E903DF171DFF066F00EC0652 /* BidAsk */ = {
+			isa = PBXGroup;
+			children = (
+				E903DF181DFF068A00EC0652 /* BidAskButton.swift */,
+			);
+			path = BidAsk;
+			sourceTree = "<group>";
+		};
 		E91FE5CD1DEAD1AC00D2632C /* ReSendOrder */ = {
 			isa = PBXGroup;
 			children = (
@@ -1370,6 +1381,14 @@
 			path = Reducer;
 			sourceTree = "<group>";
 		};
+		E938ECDB1DFD6BC100125B77 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				E903DF171DFF066F00EC0652 /* BidAsk */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		E964B2CE1DE5BE4D003A719F /* SendOrder */ = {
 			isa = PBXGroup;
 			children = (
@@ -1424,7 +1443,7 @@
 		E964B2ED1DE5C294003A719F /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				E96D3FD31DE9C0CE0072E80C /* BaseSendOrderCommonViewController.swift */,
+				E938ECE41DFDA4EB00125B77 /* BaseSendOrderCommonViewController.swift */,
 				E96D3FC81DE97B440072E80C /* SendOrderViewModel.swift */,
 				E964B2F81DE5C475003A719F /* Limit */,
 				E964B2FC1DE5C4B3003A719F /* Market */,
@@ -1885,8 +1904,8 @@
 				BA76BE741DDF30EF005514AC /* CoincheckRequest.swift in Sources */,
 				E964B3271DE5CB3F003A719F /* Enums.swift in Sources */,
 				E91FE5D61DEAD4F500D2632C /* ReBaseSendOrderViewController.swift in Sources */,
-				E96D3FD41DE9C0CE0072E80C /* BaseSendOrderCommonViewController.swift in Sources */,
 				07B854551DB1C11F009E3181 /* BTCChangerViewModel.swift in Sources */,
+				E903DF191DFF068A00EC0652 /* BidAskButton.swift in Sources */,
 				BA76BE6C1DDF2F32005514AC /* CoincheckTickerRequest.swift in Sources */,
 				07C7CC591DD4B50E00F7A398 /* OrderListState.swift in Sources */,
 				07BD522A1DA3E4AE00DA54B8 /* AppDelegate.swift in Sources */,
@@ -1912,6 +1931,7 @@
 				E91FE5F11DEAD60000D2632C /* ReTrailOrderViewController.swift in Sources */,
 				072441971DACC1FB0059E872 /* ReferenceRootViewController.swift in Sources */,
 				07932C6B1DBCEEB300E38530 /* RateListViewModel.swift in Sources */,
+				E938ECE51DFDA4EB00125B77 /* BaseSendOrderCommonViewController.swift in Sources */,
 				070936671DEC6F500091B972 /* RxSimpleOrderViewController.swift in Sources */,
 				07932C741DBD035F00E38530 /* RateTableViewCell.swift in Sources */,
 				07FAE3341DA7BA2500089136 /* AppStatus.swift in Sources */,
