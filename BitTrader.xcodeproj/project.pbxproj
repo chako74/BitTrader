@@ -1643,9 +1643,8 @@
 				TargetAttributes = {
 					07BD51F21DA3DECD00DA54B8 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = ZYH5V292WC;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 0;
@@ -2166,7 +2165,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = ZYH5V292WC;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BitTrader/Resources/Plist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mt.ak.bittrader.BitTrader;
@@ -2183,7 +2182,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = ZYH5V292WC;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BitTrader/Resources/Plist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mt.ak.bittrader.BitTrader;
