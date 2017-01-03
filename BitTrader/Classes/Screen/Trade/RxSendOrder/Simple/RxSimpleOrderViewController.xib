@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RxSimpleOrderViewController" customModule="BitTrader" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="Z9n-r2-TfG" id="d3l-kv-0RI"/>
+                <outlet property="pickerView" destination="irq-XN-zte" id="Swq-4x-z5r"/>
                 <outlet property="sendOrderButton" destination="8d7-iS-qyg" id="C0m-eq-DRD"/>
                 <outlet property="view" destination="iN0-l3-epB" id="T5D-sd-3eI"/>
             </connections>
@@ -21,8 +22,18 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="irq-XN-zte">
+                    <rect key="frame" x="10" y="0.0" width="355" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="LG5-IA-qpD"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="pgx-Lc-HmY"/>
+                        <outlet property="delegate" destination="-1" id="CDn-lZ-HdP"/>
+                    </connections>
+                </pickerView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9n-r2-TfG">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                    <rect key="frame" x="0.0" y="70" width="375" height="547"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKL-pd-Fr1">
@@ -31,9 +42,6 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8d7-iS-qyg">
                             <rect key="frame" x="172" y="0.0" width="31" height="30"/>
                             <state key="normal" title="発注"/>
-                            <connections>
-                                <action selector="onSendOrderButton:" destination="-1" eventType="touchUpInside" id="Wpz-tM-dkv"/>
-                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -46,14 +54,18 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Z9n-r2-TfG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5Iu-YT-znD"/>
+                <constraint firstItem="irq-XN-zte" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="73d-kg-jr2"/>
                 <constraint firstItem="VKL-pd-Fr1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ITE-O5-R79"/>
                 <constraint firstAttribute="trailing" secondItem="VKL-pd-Fr1" secondAttribute="trailing" id="J2m-dq-hMV"/>
                 <constraint firstItem="Z9n-r2-TfG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WA4-sz-MnL"/>
                 <constraint firstAttribute="bottom" secondItem="VKL-pd-Fr1" secondAttribute="bottom" constant="20" id="WSu-bV-7JE"/>
+                <constraint firstItem="Z9n-r2-TfG" firstAttribute="top" secondItem="irq-XN-zte" secondAttribute="bottom" constant="10" id="ZtU-oD-XWF"/>
+                <constraint firstItem="irq-XN-zte" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="awA-KR-eSA"/>
+                <constraint firstAttribute="trailing" secondItem="irq-XN-zte" secondAttribute="trailing" constant="10" id="cUj-yK-CIi"/>
                 <constraint firstItem="VKL-pd-Fr1" firstAttribute="top" secondItem="Z9n-r2-TfG" secondAttribute="bottom" id="rOQ-Y6-go5"/>
                 <constraint firstAttribute="trailing" secondItem="Z9n-r2-TfG" secondAttribute="trailing" id="ubk-EB-LeN"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
         </view>
     </objects>
 </document>

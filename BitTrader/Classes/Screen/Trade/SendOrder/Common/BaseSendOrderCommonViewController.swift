@@ -37,10 +37,10 @@ class BaseSendOrderCommonViewController: UIViewController, SendOrderViewControll
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        bidButton.initBidAsk(.bid)
+        bidButton.initializeBidAsk(.bid)
         bidButton.title(Enums.BidAsk.bid.rawValue)
 
-        askButton.initBidAsk(.ask)
+        askButton.initializeBidAsk(.ask)
         askButton.title(Enums.BidAsk.ask.rawValue)
 
         initComponent()

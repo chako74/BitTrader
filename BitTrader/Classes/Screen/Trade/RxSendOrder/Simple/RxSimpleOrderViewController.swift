@@ -8,30 +8,27 @@
 
 import UIKit
 
+import RxCocoa
+import RxSwift
+
 class RxSimpleOrderViewController: RxBaseSendOrderViewController, ViewContainer, ApiExecuterDelegate {
-        
-    private var activeViewController: RxBaseSendOrderCommonViewController?
+    
+    private let disposeBag = DisposeBag()
+    
+    fileprivate let viewModel = RxSimpleOrderViewModel(condition: .market)
+    
+    fileprivate var activeViewController: RxBaseSendOrderCommonViewController?
+    
+    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var sendOrderButton: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        activeViewController = makeSendOrderChildViewController(condition: self.viewModel.selectedCondition.value)
-        addChildContainerViewController(activeViewController!, atContainerView: containerView)
-    }
-
-    override func updateCondition(_ condition: Enums.Condition) {
-        guard let activeViewController = activeViewController, let newAvc = makeSendOrderChildViewController(condition: condition) else {
-            return
-        }
-        removeChildContainerViewController(activeViewController)
-        self.activeViewController = newAvc
-        addChildContainerViewController(newAvc, atContainerView: containerView)
+        
+        bindLifeCycle()
+        bindPicker()
+        bindOrderButton()
     }
 
     override func updateBidPrice(price: String) {
@@ -50,28 +47,31 @@ class RxSimpleOrderViewController: RxBaseSendOrderViewController, ViewContainer,
         showAlert(message: error.message)
     }
 
-    @IBAction func onSendOrderButton(_ sender: UIButton) {
-        guard let activeViewController = activeViewController else {
-            return
-        }
+//    @IBAction func onSendOrderButton(_ sender: UIButton) {
+//        guard let activeViewController = activeViewController else {
+//            return
+//        }
+//
+//        let sendOrderModel: RxSendOrderModel
+//        do {
+//            sendOrderModel = try activeViewController.sendOrderViewModel()
+//        } catch (let error) {
+//            guard let error = error as? BitTraderError else {
+//                showAlert(message: "Invalid Input value")
+//                return
+//            }
+//            showAlert(message: error.message)
+//            return
+//        }
+//
+//        /*
+//        showConfirmAlert(message: makeErrorMessage(sendOrderModel),
+//                         cancelHandler: nil,
+//                         agreeHandler: { [weak self] _ in self?.sendChildOrder(sendOrderModel) })
+// */
+//    }
 
-        let sendOrderModel: RxSendOrderModel
-        do {
-            sendOrderModel = try activeViewController.sendOrderViewModel()
-        } catch (let error) {
-            guard let error = error as? BitTraderError else {
-                showAlert(message: "Invalid Input value")
-                return
-            }
-            showAlert(message: error.message)
-            return
-        }
-
-        showConfirmAlert(message: makeErrorMessage(sendOrderModel),
-                         cancelHandler: nil,
-                         agreeHandler: { [weak self] _ in self?.sendChildOrder(sendOrderModel) })
-    }
-
+    /*
     private func sendChildOrder(_ viewModel: RxSendOrderModel) {
         let requestParameter: BitflyerSendChildOrderRequestParameter!
         do {
@@ -100,7 +100,7 @@ class RxSimpleOrderViewController: RxBaseSendOrderViewController, ViewContainer,
         apiExecuter.delegate = self
         apiExecuter.execute()
     }
-
+*/
     private func showAlert(message: String, handler: ((UIAlertAction) -> Void)? = nil) {
         let alertController = UIAlertController(title: "",
                                                 message: message,
@@ -135,6 +135,98 @@ class RxSimpleOrderViewController: RxBaseSendOrderViewController, ViewContainer,
         }
         alertController.addAction(cancelAction)
         alertController.addAction(agreeAction)
-        rootViewController()?.present(alertController, animated: true, completion: nil)
+        //rootViewController()?.present(alertController, animated: true, completion: nil)
+    }
+    
+    private func bindLifeCycle() {
+    }
+    
+    private func bindPicker() {
+        
+        // 注文種別変更
+        viewModel.selectedCondition
+            .asDriver()
+            .drive(onNext: { [weak self] condition in
+                
+                guard let sSelf = self else {
+                    return
+                }
+                
+                sSelf.pickerView.selectRow(Enums.Condition.values.index(of: condition) ?? 0, inComponent: 0, animated: false)
+                
+                if let controller = sSelf.makeSimpleOrderChildViewController(condition: condition) {
+                    
+                    if let active = sSelf.activeViewController {
+                        sSelf.removeChildContainerViewController(active)
+                    }
+                    sSelf.activeViewController = controller
+                    sSelf.addChildContainerViewController(controller, atContainerView: sSelf.containerView)
+                }
+            })
+            .addDisposableTo(disposeBag)
+    }
+    
+    private func bindOrderButton() {
+        
+        self.sendOrderButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                do {
+                    try self?.activeViewController?.executeOrder(
+                        success: { [weak self] in
+                            self?.showAlert(message: "complate")
+                        },
+                        failure: { [weak self] errorMessage in
+                            self?.showAlert(message: errorMessage)
+                    })
+                } catch (let error) {
+                    guard let error = error as? BitTraderError else {
+                        self?.showAlert(message: "Invalid Input value")
+                        return
+                    }
+                    self?.showAlert(message: error.message)
+                    return
+                }
+            })
+            .addDisposableTo(disposeBag)
+    }
+    
+    func makeSimpleOrderChildViewController(condition: Enums.Condition) -> RxBaseSendOrderCommonViewController? {
+        switch condition {
+        case .limit:
+            return RxLimitOrderViewController(bidAsk: .bid)
+        case .market:
+            return RxMarketOrderViewController(bidAsk: .bid)
+        default:
+            return nil
+        }
+    }
+}
+
+extension RxSimpleOrderViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return viewModel.tradeTypeComponentCount()
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return viewModel.tradeTypeCount(numberOfRowsInComponent: component)
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return viewModel.tradeTypeTitleForRow(row, forComponent: component)
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        viewModel.updateDidSelectedPicker(row: row, inComponent: component)
+    }
+    
+     private func updateCondition(_ condition: Enums.Condition) {
+        guard let activeViewController = activeViewController, let newAvc = makeSendOrderChildViewController(condition: condition) else {
+            return
+        }
+        removeChildContainerViewController(activeViewController)
+        self.activeViewController = newAvc
+        addChildContainerViewController(newAvc, atContainerView: containerView)
     }
 }

@@ -80,6 +80,8 @@
 		07AFA1761DD84E9600A8B981 /* OrderListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AFA1751DD84E9600A8B981 /* OrderListReducer.swift */; };
 		07AFA1791DD8571400A8B981 /* OrderListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AFA1771DD8571400A8B981 /* OrderListTableViewCell.swift */; };
 		07AFA17C1DD89CBC00A8B981 /* OrderListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AFA17B1DD89CBC00A8B981 /* OrderListTableViewCell.xib */; };
+		07B053DC1E0185D80016B106 /* RxMarketOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B053DB1E0185D80016B106 /* RxMarketOrderViewModel.swift */; };
+		07B053E01E0189C00016B106 /* RxSendOrderGlobalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B053DF1E0189C00016B106 /* RxSendOrderGlobalModel.swift */; };
 		07B854471DAF2D84009E3181 /* BTCChangerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B854461DAF2D84009E3181 /* BTCChangerViewController.xib */; };
 		07B854551DB1C11F009E3181 /* BTCChangerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B854541DB1C11F009E3181 /* BTCChangerViewModel.swift */; };
 		07B8545A1DB1DCE8009E3181 /* NumberPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B854581DB1DCE8009E3181 /* NumberPadViewController.swift */; };
@@ -88,6 +90,7 @@
 		07B8545F1DB205DB009E3181 /* NumberPadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8545E1DB205DB009E3181 /* NumberPadState.swift */; };
 		07B854621DB24F83009E3181 /* IndentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B854611DB24F83009E3181 /* IndentLabel.swift */; };
 		07B854641DB25EAE009E3181 /* NumberPadStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B854631DB25EAE009E3181 /* NumberPadStateTests.swift */; };
+		07BAA3761E0EB9C600EF4414 /* RxLimitOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BAA3751E0EB9C600EF4414 /* RxLimitOrderViewModel.swift */; };
 		07BD52011DA3DECD00DA54B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07BD51FF1DA3DECD00DA54B8 /* LaunchScreen.storyboard */; };
 		07BD52171DA3DECD00DA54B8 /* BitTraderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD52161DA3DECD00DA54B8 /* BitTraderUITests.swift */; };
 		07BD522A1DA3E4AE00DA54B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD52281DA3E4AE00DA54B8 /* AppDelegate.swift */; };
@@ -102,6 +105,7 @@
 		07DCBF2C1DCB734800B60008 /* PositionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DCBF2B1DCB734800B60008 /* PositionListViewModel.swift */; };
 		07DCBF2F1DCB737600B60008 /* PositionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DCBF2D1DCB737600B60008 /* PositionTableViewCell.swift */; };
 		07DCBF301DCB737600B60008 /* PositionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07DCBF2E1DCB737600B60008 /* PositionTableViewCell.xib */; };
+		07EC93B21E08247200FCB052 /* RxSimpleOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC93B11E08247200FCB052 /* RxSimpleOrderViewModel.swift */; };
 		07FAE3291DA778E500089136 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE3281DA778E500089136 /* RootViewController.swift */; };
 		07FAE3301DA77CE600089136 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FAE32F1DA77CE600089136 /* RootViewController.xib */; };
 		07FAE3341DA7BA2500089136 /* AppStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAE3331DA7BA2500089136 /* AppStatus.swift */; };
@@ -300,6 +304,8 @@
 		07AFA1751DD84E9600A8B981 /* OrderListReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListReducer.swift; sourceTree = "<group>"; };
 		07AFA1771DD8571400A8B981 /* OrderListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListTableViewCell.swift; sourceTree = "<group>"; };
 		07AFA17B1DD89CBC00A8B981 /* OrderListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderListTableViewCell.xib; sourceTree = "<group>"; };
+		07B053DB1E0185D80016B106 /* RxMarketOrderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxMarketOrderViewModel.swift; sourceTree = "<group>"; };
+		07B053DF1E0189C00016B106 /* RxSendOrderGlobalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSendOrderGlobalModel.swift; sourceTree = "<group>"; };
 		07B854461DAF2D84009E3181 /* BTCChangerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTCChangerViewController.xib; sourceTree = "<group>"; };
 		07B854541DB1C11F009E3181 /* BTCChangerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTCChangerViewModel.swift; sourceTree = "<group>"; };
 		07B854581DB1DCE8009E3181 /* NumberPadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPadViewController.swift; sourceTree = "<group>"; };
@@ -308,6 +314,7 @@
 		07B8545E1DB205DB009E3181 /* NumberPadState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPadState.swift; sourceTree = "<group>"; };
 		07B854611DB24F83009E3181 /* IndentLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndentLabel.swift; sourceTree = "<group>"; };
 		07B854631DB25EAE009E3181 /* NumberPadStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPadStateTests.swift; sourceTree = "<group>"; };
+		07BAA3751E0EB9C600EF4414 /* RxLimitOrderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxLimitOrderViewModel.swift; sourceTree = "<group>"; };
 		07BD51F31DA3DECD00DA54B8 /* BitTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07BD52001DA3DECD00DA54B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07BD52071DA3DECD00DA54B8 /* BitTraderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitTraderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -327,6 +334,7 @@
 		07DCBF2B1DCB734800B60008 /* PositionListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionListViewModel.swift; sourceTree = "<group>"; };
 		07DCBF2D1DCB737600B60008 /* PositionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionTableViewCell.swift; sourceTree = "<group>"; };
 		07DCBF2E1DCB737600B60008 /* PositionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PositionTableViewCell.xib; sourceTree = "<group>"; };
+		07EC93B11E08247200FCB052 /* RxSimpleOrderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSimpleOrderViewModel.swift; sourceTree = "<group>"; };
 		07FAE3281DA778E500089136 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		07FAE32F1DA77CE600089136 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		07FAE3331DA7BA2500089136 /* AppStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStatus.swift; sourceTree = "<group>"; };
@@ -487,6 +495,7 @@
 		070936301DEC6F500091B972 /* RxSendOrder */ = {
 			isa = PBXGroup;
 			children = (
+				07B053DF1E0189C00016B106 /* RxSendOrderGlobalModel.swift */,
 				0709366E1DF04EBD0091B972 /* RxSendOrderViewModel.swift */,
 				070936311DEC6F500091B972 /* RxBaseSendOrderViewController.swift */,
 				0709364D1DEC6F500091B972 /* RxSendOrderRootViewController.swift */,
@@ -519,6 +528,7 @@
 			children = (
 				070936351DEC6F500091B972 /* RxLimitOrderViewController.swift */,
 				070936361DEC6F500091B972 /* RxLimitOrderViewController.xib */,
+				07BAA3751E0EB9C600EF4414 /* RxLimitOrderViewModel.swift */,
 			);
 			path = Limit;
 			sourceTree = "<group>";
@@ -528,6 +538,7 @@
 			children = (
 				070936381DEC6F500091B972 /* RxMarketOrderViewController.swift */,
 				070936391DEC6F500091B972 /* RxMarketOrderViewController.xib */,
+				07B053DB1E0185D80016B106 /* RxMarketOrderViewModel.swift */,
 			);
 			path = Market;
 			sourceTree = "<group>";
@@ -591,6 +602,7 @@
 			children = (
 				070936501DEC6F500091B972 /* RxSimpleOrderViewController.swift */,
 				070936511DEC6F500091B972 /* RxSimpleOrderViewController.xib */,
+				07EC93B11E08247200FCB052 /* RxSimpleOrderViewModel.swift */,
 			);
 			path = Simple;
 			sourceTree = "<group>";
@@ -1877,6 +1889,7 @@
 				070936531DEC6F500091B972 /* RxBaseSendOrderCommonViewController.swift in Sources */,
 				E964B3061DE5C526003A719F /* TrailOrderViewController.swift in Sources */,
 				07932C711DBD023100E38530 /* RateModel.swift in Sources */,
+				07B053E01E0189C00016B106 /* RxSendOrderGlobalModel.swift in Sources */,
 				072441881DACBEB40059E872 /* RegistKeyViewModel.swift in Sources */,
 				E91FE6611DEB249900D2632C /* State.swift in Sources */,
 				070936591DEC6F500091B972 /* RxStopOrderViewController.swift in Sources */,
@@ -1896,6 +1909,7 @@
 				E96473F91DF7029200A4B619 /* AppAction.swift in Sources */,
 				07AFA1791DD8571400A8B981 /* OrderListTableViewCell.swift in Sources */,
 				BAD390241DDF8D38001FA3F5 /* KrakenTickerModel.swift in Sources */,
+				07BAA3761E0EB9C600EF4414 /* RxLimitOrderViewModel.swift in Sources */,
 				07AFA1741DD84DE200A8B981 /* OrderListAction.swift in Sources */,
 				0755CBCE1DE5D05C005A7873 /* BitflyerSendParentOrderResponse.swift in Sources */,
 				E96D3FC91DE97B440072E80C /* SendOrderViewModel.swift in Sources */,
@@ -1922,12 +1936,14 @@
 				E964B3151DE5CA09003A719F /* ApiClient.swift in Sources */,
 				BA699AE81DD0D5F6007B650F /* NumberPadViewController+Rx.swift in Sources */,
 				BA699AE61DD0D369007B650F /* RxNumberPadViewDelegateProxy.swift in Sources */,
+				07B053DC1E0185D80016B106 /* RxMarketOrderViewModel.swift in Sources */,
 				E96473F61DF7023300A4B619 /* ParentOrderReducer.swift in Sources */,
 				07FAE3291DA778E500089136 /* RootViewController.swift in Sources */,
 				E96D3FD61DE9C15A0072E80C /* BaseSendOrderViewController.swift in Sources */,
 				E91FE5F91DEAD61300D2632C /* ReStopOrderViewController.swift in Sources */,
 				E964B2E01DE5C14E003A719F /* IfdOrderViewController.swift in Sources */,
 				BA76BE591DDF2C44005514AC /* BtcBoxTickerRequest.swift in Sources */,
+				07EC93B21E08247200FCB052 /* RxSimpleOrderViewModel.swift in Sources */,
 				E91FE5F11DEAD60000D2632C /* ReTrailOrderViewController.swift in Sources */,
 				072441971DACC1FB0059E872 /* ReferenceRootViewController.swift in Sources */,
 				07932C6B1DBCEEB300E38530 /* RateListViewModel.swift in Sources */,

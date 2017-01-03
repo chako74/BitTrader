@@ -13,7 +13,7 @@ class BidAskButton: UIButton {
 
     private var bidAsk: Enums.BidAsk?
 
-    func initBidAsk(_ bidAsk: Enums.BidAsk) {
+    func initializeBidAsk(_ bidAsk: Enums.BidAsk) {
         self.bidAsk = bidAsk
         background()
 
@@ -29,7 +29,7 @@ class BidAskButton: UIButton {
         self.titleLabel?.font = font
     }
 
-    func selected(bidAsk: Enums.BidAsk) {
+    func selected(bidAsk: Enums.BidAsk?) {
         if self.bidAsk == bidAsk {
             self.isSelected = true
         } else {
@@ -56,6 +56,13 @@ class BidAskButton: UIButton {
             self.setBackgroundImage(askImage, for: .highlighted)
             self.setBackgroundImage(askSelectedImage, for: .selected)
             self.setBackgroundImage(askImage, for: .disabled)
+            
+        } else {
+            
+            self.setBackgroundImage(nil, for: .normal)
+            self.setBackgroundImage(nil, for: .highlighted)
+            self.setBackgroundImage(nil, for: .selected)
+            self.setBackgroundImage(nil, for: .disabled)
         }
     }
 
