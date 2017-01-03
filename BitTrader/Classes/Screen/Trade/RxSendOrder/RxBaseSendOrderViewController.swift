@@ -8,25 +8,13 @@
 
 import UIKit
 
+import RxCocoa
+import RxSwift
+
 class RxBaseSendOrderViewController: UIViewController {
 
     weak var delegate: RxSendOrderRootViewControllerProtocol?
-    
-    let viewModel: RxSendOrderViewModel
 
-    init(viewModel: RxSendOrderViewModel) {
-        self.viewModel = viewModel
-        
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func updateCondition(_ condition: Enums.Condition) {
-        fatalError("updateCondition(:) has not been implemented")
-    }
     func updateBidPrice(price: String) {
         fatalError("updateBidPrice(price:) has not been implemented")
     }
@@ -37,9 +25,9 @@ class RxBaseSendOrderViewController: UIViewController {
     func makeSendOrderChildViewController(condition: Enums.Condition) -> RxBaseSendOrderCommonViewController? {
         switch condition {
         case .limit:
-            return RxLimitOrderViewController(bidAsk: .bid, delegete: delegate!)
+            return RxLimitOrderViewController(bidAsk: .bid)
         case .market:
-            return RxMarketOrderViewController()
+            return RxMarketOrderViewController(bidAsk: .bid)
         case .stop:
             return RxStopOrderViewController()
         case .stopLimit:
@@ -59,6 +47,11 @@ class RxBaseSendOrderViewController: UIViewController {
         return message
     }
 
+    func rootViewController() -> UIViewController? {
+        return UIApplication.shared.keyWindow!.rootViewController
+    }
+
+    /*
     func convert(_ model: RxSendOrderModel) -> SendOrderModel {
         return SendOrderModel(productCode: viewModel.productType.value,
                               side: convert(model.side),
@@ -80,10 +73,6 @@ class RxBaseSendOrderViewController: UIViewController {
                                                 minuteToExpire: nil,
                                                 timeInForce: nil,
                                                 parameters: parameters)
-    }
-
-    func rootViewController() -> UIViewController? {
-        return UIApplication.shared.keyWindow!.rootViewController
     }
 
     private func convert(_ bidAsk: Enums.BidAsk) -> Bitflyer.SideType {
@@ -125,5 +114,29 @@ class RxBaseSendOrderViewController: UIViewController {
             throw BitTraderError.SyntaxError(message: "cannot convert OrderType to NomalOrderType")
         }
         return type
+    }
+ */
+}
+
+extension RxBaseSendOrderViewController {
+    
+    func trigger(selector: Selector) -> Observable<Void> {
+        return rx.sentMessage(selector).map { _ in () }.shareReplay(1)
+    }
+    
+    var viewWillAppearTrigger: Observable<Void> {
+        return trigger(selector: #selector(self.viewWillAppear(_:)))
+    }
+    
+    var viewDidAppearTrigger: Observable<Void> {
+        return trigger(selector: #selector(self.viewDidAppear(_:)))
+    }
+    
+    var viewWillDisappearTrigger: Observable<Void> {
+        return trigger(selector: #selector(self.viewWillDisappear(_:)))
+    }
+    
+    var viewDidDisappearTrigger: Observable<Void> {
+        return trigger(selector: #selector(self.viewDidDisappear(_:)))
     }
 }

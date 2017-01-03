@@ -11,7 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RxSendOrderRootViewController" customModule="BitTrader" customModuleProvider="target">
             <connections>
+                <outlet property="askButton" destination="slP-im-1zr" id="fGd-IA-dzJ"/>
                 <outlet property="askRateLabel" destination="71g-YF-fvj" id="VuK-AU-8Pb"/>
+                <outlet property="bidButton" destination="1XO-DZ-He3" id="Iua-rr-lMR"/>
                 <outlet property="bidRateLabel" destination="A1V-Nv-9Nr" id="x8r-Tk-qqp"/>
                 <outlet property="containerView" destination="7Oe-Di-nPI" id="vV8-3c-kLJ"/>
                 <outlet property="pickerView" destination="QOo-5B-Jl2" id="Buu-Ag-F5x"/>
@@ -29,9 +31,6 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XO-DZ-He3">
                             <rect key="frame" x="0.0" y="0.0" width="147.5" height="40"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="onBidButton:" destination="-1" eventType="touchUpInside" id="xUy-ac-MNf"/>
-                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="A1V-Nv-9Nr">
                             <rect key="frame" x="2" y="2" width="143.5" height="36"/>
@@ -62,9 +61,6 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slP-im-1zr">
                             <rect key="frame" x="0.0" y="0.0" width="147.5" height="40"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="onAskButton:" destination="-1" eventType="touchUpInside" id="4tR-2X-eyv"/>
-                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="71g-YF-fvj">
                             <rect key="frame" x="2" y="2" width="143.5" height="36"/>

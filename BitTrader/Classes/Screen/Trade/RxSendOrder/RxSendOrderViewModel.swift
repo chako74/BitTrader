@@ -12,49 +12,54 @@ import RxSwift
 class RxSendOrderViewModel {
     
     let productType: Variable<Bitflyer.ProductCodeType>
-    let selectedOrder: Variable<Enums.Order>
-    let selectedCondition: Variable<Enums.Condition>
+    private(set) var selectedOrder: Variable<Enums.Order>
     
-    init(productType: Bitflyer.ProductCodeType, order: Enums.Order, condition: Enums.Condition) {
+    init(productType: Bitflyer.ProductCodeType, order: Enums.Order) {
         
         self.productType = Variable(productType)
         self.selectedOrder = Variable(order)
-        self.selectedCondition = Variable(condition)
+    }
+    
+    func setSelectedBidAsk(_ bidAsk: Enums.BidAsk) {
+        RxSendOrderGlobalModel.sharedInstance.selectedBidAsk.value = bidAsk
+    }
+    
+    func selectedBidAsk() -> Variable<Enums.BidAsk?> {
+        return RxSendOrderGlobalModel.sharedInstance.selectedBidAsk
+    }
+    
+    func bidRate() -> Variable<Int?> {
+        return RxSendOrderGlobalModel.sharedInstance.bidRate
+    }
+    
+    func askRate() -> Variable<Int?> {
+        return RxSendOrderGlobalModel.sharedInstance.askRate
+    }
+    
+    func subscribe() {
+        RxSendOrderGlobalModel.sharedInstance.subscribe(productCodeType: productType.value)
+    }
+    
+    func unsubscribe() {
+        RxSendOrderGlobalModel.sharedInstance.unsubscribe()
     }
     
     func tradeTypeComponentCount() -> Int {
-        return 2
+        return 1
     }
     
-    func tradeTypeCount(numberOfRowsInComponent component: Int) -> Int {        
-        if component == 0 {
-            return Enums.Order.count
-        }
-        return Enums.Condition.count
+    func tradeTypeCount(numberOfRowsInComponent component: Int) -> Int {
+        return Enums.Order.count
     }
     
     func tradeTypeTitleForRow(_ row: Int, forComponent component: Int) -> String? {
-        if component == 0 {
-            return Enums.Order(rawValue: row)?.name
-        } else if component == 1 {
-            return Enums.Condition(rawValue: row)?.name
-        } else {
-            return nil
-        }
+        return Enums.Order(rawValue: row)?.name
     }
     
     func updateDidSelectedPicker(row: Int, inComponent component: Int) {
-        
-        if component == 0 {
-            // 注文方法の更新
-            if let order = Enums.Order(rawValue: row) {
-                selectedOrder.value = order
-            }
-        } else if component == 1 {
-            // 注文の執行条件の更新
-            if let condition = Enums.Condition(rawValue: row) {
-                selectedCondition.value = condition
-            }
+        // 注文方法の更新
+        if let order = Enums.Order(rawValue: row) {
+            selectedOrder.value = order
         }
     }
 }

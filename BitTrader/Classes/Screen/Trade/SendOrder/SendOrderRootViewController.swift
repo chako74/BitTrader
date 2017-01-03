@@ -111,9 +111,9 @@ class SendOrderRootViewController: UIViewController, ViewContainer, UIPickerView
 
         selectedOrder = Enums.Order(rawValue: 0)
 
-        bidButton.initBidAsk(.bid)
+        bidButton.initializeBidAsk(.bid)
         bidButton.font(UIFont(name: (bidButton.titleLabel?.font.fontName)!, size: 30.0)!)
-        askButton.initBidAsk(.ask)
+        askButton.initializeBidAsk(.ask)
         askButton.font(UIFont(name: (askButton.titleLabel?.font.fontName)!, size: 30.0)!)
 
         activeViewController = SimpleOrderViewController(productType: productType, delegete: self)

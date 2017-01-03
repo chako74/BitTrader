@@ -8,21 +8,24 @@
 
 import UIKit
 
-class RxLimitOrderViewController: RxBaseSendOrderCommonViewController, PlusMinusInputFieldDelegate, NumberPadViewDelegate {
+import RxCocoa
+import RxSwift
 
-    weak var delegate: RxSendOrderRootViewControllerProtocol?
+class RxLimitOrderViewController: RxBaseSendOrderCommonViewController {
 
+    private let disposeBag = DisposeBag()
+    private let viewModel = RxLimitOrderViewModel()
+    
     private var bidAsk: Enums.BidAsk
     private var targetField: PlusMinusInputField?
 
-    @IBOutlet weak var bidButton: UIButton!
-    @IBOutlet weak var askButton: UIButton!
+    @IBOutlet weak var bidButton: BidAskButton!
+    @IBOutlet weak var askButton: BidAskButton!
     @IBOutlet weak var amountPlusMinusInput: PlusMinusInputField!
     @IBOutlet weak var pricePlusMinusInput: PlusMinusInputField!
 
-    init(bidAsk: Enums.BidAsk, delegete: RxSendOrderRootViewControllerProtocol) {
+    init(bidAsk: Enums.BidAsk) {
         self.bidAsk = bidAsk
-        self.delegate = delegete
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -32,36 +35,17 @@ class RxLimitOrderViewController: RxBaseSendOrderCommonViewController, PlusMinus
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        initComponent()
+        initializeComponent()
+        
+        bindRateButton()
+        bindInputAmount()
+        bindInputPrice()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         changeBidAsk(bidAsk: bidAsk)
-    }
-
-    func initComponent() {
-        let bidImage = UIColor.init(red: 0.0, green: 0.0, blue: 1.0, alpha: 0.3).toImage()
-        let bidSelectedImage = UIColor.init(red: 0.0, green: 0.0, blue: 1.0, alpha: 0.7).toImage()
-        bidButton.setBackgroundImage(bidImage, for: .normal)
-        bidButton.setBackgroundImage(bidImage, for: .highlighted)
-        bidButton.setBackgroundImage(bidSelectedImage, for: .selected)
-        bidButton.setBackgroundImage(bidImage, for: .disabled)
-
-        let askImage = UIColor.init(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.3).toImage()
-        let askSelectedImage = UIColor.init(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.7).toImage()
-        askButton.setBackgroundImage(askImage, for: .normal)
-        askButton.setBackgroundImage(askImage, for: .highlighted)
-        askButton.setBackgroundImage(askSelectedImage, for: .selected)
-        askButton.setBackgroundImage(askImage, for: .disabled)
-
-        amountPlusMinusInput.upDownUnit = Double(0.001)
-        amountPlusMinusInput.format = "%.3f"
-        amountPlusMinusInput.delegate = self
-
-        pricePlusMinusInput.format = "%.0f"
-        pricePlusMinusInput.delegate = self
     }
 
     override func updateBidPrice(price: String) {
@@ -71,64 +55,133 @@ class RxLimitOrderViewController: RxBaseSendOrderCommonViewController, PlusMinus
     override func updateAskPrice(price: String) {
         updatePrice(bidAsk: .ask, price: Double(price)!)
     }
+    
+    override func executeOrder(success: @escaping () -> Void, failure: @escaping (String) -> Void) throws {
+        try viewModel.executeOrder(success: success, failure: failure)
+    }
+//    override func sendOrderViewModel() throws -> RxSendOrderModel {
+//        guard let size = amountPlusMinusInput.input.value else {
+//            throw BitTraderError.ValidationError(message: "size is required")
+//        }
+//        guard let price = pricePlusMinusInput.input.value else {
+//            throw BitTraderError.ValidationError(message: "price is required")
+//        }
+//
+//        return RxSendOrderModel(side: bidButton.isSelected ? .bid : .ask,
+//                                size: size,
+//                                orderType: .limit(price: Int(price)))
+//    }
 
-    override func sendOrderViewModel() throws -> RxSendOrderModel {
-        guard let size = amountPlusMinusInput.input.value else {
-            throw BitTraderError.ValidationError(message: "size is required")
-        }
-        guard let price = pricePlusMinusInput.input.value else {
-            throw BitTraderError.ValidationError(message: "price is required")
-        }
-
-        return RxSendOrderModel(side: bidButton.isSelected ? .bid : .ask,
-                                size: size,
-                                orderType: .limit(price: Int(price)))
+    private func initializeComponent() {
+        
+        bidButton.initializeBidAsk(.bid)
+        bidButton.font(UIFont(name: (bidButton.titleLabel?.font.fontName)!, size: 30.0)!)
+        bidButton.title(Enums.BidAsk.bid.rawValue)
+        
+        askButton.initializeBidAsk(.ask)
+        askButton.font(UIFont(name: (askButton.titleLabel?.font.fontName)!, size: 30.0)!)
+        askButton.title(Enums.BidAsk.ask.rawValue)
+        
+        amountPlusMinusInput.upDownUnit = Double(0.001)
+        amountPlusMinusInput.format = "%.3f"
+        
+        pricePlusMinusInput.format = "%.0f"
+    }
+    
+    private func bindRateButton() {
+        
+        self.viewModel.selectedBidAsk()
+            .asDriver()
+            .drive(onNext: { [weak self] selectedBidAsk in
+                self?.bidButton?.selected(bidAsk: selectedBidAsk)
+                self?.askButton?.selected(bidAsk: selectedBidAsk)
+            })
+            .addDisposableTo(disposeBag)
+        
+        bidButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.viewModel.setSelectedBidAsk(.bid)
+            })
+            .addDisposableTo(disposeBag)
+        
+        askButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.viewModel.setSelectedBidAsk(.ask)
+            })
+            .addDisposableTo(disposeBag)
     }
 
-    func didTapedPlusMinusInputField(_ field: PlusMinusInputField) {
-        targetField = field
-        guard let rootViewController = rootViewController() else {
-            return
-        }
-        let numberPad = NumberPadViewController()
-        numberPad.delegate = self
-        numberPad.modalPresentationStyle = .overCurrentContext
-        numberPad.view.backgroundColor = UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.6)
-        rootViewController.present(numberPad, animated: true, completion: nil)
+    private func bindInputAmount() {
+        
+        amountPlusMinusInput!.input
+            .asDriver()
+            .drive(onNext: { [weak self] amount in
+                self?.viewModel.openAmount().value = amount
+            })
+            .addDisposableTo(disposeBag)
+        
+        amountPlusMinusInput?.rx
+            .didTaped
+            .flatMapLatest { _ in
+                return NumberPadViewController.rx.createWithParent(self.rootViewController())
+                    .flatMap { $0.rx.didDone }
+                    .take(1)
+            }
+            .map { $1 != "" ? Double($1) : nil }
+            .bindTo(self.viewModel.openAmount())
+            .addDisposableTo(disposeBag)
+        
+        viewModel.openAmount()
+            .asDriver()
+            .filter({ [weak self] openAmount -> Bool in
+                let amount = openAmount ?? 0
+                return amount != self?.amountPlusMinusInput.input.value
+            })
+            .drive(onNext: { [weak self] amount in
+                self?.amountPlusMinusInput.input.value = amount
+            })
+            .addDisposableTo(disposeBag)
     }
-
-    func plusMinusInputField(_ plusMinusInputField: PlusMinusInputField, changedValue: Double?) {
+    
+    private func bindInputPrice() {
+        pricePlusMinusInput!.input
+            .asDriver()
+            .drive(onNext: { [weak self] inputPrice in
+                if let price = inputPrice {
+                    self?.viewModel.limitPrice.value = Int(price)
+                }
+            })
+            .addDisposableTo(disposeBag)
+        
+        pricePlusMinusInput?.rx
+            .didTaped
+            .flatMapLatest { _ in
+                return NumberPadViewController.rx.createWithParent(self.rootViewController())
+                    .flatMap { $0.rx.didDone }
+                    .take(1)
+            }
+            .map { $1 != "" ? Int($1) : nil }
+            .bindTo(self.viewModel.limitPrice)
+            .addDisposableTo(disposeBag)
+        
+        viewModel.limitPrice
+            .asDriver()
+            .map {
+                if let price = $0 {
+                    return Double(price)
+                }
+                return nil
+            }
+            .filter { [weak self] limitPrice -> Bool in
+                let price = limitPrice ?? 0
+                return price != self?.pricePlusMinusInput.input.value
+            }
+            .drive(onNext: { [weak self] limitPrice in
+                self?.pricePlusMinusInput.input.value = limitPrice
+            })
+            .addDisposableTo(disposeBag)
     }
-
-    func didDone(_ numberPadViewController: NumberPadViewController, value: String) {
-        guard let rootViewController = rootViewController(), let field = targetField else {
-            return
-        }
-        field.input.value = Double(value)
-        rootViewController.dismiss(animated: true, completion: nil)
-    }
-
-    func didCancel(_ numberPadViewController: NumberPadViewController) {
-        guard let rootViewController = rootViewController() else {
-            return
-        }
-        rootViewController.dismiss(animated: true, completion: nil)
-    }
-
-    @IBAction func onBidButton(_ sender: UIButton) {
-        guard let price = self.delegate?.willNeedBidPrice(rateType: .bitflyerFx) else {
-            return
-        }
-        updatePrice(bidAsk: .bid, price: Double(price)!)
-    }
-
-    @IBAction func onAskButton(_ sender: UIButton) {
-        guard let price = self.delegate?.willNeedAskPrice(rateType: .bitflyerFx) else {
-            return
-        }
-        updatePrice(bidAsk: .ask, price: Double(price)!)
-    }
-
+    
     private func updatePrice(bidAsk: Enums.BidAsk, price: Double) {
         changeBidAsk(bidAsk: bidAsk)
         pricePlusMinusInput.input.value = price
