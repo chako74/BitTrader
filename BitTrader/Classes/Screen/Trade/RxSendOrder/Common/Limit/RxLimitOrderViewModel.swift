@@ -14,8 +14,6 @@ class RxLimitOrderViewModel: ApiExecuterDelegate {
     let disposeBag = DisposeBag()
     
     let limitPrice = Variable<Int?>(nil)
-    let executeOrderSuccessTrigger = PublishSubject<Void>()
-    let executeOrderFailureTrigger = PublishSubject<String>()
     
     private var success: (() -> Void)?
     private var failure: ((String) -> Void)?
