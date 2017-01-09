@@ -12,7 +12,7 @@ import RxSwift
 enum RateViewState {
     case initial
     case requesting
-    case requested(rateList: Array<RateModel>)
+    case requested(rateList: [RateModel])
     case error
     case stop
 }
@@ -41,7 +41,7 @@ class RateListModel {
                 return (v0, v1, v2, v3, v4, v5)
             }
             .flatMapLatest { (bitflyer, bitflyerFx, btcBox, coincheck, kraken, zaif) -> Observable<[RateModel]> in
-                var models = Array<RateModel>()
+                var models = [RateModel]()
                 models.appendNotNil(element: bitflyer)
                 models.appendNotNil(element: bitflyerFx)
                 models.appendNotNil(element: btcBox)

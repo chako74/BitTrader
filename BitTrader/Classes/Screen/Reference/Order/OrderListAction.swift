@@ -15,7 +15,7 @@ struct OrderListAction {
     struct RequestStartAction: Action {}
     
     struct RequestFinishedAction: Action {
-        let items: Array<BitflyerOrderModel>
+        let items: [BitflyerOrderModel]
     }
     
     struct RequestErrorAction: Action {

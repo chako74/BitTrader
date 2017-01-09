@@ -16,7 +16,7 @@ class OrderListViewController: UIViewController, StoreSubscriber {
     
     let store = Store<OrderListState>(reducer:OrderListReducer(), state:nil)
     
-    var orderModels = Array<BitflyerOrderModel>()
+    var orderModels = [BitflyerOrderModel]()
     var requestTimer: Timer?
     
     override func viewDidLoad() {

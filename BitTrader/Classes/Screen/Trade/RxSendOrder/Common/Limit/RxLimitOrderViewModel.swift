@@ -25,6 +25,10 @@ class RxLimitOrderViewModel: ApiExecuterDelegate {
             .addDisposableTo(disposeBag)
     }
     
+    deinit {
+        print("deinit")
+    }
+    
     func setSelectedBidAsk(_ selectedBidAsk: Enums.BidAsk?) {
         RxSendOrderGlobalModel.sharedInstance.selectedBidAsk.value = selectedBidAsk
     }
@@ -41,8 +45,10 @@ class RxLimitOrderViewModel: ApiExecuterDelegate {
         return RxSendOrderGlobalModel.sharedInstance.openAmount
     }
     
-    func executeOrder(success: @escaping () -> Void, failure: @escaping (String) -> Void) throws {
-     
+    func executeOrder(confirm: @escaping (_ message: String, _ cancelTitle: String, _ okTitle: String) -> Observable<String>,
+                      success: @escaping () -> Void,
+                      failure: @escaping (String) -> Void) throws {
+        
         guard let productCode = RxSendOrderGlobalModel.sharedInstance.productCodeType else {
             throw BitTraderError.ValidationError(message: "productCodeType is required")
         }
@@ -58,8 +64,28 @@ class RxLimitOrderViewModel: ApiExecuterDelegate {
             throw BitTraderError.ValidationError(message: "limitPrice is required")
         }
         
-        self.success = success
-        self.failure = failure
+        if amount == 0 {
+            throw BitTraderError.ValidationError(message: "数量が0です。")
+        }
+        
+        if price == 0 {
+            throw BitTraderError.ValidationError(message: "価格が0です。")
+        }
+        
+        switch bidAsk {
+        case .bid:
+            if let askRate = RxSendOrderGlobalModel.sharedInstance.askRate.value {
+                if price < askRate {
+                    throw BitTraderError.ValidationError(message: "即時約定する可能性があります。")
+                }
+            }
+        case .ask:
+            if let bidRate = RxSendOrderGlobalModel.sharedInstance.bidRate.value {
+                if bidRate < price {
+                    throw BitTraderError.ValidationError(message: "即時約定する可能性があります。")
+                }
+            }
+        }
         
         let parameter = BitflyerSendChildOrderRequestParameter(productCode: productCode,
                                                                orderType: .limit(price: price),
@@ -67,11 +93,23 @@ class RxLimitOrderViewModel: ApiExecuterDelegate {
                                                                size: amount,
                                                                minuteToExpire: nil,
                                                                timeInForce: nil)
-        let request = BitflyerSendChildOrderRequest(requestParameter: parameter)
-        
-        let apiExecuter = ApiKitApiExecuter<BitflyerSendChildOrderRequest, BitflyerSendChildOrderResponse>(request)
-        apiExecuter.delegate = self
-        apiExecuter.execute()
+        let cancelTitle = "Cancel"
+        let okTitle = "OK"
+        confirm(parameter.description, cancelTitle, okTitle)
+            .subscribe(onNext: { [weak self] buttonTitle in
+                if buttonTitle == okTitle {
+                    
+                    self?.success = success
+                    self?.failure = failure
+
+                    let request = BitflyerSendChildOrderRequest(requestParameter: parameter)
+                    
+                    let apiExecuter = ApiKitApiExecuter<BitflyerSendChildOrderRequest, BitflyerSendChildOrderResponse>(request)
+                    apiExecuter.delegate = self
+                    apiExecuter.execute()
+                }
+            })
+            .addDisposableTo(disposeBag)
     }
     
     func success<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType) {

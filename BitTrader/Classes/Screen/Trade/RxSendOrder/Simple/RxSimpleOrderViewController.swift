@@ -26,17 +26,8 @@ class RxSimpleOrderViewController: RxBaseSendOrderViewController, ViewContainer,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bindLifeCycle()
         bindPicker()
         bindOrderButton()
-    }
-
-    override func updateBidPrice(price: String) {
-        activeViewController?.updateBidPrice(price: price)
-    }
-
-    override func updateAskPrice(price: String) {
-        activeViewController?.updateAskPrice(price: price)
     }
 
     func success<ApiExecuter: ApiExecuterProtocol>(_ apiExecuter: ApiExecuter, value: ApiExecuter.ModelType) {
@@ -47,60 +38,6 @@ class RxSimpleOrderViewController: RxBaseSendOrderViewController, ViewContainer,
         showAlert(message: error.message)
     }
 
-//    @IBAction func onSendOrderButton(_ sender: UIButton) {
-//        guard let activeViewController = activeViewController else {
-//            return
-//        }
-//
-//        let sendOrderModel: RxSendOrderModel
-//        do {
-//            sendOrderModel = try activeViewController.sendOrderViewModel()
-//        } catch (let error) {
-//            guard let error = error as? BitTraderError else {
-//                showAlert(message: "Invalid Input value")
-//                return
-//            }
-//            showAlert(message: error.message)
-//            return
-//        }
-//
-//        /*
-//        showConfirmAlert(message: makeErrorMessage(sendOrderModel),
-//                         cancelHandler: nil,
-//                         agreeHandler: { [weak self] _ in self?.sendChildOrder(sendOrderModel) })
-// */
-//    }
-
-    /*
-    private func sendChildOrder(_ viewModel: RxSendOrderModel) {
-        let requestParameter: BitflyerSendChildOrderRequestParameter!
-        do {
-            requestParameter = try makeChildOrderParameter(model: viewModel)
-        } catch (let error) {
-            guard let error = error as? BitTraderError else {
-                showAlert(message: "Invalid Input value")
-                return
-            }
-            showAlert(message: error.message)
-            return
-        }
-        let request = BitflyerSendChildOrderRequest(requestParameter: requestParameter)
-
-        let apiExecuter = ApiKitApiExecuter<BitflyerSendChildOrderRequest, BitflyerSendChildOrderResponse>(request)
-        apiExecuter.delegate = self
-        apiExecuter.execute()
-    }
-
-    private func sendParentOrder(_ viewModel: RxSendOrderModel) {
-        let sendOrderModel = convert(viewModel)
-        let requestParameter = makeParentOrderParameter(orderMethodType: .simple, parameters: [sendOrderModel])
-        let request = BitflyerSendParentOrderRequest(requestParameter: requestParameter)
-
-        let apiExecuter = ApiKitApiExecuter<BitflyerSendParentOrderRequest, BitflyerSendParentOrderResponse>(request)
-        apiExecuter.delegate = self
-        apiExecuter.execute()
-    }
-*/
     private func showAlert(message: String, handler: ((UIAlertAction) -> Void)? = nil) {
         let alertController = UIAlertController(title: "",
                                                 message: message,
@@ -135,10 +72,7 @@ class RxSimpleOrderViewController: RxBaseSendOrderViewController, ViewContainer,
         }
         alertController.addAction(cancelAction)
         alertController.addAction(agreeAction)
-        //rootViewController()?.present(alertController, animated: true, completion: nil)
-    }
-    
-    private func bindLifeCycle() {
+        rootViewController()?.present(alertController, animated: true, completion: nil)
     }
     
     private func bindPicker() {
@@ -167,11 +101,28 @@ class RxSimpleOrderViewController: RxBaseSendOrderViewController, ViewContainer,
     }
     
     private func bindOrderButton() {
-        
+
         self.sendOrderButton.rx.tap
             .subscribe(onNext: { [weak self] _ in
                 do {
                     try self?.activeViewController?.executeOrder(
+                        confirm: { [weak self] (message, cancelTitle, okTitle) -> Observable<String> in
+                            return  Observable.create { observer in
+                                let alertView = UIAlertController(title: "", message: message, preferredStyle: .alert)
+                                alertView.addAction(UIAlertAction(title: cancelTitle, style: .cancel) { _ in
+                                    observer.on(.next(cancelTitle))
+                                })
+                                alertView.addAction(UIAlertAction(title: okTitle, style: .default) { _ in
+                                        observer.on(.next(okTitle))
+                                })
+                                
+                                self?.rootViewController()?.present(alertView, animated: true, completion: nil)
+                                
+                                return Disposables.create {
+                                    alertView.dismiss(animated:false, completion: nil)
+                                }
+                            }
+                        },
                         success: { [weak self] in
                             self?.showAlert(message: "complate")
                         },

@@ -33,6 +33,10 @@ class RxLimitOrderViewController: RxBaseSendOrderCommonViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    deinit {
+        print("deinit")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeComponent()
@@ -42,35 +46,11 @@ class RxLimitOrderViewController: RxBaseSendOrderCommonViewController {
         bindInputPrice()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        changeBidAsk(bidAsk: bidAsk)
+    override func executeOrder(confirm: @escaping (_ message: String, _ cancelTitle: String, _ okTitle: String) -> Observable<String>,
+                               success: @escaping () -> Void,
+                               failure: @escaping (String) -> Void) throws {
+        try viewModel.executeOrder(confirm: confirm, success: success, failure: failure)
     }
-
-    override func updateBidPrice(price: String) {
-        updatePrice(bidAsk: .bid, price: Double(price)!)
-    }
-
-    override func updateAskPrice(price: String) {
-        updatePrice(bidAsk: .ask, price: Double(price)!)
-    }
-    
-    override func executeOrder(success: @escaping () -> Void, failure: @escaping (String) -> Void) throws {
-        try viewModel.executeOrder(success: success, failure: failure)
-    }
-//    override func sendOrderViewModel() throws -> RxSendOrderModel {
-//        guard let size = amountPlusMinusInput.input.value else {
-//            throw BitTraderError.ValidationError(message: "size is required")
-//        }
-//        guard let price = pricePlusMinusInput.input.value else {
-//            throw BitTraderError.ValidationError(message: "price is required")
-//        }
-//
-//        return RxSendOrderModel(side: bidButton.isSelected ? .bid : .ask,
-//                                size: size,
-//                                orderType: .limit(price: Int(price)))
-//    }
 
     private func initializeComponent() {
         
@@ -180,21 +160,5 @@ class RxLimitOrderViewController: RxBaseSendOrderCommonViewController {
                 self?.pricePlusMinusInput.input.value = limitPrice
             })
             .addDisposableTo(disposeBag)
-    }
-    
-    private func updatePrice(bidAsk: Enums.BidAsk, price: Double) {
-        changeBidAsk(bidAsk: bidAsk)
-        pricePlusMinusInput.input.value = price
-    }
-
-    private func changeBidAsk(bidAsk: Enums.BidAsk) {
-        switch bidAsk {
-        case .bid:
-            bidButton.isSelected = true
-            askButton.isSelected = false
-        case .ask:
-            bidButton.isSelected = false
-            askButton.isSelected = true
-        }
     }
 }

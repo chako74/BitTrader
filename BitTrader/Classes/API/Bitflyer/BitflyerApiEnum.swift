@@ -9,15 +9,28 @@
 import Himotoki
 
 enum Bitflyer {
-    enum ProductCodeType: String {
+    enum ProductCodeType: String, CustomStringConvertible {
         case btcjpy = "BTC_JPY"
         case fxBtcJpy = "FX_BTC_JPY"
         case ethBtc = "ETHBTC"
+        
+        var description: String {
+            return self.rawValue
+        }
     }
     
-    enum SideType: String {
+    enum SideType: String, CustomStringConvertible {
         case buy = "BUY"
         case sell = "SELL"
+        
+        var description: String {
+            switch self {
+            case .buy:
+                return "買"
+            case .sell:
+                return "売"
+            }
+        }
     }
     
     enum ChildOrderState: String {
@@ -46,10 +59,14 @@ enum Bitflyer {
         case stop = "STOP"
     }
     
-    enum TimeInForceType: String {
+    enum TimeInForceType: String, CustomStringConvertible {
         case gtc = "GTC"
         case ioc = "IOC"
         case fok = "FOK"
+        
+        var description: String {
+            return self.rawValue
+        }
     }
     
     enum OrderMethodType: String {
@@ -126,9 +143,18 @@ enum Bitflyer {
         }
     }
     
-    enum NomalOrderType {
+    enum NomalOrderType: CustomStringConvertible {
         case market
         case limit(price: Int)
+        
+        var description: String {
+            switch self {
+            case .market:
+                return "成行"
+            case .limit(let price):
+                return "指値[指値価格=\(NSNumber(integerLiteral:price).formatComma())]"
+            }
+        }
     }
 
     enum CancelChildOrderType {

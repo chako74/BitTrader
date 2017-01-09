@@ -37,12 +37,7 @@ class RxMarketOrderViewController: RxBaseSendOrderCommonViewController {
         
         bindRateButton()
     }
-    
-    override func executeOrder(success: @escaping () -> Void, failure: @escaping (String) -> Void) throws {
         
-        try self.viewModel.executeOrder()
-    }
-    
     private func initializeComponent() {
         bidButton.initializeBidAsk(.bid)
         bidButton.font(UIFont(name: (bidButton.titleLabel?.font.fontName)!, size: 30.0)!)
