@@ -29,7 +29,7 @@ extension Reactive where Base: NumberPadViewController {
 
     static func createWithParent(_ parent: UIViewController?,
                                  animated: Bool = true,
-                                 configureNumberPad: @escaping (NumberPadViewController) throws -> () = { x in }) -> Observable<NumberPadViewController> {
+                                 configureNumberPad: @escaping (NumberPadViewController) throws -> Void = { x in }) -> Observable<NumberPadViewController> {
 
         return Observable.create { [weak parent] observer in
 

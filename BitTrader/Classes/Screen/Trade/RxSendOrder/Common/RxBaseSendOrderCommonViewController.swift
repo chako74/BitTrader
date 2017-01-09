@@ -8,23 +8,21 @@
 
 import UIKit
 
+import RxCocoa
+import RxSwift
+
 protocol RxSendOrderViewControllerProtocol: NSObjectProtocol {
-    func updateBidPrice(price: String)
-    func updateAskPrice(price: String)
-    func executeOrder(success: @escaping () -> Void, failure: @escaping (String) -> Void) throws
+    
+    func executeOrder(confirm: @escaping (_ message: String, _ cancelTitle: String, _ okTitle: String) -> Observable<String>,
+                      success: @escaping () -> Void,
+                      failure: @escaping (String) -> Void) throws
 }
 
 class RxBaseSendOrderCommonViewController: UIViewController, RxSendOrderViewControllerProtocol {
-
-    func updateBidPrice(price: String) {
-        fatalError("updateBidPrice(price:) has not been implemented")
-    }
-
-    func updateAskPrice(price: String) {
-        fatalError("updateAskPrice(price:) has not been implemented")
-    }
-
-    func executeOrder(success: @escaping () -> Void, failure: @escaping (String) -> Void)  throws {
+    
+    func executeOrder(confirm: @escaping (_ message: String, _ cancelTitle: String, _ okTitle: String) -> Observable<String>,
+                      success: @escaping () -> Void,
+                      failure: @escaping (String) -> Void) throws {
         fatalError("executeOrder() has not been implemented")
     }
     

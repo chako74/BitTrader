@@ -76,8 +76,7 @@ class NumberPadViewController: UIViewController {
                 thousandButton.rx.tap.map { _ in .addNumber("000") },
 
                 doneButton.rx.tap.map { _ in .done },
-                cancelButton.rx.tap.map { _ in .cancel },
-
+                cancelButton.rx.tap.map { _ in .cancel }
                 ]
 
         Observable.from(commands)

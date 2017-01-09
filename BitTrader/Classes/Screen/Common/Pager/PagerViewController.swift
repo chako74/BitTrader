@@ -24,7 +24,7 @@ class PagerViewController: UIViewController, ViewContainer {
         }
     }
     
-    var pageViewControllers: Array<UIViewController>? {
+    var pageViewControllers: [UIViewController]? {
         didSet {
             updatePages()
         }

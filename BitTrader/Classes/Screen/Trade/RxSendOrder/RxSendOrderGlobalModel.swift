@@ -76,7 +76,7 @@ class RxSendOrderGlobalModel {
     
     private func startRequest() {
         
-        SendOrderUtils.createBitflyerFxTickerRequestExecuter().execute() { [weak self] result in
+        SendOrderUtils.createBitflyerFxTickerRequestExecuter().execute { [weak self] result in
             
             guard let sSelf = self else {
                 return
@@ -105,7 +105,7 @@ class RxSendOrderGlobalModel {
         timer?.invalidate()
     }
     
-    private func sequenceExecute(execute: () -> ()) {
+    private func sequenceExecute(execute: () -> Void) {
         
         semaphore.wait()
         execute()

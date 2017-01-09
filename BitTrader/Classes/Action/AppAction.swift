@@ -46,7 +46,7 @@ func childOrderCondition(place: Enums.Place, condition: Enums.Condition) -> Stor
 
 let executeApi: Store<State>.AsyncActionCreator = { state, store, callback in
 
-    SendOrderUtils.createBitflyerFxTickerRequestExecuter().execute() { result in
+    SendOrderUtils.createBitflyerFxTickerRequestExecuter().execute { result in
         switch result {
         case .success(let rateModel):
             callback {_, _ in

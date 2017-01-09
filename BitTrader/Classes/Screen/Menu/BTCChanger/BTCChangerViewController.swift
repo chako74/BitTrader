@@ -70,7 +70,7 @@ class BTCChangerViewController: UIViewController, NumberPadViewDelegate {
     
         btcPlusMinusInput!.input
             .asObservable()
-            .map() { input -> Double? in
+            .map { input -> Double? in
                 guard let input = input else {
                     return nil
                 }

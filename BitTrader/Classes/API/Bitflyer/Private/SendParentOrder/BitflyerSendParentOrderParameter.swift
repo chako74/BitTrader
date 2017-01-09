@@ -31,7 +31,7 @@ extension BitflyerSendParentOrderParameter: BitTraderRequestParameter {
             dic[Bitflyer.ApiKey.timeInForce.rawValue] = timeInForce
         }
         
-        var items = Array<[String: Any]>()
+        var items = [[String: Any]]()
         for model in parameters {
             if let childParameters = model.createParameters() {
                 items.append(childParameters)
