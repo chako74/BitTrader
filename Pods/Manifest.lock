@@ -1,31 +1,39 @@
 PODS:
-  - APIKit (3.0.0):
+  - APIKit (3.1.1):
     - Result (~> 3.0)
   - Himotoki (3.0.0)
   - KeychainAccess (3.0.0)
-  - Result (3.0.0)
+  - Realm (2.1.2):
+    - Realm/Headers (= 2.1.2)
+  - Realm/Headers (2.1.2)
+  - RealmSwift (2.1.2):
+    - Realm (= 2.1.2)
+  - Result (3.1.0)
   - ReSwift (2.1.0)
-  - RxCocoa (3.0.1):
-    - RxSwift (~> 3.0)
-  - RxSwift (3.0.1)
+  - RxCocoa (3.1.0):
+    - RxSwift (~> 3.1)
+  - RxSwift (3.1.0)
 
 DEPENDENCIES:
-  - APIKit (= 3.0.0)
+  - APIKit (= 3.1.1)
   - Himotoki (= 3.0.0)
   - KeychainAccess (= 3.0.0)
+  - RealmSwift (= 2.1.2)
   - ReSwift (= 2.1.0)
-  - RxCocoa (= 3.0.1)
-  - RxSwift (= 3.0.1)
+  - RxCocoa (= 3.1.0)
+  - RxSwift (= 3.1.0)
 
 SPEC CHECKSUMS:
-  APIKit: f541a78fc054a03690e7bd32198b00bb835654b6
+  APIKit: 7460983f490d3bde6aaaaa4164d18c9865a6f91d
   Himotoki: df74b01035e86e021b7b04a15b033a7fd189b84f
   KeychainAccess: 412bf2650d9aebfc8135a58103b90ec38caad7f8
-  Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
+  Realm: efe855f4d977c8ce5a82d3116d9f1ff155a6550c
+  RealmSwift: 17d6ee30b6f9df86364408c2197492e33bfea567
+  Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
   ReSwift: c13b76cb963c5ab2a137c9c6e74823cef4b81588
-  RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
-  RxSwift: af5680055c4ad04480189c52d28385b1029493a6
+  RxCocoa: 50d7564866da9299161e86a263ce12a0873904d8
+  RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
 
-PODFILE CHECKSUM: adf35c44d0a0d72a3729bb689d1376825139b77d
+PODFILE CHECKSUM: ed034641c6ddb75a314085533ed5923457d8b32d
 
 COCOAPODS: 1.0.1
