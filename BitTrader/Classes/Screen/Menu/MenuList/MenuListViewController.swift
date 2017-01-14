@@ -49,6 +49,8 @@ class MenuListViewController: UIViewController {
         switch menuType {
         case .apiKey:
             navigationController?.pushViewController(RegistKeyViewController(), animated: true)
+        case .product:
+            navigationController?.pushViewController(ProductListViewController(), animated: true)
         case .btcChanger:
             navigationController?.pushViewController(BTCChangerViewController(), animated: true)
         case .numberPad:

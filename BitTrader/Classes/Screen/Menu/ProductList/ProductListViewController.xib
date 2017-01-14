@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductListViewController" customModule="BitTrader" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="LFb-hC-AaO" id="1wp-0v-or5"/>
+                <outlet property="view" destination="Z8U-1K-7uZ" id="zZU-0j-7e9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Z8U-1K-7uZ">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LFb-hC-AaO">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="LFb-hC-AaO" firstAttribute="top" secondItem="Z8U-1K-7uZ" secondAttribute="top" id="T3H-Ay-c9O"/>
+                <constraint firstAttribute="bottom" secondItem="LFb-hC-AaO" secondAttribute="bottom" id="lS3-qk-eDW"/>
+                <constraint firstAttribute="trailing" secondItem="LFb-hC-AaO" secondAttribute="trailing" id="njZ-BM-6kg"/>
+                <constraint firstItem="LFb-hC-AaO" firstAttribute="leading" secondItem="Z8U-1K-7uZ" secondAttribute="leading" id="ol3-Tf-zjU"/>
+            </constraints>
+            <point key="canvasLocation" x="8" y="-104"/>
+        </view>
+    </objects>
+</document>

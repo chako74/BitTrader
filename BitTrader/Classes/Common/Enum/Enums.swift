@@ -9,7 +9,23 @@
 import Foundation
 
 enum Enums {
-
+    
+    enum ProductType: String {
+        case bitflyerBTC = "Bitflyer BTC"
+        case bitflyerFxBTC = "Bitflyer FX BTC"
+        case btcboxBTC = "BTCBOX BTC"
+        case coinCheckBTC = "CoinCheck BTC"
+        case krakenBTC = "Kraken BTC"
+        case zaifBTC = "Zaif BTC"
+        
+        static let values = [ProductType.bitflyerBTC,
+                             .bitflyerFxBTC,
+                             .btcboxBTC,
+                             .coinCheckBTC,
+                             .krakenBTC,
+                             .zaifBTC]
+    }
+    
     enum BidAsk: String {
         case bid = "売り"
         case ask = "買い"

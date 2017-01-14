@@ -11,6 +11,7 @@ import RxSwift
 
 enum MenuType: Int {
     case apiKey
+    case product
     case btcChanger
     case numberPad
     
@@ -19,6 +20,8 @@ enum MenuType: Int {
         switch self {
         case .apiKey:
             return "APIキー登録"
+        case .product:
+            return "銘柄一覧"
         case .btcChanger:
             return "BTC-Satoshi計算"
         case .numberPad:
@@ -33,6 +36,7 @@ struct MenuListViewModel {
     
     init() {
         menus.value.append(.apiKey)
+        menus.value.append(.product)
         menus.value.append(.btcChanger)
         menus.value.append(.numberPad)
     }
