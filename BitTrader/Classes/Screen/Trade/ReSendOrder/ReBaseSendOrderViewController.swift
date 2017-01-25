@@ -21,7 +21,7 @@ class ReBaseSendOrderViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func remakeSendOrderChildViewController(place: Enums.Place, condition: Enums.Condition) -> ReBaseSendOrderCommonViewController? {
+    func remakeSendOrderChildViewController(place: OldEnums.Place, condition: OldEnums.Condition) -> ReBaseSendOrderCommonViewController? {
         switch condition {
         case .limit:
             return ReLimitOrderViewController(place: place)
@@ -73,7 +73,7 @@ class ReBaseSendOrderViewController: UIViewController {
         return UIApplication.shared.keyWindow!.rootViewController
     }
 
-    private func convert(_ bidAsk: Enums.BidAsk) -> Bitflyer.SideType {
+    private func convert(_ bidAsk: OldEnums.BidAsk) -> Bitflyer.SideType {
         let type: Bitflyer.SideType
         switch bidAsk {
         case .bid:
@@ -84,7 +84,7 @@ class ReBaseSendOrderViewController: UIViewController {
         return type
     }
 
-    private func convert(_ orderType: Enums.OrderType) -> Bitflyer.SpecialOrderType {
+    private func convert(_ orderType: OldEnums.OrderType) -> Bitflyer.SpecialOrderType {
         let type: Bitflyer.SpecialOrderType
         switch orderType {
         case .market:
@@ -101,7 +101,7 @@ class ReBaseSendOrderViewController: UIViewController {
         return type
     }
 
-    private func convert(_ orderType: Enums.OrderType) throws -> Bitflyer.NomalOrderType {
+    private func convert(_ orderType: OldEnums.OrderType) throws -> Bitflyer.NomalOrderType {
         let type: Bitflyer.NomalOrderType
         switch orderType {
         case .market:

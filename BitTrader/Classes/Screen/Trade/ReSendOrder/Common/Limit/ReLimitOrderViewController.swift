@@ -144,7 +144,7 @@ class ReLimitOrderViewController: ReBaseSendOrderCommonViewController, PlusMinus
         store.dispatch(AppAction.BidAsk(.First, value: .ask))
     }
 
-    private func changeBidAsk(bidAsk: Enums.BidAsk) {
+    private func changeBidAsk(bidAsk: OldEnums.BidAsk) {
         switch bidAsk {
         case .bid:
             bidButton.isSelected = true

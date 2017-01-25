@@ -21,7 +21,7 @@ class RxSendOrderGlobalModel {
     }()
     
     var productCodeType: Bitflyer.ProductCodeType?
-    var selectedBidAsk = Variable<Enums.BidAsk?>(nil)
+    var selectedBidAsk = Variable<OldEnums.BidAsk?>(nil)
     let selectedPrice = Variable<Int?>(nil)
     let bidRate = Variable<Int?>(nil)
     let askRate = Variable<Int?>(nil)

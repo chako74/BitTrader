@@ -16,12 +16,12 @@ class RxMarketOrderViewController: RxBaseSendOrderCommonViewController {
     private let disposeBag = DisposeBag()
     private let viewModel = RxMarketOrderViewModel()
     
-    private var bidAsk: Enums.BidAsk
+    private var bidAsk: OldEnums.BidAsk
     
     @IBOutlet weak var bidButton: BidAskButton!
     @IBOutlet weak var askButton: BidAskButton!
     
-    init(bidAsk: Enums.BidAsk) {
+    init(bidAsk: OldEnums.BidAsk) {
         self.bidAsk = bidAsk
         super.init(nibName: nil, bundle: nil)
     }
@@ -41,11 +41,11 @@ class RxMarketOrderViewController: RxBaseSendOrderCommonViewController {
     private func initializeComponent() {
         bidButton.initializeBidAsk(.bid)
         bidButton.font(UIFont(name: (bidButton.titleLabel?.font.fontName)!, size: 30.0)!)
-        bidButton.title(Enums.BidAsk.bid.rawValue)
+        bidButton.title(OldEnums.BidAsk.bid.rawValue)
         
         askButton.initializeBidAsk(.ask)
         askButton.font(UIFont(name: (askButton.titleLabel?.font.fontName)!, size: 30.0)!)
-        askButton.title(Enums.BidAsk.ask.rawValue)
+        askButton.title(OldEnums.BidAsk.ask.rawValue)
     }
     
     private func bindRateButton() {

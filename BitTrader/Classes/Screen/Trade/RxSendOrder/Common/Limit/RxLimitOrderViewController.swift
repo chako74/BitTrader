@@ -16,7 +16,7 @@ class RxLimitOrderViewController: RxBaseSendOrderCommonViewController {
     private let disposeBag = DisposeBag()
     private let viewModel = RxLimitOrderViewModel()
     
-    private var bidAsk: Enums.BidAsk
+    private var bidAsk: OldEnums.BidAsk
     private var targetField: PlusMinusInputField?
 
     @IBOutlet weak var bidButton: BidAskButton!
@@ -24,7 +24,7 @@ class RxLimitOrderViewController: RxBaseSendOrderCommonViewController {
     @IBOutlet weak var amountPlusMinusInput: PlusMinusInputField!
     @IBOutlet weak var pricePlusMinusInput: PlusMinusInputField!
 
-    init(bidAsk: Enums.BidAsk) {
+    init(bidAsk: OldEnums.BidAsk) {
         self.bidAsk = bidAsk
         super.init(nibName: nil, bundle: nil)
     }
@@ -56,11 +56,11 @@ class RxLimitOrderViewController: RxBaseSendOrderCommonViewController {
         
         bidButton.initializeBidAsk(.bid)
         bidButton.font(UIFont(name: (bidButton.titleLabel?.font.fontName)!, size: 30.0)!)
-        bidButton.title(Enums.BidAsk.bid.rawValue)
+        bidButton.title(OldEnums.BidAsk.bid.rawValue)
         
         askButton.initializeBidAsk(.ask)
         askButton.font(UIFont(name: (askButton.titleLabel?.font.fontName)!, size: 30.0)!)
-        askButton.title(Enums.BidAsk.ask.rawValue)
+        askButton.title(OldEnums.BidAsk.ask.rawValue)
         
         amountPlusMinusInput.upDownUnit = Double(0.001)
         amountPlusMinusInput.format = "%.3f"

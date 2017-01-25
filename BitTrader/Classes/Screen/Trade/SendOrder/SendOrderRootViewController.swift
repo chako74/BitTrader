@@ -18,7 +18,7 @@ class SendOrderRootViewController: UIViewController, ViewContainer, UIPickerView
     private var activeViewController: BaseSendOrderViewController?
 
     private var productType: Bitflyer.ProductCodeType?
-    private var selectedOrder: Enums.Order?
+    private var selectedOrder: OldEnums.Order?
     private var response: BitflyerTickerResponse?
     private var timer: Timer?
 
@@ -53,15 +53,15 @@ class SendOrderRootViewController: UIViewController, ViewContainer, UIPickerView
     }
 
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Enums.Order.count
+        return OldEnums.Order.count
     }
 
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Enums.Order(rawValue: row)?.name
+        return OldEnums.Order(rawValue: row)?.name
     }
 
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedOrder = Enums.Order(rawValue: row)
+        selectedOrder = OldEnums.Order(rawValue: row)
         guard let activeViewController = activeViewController,
             let productType = productType,
             let selectedOrder = selectedOrder,
@@ -109,7 +109,7 @@ class SendOrderRootViewController: UIViewController, ViewContainer, UIPickerView
 
         title = productType.rawValue
 
-        selectedOrder = Enums.Order(rawValue: 0)
+        selectedOrder = OldEnums.Order(rawValue: 0)
 
         bidButton.initializeBidAsk(.bid)
         bidButton.font(UIFont(name: (bidButton.titleLabel?.font.fontName)!, size: 30.0)!)
@@ -143,7 +143,7 @@ class SendOrderRootViewController: UIViewController, ViewContainer, UIPickerView
         activeViewController?.updateAskPrice(price: String(describing: response.bestAsk))
     }
 
-    private func createOrderViewController(_ productType: Bitflyer.ProductCodeType, _ order: Enums.Order) -> BaseSendOrderViewController? {
+    private func createOrderViewController(_ productType: Bitflyer.ProductCodeType, _ order: OldEnums.Order) -> BaseSendOrderViewController? {
         switch order {
         case .simple:
             return SimpleOrderViewController(productType: productType, delegete: self)

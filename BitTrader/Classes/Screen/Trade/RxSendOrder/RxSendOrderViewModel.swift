@@ -12,19 +12,19 @@ import RxSwift
 class RxSendOrderViewModel {
     
     let productType: Variable<Bitflyer.ProductCodeType>
-    private(set) var selectedOrder: Variable<Enums.Order>
+    private(set) var selectedOrder: Variable<OldEnums.Order>
     
-    init(productType: Bitflyer.ProductCodeType, order: Enums.Order) {
+    init(productType: Bitflyer.ProductCodeType, order: OldEnums.Order) {
         
         self.productType = Variable(productType)
         self.selectedOrder = Variable(order)
     }
     
-    func setSelectedBidAsk(_ bidAsk: Enums.BidAsk) {
+    func setSelectedBidAsk(_ bidAsk: OldEnums.BidAsk) {
         RxSendOrderGlobalModel.sharedInstance.selectedBidAsk.value = bidAsk
     }
     
-    func selectedBidAsk() -> Variable<Enums.BidAsk?> {
+    func selectedBidAsk() -> Variable<OldEnums.BidAsk?> {
         return RxSendOrderGlobalModel.sharedInstance.selectedBidAsk
     }
     
@@ -49,16 +49,16 @@ class RxSendOrderViewModel {
     }
     
     func tradeTypeCount(numberOfRowsInComponent component: Int) -> Int {
-        return Enums.Order.count
+        return OldEnums.Order.count
     }
     
     func tradeTypeTitleForRow(_ row: Int, forComponent component: Int) -> String? {
-        return Enums.Order(rawValue: row)?.name
+        return OldEnums.Order(rawValue: row)?.name
     }
     
     func updateDidSelectedPicker(row: Int, inComponent component: Int) {
         // 注文方法の更新
-        if let order = Enums.Order(rawValue: row) {
+        if let order = OldEnums.Order(rawValue: row) {
             selectedOrder.value = order
         }
     }

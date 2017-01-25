@@ -9,7 +9,7 @@
 import Foundation
 
 struct RxSendOrderModel {
-    let side: Enums.BidAsk
+    let side: OldEnums.BidAsk
     let size: Double
-    let orderType: Enums.OrderType
+    let orderType: OldEnums.OrderType
 }

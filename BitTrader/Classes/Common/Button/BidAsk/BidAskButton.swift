@@ -11,9 +11,9 @@ import UIKit
 
 class BidAskButton: UIButton {
 
-    private var bidAsk: Enums.BidAsk?
+    private var bidAsk: OldEnums.BidAsk?
 
-    func initializeBidAsk(_ bidAsk: Enums.BidAsk) {
+    func initializeBidAsk(_ bidAsk: OldEnums.BidAsk) {
         self.bidAsk = bidAsk
         background()
 
@@ -29,7 +29,7 @@ class BidAskButton: UIButton {
         self.titleLabel?.font = font
     }
 
-    func selected(bidAsk: Enums.BidAsk?) {
+    func selected(bidAsk: OldEnums.BidAsk?) {
         if self.bidAsk == bidAsk {
             self.isSelected = true
         } else {
