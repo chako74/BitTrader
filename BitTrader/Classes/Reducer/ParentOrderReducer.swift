@@ -71,7 +71,7 @@ struct ParentOrderReducer: Reducer {
         return state
     }
 
-    private func bidAskPrice(_ bidAsk: Enums.BidAsk, rateModel: RateModel?) -> Double? {
+    private func bidAskPrice(_ bidAsk: OldEnums.BidAsk, rateModel: RateModel?) -> Double? {
         guard let rateModel = rateModel else {
             return nil
         }
@@ -85,7 +85,7 @@ struct ParentOrderReducer: Reducer {
         return Double(price)
     }
 
-    private func makeCondition(condition: ChildOrderCondition, bidAsk: Enums.BidAsk, price: Double?) -> ChildOrderCondition {
+    private func makeCondition(condition: ChildOrderCondition, bidAsk: OldEnums.BidAsk, price: Double?) -> ChildOrderCondition {
         switch condition {
         case .limit(_, let amount, _):
             return .limit(bidAsk: bidAsk, amount: amount, price: price)
@@ -146,7 +146,7 @@ struct ParentOrderReducer: Reducer {
         }
     }
 
-    private func makeOrderState(parentOrderState: ParentOrderState, place: Enums.Place, hasCondition: HasCondition) -> ParentOrderState {
+    private func makeOrderState(parentOrderState: ParentOrderState, place: OldEnums.Place, hasCondition: HasCondition) -> ParentOrderState {
         switch place {
         case .First:
             switch parentOrderState {

@@ -42,7 +42,7 @@ class StopLimitOrderViewController: BaseSendOrderCommonViewController {
                                   orderType: .stopLimit(price: Int(price), triggerPrice: Int(triggerPrice)))
     }
 
-    override func updatePrice(bidAsk: Enums.BidAsk, price: Double) {
+    override func updatePrice(bidAsk: OldEnums.BidAsk, price: Double) {
         pricePlusMinusInput.input.value = price
     }
 }

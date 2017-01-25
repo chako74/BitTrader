@@ -71,26 +71,26 @@ class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
 
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if component == 0 {
-            return Enums.Order.count
+            return OldEnums.Order.count
         }
-        return Enums.Condition.count
+        return OldEnums.Condition.count
     }
 
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == 0 {
-            return Enums.Order(rawValue: row)?.name
+            return OldEnums.Order(rawValue: row)?.name
         }
-        return Enums.Condition(rawValue: row)?.name
+        return OldEnums.Condition(rawValue: row)?.name
     }
 
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch component {
         case 0:
-            if let order = Enums.Order(rawValue: row) {
+            if let order = OldEnums.Order(rawValue: row) {
                 store.dispatch(AppAction.Order(order))
             }
         case 1:
-            if let condition = Enums.Condition(rawValue: row) {
+            if let condition = OldEnums.Condition(rawValue: row) {
                 store.dispatch(childOrderCondition(place: .First, condition: condition))
             }
         default:
@@ -110,7 +110,7 @@ class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
         store.dispatch(AppAction.BidAsk(.First, value: .ask))
     }
 
-    private func exchangeChildContainerView(productType: Bitflyer.ProductCodeType, order: Enums.Order) {
+    private func exchangeChildContainerView(productType: Bitflyer.ProductCodeType, order: OldEnums.Order) {
 
         guard let newAvc = recreateOrderViewController(productType, order),
             type(of: activeViewController) != type(of: newAvc) else {
@@ -123,7 +123,7 @@ class ReSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
     }
 
     private func recreateOrderViewController(_ productType: Bitflyer.ProductCodeType,
-                                             _ order: Enums.Order) -> ReBaseSendOrderViewController? {
+                                             _ order: OldEnums.Order) -> ReBaseSendOrderViewController? {
         switch order {
         case .simple:
             return ReSimpleOrderViewController(productType: productType)

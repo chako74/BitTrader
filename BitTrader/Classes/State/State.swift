@@ -16,7 +16,7 @@ struct State: StateType {
 
 struct SendOrderState: StateType {
     var productType: Bitflyer.ProductCodeType
-    var order: Enums.Order
+    var order: OldEnums.Order
 }
 
 enum ParentOrderState: StateType {
@@ -36,11 +36,11 @@ struct ChildOrderState: HasCondition {
 }
 
 enum ChildOrderCondition {
-    case limit(bidAsk: Enums.BidAsk, amount: String?, price: Double?)
-    case market(bidAsk: Enums.BidAsk, amount: String?)
-    case stop(bidAsk: Enums.BidAsk, amount: String?, triggerPrice: Double?)
-    case stopLimit(bidAsk: Enums.BidAsk, amount: String?, price: Double?, triggerPrice: Double?)
-    case trail(bidAsk: Enums.BidAsk, amount: String?, trailDistance: Double?)
+    case limit(bidAsk: OldEnums.BidAsk, amount: String?, price: Double?)
+    case market(bidAsk: OldEnums.BidAsk, amount: String?)
+    case stop(bidAsk: OldEnums.BidAsk, amount: String?, triggerPrice: Double?)
+    case stopLimit(bidAsk: OldEnums.BidAsk, amount: String?, price: Double?, triggerPrice: Double?)
+    case trail(bidAsk: OldEnums.BidAsk, amount: String?, trailDistance: Double?)
 }
 
 extension State {
@@ -102,7 +102,7 @@ extension ParentOrderState {
 }
 
 extension ChildOrderCondition {
-    var bidAsk: Enums.BidAsk {
+    var bidAsk: OldEnums.BidAsk {
         switch self {
         case .limit(let bidAsk, _, _): return bidAsk
         case .market(let bidAsk, _): return bidAsk
@@ -152,7 +152,7 @@ extension ChildOrderCondition {
         }
     }
 
-    var enums: Enums.Condition {
+    var enums: OldEnums.Condition {
         switch self {
         case .limit: return .limit
         case .market: return .market

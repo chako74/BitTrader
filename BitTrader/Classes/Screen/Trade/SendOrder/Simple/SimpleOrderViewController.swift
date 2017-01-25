@@ -11,7 +11,7 @@ import UIKit
 class SimpleOrderViewController: BaseSendOrderViewController, ViewContainer, ApiExecuterDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     private var activeViewController: BaseSendOrderCommonViewController?
-    private var selectedCondition: Enums.Condition?
+    private var selectedCondition: OldEnums.Condition?
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var sendOrderButton: UIButton!
@@ -48,15 +48,15 @@ class SimpleOrderViewController: BaseSendOrderViewController, ViewContainer, Api
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Enums.Condition.count
+        return OldEnums.Condition.count
     }
 
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Enums.Condition(rawValue: row)?.name
+        return OldEnums.Condition(rawValue: row)?.name
     }
 
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedCondition = Enums.Condition(rawValue: row)
+        selectedCondition = OldEnums.Condition(rawValue: row)
         guard let selectedCondition = selectedCondition else {
             return
         }
@@ -168,7 +168,7 @@ class SimpleOrderViewController: BaseSendOrderViewController, ViewContainer, Api
         rootViewController()?.present(alertController, animated: true, completion: nil)
     }
 
-    private func updateCondition(_ condition: Enums.Condition) {
+    private func updateCondition(_ condition: OldEnums.Condition) {
         guard let activeViewController = activeViewController, let newAvc = makeSendOrderChildViewController(condition: condition) else {
             return
         }

@@ -11,9 +11,9 @@ import RxSwift
 
 class RxSimpleOrderViewModel {
     
-    private(set) var selectedCondition: Variable<Enums.Condition>
+    private(set) var selectedCondition: Variable<OldEnums.Condition>
     
-    init(condition: Enums.Condition) {
+    init(condition: OldEnums.Condition) {
         self.selectedCondition = Variable(condition)
     }
     
@@ -22,16 +22,16 @@ class RxSimpleOrderViewModel {
     }
     
     func tradeTypeCount(numberOfRowsInComponent component: Int) -> Int {
-        return Enums.Condition.count
+        return OldEnums.Condition.count
     }
     
     func tradeTypeTitleForRow(_ row: Int, forComponent component: Int) -> String? {
-        return Enums.Condition(rawValue: row)?.name
+        return OldEnums.Condition(rawValue: row)?.name
     }
     
     func updateDidSelectedPicker(row: Int, inComponent component: Int) {
         // 注文の執行条件の更新
-        if let condition = Enums.Condition(rawValue: row) {
+        if let condition = OldEnums.Condition(rawValue: row) {
             selectedCondition.value = condition
         }
     }

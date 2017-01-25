@@ -75,7 +75,7 @@ struct SendOrderUtils {
         })
     }
 
-    static func selectOrderState(parentOrderState: ParentOrderState, place: Enums.Place) -> HasCondition {
+    static func selectOrderState(parentOrderState: ParentOrderState, place: OldEnums.Place) -> HasCondition {
         switch place {
         case .First:
             switch parentOrderState {

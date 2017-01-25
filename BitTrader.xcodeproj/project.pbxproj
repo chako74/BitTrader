@@ -84,6 +84,8 @@
 		07AFA17C1DD89CBC00A8B981 /* OrderListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AFA17B1DD89CBC00A8B981 /* OrderListTableViewCell.xib */; };
 		07B053DC1E0185D80016B106 /* RxMarketOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B053DB1E0185D80016B106 /* RxMarketOrderViewModel.swift */; };
 		07B053E01E0189C00016B106 /* RxSendOrderGlobalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B053DF1E0189C00016B106 /* RxSendOrderGlobalModel.swift */; };
+		07B83CF91E2CFA7F00C41064 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B83CF81E2CFA7F00C41064 /* Order.swift */; };
+		07B83CFB1E2CFEBC00C41064 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B83CFA1E2CFEBC00C41064 /* Enums.swift */; };
 		07B854471DAF2D84009E3181 /* BTCChangerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B854461DAF2D84009E3181 /* BTCChangerViewController.xib */; };
 		07B854551DB1C11F009E3181 /* BTCChangerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B854541DB1C11F009E3181 /* BTCChangerViewModel.swift */; };
 		07B8545A1DB1DCE8009E3181 /* NumberPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B854581DB1DCE8009E3181 /* NumberPadViewController.swift */; };
@@ -214,7 +216,7 @@
 		E964B31C1DE5CA3A003A719F /* ApiKitApiExecuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B31A1DE5CA3A003A719F /* ApiKitApiExecuter.swift */; };
 		E964B3221DE5CA81003A719F /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B3211DE5CA81003A719F /* RequestProtocol.swift */; };
 		E964B3241DE5CA87003A719F /* ApiKitRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B3231DE5CA87003A719F /* ApiKitRequestProtocol.swift */; };
-		E964B3271DE5CB3F003A719F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B3261DE5CB3F003A719F /* Enums.swift */; };
+		E964B3271DE5CB3F003A719F /* OldEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964B3261DE5CB3F003A719F /* OldEnums.swift */; };
 		E96D3FC91DE97B440072E80C /* SendOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D3FC81DE97B440072E80C /* SendOrderViewModel.swift */; };
 		E96D3FCC1DE9B9910072E80C /* BitTraderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D3FCB1DE9B9910072E80C /* BitTraderError.swift */; };
 		E96D3FD61DE9C15A0072E80C /* BaseSendOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D3FD51DE9C15A0072E80C /* BaseSendOrderViewController.swift */; };
@@ -318,6 +320,8 @@
 		07AFA17B1DD89CBC00A8B981 /* OrderListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderListTableViewCell.xib; sourceTree = "<group>"; };
 		07B053DB1E0185D80016B106 /* RxMarketOrderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxMarketOrderViewModel.swift; sourceTree = "<group>"; };
 		07B053DF1E0189C00016B106 /* RxSendOrderGlobalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSendOrderGlobalModel.swift; sourceTree = "<group>"; };
+		07B83CF81E2CFA7F00C41064 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		07B83CFA1E2CFEBC00C41064 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		07B854461DAF2D84009E3181 /* BTCChangerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTCChangerViewController.xib; sourceTree = "<group>"; };
 		07B854541DB1C11F009E3181 /* BTCChangerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTCChangerViewModel.swift; sourceTree = "<group>"; };
 		07B854581DB1DCE8009E3181 /* NumberPadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPadViewController.swift; sourceTree = "<group>"; };
@@ -458,7 +462,7 @@
 		E964B31A1DE5CA3A003A719F /* ApiKitApiExecuter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKitApiExecuter.swift; sourceTree = "<group>"; };
 		E964B3211DE5CA81003A719F /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		E964B3231DE5CA87003A719F /* ApiKitRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKitRequestProtocol.swift; sourceTree = "<group>"; };
-		E964B3261DE5CB3F003A719F /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		E964B3261DE5CB3F003A719F /* OldEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldEnums.swift; sourceTree = "<group>"; };
 		E96D3FC81DE97B440072E80C /* SendOrderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendOrderViewModel.swift; sourceTree = "<group>"; };
 		E96D3FCB1DE9B9910072E80C /* BitTraderError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitTraderError.swift; sourceTree = "<group>"; };
 		E96D3FD51DE9C15A0072E80C /* BaseSendOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSendOrderViewController.swift; sourceTree = "<group>"; };
@@ -773,6 +777,14 @@
 			path = Rate;
 			sourceTree = "<group>";
 		};
+		07B83CF71E2CF9F500C41064 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				07B83CF81E2CFA7F00C41064 /* Order.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
 		07B854561DB1DC60009E3181 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -981,6 +993,7 @@
 		07FAE3311DA7898100089136 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				07B83CF71E2CF9F500C41064 /* Order */,
 				E964B3111DE5C8A0003A719F /* Client */,
 				BA4FA2241DDDF5BB001038E5 /* Bitflyer */,
 				BA76BE3E1DDF2984005514AC /* BtcBox */,
@@ -1605,7 +1618,8 @@
 		E964B3251DE5CAE2003A719F /* Enum */ = {
 			isa = PBXGroup;
 			children = (
-				E964B3261DE5CB3F003A719F /* Enums.swift */,
+				E964B3261DE5CB3F003A719F /* OldEnums.swift */,
+				07B83CFA1E2CFEBC00C41064 /* Enums.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -1964,18 +1978,20 @@
 				072441861DACBEB40059E872 /* RegistKeyViewController.swift in Sources */,
 				07BDF9BD1DD370A5006C99CA /* OrderListViewController.swift in Sources */,
 				BA76BE741DDF30EF005514AC /* CoincheckRequest.swift in Sources */,
-				E964B3271DE5CB3F003A719F /* Enums.swift in Sources */,
+				E964B3271DE5CB3F003A719F /* OldEnums.swift in Sources */,
 				07E8DA1E1E23C21A00C6EA6F /* RealmMigration.swift in Sources */,
 				07E8DA261E23D5F300C6EA6F /* ProductListCellModel.swift in Sources */,
 				E91FE5D61DEAD4F500D2632C /* ReBaseSendOrderViewController.swift in Sources */,
 				07B854551DB1C11F009E3181 /* BTCChangerViewModel.swift in Sources */,
 				E903DF191DFF068A00EC0652 /* BidAskButton.swift in Sources */,
+				07B83CFB1E2CFEBC00C41064 /* Enums.swift in Sources */,
 				BA76BE6C1DDF2F32005514AC /* CoincheckTickerRequest.swift in Sources */,
 				07C7CC591DD4B50E00F7A398 /* OrderListState.swift in Sources */,
 				07BD522A1DA3E4AE00DA54B8 /* AppDelegate.swift in Sources */,
 				07DCBF2C1DCB734800B60008 /* PositionListViewModel.swift in Sources */,
 				07069CAA1DE17EAA002CEC31 /* BitflyerCancelChildOrderParameter.swift in Sources */,
 				07E8DA271E23D5F300C6EA6F /* ProductListTableViewCell.swift in Sources */,
+				07B83CF91E2CFA7F00C41064 /* Order.swift in Sources */,
 				07DCBF2F1DCB737600B60008 /* PositionTableViewCell.swift in Sources */,
 				BA4FA2351DDDF65B001038E5 /* BitflyerGetHealthResponse.swift in Sources */,
 				E91FE5F51DEAD60D00D2632C /* ReStopLimitOrderViewController.swift in Sources */,

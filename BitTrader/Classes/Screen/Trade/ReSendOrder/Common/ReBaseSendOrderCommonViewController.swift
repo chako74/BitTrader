@@ -14,9 +14,9 @@ protocol ReSendOrderViewControllerProtocol: NSObjectProtocol {
 
 class ReBaseSendOrderCommonViewController: UIViewController, ReSendOrderViewControllerProtocol {
 
-    var place: Enums.Place
+    var place: OldEnums.Place
 
-    init(place: Enums.Place) {
+    init(place: OldEnums.Place) {
         self.place = place
         super.init(nibName: nil, bundle: nil)
     }

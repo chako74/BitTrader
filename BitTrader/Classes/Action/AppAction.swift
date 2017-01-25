@@ -11,20 +11,20 @@ import ReSwift
 enum AppAction: Action {
 
     case ProductCodeType(Bitflyer.ProductCodeType)
-    case Order(Enums.Order)
+    case Order(OldEnums.Order)
 
     case RateModel(RateModel?)
 
-    case ChildOrderCondition(Enums.Place, value: ChildOrderCondition)
+    case ChildOrderCondition(OldEnums.Place, value: ChildOrderCondition)
 
-    case BidAsk(Enums.Place, value: Enums.BidAsk)
-    case Amount(Enums.Place, value: String?)
-    case Price(Enums.Place, value: Double?)
-    case TriggerPrice(Enums.Place, value: Double?)
-    case TrailDistance(Enums.Place, value: Double?)
+    case BidAsk(OldEnums.Place, value: OldEnums.BidAsk)
+    case Amount(OldEnums.Place, value: String?)
+    case Price(OldEnums.Place, value: Double?)
+    case TriggerPrice(OldEnums.Place, value: Double?)
+    case TrailDistance(OldEnums.Place, value: Double?)
 }
 
-func childOrderCondition(place: Enums.Place, condition: Enums.Condition) -> Store<State>.ActionCreator {
+func childOrderCondition(place: OldEnums.Place, condition: OldEnums.Condition) -> Store<State>.ActionCreator {
     return { state, store in
         switch condition {
         case .limit:

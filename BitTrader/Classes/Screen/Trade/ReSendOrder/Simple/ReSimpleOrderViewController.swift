@@ -43,7 +43,7 @@ class ReSimpleOrderViewController: ReBaseSendOrderViewController, ViewContainer,
         updateCondition(orderState.condition.enums)
     }
 
-    func updateCondition(_ condition: Enums.Condition) {
+    func updateCondition(_ condition: OldEnums.Condition) {
         guard let activeViewController = activeViewController,
             let newAvc = remakeSendOrderChildViewController(place: .First, condition: condition),
             type(of: activeViewController) != type(of: newAvc) else {

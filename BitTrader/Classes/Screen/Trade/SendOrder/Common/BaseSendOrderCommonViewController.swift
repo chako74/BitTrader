@@ -21,10 +21,10 @@ class BaseSendOrderCommonViewController: UIViewController, SendOrderViewControll
     @IBOutlet weak var bidButton: BidAskButton!
     @IBOutlet weak var askButton: BidAskButton!
     
-    var bidAsk: Enums.BidAsk
+    var bidAsk: OldEnums.BidAsk
     var targetField: PlusMinusInputField?
 
-    init(bidAsk: Enums.BidAsk, delegete: SendOrderRootViewControllerProtocol) {
+    init(bidAsk: OldEnums.BidAsk, delegete: SendOrderRootViewControllerProtocol) {
         self.bidAsk = bidAsk
         self.delegate = delegete
         super.init(nibName: nil, bundle: nil)
@@ -38,10 +38,10 @@ class BaseSendOrderCommonViewController: UIViewController, SendOrderViewControll
         super.viewDidLoad()
 
         bidButton.initializeBidAsk(.bid)
-        bidButton.title(Enums.BidAsk.bid.rawValue)
+        bidButton.title(OldEnums.BidAsk.bid.rawValue)
 
         askButton.initializeBidAsk(.ask)
-        askButton.title(Enums.BidAsk.ask.rawValue)
+        askButton.title(OldEnums.BidAsk.ask.rawValue)
 
         initComponent()
     }
@@ -99,7 +99,7 @@ class BaseSendOrderCommonViewController: UIViewController, SendOrderViewControll
     func initComponent() {
     }
 
-    func updatePrice(bidAsk: Enums.BidAsk, price: Double) {
+    func updatePrice(bidAsk: OldEnums.BidAsk, price: Double) {
     }
 
     @IBAction func onBidButton(_ sender: UIButton) {
@@ -118,7 +118,7 @@ class BaseSendOrderCommonViewController: UIViewController, SendOrderViewControll
         changeBidAsk(bidAsk: .ask)
     }
 
-    func changeBidAsk(bidAsk: Enums.BidAsk) {
+    func changeBidAsk(bidAsk: OldEnums.BidAsk) {
         bidButton.selected(bidAsk: bidAsk)
         askButton.selected(bidAsk: bidAsk)
     }

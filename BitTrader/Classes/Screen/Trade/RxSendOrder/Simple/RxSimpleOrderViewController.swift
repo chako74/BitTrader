@@ -86,7 +86,7 @@ class RxSimpleOrderViewController: RxBaseSendOrderViewController, ViewContainer,
                     return
                 }
                 
-                sSelf.pickerView.selectRow(Enums.Condition.values.index(of: condition) ?? 0, inComponent: 0, animated: false)
+                sSelf.pickerView.selectRow(OldEnums.Condition.values.index(of: condition) ?? 0, inComponent: 0, animated: false)
                 
                 if let controller = sSelf.makeSimpleOrderChildViewController(condition: condition) {
                     
@@ -141,7 +141,7 @@ class RxSimpleOrderViewController: RxBaseSendOrderViewController, ViewContainer,
             .addDisposableTo(disposeBag)
     }
     
-    func makeSimpleOrderChildViewController(condition: Enums.Condition) -> RxBaseSendOrderCommonViewController? {
+    func makeSimpleOrderChildViewController(condition: OldEnums.Condition) -> RxBaseSendOrderCommonViewController? {
         switch condition {
         case .limit:
             return RxLimitOrderViewController(bidAsk: .bid)
@@ -172,7 +172,7 @@ extension RxSimpleOrderViewController: UIPickerViewDataSource, UIPickerViewDeleg
         viewModel.updateDidSelectedPicker(row: row, inComponent: component)
     }
     
-     private func updateCondition(_ condition: Enums.Condition) {
+     private func updateCondition(_ condition: OldEnums.Condition) {
         guard let activeViewController = activeViewController, let newAvc = makeSendOrderChildViewController(condition: condition) else {
             return
         }

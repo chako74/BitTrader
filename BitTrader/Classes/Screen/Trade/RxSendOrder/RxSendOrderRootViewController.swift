@@ -166,7 +166,7 @@ class RxSendOrderRootViewController: UIViewController, ViewContainer, UIPickerVi
         return nil
     }
 
-    private func makeOrderViewController(withProductType: Bitflyer.ProductCodeType, order: Enums.Order) -> RxBaseSendOrderViewController? {
+    private func makeOrderViewController(withProductType: Bitflyer.ProductCodeType, order: OldEnums.Order) -> RxBaseSendOrderViewController? {
         switch order {
         case .simple:
             let controller = RxSimpleOrderViewController()

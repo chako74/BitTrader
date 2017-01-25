@@ -11,11 +11,11 @@ import RxSwift
 
 class RxMarketOrderViewModel {
     
-    func setSelectedBidAsk(_ selectedBidAsk: Enums.BidAsk?) {
+    func setSelectedBidAsk(_ selectedBidAsk: OldEnums.BidAsk?) {
         RxSendOrderGlobalModel.sharedInstance.selectedBidAsk.value = selectedBidAsk
     }
     
-    func selectedBidAsk() -> Variable<Enums.BidAsk?> {
+    func selectedBidAsk() -> Variable<OldEnums.BidAsk?> {
         return RxSendOrderGlobalModel.sharedInstance.selectedBidAsk
     }
     

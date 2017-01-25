@@ -35,7 +35,7 @@ class LimitOrderViewController: BaseSendOrderCommonViewController {
                                   orderType: .limit(price: Int(price)))
     }
 
-    override func updatePrice(bidAsk: Enums.BidAsk, price: Double) {
+    override func updatePrice(bidAsk: OldEnums.BidAsk, price: Double) {
         pricePlusMinusInput.input.value = price
     }
 }

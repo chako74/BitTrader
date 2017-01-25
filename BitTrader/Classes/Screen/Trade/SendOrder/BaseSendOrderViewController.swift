@@ -31,7 +31,7 @@ class BaseSendOrderViewController: UIViewController {
         fatalError("updateAskPrice(price:) has not been implemented")
     }
 
-    func makeSendOrderChildViewController(condition: Enums.Condition) -> BaseSendOrderCommonViewController? {
+    func makeSendOrderChildViewController(condition: OldEnums.Condition) -> BaseSendOrderCommonViewController? {
         switch condition {
         case .limit:
             return LimitOrderViewController(bidAsk: .bid, delegete: delegate!)
@@ -83,7 +83,7 @@ class BaseSendOrderViewController: UIViewController {
         return UIApplication.shared.keyWindow!.rootViewController
     }
 
-    private func convert(_ bidAsk: Enums.BidAsk) -> Bitflyer.SideType {
+    private func convert(_ bidAsk: OldEnums.BidAsk) -> Bitflyer.SideType {
         let type: Bitflyer.SideType
         switch bidAsk {
         case .bid:
@@ -94,7 +94,7 @@ class BaseSendOrderViewController: UIViewController {
         return type
     }
 
-    private func convert(_ orderType: Enums.OrderType) -> Bitflyer.SpecialOrderType {
+    private func convert(_ orderType: OldEnums.OrderType) -> Bitflyer.SpecialOrderType {
         let type: Bitflyer.SpecialOrderType
         switch orderType {
         case .market:
@@ -111,7 +111,7 @@ class BaseSendOrderViewController: UIViewController {
         return type
     }
 
-    private func convert(_ orderType: Enums.OrderType) throws -> Bitflyer.NomalOrderType {
+    private func convert(_ orderType: OldEnums.OrderType) throws -> Bitflyer.NomalOrderType {
         let type: Bitflyer.NomalOrderType
         switch orderType {
         case .market:
